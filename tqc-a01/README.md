@@ -145,6 +145,38 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 
 ## Mainline U-Boot
 
+## Forums and Blogs
+
+[泰奇猫TQC-A01强力推荐此盒子](https://www.znds.com/tv-1185657-1-1.html)
+
+[TQC泰奇猫矿渣利用](https://www.right.com.cn/forum/thread-3469793-1-1.html)
+
+> 泰奇猫这个是基于Allwinner H6 也就是全志H6 ARM64 芯片的一个盒子,整体这个机子的系统其实也是套用了公版sun50iw6 OrangePi3 实施的一个方案。
+
+[# 网络设备杂谈 篇一：小猫变脑斧？？？！！！泰奇猫深度使用记录](https://post.m.smzdm.com/p/alxld6mp)
+
+[# 25元的泰奇猫盒子 还能刷Zidoo机顶盒系统](https://post.smzdm.com/p/awrnn9vg/)
+
+[# 垃圾佬的日常 篇十四：25元就能体验到芝杜（zidoo）系统，一个纯净的电视盒子矿渣——泰奇猫](https://post.m.smzdm.com/p/anxxvrgp/)
+
+[教你怎么刷芝杜/zidoo播放器系统-泰奇猫](https://www.hao4k.cn/thread-57639-1-1.html)
+
+![H6vsS905](https://data.hao4k.cn/forum/202105/24/zdm202105Mon091131k21ejyd2gjc.jpg)
+
+[矿渣 ：泰奇猫刷机芝杜（zidoo）系统](https://www.amobbs.com/thread-5750868-1-1.html)
+
+[泰奇猫Zidoo固件发布-更新完美线刷包20201115更新外置网卡版](https://bbs.nas66.com/thread-12104-1-1.html)
+
+[矿渣论坛 - 硬件专区›泰奇猫](https://bbs.nas66.com/forum-42-1.html)
+
+[矿渣篇：泰奇猫魔改](https://www.bilibili.com/read/mobile?id=9995897&ivk_sa=1024320u)
+
+[TQC泰奇猫刷原版Android系统](https://post.m.smzdm.com/p/adwgz3ox/)
+
+[40块买到原价1299的矿渣电视盒泰奇猫，能刷芝杜系统还能上4K](https://mbd.baidu.com/newspage/data/landingshare?pageType=1&nid=news_9259844976391711714&wfr=&_refluxos=)
+
+[记录某全志H6矿渣LibreELEC系统适配过程](https://www.amobbs.com/thread-5751326-1-1.html)
+
 ## TODO
 
 - install arch to eMMC
@@ -158,3 +190,4 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 - ~~dump kernel verion~~
 
 - build usable U-Boot for H6
+
