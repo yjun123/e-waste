@@ -155,6 +155,8 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 
 [# 网络设备杂谈 篇一：小猫变脑斧？？？！！！泰奇猫深度使用记录](https://post.m.smzdm.com/p/alxld6mp)
 
+[网络设备杂谈 篇二：震惊! 矿渣wifi起死回生，背后的原因令人暖心。泰奇猫0成本wifi](https://post.m.smzdm.com/p/a4d4w5mx/)
+
 [# 25元的泰奇猫盒子 还能刷Zidoo机顶盒系统](https://post.smzdm.com/p/awrnn9vg/)
 
 [# 垃圾佬的日常 篇十四：25元就能体验到芝杜（zidoo）系统，一个纯净的电视盒子矿渣——泰奇猫](https://post.m.smzdm.com/p/anxxvrgp/)
@@ -165,6 +167,8 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 
 [矿渣 ：泰奇猫刷机芝杜（zidoo）系统](https://www.amobbs.com/thread-5750868-1-1.html)
 
+[泰奇猫Zidoo h6 pro移植固件发布](https://www.znds.com/tv-1183570-1-1.html)
+
 [泰奇猫Zidoo固件发布-更新完美线刷包20201115更新外置网卡版](https://bbs.nas66.com/thread-12104-1-1.html)
 
 [矿渣论坛 - 硬件专区›泰奇猫](https://bbs.nas66.com/forum-42-1.html)
@@ -174,6 +178,8 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 [TQC泰奇猫刷原版Android系统](https://post.m.smzdm.com/p/adwgz3ox/)
 
 [40块买到原价1299的矿渣电视盒泰奇猫，能刷芝杜系统还能上4K](https://mbd.baidu.com/newspage/data/landingshare?pageType=1&nid=news_9259844976391711714&wfr=&_refluxos=)
+
+[熊娃成全了他爹！40块包邮的泰奇猫电视盒子，还能刷芝杜系统](https://post.m.smzdm.com/p/ar66vp5z/)
 
 [记录某全志H6矿渣LibreELEC系统适配过程](https://www.amobbs.com/thread-5751326-1-1.html)
 
