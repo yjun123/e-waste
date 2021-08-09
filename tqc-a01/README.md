@@ -11,7 +11,7 @@
 | Specifications| Description |
 | ----- | --- |
 | PCB revision  | AZW-KT02 2.0 |
-| SoC   | Allwinner [H6](https://linux-sunxi.org/H6)@1.8Ghz/V2000-AWIN/BGA451/15X15mm/Quad-core Cotex-A53 |
+| SoC   | Allwinner [H6](https://linux-sunxi.org/H6)@1.8Ghz/V2000-AWIN/BGA451/15X15mm/Quad-core Cortex-A53 |
 | DRAM  | 1GiB LPDDR3 SpecTek [SS256M32V01MD1LPF-107BT](https://www.spectek.com/menus/we_detail.aspx?memType=LPDDR3)/PB047-125 PT/BGA178/1600Mbps |
 | Power | DC 5V@2A |
 | eMMC  | 8GiB eMMC 5.1 Longsys Foresee eMMC [NCEMAM6G-08G](https://www.arrow.com/en/datasheets/9029653725/shenzhen-longsys-electronics-co.-ltd/ncemam6g-08g)/BGA153 |
@@ -74,13 +74,12 @@ connect to USB 2.0 port instead of the USB OTG port :).
 
 ### Device Tree
 
-  based on OrangePi 3 device tree, ethernet and wifi, BT enabled.
+  based on OrangePi 3 device tree, ethernet, WiFi and Bluetooth enabled.
 
   it works fine with linux stable release [sun50i-h6-tqc-a01.dts](https://aur.archlinux.org/cgit/aur.git/plain/sun50i-h6-tqc-a01.dts?h=linux-tqc-a01)
 
 
   works fine with linux 5.11.4 [dts for linux 5.11](https://aur.archlinux.org/cgit/aur.git/plain/sun50i-h6-tqc-a01.dts?h=linux-tqc-a01&id=869858806a8fbf1e0121537eb724dfe25ff3728a)
-
 
 ### config
 
@@ -153,13 +152,13 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 
 > 泰奇猫这个是基于Allwinner H6 也就是全志H6 ARM64 芯片的一个盒子,整体这个机子的系统其实也是套用了公版sun50iw6 OrangePi3 实施的一个方案。
 
-[# 网络设备杂谈 篇一：小猫变脑斧？？？！！！泰奇猫深度使用记录](https://post.m.smzdm.com/p/alxld6mp)
+[网络设备杂谈 篇一：小猫变脑斧？？？！！！泰奇猫深度使用记录](https://post.m.smzdm.com/p/alxld6mp)
 
 [网络设备杂谈 篇二：震惊! 矿渣wifi起死回生，背后的原因令人暖心。泰奇猫0成本wifi](https://post.m.smzdm.com/p/a4d4w5mx/)
 
-[# 25元的泰奇猫盒子 还能刷Zidoo机顶盒系统](https://post.smzdm.com/p/awrnn9vg/)
+[25元的泰奇猫盒子 还能刷Zidoo机顶盒系统](https://post.smzdm.com/p/awrnn9vg/)
 
-[# 垃圾佬的日常 篇十四：25元就能体验到芝杜（zidoo）系统，一个纯净的电视盒子矿渣——泰奇猫](https://post.m.smzdm.com/p/anxxvrgp/)
+[垃圾佬的日常 篇十四：25元就能体验到芝杜（zidoo）系统，一个纯净的电视盒子矿渣——泰奇猫](https://post.m.smzdm.com/p/anxxvrgp/)
 
 [教你怎么刷芝杜/zidoo播放器系统-泰奇猫](https://www.hao4k.cn/thread-57639-1-1.html)
 
@@ -187,7 +186,7 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 
 - install arch to eMMC
 
-- ~~enable wifi~~ 
+- ~~enable WiFi~~ 
 
 - enable IrDA
 

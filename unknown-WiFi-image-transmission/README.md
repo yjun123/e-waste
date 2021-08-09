@@ -30,6 +30,8 @@
 
 - all Pictures of the ICs is in `/image`.
 
+- all datasheets of the ICs is in `/datasheet`.
+
 ## Stock Firmware
 
 ### WiFi
@@ -50,7 +52,11 @@
 
 ![image-20210809165854675](./image/stock-firmware-open-port.png)
 
+### Telnet user and password crack
 
+- metasploit
+
+- hack firmware 
 
 ## Analog Input Port
 
