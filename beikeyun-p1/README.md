@@ -40,7 +40,7 @@
 | GPU           | Mali-450MP4 |
 | Memory        | DDR3/DDR3L/LPDDR3/DDR4 4GB(max) |
 
-[Rockchip RK3328 Product-Page ](https://www.rock-chips.com/a/en/products/RK33_Series/2017/0118/829.html)
+[Rockchip RK3328 Product-Page](https://www.rock-chips.com/a/en/products/RK33_Series/2017/0118/829.html)
 
 [Rockchip RK3328 Wiki](http://opensource.rock-chips.com/wiki_RK3328)
 
@@ -95,6 +95,28 @@
 [unifreq/linux-5.14.y - rk3328-beikeyun-1296mhz.dts](https://github.com/unifreq/linux-5.14.y/blob/main/arch/arm64/boot/dts/rockchip/rk3328-beikeyun-1296mhz.dts)
 
 ## Mainline Linux
+
+### Arch Linux ARM PKGBUILD
+
+[linux-beikeyun-p1](https://aur.archlinux.org/packages/linux-beikeyun-p1/)
+
+### Patches
+
+- those patches are extracted from commits in [unifreq/linux-5.14.y](https://github.com/unifreq/linux-5.14.y)
+
+  [0001-add-rk3328-usb3-phy-driver.patch](https://aur.archlinux.org/cgit/aur.git/plain/0001-add-rk3328-usb3-phy-driver.patch?h=linux-beikeyun-p1)
+
+  [0002-rk3328-add-dmc-driver.patch](https://aur.archlinux.org/cgit/aur.git/plain/0002-rk3328-add-dmc-driver.patch?h=linux-beikeyun-p1)
+
+  [0003-rk3328-audio-and-renegade-supplies.patch](https://aur.archlinux.org/cgit/aur.git/plain/0003-rk3328-audio-and-renegade-supplies.patch?h=linux-beikeyun-p1)
+
+  [0004-rk3328-dtsi-mmc-vdec-usb3-tweaks.patch](https://aur.archlinux.org/cgit/aur.git/plain/0004-rk3328-dtsi-mmc-vdec-usb3-tweaks.patch?h=linux-beikeyun-p1)
+
+  [0005-rk3328-fix-mali-node.patch](https://aur.archlinux.org/cgit/aur.git/plain/0005-rk3328-fix-mali-node.patch?h=linux-beikeyun-p1)
+
+  [0006-rockchip-rng-driver.patch](https://aur.archlinux.org/cgit/aur.git/plain/0006-rockchip-rng-driver.patch?h=linux-beikeyun-p1)
+
+  [0007-fixed-mmc-index.patch](https://aur.archlinux.org/cgit/aur.git/plain/0007-fixed-mmc-index.patch?h=linux-beikeyun-p1)
 
 ## Mainline U-Boot
 
