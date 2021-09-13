@@ -12,3 +12,7 @@
 ## Wireless Image transmission
 
 - 保千里 Protruly SC150MBN1 汽车夜视系统图传 2.4G
+
+## Beacon Sensor
+
+- Sensoro SmartBeacon-4AA 云盒
