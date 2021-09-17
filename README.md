@@ -15,4 +15,5 @@
 
 ## Beacon Sensor
 
-- Sensoro SmartBeacon-4AA 云盒
+- 云盒 Sensoro SmartBeacon-4AA
+

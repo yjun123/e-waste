@@ -1,6 +1,12 @@
 # Sensoro SmartBeacon-4AA 云盒
 
+[offical website](https://www.sensoro.com/en/Beacons)
+
+<img src="https://www.sensoro.com/static/image/product/SmartBeacon-4AA@2x.png" alt="SmartBeacon-4AA" style="zoom:50%;" />
+
 ## Sensoro Tag C0 
+
+see `manual/Sensoro-Tag-{External-Photos,Internal-Photos,Users-Manual}.pdf`
 
 ## Nordic nRF51822
 
@@ -42,5 +48,7 @@ see `protocol.txt`
 
 > SmartBeacon-2AA（品牌：Sensoro）和SmartBeacon-4AA（品牌：Sensoro），采用2节AA电池供电(可更换电池)和4节AA电池供电(可更换电池)
 
+[iBeacon智能云盒传感器 NRF51822无线智能设备控制盒 diy研究价](https://item.taobao.com/item.htm?id=648320836131)
 
+[iBeacon 智能传感器 云盒 NRF51822无线智能设备 微信摇一摇周边](https://item.taobao.com/item.htm?id=623129022866)
 

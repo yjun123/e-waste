@@ -1,18 +1,18 @@
 Len Type Flag Len Type Company Type Len UUID                             Major Minor   Len Type Service-UUID Len Type  Service-UUID Data 
-02  01   06   1A  FF   4C00    02   15  23A01AF0232A45189C0E323FB773F5EF 54B0  BA15 B5 03  03   E781         1A  16    E781         C0 30 30 5C99AC2C2E1B54B0BA15 63 8400 24 FFFF 09 00 00   B5
-                       Apple                                                                                                        MD V     SN                   P%      ℃      MV    MVing     --- Model C0(MD), Version 3.0(V), Battery(p%) 99 %, 26 degree, Move count(MV) 9 , Moving = 0(MVing)
+02  01   06   1A  FF   4C00    02   15  23A01AF0232A45189C0E323FB773F5EF 54B0  BA15 B5 03  03   E781         1A  16    E781         C0 30 30 5C99AC 2C2E1B54B0BA15 63 8400 24 FFFF 09 00 00   B5
+                       Apple                                                                                                        MD V     SN                    P%      ℃      MV    MVing     --- Model C0(MD), Version 3.0(V), Battery(p%) 99 %, 26 degree, Move count(MV) 9 , Moving = 0(MVing)
                        
-02  01   06   1A  FF   4C00    02   15  23A01AF0232A45189C0E323FB773F5EF 54B0  BA15 B5 03  03   E781         1A  16    E781         C0 30 30 5C99AC2C2E1B54B0BA15 63 8400 24 FFFF 10 00 00   B5
-                       Apple                                                                                                        MD V     SN                   P%      ℃      MV    MVing     --- Model C0(MD), Version 3.0(V), Battery(p%) 99 %, 26 degree, Move count(MV) 16, Moving = 0(MVing)
+02  01   06   1A  FF   4C00    02   15  23A01AF0232A45189C0E323FB773F5EF 54B0  BA15 B5 03  03   E781         1A  16    E781         C0 30 30 5C99AC 2C2E1B54B0BA15 63 8400 24 FFFF 10 00 00   B5
+                       Apple                                                                                                        MD V     SN                    P%      ℃      MV    MVing     --- Model C0(MD), Version 3.0(V), Battery(p%) 99 %, 26 degree, Move count(MV) 16, Moving = 0(MVing)
                        
-02  01   06   1A  FF   4C00    02   15  23A01AF0232A45189C0E323FB773F5EF 54B0  BA15 B5 03  03   E781         1A  16    E781         C0 30 30 5C99AC2C2E1B54B0BA15 63 8400 25 FFFF 12 00 01   B5
-                       Apple                                                                                                        MD V     SN                   P%      ℃      MV    MVing     --- Model C0(MD), Version 3.0(V), Battery(p%) 99 %, 27 degree, Move count(MV) 18, Moving = 1(MVing)
+02  01   06   1A  FF   4C00    02   15  23A01AF0232A45189C0E323FB773F5EF 54B0  BA15 B5 03  03   E781         1A  16    E781         C0 30 30 5C99AC 2C2E1B54B0BA15 63 8400 25 FFFF 12 00 01   B5
+                       Apple                                                                                                        MD V     SN                    P%      ℃      MV    MVing     --- Model C0(MD), Version 3.0(V), Battery(p%) 99 %, 27 degree, Move count(MV) 18, Moving = 1(MVing)
 
 
 MD: 型号
 V: 版本
 SN： 序列号
 P%: 电池电量百分比
-℃: 摄氏度
+℃: 摄氏度 (0℃ = 10)
 MV: 移动次数
 MVing: 是否在移动
