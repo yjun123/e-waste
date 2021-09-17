@@ -4,7 +4,11 @@
 
 <img src="https://www.sensoro.com/static/image/product/SmartBeacon-4AA@2x.png" alt="SmartBeacon-4AA" style="zoom:50%;" />
 
-## Sensoro Tag C0 
+<img src="image/Sensoro-SmartBeacon-4AA-5.jpg" alt="Internal" style="zoom:50%;" />
+
+## Sensoro Tag C0
+
+[FCC ID: 2ADY-C0](https://fccid.io/2ADYO-C0)
 
 see `manual/Sensoro-Tag-{External-Photos,Internal-Photos,Users-Manual}.pdf`
 
