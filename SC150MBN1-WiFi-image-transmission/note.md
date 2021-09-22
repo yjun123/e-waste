@@ -33,7 +33,40 @@ execute `run/exploit`
 
 ### Hack firmware
 
+[dumping-firmware-with-the-ch341a-programmer](https://www.blackhillsinfosec.com/dumping-firmware-with-the-ch341a-programmer/)
 
+- dump firmware with ch341a programmer
+
+  `sudo flashrom -p ch341a_spi --read SC150MBN1-firmware-dump.bin`
+
+- extract the file from firmware with binwalk
+
+  `binwalk -eM SC150MBN1-firmware-dump.bin`
+
+- get user name and password
+
+  ```bash
+  # _SC150MBN1-firmware-dump.bin.extracted/_50040.extracted/_33F000.extracted/cpio-root/sbin/start.sh
+  #!/bin/sh
+  #
+  # mark 13922845352
+  #
+  # usage: start.sh
+  #
+  
+  ###########################################################
+  login="lewei"
+  pass="leweilewei"
+  ipaddr="192.168.10.123"
+  start="192.168.10.20"
+  end="192.168.10.50"
+  wname=`flash -a`
+  wpassword=`flash -p`
+  haspassword=`flash -h`
+  ###########################################################
+  ```
+
+  
 
 ## Other open ports
 

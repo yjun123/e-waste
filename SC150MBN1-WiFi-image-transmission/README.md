@@ -26,11 +26,11 @@
 | PCB Revision             | LW-8309 REV: 3.2 2015/07/30                                  |
 | SoC                      | Ralink [RT5350F](https://deviwiki.com/wiki/Ralink_RT5350) /TP46X25609 154PTA1/ |
 | SDRAM                    | ESMT [M12L2461616A](https://www.esmt.com.tw/upload/pdf/ESMT/datasheets/M12L2561616A(2S)_operation%20temperature%20condition%20-40~85%C2%B0C.pdf) /- 6T AZA1P54T6 1546/32MB |
+| Serial NOR Flash         | Winbind [W25Q32FV](https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q32FV) /25Q32FVSIG 1530/32Mb/SOIC8 208-mil |
 | Camera Controller        | Arkmicro [ARK3399](https://www.kynix.com/Detail/111730/ARK3399.html) /V399 G151537147 |
 | Video Display Controller | Arkmicro [AMT630](https://datasheetspdf.com/pdf/840049/ARKMICRO/AMT630/1) /G150101236N/ |
-| Serial Flash             | Macronix [MX25L4006E](https://www.mxic.com.tw/en-us/products/NOR-Flash/Serial-NOR-Flash/Pages/spec.aspx?p=MX25L4006E&m=Serial%20NOR%20Flash&n=PM1576) /M1I-126/4Mb |
-| Serial NOR Flash         | Winbind [W25Q32FV](https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q32FV) /25Q32FVSIG 1530/32Mb |
-| EEPROM                   | HHGrace [K24C32](https://item.szlcsc.com/184570.html) /1430TDX/32Kb |
+| Serial NOR Flash         | Macronix [MX25L4006E](https://www.mxic.com.tw/en-us/products/NOR-Flash/Serial-NOR-Flash/Pages/spec.aspx?p=MX25L4006E&m=Serial%20NOR%20Flash&n=PM1576) /M1I-126/4Mb/SOP8 150mil (connected to AMT630) |
+| EEPROM                   | HHGrace [K24C32](https://item.szlcsc.com/184570.html) /1430TDX/32Kb (connected to ARK3399) |
 
 - all Pictures of the ICs is in `/image`.
 
@@ -61,6 +61,14 @@
 - metasploit
 
 - hack firmware 
+
+  
+
+| usernaem | password   |
+| -------- | ---------- |
+| lewei    | leweilewei |
+
+
 
 ## Analog Input Port
 
