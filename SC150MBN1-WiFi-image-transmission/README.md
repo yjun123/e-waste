@@ -64,7 +64,7 @@
 
   
 
-| usernaem | password   |
+| username | password   |
 | -------- | ---------- |
 | lewei    | leweilewei |
 

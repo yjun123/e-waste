@@ -24,7 +24,7 @@
 | USB 2.0   | Host * 2, OTG * 1       |
 | HDMI      | 2.0a * 1                |
 | Ethernet  | 10/100M RJ45 * 1        |
-| WiFi      | 801.11.b/g/n 2.4Ghz * 1 |
+| WiFi      | 802.11.b/g/n 2.4Ghz * 1 |
 | Bluetooth | BT 4.0 * 1              |
 | SD/MMC    | * 1                     |
 | Infrared  | * 1                     |
@@ -57,7 +57,7 @@
 
 ### Linux Staging Driver
 
-[rtl8723bs)](https://github.com/torvalds/linux/tree/master/drivers/staging/rtl8723bs)
+[rtl8723bs](https://github.com/torvalds/linux/tree/master/drivers/staging/rtl8723bs)
 
 
 
