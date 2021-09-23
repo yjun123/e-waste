@@ -6,17 +6,18 @@
 
 | Specification    | Description                                                  |
 | ---------------- | ------------------------------------------------------------ |
-| PCB revision     | 3328-D4_A DATE:20181219 FROM HUGSUN                          |
+| PCB revision     | MXQ-RK3328-D4_A VER:2.0 DATE:20181219 DESIGN FROM HUGSUN     |
 | SoC              | Rockchip [RK3328](https://www.rock-chips.com/a/en/products/RK33_Series/2017/0118/829.html)@1.5Ghz/Quad-core Cortex-A53 |
-| DRAM             | 512MiB * 8 (4GiB) DDR3                                       |
-| eMMC             | 32GiB eMMC Kimtigo                                           |
+| DRAM             | 512MiB * 8 (4GiB) DDR3 Micron [MT41K1G4RH-125:E](http://www.microndram.com/MT41K1G4RH-125_E.html)/D9PQL/PBGA78 |
+| eMMC             | 32GiB eMMC Kimtigo [KM110SS1032GxA-DDD00WT](http://www.kimtigo.net/product.php?seq=54&locale=cn)/eMMC 5.1/FBGA153 |
 | Wireless Module  | 2.4G 802.11 bgn/BT 4.0 Realtek [RTL8723BS](https://www.realtek.com/en/products/communications-network-ics/item/rtl8723bs) |
-| PMU/PMIC         | ?                                                            |
+| USB Hub IC       | USB 2.0 Hub Controller [GL850G](http://www.genesyslogic.com/en/product_view.php?show=21)/SSOP28 |
+| PMU/PMIC         | No                                                           |
 | Lan Transformer  | 100BASE-TX Pulse [H1102NL](https://productfinder.pulseeng.com/product/H1102NL) |
 | Power            | DC 5V@2.5A                                                   |
 | Size (L x W x H) | 115 x 115 x 25 mm                                            |
 
-
+- all datasheets see `datasheet` directory
 
 | Interface | Description             |
 | --------- | ----------------------- |
@@ -50,6 +51,42 @@
 [Rockchip RK3328 TRM](http://opensource.rock-chips.com/images/8/8f/Rockchip_RK3288_TRM_V1.2_Part1-20170321.pdf)
 
 [Rockchip RK3328 Hadrware Reference (Schematic & Layout Guide)](http://opensource.rock-chips.com/images/9/97/Rockchip_RK3328TRM_V1.1-Part1-20170321.pdf)
+
+
+
+## Flash
+
+### Linux Flash Tool
+
+[rkdeveloptool](https://aur.archlinux.org/packages/rkdeveloptool-git/)
+
+### Steps
+
+- detect maskrom mode device
+
+  ```
+  $ rkdeveloptool ld                   
+  DevNo=1 Vid=0x2207,Pid=0x320c,LocationID=101    Maskrom
+  ```
+
+- flash the image into eMMC
+
+  ```
+  rkdeveloptool db rk3328_loader.bin #rk3328_loader_v1.14.249.bin
+  rkdeveloptool wl 0x0 ArchLinuxARM-aarch64-beikeyun-2019-09-16.img
+  rkdeveloptool rd
+  
+  $ rkdeveloptool db rk3328_loader.bin
+  Downloading bootloader succeeded.
+  $ rkdeveloptool wl 0x0 ArchLinuxARM-aarch64-beikeyun-2019-09-16.img
+  Write LBA from file (100%)
+  ```
+
+
+
+## TTL UART
+
+**baudrate**: `1500000`
 
 
 
