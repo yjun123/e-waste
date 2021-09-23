@@ -86,7 +86,14 @@
   Write LBA from file (100%)
   ```
 
+- dump vendor firmware
 
+  ```
+  # 32 * 1000 * 1000 * 1000 / 512 = 62500000
+  $ rkdeveloptool rl 0x0 62500000 a5x-max-vendor-firmware-dump.img
+  ```
+
+  
 
 ## TTL UART
 
@@ -98,7 +105,7 @@
 
 ## Wireless
 
-![](image/a5x-max-wireless-module.png)
+<img src="image/a5x-max-wireless-module.jpg" style="zoom: 67%;" />
 
 ### Linux Staging Driver
 
