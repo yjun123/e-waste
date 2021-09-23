@@ -56,6 +56,10 @@
 
 ## Flash
 
+### eMMC short circuit
+
+<img src="image/a5x-max-emmc-short-circuit.png" alt="eMMC-short-circuit" style="zoom:50%;" />
+
 ### Linux Flash Tool
 
 [rkdeveloptool](https://aur.archlinux.org/packages/rkdeveloptool-git/)
@@ -86,17 +90,19 @@
 
 ## TTL UART
 
+<img src="image/a5x-max-ttl-uart.png" alt="TTL_UART_Port" style="zoom: 67%;" />
+
 **baudrate**: `1500000`
 
 
 
-# Wireless
+## Wireless
+
+![](image/a5x-max-wireless-module.png)
 
 ### Linux Staging Driver
 
 [rtl8723bs](https://github.com/torvalds/linux/tree/master/drivers/staging/rtl8723bs)
-
-
 
 ## Device Tree
 
