@@ -18,3 +18,4 @@
 
 - 云盒 Sensoro SmartBeacon-4AA
 
+- 云子 Sensoro Yunzi

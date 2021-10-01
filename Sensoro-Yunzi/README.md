@@ -4,6 +4,10 @@
 
 <img src="https://www.sensoro.com/static/image/product/Yunzi@2x.png" alt="Sensoro-Yunzi" style="zoom:50%;" />
 
+## PCB Resivion
+
+`SENSORO_00A_MB_1.3.2`
+
 ## Nordic nRF51822
 
 - [nRF51822](https://www.nordicsemi.com/products/nrf51822)
@@ -22,6 +26,8 @@
 ## MAC Address
 
 `01:17:C5:38:77:EB`
+
+
 
 ## Protocol
 
