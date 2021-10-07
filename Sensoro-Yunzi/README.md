@@ -20,8 +20,11 @@
 ## STMicroelectronics  LIS3DH C3H
 
 - [LIS3DH](https://www.st.com/en/mems-and-sensors/lis3dh.html)
-
 - three-axis linear accelerometer
+
+## Button Cell
+
+- [Panasonic CR2477](https://industrial.panasonic.cn/ea/products/pt/lithium-batteries/models/CR2477)
 
 ## MAC Address
 
@@ -31,7 +34,7 @@
 
 ## Protocol
 
-
+see `protocol.txt`
 
 ## Website
 
