@@ -4,9 +4,13 @@ Len Type Flag Len Type Company Type Len UUID                             Major M
 
 Len Type Flag Len Type Company Type Len UUID                             Major Minor   Len Type Service-UUID Len Type  Service-UUID Data 
 02  01   06   1A  FF   4C00    02   15  23A01AF0232A45189C0E323FB773F5EF 34EF  5F12 B3 03  03   E780         1A  16    E780         B0 23 2C2E1BD66C4934EF5F12 3877EB 61 22 190B 1E 00 01 00
-                       Apple                                                                                                        MD V                       SN     P% ℃ L    MV     MVing     --- Model B0(MD), Version 2.3(V), Battery(P%) 97 %, 24 degree, Light(L) 0x190B, Move count(MV) 30, Moving = 1(MVing)
+                       Apple                                                                                                        MD V                       SN     P% ℃  L    MV    MVing     --- Model B0(MD), Version 2.3(V), Battery(P%) 97 %, 24 degree, Light(L) 0x190B, Move count(MV) 30, Moving = 1(MVing)
                        
+Len Type Flag Len Type Company Type Len UUID                             Major Minor   Len Type Service-UUID Len Type  Service-UUID Data 
+02  01   06   1A  FF   4C00    02   15  23A01AF0232A45189C0E323FB773F5EF 34EF  5F12 B3 03  03   E780         1A  16    E780         B0 23 2C2E1BD66C4934EF5F12 3877EB 63 22 1B08 00 00 FF 00
+                       Apple                                                                                                        MD V                       SN     P% ℃  L    MV    MVing    --- Model B0(MD), Version 2.3(V), Battery(P%) 99 %, 24 degree, Light(L) 0x1B08, Move count(MV) 30, Moving = FF(MVing)
 
+                                                                                                                                    
 MD: 型号
 V: 版本
 SN： 序列号
@@ -14,4 +18,4 @@ P%: 电池电量百分比
 ℃: 摄氏度 (0℃ = 10)
 L: 亮度
 MV: 移动次数
-MVing: 是否在移动
+MVing: 是否在移动 (0xFF 未开启移动检测）
