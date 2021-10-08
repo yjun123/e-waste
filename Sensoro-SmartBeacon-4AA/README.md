@@ -35,8 +35,11 @@ see `manual/Sensoro-Tag-{External-Photos,Internal-Photos,Users-Manual}.pdf`
 ## STMicroelectronics  BAL-NRF02D3
 
 - [BAL-NRF02D3](https://www.st.com/en/emi-filtering-and-signal-conditioning/bal-nrf02d3.html)
-
 - 50 balun transformer
+
+## MAC Address
+
+`01:17:c5:5c:99:ac`
 
 ## Protocol
 

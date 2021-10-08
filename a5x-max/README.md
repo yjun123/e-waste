@@ -125,4 +125,25 @@
 
 ## Website
 
-[A5X MAX Android 9.0 4GB/32GB RK3328 4K TV BOX WIFI LAN KODI 18.0 HDR VP9 USB3.0](https://www.geekbuying.com/item/A5X-MAX-RK3328-4GB-32GB-TV-Box-388745.html)
+[geekbuying.com - A5X MAX Android 9.0 4GB/32GB RK3328 4K TV BOX WIFI LAN KODI 18.0 HDR VP9 USB3.0](https://www.geekbuying.com/item/A5X-MAX-RK3328-4GB-32GB-TV-Box-388745.html)
+
+[ech.scargill.net - The A5X MAX Android 8.1 TV Box](https://tech.scargill.net/the-a5x-tv-android-box/)
+
+[thephonetalks - A5X MAX TV Box – The First Chinese TV Box To Feature Android 9.0](https://www.thephonetalks.com/a5x-max-tv-box-features-price/)
+
+[forum.armbian.com - A5X MAX RK3328 4GB/16GB](https://forum.armbian.com/topic/4895-a5x-max-rk3328-4gb16gb/)
+
+> 44GB RAM * 16G eMMC
+>
+> MXQ-RK3328-D4_A
+>
+> VER: 1.0 DATA: 20170713
+
+[forum.armbian.com - A5x max - rk3328 help booting from emmc](https://forum.armbian.com/topic/11294-a5x-max-rk3328-help-booting-from-emmc/)
+
+[forum.armbian.com - Armbian for TV box rk3328](https://forum.armbian.com/topic/8082-armbian-for-tv-box-rk3328/)
+
+[forum.armbian.com - Help with A5X Max](https://forum.armbian.com/topic/9192-help-with-a5x-max/)
+
+[cloudynights.com - Android TV Box as mount side computer](https://www.cloudynights.com/topic/645034-android-tv-box-as-mount-side-computer/)
+
