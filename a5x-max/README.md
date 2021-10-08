@@ -147,3 +147,13 @@
 
 [cloudynights.com - Android TV Box as mount side computer](https://www.cloudynights.com/topic/645034-android-tv-box-as-mount-side-computer/)
 
+
+
+## TODO
+
+- ~~ethernet enable~~
+- wifi enable
+- bluetooth enable
+- ~~hdmi output enable~~
+
+- install into eMMC

@@ -1,1 +1,8 @@
 rk3328_loader.bin
+*.dtb
+*.dts
+*.bin
+*.xz
+*.gz
+boot-backup
+note.md
