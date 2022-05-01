@@ -19,3 +19,7 @@
 - 云盒 Sensoro SmartBeacon-4AA
 
 - 云子 Sensoro Yunzi
+
+## Smart Speaker
+
+- 若琪 繁星 Rokid Mini RP105
