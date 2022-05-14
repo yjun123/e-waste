@@ -67,7 +67,7 @@ connect to USB 2.0 port instead of the USB OTG port :).
 ![TQC-TTL](./image/TQC-TTL-UART.png)
 
 ## Mainline Linux
-  
+
 ### linux kernel packge for Arch Linux ARM
 
   [linux-tqc-a01](https://aur.archlinux.org/packages/linux-tqc-a01/)
@@ -125,6 +125,59 @@ connect to USB 2.0 port instead of the USB OTG port :).
 
   is same as 5.11
 
+#### 5.17
+
+- mmc
+
+  [0012-fix-h6-emmc.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/0012-fix-h6-emmc.patch)
+
+  [0013-x-fix-h6-emmc-dts.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/0013-x-fix-h6-emmc-dts.patch)
+
+- ethernet
+
+  [arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch)
+
+  [drv-net-phy-Add-support-for-AC200-EPHY.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-net-phy-Add-support-for-AC200-EPHY.patch)
+
+  [drv-mfd-Add-support-for-AC200.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-mfd-Add-support-for-AC200.patch)
+
+  [net-stmmac-sun8i-Add-support-for-enabling-a-regulator-for-PHY-I.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/net-stmmac-sun8i-Add-support-for-enabling-a-regulator-for-PHY-I.patch)
+
+  [net-stmmac-sun8i-Rename-PHY-regulator-variable-to-regulator_phy.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/net-stmmac-sun8i-Rename-PHY-regulator-variable-to-regulator_phy.patch)
+
+  [net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regulator.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regulator.patch)
+
+- hdmi sound
+
+  [arm64-dts-allwinner-h6-Add-hdmi-sound-card.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/arm64-dts-allwinner-h6-Add-hdmi-sound-card.patch)
+
+- audio codec
+
+  [0009-allwinner-h6-support-ac200-audio-codec.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/0009-allwinner-h6-support-ac200-audio-codec.patch)
+
+- misc
+
+  [0010-allwinner-add-sunxi_get_soc_chipid-and-sunxi_get_ser.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/0010-allwinner-add-sunxi_get_soc_chipid-and-sunxi_get_ser.patch)
+
+  [arm64-dts-sun50i-h6.dtsi-improve-thermals.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/arm64-dts-sun50i-h6.dtsi-improve-thermals.patch)
+
+  [arm64-dts-allwinner-h6-Add-SCPI-protocol.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/arm64-dts-allwinner-h6-Add-SCPI-protocol.patch)
+
+  [arm64-dts-allwinner-h6-Protect-SCP-clocks.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/arm64-dts-allwinner-h6-Protect-SCP-clocks.patch)
+
+  [drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch)
+
+- cedrus (VPU driver)
+
+  [drv-media-cedrus-10-bit-HEVC-support.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-10-bit-HEVC-support.patch)
+
+  [drv-media-cedrus-Add-callback-for-buffer-cleanup.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-Add-callback-for-buffer-cleanup.patch)
+
+  [drv-media-cedrus-h264-Improve-buffer-management.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-h264-Improve-buffer-management.patch)
+  [drv-media-cedrus-hevc-Improve-buffer-management.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-hevc-Improve-buffer-management.patch)
+
+  [drv-media-cedrus-hevc-tiles-hack.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-hevc-tiles-hack.patch)
+
 ## Firmware
 
 ### firmware packge for Arch Linux ARM
@@ -132,7 +185,7 @@ connect to USB 2.0 port instead of the USB OTG port :).
   [firmware-tqc-a01](https://aur.archlinux.org/packages/firmware-tqc-a01/)
 
 ### WiFi
-    
+
   > brcmfmac43430-sdio.bin
     brcmfmac43430-sdio.AP6212.txt
 
