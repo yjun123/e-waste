@@ -167,13 +167,20 @@ connect to USB 2.0 port instead of the USB OTG port :).
 
   [drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch)
 
-- cedrus (VPU driver)
+- media &&cedrus (VPU driver)
+
+  [HACK-media-uapi-hevc-tiles-and-num_slices.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/HACK-media-uapi-hevc-tiles-and-num_slices.patch)
+
+  [Revert-net-Remove-net-ipx.h-and-uapi-linux-ipx.h-hea.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/Revert-net-Remove-net-ipx.h-and-uapi-linux-ipx.h-hea.patch)
+
+  [WIP-media-uapi-hevc-add-fields-needed-for-rkvdec.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/WIP-media-uapi-hevc-add-fields-needed-for-rkvdec.patch)
 
   [drv-media-cedrus-10-bit-HEVC-support.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-10-bit-HEVC-support.patch)
 
   [drv-media-cedrus-Add-callback-for-buffer-cleanup.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-Add-callback-for-buffer-cleanup.patch)
 
   [drv-media-cedrus-h264-Improve-buffer-management.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-h264-Improve-buffer-management.patch)
+
   [drv-media-cedrus-hevc-Improve-buffer-management.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-hevc-Improve-buffer-management.patch)
 
   [drv-media-cedrus-hevc-tiles-hack.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-hevc-tiles-hack.patch)
