@@ -206,6 +206,8 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 
 ## Mainline U-Boot
 
+[uboot-tqc-a01](https://github.com/Izumiko/uboot-tqc-a01)
+
 ## Forums and Blogs
 
 [泰奇猫TQC-A01强力推荐此盒子](https://www.znds.com/tv-1185657-1-1.html)
