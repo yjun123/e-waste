@@ -23,3 +23,12 @@
 ## Smart Speaker
 
 - 若琪 繁星 Rokid Mini RP105
+
+## Advertising Machine
+
+- 深圳市天诺技术科技有限公司 TN3399_V3
+
+## Mobile Phone
+
+- 红米 Note 4G Xiaomi Redmi Note 4G
+
