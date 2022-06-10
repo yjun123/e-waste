@@ -41,7 +41,7 @@ Phone model: `Global (2014715), India (2014712), China (2014022, 2014021)`
 
 ## TWRP
 
-https://twrp.me/xiaomi/xiaomiredmi1s.html
+https://twrp.me/xiaomi/xiaomiredminote4gsinglesim.html
 
 ## PostmarketOS
 

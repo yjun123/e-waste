@@ -1,0 +1,53 @@
+Qualcomm Sahara / Firehose Client V3.53 (c) B.Kerler 2018-2021.
+main - Trying with no loader given ...
+main - Waiting for the device
+main - Device detected :)
+main - Mode detected: firehose
+firehose - Nop succeeded.
+firehose - No supported functions detected, configuring qc generic commands
+firehose - 
+firehose_client
+firehose_client - [LIB]: [33mNo --memory option set, we assume "eMMC" as default ..., if it fails, try using "--memory" with "UFS","NAND" or "spinor" instead ![0m
+firehose - TargetName=MSM8x26
+firehose - MemoryName=eMMC
+firehose - Version=1
+firehose_client - Supported functions:
+-----------------
+configure,program,firmwarewrite,patch,setbootablestoragedrive,ufs,emmc,power,benchmark,read,getstorageinfo,getcrc16digest,getsha256digest,erase,peek,poke,nop,xml
+
+Parsing Lun 0:
+
+GPT Table:
+-------------
+sbl1:                Offset 0x0000000000004400, Length 0x00000000001fbc00, Flags 0x00000000, UUID bb30e2b0-cfde-f439-bc06-6dbcb8c4b6ff, Type 0xdea0ba2c
+sbl1bak:             Offset 0x0000000000200000, Length 0x00000000001fbc00, Flags 0x00000000, UUID 2572c3b0-8e08-b15f-6c5c-089283a9c579, Type EFI_BASIC_DATA
+rpm:                 Offset 0x00000000003fbc00, Length 0x0000000000100000, Flags 0x00000000, UUID 0d42fb1c-525d-df28-ca1b-7f50f8309646, Type 0x98df793
+rpmbak:              Offset 0x00000000004fbc00, Length 0x0000000000100000, Flags 0x00000000, UUID e9742b9d-97f4-5f61-4455-0fb65cfb78b4, Type EFI_BASIC_DATA
+tz:                  Offset 0x00000000005fbc00, Length 0x0000000000100000, Flags 0x00000000, UUID 5a631cfb-5d29-d56c-c243-eb0e01293ef7, Type 0xa053aa7f
+tzbak:               Offset 0x00000000006fbc00, Length 0x0000000000100000, Flags 0x00000000, UUID a16df99d-3c2b-f38f-f821-857d7a150f0e, Type EFI_BASIC_DATA
+ssd:                 Offset 0x00000000007fbc00, Length 0x0000000000002000, Flags 0x00000000, UUID a670a72f-0f16-6760-3e8b-5833bedcfa4f, Type 0x2c86e742
+sdi:                 Offset 0x00000000007fdc00, Length 0x0000000000100000, Flags 0x00000000, UUID 75647b61-d990-1ce0-5740-864b2a1a9f20, Type 0xd4e0d938
+DDR:                 Offset 0x00000000008fdc00, Length 0x0000000000100000, Flags 0x00000000, UUID 14f5a906-8ce7-6c77-7952-14dbbb5edca6, Type 0x20a0c19c
+aboot:               Offset 0x00000000009fdc00, Length 0x0000000000400000, Flags 0x00000000, UUID 57843886-8403-5ae3-b3aa-3640f8fc22b0, Type 0x400ffdcd
+abootbak:            Offset 0x0000000000dfdc00, Length 0x0000000000400000, Flags 0x00000000, UUID 1ada89e6-2742-430c-f4be-78091cf5548b, Type EFI_BASIC_DATA
+bk1:                 Offset 0x00000000011fdc00, Length 0x0000000000500000, Flags 0x00000000, UUID d08a5ad9-34f0-b47b-41e1-862e241773b0, Type EFI_LINUX_DAYA
+misc:                Offset 0x00000000016fdc00, Length 0x0000000000400000, Flags 0x00000000, UUID e6fdcc48-701c-b4b7-fb76-fcf18b452fb2, Type 0x20117f86
+logo:                Offset 0x0000000001afdc00, Length 0x0000000000800000, Flags 0x00000000, UUID 7eb5fb8e-2b84-ddfa-6f8d-2c42642fd0d3, Type EFI_LINUX_DAYA
+bk2:                 Offset 0x00000000022fdc00, Length 0x0000000001d01000, Flags 0x00000000, UUID 26cfc631-e659-50d0-957a-a7a491d793d6, Type EFI_LINUX_DAYA
+modemst1:            Offset 0x0000000003ffec00, Length 0x0000000000180000, Flags 0x00000000, UUID f6fda325-6754-a6c5-0411-73da4c644c42, Type 0xebbeadaf
+modemst2:            Offset 0x000000000417ec00, Length 0x0000000000180000, Flags 0x00000000, UUID fd2ea08a-05a1-1185-9f73-df8be75fc002, Type 0xa288b1f
+fsc:                 Offset 0x00000000042fec00, Length 0x0000000000000400, Flags 0x00000000, UUID 9ab04b73-b609-d6b2-3669-bc7ee176e13a, Type 0x57b90a16
+bk3:                 Offset 0x00000000042ff000, Length 0x0000000003cffc00, Flags 0x00000000, UUID 00c10a9e-0c73-3aea-4f94-229ba9a254ac, Type EFI_LINUX_DAYA
+fsg:                 Offset 0x0000000007ffec00, Length 0x0000000000180000, Flags 0x00000000, UUID 7ab928ba-3158-35df-9faf-24a3a4579d95, Type 0x638ff8e2
+bk4:                 Offset 0x000000000817ec00, Length 0x0000000001e80000, Flags 0x00000000, UUID 605e7f1f-a7eb-b58b-b128-155a42a8beb2, Type EFI_LINUX_DAYA
+bk5:                 Offset 0x0000000009ffec00, Length 0x0000000002000000, Flags 0x00000000, UUID 07421466-6f85-9d67-1079-253cf30d6658, Type EFI_LINUX_DAYA
+modem:               Offset 0x000000000bffec00, Length 0x0000000004000000, Flags 0x00000000, UUID 2fe5de9a-3535-af01-e08c-e97795c6d30b, Type EFI_BASIC_DATA
+boot:                Offset 0x000000000fffec00, Length 0x0000000001000000, Flags 0x00000000, UUID b23bc8cd-b978-83e4-9809-4ff3a14fadaf, Type 0x20117f86
+recovery:            Offset 0x0000000010ffec00, Length 0x0000000001000000, Flags 0x00000000, UUID 5e76724f-d87b-15bc-c9af-9296bdde007e, Type 0x20117f86
+persist:             Offset 0x0000000011ffec00, Length 0x0000000002000000, Flags 0x00000000, UUID 31eec5a3-185a-1bc6-171b-7ea4bfaef4e8, Type EFI_BASIC_DATA
+system:              Offset 0x0000000013ffec00, Length 0x0000000032000000, Flags 0x00000000, UUID 900bc86f-d208-4c90-4a04-a7a1850129d7, Type EFI_BASIC_DATA
+cache:               Offset 0x0000000045ffec00, Length 0x0000000018000000, Flags 0x00000000, UUID 7d6fcb1f-4bae-20b2-3e1f-10c4b0ff30b8, Type EFI_BASIC_DATA
+userdata:            Offset 0x0000000060000000, Length 0x0000000171ffbe00, Flags 0x1000000000000000, UUID a4485d56-09a7-489e-fd51-88f59b64cc5a, Type EFI_BASIC_DATA
+
+Total disk size:0x00000001d2000000, sectors:0x0000000000e90000
+
