@@ -91,6 +91,42 @@ connect to USB 2.0 port instead of the USB OTG port :).
 
 ### patches
 
+#### 6.4
+
+*picked from Armbian sunxi-6.1 kernel patches, some change to adopt to mainline 6.4*
+
+- mmc
+
+  [0012-fix-h6-emmc.patch](./patches/0012-fix-h6-emmc.patch)
+  [0013-x-fix-h6-emmc-dts.patch](0013-x-fix-h6-emmc-dts.patch)
+
+- ethernet
+
+  [net-stmmac-sun8i-Add-support-for-enabling-a-regulator-for-PHY-I.patch](./patches/net-stmmac-sun8i-Add-support-for-enabling-a-regulator-for-PHY-I.patch)
+  [net-stmmac-sun8i-Rename-PHY-regulator-variable-to-regulator_phy.patch](./patches/net-stmmac-sun8i-Rename-PHY-regulator-variable-to-regulator_phy.patch)
+  [net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regulator.patch](./patches/net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regulator.patch)
+  [drv-mfd-Add-support-for-AC200.patch](./patches/drv-mfd-Add-support-for-AC200.patch)
+
+  [drv-net-phy-Add-support-for-AC200-EPHY.patch](./patches/drv-net-phy-Add-support-for-AC200-EPHY.patch)
+
+  [arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch](./patches/arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch)
+
+- hdmi sound
+
+  [ASOC-sun9i-hdmi-audio-Initial-implementation.patch](./patches/ASOC-sun9i-hdmi-audio-Initial-implementation.patch)
+
+  [arm64-dts-allwinner-h6-Add-hdmi-sound-card.patch](./patches/arm64-dts-allwinner-h6-Add-hdmi-sound-card.patch)
+
+- misc
+
+  [arm64-dts-allwinner-h6-Add-SCPI-protocol.patch](./patches/arm64-dts-allwinner-h6-Add-SCPI-protocol.patch)
+  [arm64-dts-allwinner-h6-Protect-SCP-clocks.patch](./patches/arm64-dts-allwinner-h6-Protect-SCP-clocks.patch)
+  [arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch](./patches/arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch)
+  [arm64-dts-sun50i-h6.dtsi-improve-thermals.patch](./patches/arm64-dts-sun50i-h6.dtsi-improve-thermals.patch)
+
+  [drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch](./patches/drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch)
+
+
 #### 5.11
 
   - mmc
@@ -207,6 +243,8 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 ## Mainline U-Boot
 
 [uboot-tqc-a01](https://github.com/Izumiko/uboot-tqc-a01)
+
+[uboot-tqc-a01 package](https://aur.archlinux.org/packages/uboot-tqc-a01)
 
 ## Forums and Blogs
 
