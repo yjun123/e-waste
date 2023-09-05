@@ -1,6 +1,6 @@
 # 泰奇猫 TQC-A01
 
-[TQC official website](http://web.archive.org/web/20190409212205/tq.ultrapower.com.cn/index.html)
+[TQC official website [closed]](http://web.archive.org/web/20190409212205/tq.ultrapower.com.cn/index.html)
 
 ![TQC](http://web.archive.org/web/20190409212205im_/https://tqc.taiqigame.com/tqc/webImages/indexbanner.png)
 
@@ -251,6 +251,16 @@ Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/au
 [uboot-tqc-a01](https://github.com/Izumiko/uboot-tqc-a01)
 
 [uboot-tqc-a01 package](https://aur.archlinux.org/packages/uboot-tqc-a01)
+
+### Video Hardware Decode
+
+> Mainline FFmpeg currently lacks the necessary patches to use the v4l2-requests based API, but a fork[https://github.com/jernejsk/FFmpeg.git] that can utilise it exists.
+>
+> https://wiki.pine64.org/wiki/Mainline_Hardware_Decoding
+
+Arch Linux ARM users can install from AUR.
+
+[ffmpeg-v4l2-request-git](https://aur.archlinux.org/packages/ffmpeg-v4l2-request-git)
 
 ## Forums and Blogs
 
