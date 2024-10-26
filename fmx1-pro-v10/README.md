@@ -1,5 +1,11 @@
 # FMX1 PRO-V10(XT_X1 PRO_V10)
 
+## Board
+
+<img src="./images/Board/FMX1-PRO-V10.jpg" style="zoom:50%;" />
+
+
+
 ## Hardware
 
 | Specifications        | Description                                                  |
