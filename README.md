@@ -11,6 +11,8 @@
 
 - 贝壳云 Beikeyun P1
 
+- 网心云 OnethingCloud OEC Turbo
+
 ## Wireless Image transmission
 
 - 保千里 Protruly SC150MBN1 汽车夜视系统图传 2.4G
