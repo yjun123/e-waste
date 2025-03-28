@@ -27,7 +27,25 @@
 
 see [images](./images)
 
+## Debug TTL
+
+<img src="./images/Debug/Debug-ttl-uart.jpg" alt="Debug TTL points" style="zoom:50%;" />
+
+## Maskrom Mode
+
+<img src="./images/Debug/maskrom-short-circuits.jpg" alt="Maskrom Mode short circuits" style="zoom:50%;" />
+
+
+
+## Mainline Linux
+
+### dts
+
+TODO
+
 ## Reference
+
+[Official - OEC-turbo 产品介绍【新品】](https://help.onethingcloud.com/3b0d/OEC-turbo)
 
 [Firefly - ROC-RK3566-PC](https://wiki.t-firefly.com/zh_CN/ROC-RK3566-PC/index.html)
 
