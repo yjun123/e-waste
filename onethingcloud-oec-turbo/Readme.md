@@ -1,4 +1,4 @@
-# 网心云 OnethingCloud OEC Turbo
+# 网心云 OneThing Cloud OEC Turbo
 
 [OEC Turbo offcial website](https://www.onethingcloud.com/products/oec-turbo/)
 
@@ -19,7 +19,7 @@
 | Power     | DC 12V/2A *1 |
 | USB   | USB 3.0 Type A *1, USB 2.0 Type C *1 |
 | Ethernet  | Gigabit Ethernet port *1 |
-| SATA      | SATA hard drive bay *1 |
+| SATA      | SATA 3.0 hard drive bay *1 |
 | RESET key | *1          |
 | RGB LED | *1 |
 
