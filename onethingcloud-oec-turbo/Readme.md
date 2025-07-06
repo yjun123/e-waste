@@ -41,7 +41,7 @@ see [images](./images)
 
 ### dts
 
-TODO
+[rk3566-onethingcloud-oec-turbo.dts](./dts/rk3566-onethingcloud-oec-turbo.dts)
 
 ## Reference
 
