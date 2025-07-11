@@ -33,9 +33,15 @@ see [images](./images)
 
 ## Maskrom Mode
 
-<img src="./images/Debug/maskrom-short-circuits.jpg" alt="Maskrom Mode short circuits" style="zoom:50%;" />
+- Short-circuit 1V8 and GND. (NOT Recommended)
 
+<img src="./images/Debug/maskrom-short-circuits-not-recommended.jpg" alt="Maskrom Mode short circuits" style="zoom:50%;" />
 
+- Short-circuit pins 2 (GND) and 3 (EN) of the LDO (3V3 -> 1V8) with silkscreen "18ct". (**Recommended**)
+
+  For more information, refer to [网心云 OEC/OECT 笔记(1) 拆机刷入Armbian固件 - 关于下载BOOT失败](https://www.cnblogs.com/milton/p/18904928).
+
+<img src="images/Debug/maskrom-short-circuits-recommended.jpg" alt="1752249000772" style="zoom: 33%;" />
 
 ## Mainline Linux
 
@@ -62,3 +68,5 @@ see [images](./images)
 [Blog - 网心云oecturbo刷机记录](https://miaoyanginfo.github.io/posts/43673.html)
 
 [Blog - 网心云OEC/OECTubro刷机教程(刷iStoreOS)(刷hinas)](https://www.anuna.cn/nas/45.html)
+
+[Blog - 网心云 OEC/OECT 笔记](https://www.cnblogs.com/milton/p/18904928)
