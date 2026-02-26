@@ -5,6 +5,7 @@
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/leds/common.h>
 #include <dt-bindings/pinctrl/rockchip.h>
+#include <dt-bindings/pwm/pwm.h>
 #include "rk3566.dtsi"
 
 / {
@@ -35,6 +36,8 @@
 			default-state = "off";
 			function = LED_FUNCTION_STATUS;
 			gpios = <&gpio3 RK_PB3 GPIO_ACTIVE_LOW>;
+			pinctrl-names = "default";
+			pinctrl-0 = <&rgb_led_b_enable_l>;
 		};
 
 		rgb_led_g: led-1 {
@@ -42,6 +45,8 @@
 			default-state = "on";
 			function = LED_FUNCTION_STATUS;
 			gpios = <&gpio3 RK_PB4 GPIO_ACTIVE_LOW>;
+			pinctrl-names = "default";
+			pinctrl-0 = <&rgb_led_g_enable_l>;
 		};
 
 		rgb_led_r: led-2 {
@@ -49,6 +54,8 @@
 			default-state = "off";
 			function = LED_FUNCTION_STATUS;
 			gpios = <&gpio0 RK_PC3 GPIO_ACTIVE_LOW>;
+			pinctrl-names = "default";
+			pinctrl-0 = <&rgb_led_r_enable_l>;
 		};
 	};
 
@@ -104,7 +111,7 @@
 	vcc5v0_usb_host: regulator-vcc5v0-usb-host {
 		compatible = "regulator-fixed";
 		enable-active-high;
-		gpio = <&gpio0 RK_PC6 GPIO_ACTIVE_HIGH>;
+		gpios = <&gpio0 RK_PC6 GPIO_ACTIVE_HIGH>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&vcc5v0_usb_host_en>;
 		regulator-name = "vcc5v0_usb_host";
@@ -115,34 +122,34 @@
 
 	vdd_cpu: regulator-vdd-cpu {
 		compatible = "pwm-regulator";
-		pwms = <&pwm0 0 5000 1>;
+		pwms = <&pwm0 0 5000 PWM_POLARITY_INVERTED>;
+		regulator-always-on;
+		regulator-boot-on;
 		regulator-name = "vdd_cpu";
 		regulator-min-microvolt = <800000>;
 		regulator-max-microvolt = <1200000>;
-		regulator-always-on;
-		regulator-boot-on;
 		regulator-settling-time-up-us = <250>;
 		pwm-supply = <&vcc5v0_sys>;
 	};
 
 	vdd_fixed: regulator-vdd-fixed {
 		compatible = "regulator-fixed";
+		regulator-always-on;
+		regulator-boot-on;
 		regulator-name = "vdd_fixed";
 		regulator-min-microvolt = <950000>;
 		regulator-max-microvolt = <950000>;
-		regulator-always-on;
-		regulator-boot-on;
 		vin-supply = <&vcc5v0_sys>;
 	};
 
 	vdd_logic: regulator-vdd-logic {
 		compatible = "pwm-regulator";
-		pwms = <&pwm1 0 5000 1>;
+		pwms = <&pwm1 0 5000 PWM_POLARITY_INVERTED>;
 		regulator-name = "vdd_logic";
-		regulator-min-microvolt = <800000>;
-		regulator-max-microvolt = <1100000>;
 		regulator-always-on;
 		regulator-boot-on;
+		regulator-min-microvolt = <800000>;
+		regulator-max-microvolt = <1100000>;
 		regulator-settling-time-up-us = <250>;
 		pwm-supply = <&vcc5v0_sys>;
 	};
@@ -191,8 +198,6 @@
 		    &gmac1m1_rgmii_clk
 		    &gmac1m1_rgmii_bus
 		    &gmac1m1_clkinout>;
-	rx_delay = <0x0>;
-	tx_delay = <0x0>;
 	status = "okay";
 };
 
@@ -211,6 +216,26 @@
 };
 
 &pinctrl {
+	gmac {
+		eth_phy_reset_pin: eth-phy-reset-pin {
+			rockchip,pins = <4 RK_PC2 RK_FUNC_GPIO &pcfg_pull_up>;
+		};
+	};
+
+	leds {
+		rgb_led_b_enable_l: rgb-led-b-enable-l {
+			rockchip,pins = <3 RK_PB3 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+
+		rgb_led_g_enable_l: rgb-led-g-enable-l {
+			rockchip,pins = <3 RK_PB4 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+
+		rgb_led_r_enable_l: rgb-led-r-enable-l {
+			rockchip,pins = <0 RK_PC3 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
+
 	usb {
 		vcc5v0_usb_host_en: vcc5v0-usb-host-en {
 			rockchip,pins = <0 RK_PC6 RK_FUNC_GPIO &pcfg_pull_none>;
@@ -249,8 +274,13 @@
 
 &sdhci {
 	bus-width = <8>;
+	cap-mmc-highspeed;
 	mmc-hs200-1_8v;
+	no-sd;
+	no-sdio;
 	non-removable;
+	pinctrl-names = "default";
+	pinctrl-0 = <&emmc_bus8 &emmc_clk &emmc_cmd &emmc_datastrobe>;
 	status = "okay";
 };
 
