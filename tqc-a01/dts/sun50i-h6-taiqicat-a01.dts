@@ -1,19 +1,19 @@
 // SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-// Copyright (C) 2019 Ondřej Jirman <megous@megous.com>
+// Copyright (C) 2026 Jun Yan <jerrysteve1101@gmail.com>
 
 /dts-v1/;
 
 #include "sun50i-h6.dtsi"
 #include "sun50i-h6-cpu-opp.dtsi"
+#include "sun50i-h6-gpu-opp.dtsi"
 
 #include <dt-bindings/gpio/gpio.h>
 
 / {
-	model = "TQC A01";
-	compatible = "taiqigame,tqc-a01", "allwinner,sun50i-h6";
+	model = "TaiqiCat (TQC) A01";
+	compatible = "uqsoft,taiqicat-a01", "allwinner,sun50i-h6";
 
 	aliases {
-        ethernet0 = &emac;
 		serial0 = &uart0;
 		serial1 = &uart1;
 	};
@@ -34,7 +34,7 @@
 		};
 	};
 
-	ext_osc32k: ext_osc32k_clk {
+	ext_osc32k: ext-osc32k-clk {
 		#clock-cells = <0>;
 		compatible = "fixed-clock";
 		clock-frequency = <32768>;
@@ -45,7 +45,7 @@
 		compatible = "gpio-leds";
 
 		led-0 {
-			label = "orangepi:blue:power";
+			label = "taiqicat:blue:power";
 			gpios = <&r_pio 0 4 GPIO_ACTIVE_HIGH>; /* PL4 */
 			default-state = "on";
 		};
@@ -60,56 +60,34 @@
 		regulator-always-on;
 	};
 
-	reg_vcc33_wifi: vcc33-wifi {
-		/* Always on 3.3V regulator for WiFi and BT */
-		compatible = "regulator-fixed";
-		regulator-name = "vcc33-wifi";
-		regulator-min-microvolt = <3300000>;
-		regulator-max-microvolt = <3300000>;
-		regulator-always-on;
-		vin-supply = <&reg_vcc5v>;
+	sound-spdif {
+		compatible = "simple-audio-card";
+		simple-audio-card,name = "sun50i-h6-spdif";
+
+		simple-audio-card,cpu {
+			sound-dai = <&spdif>;
+		};
+
+		simple-audio-card,codec {
+			sound-dai = <&spdif_out>;
+		};
 	};
 
-	reg_vcc_wifi_io: vcc-wifi-io {
-		/* Always on 1.8V/300mA regulator for WiFi and BT IO */
-		compatible = "regulator-fixed";
-		regulator-name = "vcc-wifi-io";
-		regulator-min-microvolt = <1800000>;
-		regulator-max-microvolt = <1800000>;
-		regulator-always-on;
-		vin-supply = <&reg_vcc33_wifi>;
+	spdif_out: spdif-out {
+		#sound-dai-cells = <0>;
+		compatible = "linux,spdif-dit";
 	};
 
 	wifi_pwrseq: wifi-pwrseq {
 		compatible = "mmc-pwrseq-simple";
-		clocks = <&rtc 1>;
+		clocks = <&rtc CLK_OSC32K_FANOUT>;
 		clock-names = "ext_clock";
 		reset-gpios = <&r_pio 0 8 GPIO_ACTIVE_LOW>; /* PL8 */
 		post-power-on-delay-ms = <200>;
 	};
 };
 
-&ac200_ephy {
-    status = "okay";
-};
-
-&ac200_pwm_clk {
-    status = "okay";
-};
-
 &cpu0 {
-	cpu-supply = <&reg_dcdca>;
-};
-
-&cpu1 {
-	cpu-supply = <&reg_dcdca>;
-};
-
-&cpu2 {
-	cpu-supply = <&reg_dcdca>;
-};
-
-&cpu3 {
 	cpu-supply = <&reg_dcdca>;
 };
 
@@ -129,20 +107,13 @@
 	status = "okay";
 };
 
-&emac {
-    pinctrl-names = "default";
-    pinctrl-0 = <&ext_rmii_pins>;
-    phy-mode = "rmii";
-    phy-handle = <&ext_rmii_phy>;
-    status = "okay";
-};
-
 &gpu {
 	mali-supply = <&reg_dcdcc>;
 	status = "okay";
 };
 
 &hdmi {
+	hvcc-supply = <&reg_bldo2>;
 	status = "okay";
 };
 
@@ -150,21 +121,6 @@
 	hdmi_out_con: endpoint {
 		remote-endpoint = <&hdmi_con_in>;
 	};
-};
-
-&i2s1 {
-    status = "okay";
-};
-
-&i2c3 {
-    status = "okay";
-};
-
-&mdio {
-    ext_rmii_phy: ethernet-phy@1 {
-        compatible = "ethernet-phy-ieee802.3-c22";
-        reg = <1>;
-    };
 };
 
 &mmc0 {
@@ -176,8 +132,8 @@
 };
 
 &mmc1 {
-	vmmc-supply = <&reg_vcc33_wifi>;
-	vqmmc-supply = <&reg_vcc_wifi_io>;
+	vmmc-supply = <&reg_cldo3>;
+	vqmmc-supply = <&reg_bldo3>;
 	mmc-pwrseq = <&wifi_pwrseq>;
 	bus-width = <4>;
 	non-removable;
@@ -186,7 +142,7 @@
 
 	brcm: sdio-wifi@1 {
 		reg = <1>;
-		compatible = "brcm,bcm4329-fmac";
+		compatible = "brcm,bcm43430a1-fmac", "brcm,bcm4329-fmac";
 		interrupt-parent = <&r_pio>;
 		interrupts = <1 0 IRQ_TYPE_LEVEL_LOW>; /* PM0 */
 		interrupt-names = "host-wake";
@@ -214,9 +170,7 @@
 &pio {
 	vcc-pc-supply = <&reg_bldo2>;
 	vcc-pd-supply = <&reg_cldo1>;
-	vcc-pg-supply = <&reg_vcc_wifi_io>;
-	vcc-pl-supply = <&reg_aldo1>;
-	vcc-pm-supply = <&reg_vcc_wifi_io>;
+	vcc-pg-supply = <&reg_bldo3>;
 };
 
 &r_i2c {
@@ -244,22 +198,18 @@
 				regulator-always-on;
 				regulator-min-microvolt = <3300000>;
 				regulator-max-microvolt = <3300000>;
-				regulator-name = "vcc-pl-led-ir";
+				regulator-name = "vcc-pl-led-ir-pg-pm-ts";
 			};
 
 			reg_aldo2: aldo2 {
-				regulator-always-on;
 				regulator-min-microvolt = <3300000>;
 				regulator-max-microvolt = <3300000>;
-				regulator-name = "vcc33-audio-tv-ephy-mac";
+				regulator-name = "vcc-ac200";
+				regulator-enable-ramp-delay = <100000>;
 			};
 
-			/* ALDO3 is shorted to CLDO1 */
-			reg_aldo3: aldo3 {
-				regulator-always-on;
-				regulator-min-microvolt = <3300000>;
-				regulator-max-microvolt = <3300000>;
-				regulator-name = "vcc33-io-pd-emmc-sd-usb-uart-1";
+			aldo3 {
+				/* unused */
 			};
 
 			reg_bldo1: bldo1 {
@@ -273,11 +223,14 @@
 				regulator-always-on;
 				regulator-min-microvolt = <1800000>;
 				regulator-max-microvolt = <1800000>;
-				regulator-name = "vcc-efuse-pcie-hdmi-pc";
+				regulator-name = "vcc-pc-emmc-efuse-hdmi";
 			};
 
-			bldo3 {
-				/* unused */
+			reg_bldo3: bldo3 {
+				regulator-always-on;
+				regulator-min-microvolt = <1800000>;
+				regulator-max-microvolt = <1800000>;
+				regulator-name = "vcc-pg-wifiio";
 			};
 
 			bldo4 {
@@ -288,20 +241,26 @@
 				regulator-always-on;
 				regulator-min-microvolt = <3300000>;
 				regulator-max-microvolt = <3300000>;
-				regulator-name = "vcc33-io-pd-emmc-sd-usb-uart-2";
+				regulator-name = "vcc33-io-pd-emmc-sd-usb-uart";
 			};
 
-			cldo2 {
-				/* unused */
+			/* This regulator is connected with CLDO3 */
+			reg_cldo2: cldo2 {
+				regulator-always-on;
+				regulator-min-microvolt = <3300000>;
+				regulator-max-microvolt = <3300000>;
+				regulator-name = "vcc-wifi-1";
 			};
 
-			cldo3 {
-				/* unused */
+			reg_cldo3: cldo3 {
+				regulator-min-microvolt = <3300000>;
+				regulator-max-microvolt = <3300000>;
+				regulator-name = "vcc-wifi-2";
 			};
 
 			reg_dcdca: dcdca {
 				regulator-always-on;
-				regulator-min-microvolt = <800000>;
+				regulator-min-microvolt = <810000>;
 				regulator-max-microvolt = <1160000>;
 				regulator-ramp-delay = <2500>;
 				regulator-name = "vdd-cpu";
@@ -319,7 +278,7 @@
 				regulator-always-on;
 				regulator-min-microvolt = <960000>;
 				regulator-max-microvolt = <960000>;
-				regulator-name = "vdd-sys";
+				regulator-name = "vdd-sys-hdmi-usb";
 			};
 
 			reg_dcdce: dcdce {
@@ -336,20 +295,29 @@
 	};
 };
 
-&pwm {
-    status = "okay";
-};
-
 &r_ir {
 	status = "okay";
+};
+
+&r_pio {
+	/*
+	 * PL0 and PL1 are used for PMIC I2C
+	 * don't enable the pl-supply else
+	 * it will fail at boot
+	 *
+	 * vcc-pl-supply = <&reg_aldo1>;
+	 */
+	vcc-pm-supply = <&reg_aldo1>;
 };
 
 &rtc {
 	clocks = <&ext_osc32k>;
 };
 
-&sound_hdmi {
-    status = "okay";
+&spdif {
+	pinctrl-names = "default";
+	pinctrl-0 = <&spdif_tx_pin>;
+	status = "okay";
 };
 
 &uart0 {
@@ -358,7 +326,6 @@
 	status = "okay";
 };
 
-/* There's the BT part of the AP6256 connected to that UART */
 &uart1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
@@ -367,8 +334,10 @@
 
 	bluetooth {
 		compatible = "brcm,bcm43430a1-bt";
-		clocks = <&rtc 1>;
+		clocks = <&rtc CLK_OSC32K_FANOUT>;
 		clock-names = "lpo";
+		vbat-supply = <&reg_cldo3>;
+		vddio-supply = <&reg_bldo3>;
 		device-wakeup-gpios = <&r_pio 1 2 GPIO_ACTIVE_HIGH>; /* PM2 */
 		host-wakeup-gpios = <&r_pio 1 1 GPIO_ACTIVE_HIGH>; /* PM1 */
 		shutdown-gpios = <&r_pio 1 4 GPIO_ACTIVE_HIGH>; /* PM4 */
@@ -377,17 +346,11 @@
 };
 
 &usb2otg {
-	/*
-	 * This board doesn't have a controllable VBUS even though it
-	 * does have an ID pin. Using it as anything but a USB host is
-	 * unsafe.
-	 */
 	dr_mode = "host";
 	status = "okay";
 };
 
 &usb2phy {
-	usb0_id_det-gpios = <&pio 2 15 GPIO_ACTIVE_HIGH>; /* PC15 */
 	usb0_vbus-supply = <&reg_vcc5v>;
 	usb3_vbus-supply = <&reg_vcc5v>;
 	status = "okay";

@@ -70,13 +70,15 @@ connect to USB 2.0 port instead of the USB OTG port :).
 
 ## Mainline Linux
 
-### Device Tree
-
 It is currently in the process of being mainlined. 
 
 https://lore.kernel.org/linux-sunxi/20260226084850.417731-1-jerrysteve1101@gmail.com/T/
 
-### patches
+### Device Tree
+
+[sun50i-h6-taiqicat-a01.dts](./dts/sun50i-h6-taiqicat-a01.dts)
+
+### Patches
 
 The current mainline lacks the AC200 MFD/EPHY driver and the HDMI audio driver, so additional patches are required.
 
