@@ -48,7 +48,11 @@ see [images](./images)
 
 The OneThing Edge Cube series (OEC/OEC Turbo) is in the process of being mainlined.
 
-see [[PATCH v4 0/3] board: rockchip: add OneThing Edge Cube series](https://lore.kernel.org/linux-rockchip/20260204132700.329894-1-jerrysteve1101@gmail.com/T/#t)
+~~see [[PATCH v4 0/3] board: rockchip: add OneThing Edge Cube series](https://lore.kernel.org/linux-rockchip/20260204132700.329894-1-jerrysteve1101@gmail.com/T/#t)~~
+
+The current patch set has been merged into the **linux-rockchip**[1] and **linux-next** trees.
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git/log/?h=for-next
 
 ### Device Tree
 
