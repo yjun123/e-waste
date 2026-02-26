@@ -23,9 +23,9 @@
 
 | Interface | Description  |
 | ------------ | --- |
-| USB 2.0 Host | * 1 |
-| USB 3.0 Host | * 1 |
-| USB 2.0 OTG  | * 1 |
+| USB 2.0 Host (Type-A) | * 1 |
+| USB 3.0 Host (Type-A) | * 1 |
+| USB 2.0 OTG (Mirco USB) | * 1 |
 | HDMI         | * 1 |
 | Ethernet     | integrated 10/100M PHY / RJ45 * 1 |
 | WiFi         | integraed in AP6212 BCM43430 * 1 |
@@ -70,170 +70,21 @@ connect to USB 2.0 port instead of the USB OTG port :).
 
 ## Mainline Linux
 
-### linux kernel packge for Arch Linux ARM
-
-  [linux-tqc-a01](https://aur.archlinux.org/packages/linux-tqc-a01/)
-
 ### Device Tree
 
-  based on OrangePi 3 device tree, ethernet, WiFi and Bluetooth enabled.
+It is currently in the process of being mainlined. 
 
-  it works fine with linux stable release [sun50i-h6-tqc-a01.dts](https://aur.archlinux.org/cgit/aur.git/plain/sun50i-h6-tqc-a01.dts?h=linux-tqc-a01)
-
-
-  works fine with linux 5.11.4 [dts for linux 5.11](https://aur.archlinux.org/cgit/aur.git/plain/sun50i-h6-tqc-a01.dts?h=linux-tqc-a01&id=869858806a8fbf1e0121537eb724dfe25ff3728a)
-
-### config
-
-  based on linux-aarch64 config from Arch Linux ARM, with some extra changes for Allwinner H6.
-
-  [config](https://aur.archlinux.org/cgit/aur.git/plain/config?h=linux-tqc-a01)
+https://lore.kernel.org/linux-sunxi/20260226084850.417731-1-jerrysteve1101@gmail.com/T/
 
 ### patches
 
-#### 6.4
+The current mainline lacks the AC200 MFD/EPHY driver and the HDMI audio driver, so additional patches are required.
 
-*picked from Armbian sunxi-6.1 kernel patches, some change to adopt to mainline 6.4*
+AC200 MFD/EPHY : https://github.com/armbian/build/tree/main/patch/kernel/archive/sunxi-6.18/patches.armbian
 
-- mmc
-
-  [0012-fix-h6-emmc.patch](./patches/0012-fix-h6-emmc.patch)
-  [0013-x-fix-h6-emmc-dts.patch](0013-x-fix-h6-emmc-dts.patch)
-
-- ethernet
-
-  [net-stmmac-sun8i-Add-support-for-enabling-a-regulator-for-PHY-I.patch](./patches/net-stmmac-sun8i-Add-support-for-enabling-a-regulator-for-PHY-I.patch)
-
-  [net-stmmac-sun8i-Rename-PHY-regulator-variable-to-regulator_phy.patch](./patches/net-stmmac-sun8i-Rename-PHY-regulator-variable-to-regulator_phy.patch)
-
-  [net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regulator.patch](./patches/net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regulator.patch)
-
-  [drv-mfd-Add-support-for-AC200.patch](./patches/drv-mfd-Add-support-for-AC200.patch)
-
-  [drv-net-phy-Add-support-for-AC200-EPHY.patch](./patches/drv-net-phy-Add-support-for-AC200-EPHY.patch)
-
-  [arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch](./patches/arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch)
-
-- hdmi sound
-
-  [ASOC-sun9i-hdmi-audio-Initial-implementation.patch](./patches/ASOC-sun9i-hdmi-audio-Initial-implementation.patch)
-
-  [arm64-dts-allwinner-h6-Add-hdmi-sound-card.patch](./patches/arm64-dts-allwinner-h6-Add-hdmi-sound-card.patch)
-
-- misc
-
-  [arm64-dts-allwinner-h6-Add-SCPI-protocol.patch](./patches/arm64-dts-allwinner-h6-Add-SCPI-protocol.patch)
-  
-  [arm64-dts-allwinner-h6-Protect-SCP-clocks.patch](./patches/arm64-dts-allwinner-h6-Protect-SCP-clocks.patch)
-  
-  [arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch](./patches/arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch)
-  
-  [arm64-dts-sun50i-h6.dtsi-improve-thermals.patch](./patches/arm64-dts-sun50i-h6.dtsi-improve-thermals.patch)
-  
-  [drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch](./patches/drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch)
-
-
-#### 5.11
-
-  - mmc
-
-    *libreELEC* :
-
-    [0011-mmc-sunxi-fix-unusuable-eMMC-on-some-H6-boards-by-di.patch](https://github.com/LibreELEC/LibreELEC.tv/blob/master/projects/Allwinner/devices/H6/patches/linux/0011-mmc-sunxi-fix-unusuable-eMMC-on-some-H6-boards-by-di.patch)
-
-  - ethernet
-
-    *libreELEC* :
-
-    [0002-net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regu.patch](https://github.com/LibreELEC/LibreELEC.tv/blob/master/projects/Allwinner/devices/H6/patches/linux/0002-net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regu.patch)
-
-    [0003-net-stmmac-sun8i-Rename-PHY-regulator-variable-to-re.patch](https://github.com/LibreELEC/LibreELEC.tv/blob/master/projects/Allwinner/devices/H6/patches/linux/0003-net-stmmac-sun8i-Rename-PHY-regulator-variable-to-re.patch)
-
-    [0004-net-stmmac-sun8i-Add-support-for-enabling-a-regulato.patch](https://github.com/LibreELEC/LibreELEC.tv/blob/master/projects/Allwinner/devices/H6/patches/linux/0004-net-stmmac-sun8i-Add-support-for-enabling-a-regulato.patch)
-
-    *armbian* :
-
-    [0001-mfd-Add-support-for-AC200.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.11/0001-mfd-Add-support-for-AC200.patch)
-
-    [0002-net-phy-Add-support-for-AC200-EPHY.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.11/0002-net-phy-Add-support-for-AC200-EPHY.patch)
-
-    [0003-arm64-dts-allwinner-h6-Add-AC200-EPHY-related-nodes.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.11/0003-arm64-dts-allwinner-h6-Add-AC200-EPHY-related-nodes.patch)
-
-  - hdmi sound 
-
-    *libreELEC*
-
-    [0001-HACK-h6-Add-HDMI-sound-card.patch](https://github.com/LibreELEC/LibreELEC.tv/blob/master/projects/Allwinner/devices/H6/patches/linux/0001-HACK-h6-Add-HDMI-sound-card.patch) *whithout test*
-
-#### 5.13
-
-  is same as 5.11
-
-#### 5.17
-
-- mmc
-
-  [0012-fix-h6-emmc.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/0012-fix-h6-emmc.patch)
-
-  [0013-x-fix-h6-emmc-dts.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/0013-x-fix-h6-emmc-dts.patch)
-
-- ethernet
-
-  [arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/arm64-dts-sun50i-h6-Add-AC200-EPHY-related-nodes.patch)
-
-  [drv-net-phy-Add-support-for-AC200-EPHY.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-net-phy-Add-support-for-AC200-EPHY.patch)
-
-  [drv-mfd-Add-support-for-AC200.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-mfd-Add-support-for-AC200.patch)
-
-  [net-stmmac-sun8i-Add-support-for-enabling-a-regulator-for-PHY-I.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/net-stmmac-sun8i-Add-support-for-enabling-a-regulator-for-PHY-I.patch)
-
-  [net-stmmac-sun8i-Rename-PHY-regulator-variable-to-regulator_phy.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/net-stmmac-sun8i-Rename-PHY-regulator-variable-to-regulator_phy.patch)
-
-  [net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regulator.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/net-stmmac-sun8i-Use-devm_regulator_get-for-PHY-regulator.patch)
-
-- hdmi sound
-
-  [arm64-dts-allwinner-h6-Add-hdmi-sound-card.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/arm64-dts-allwinner-h6-Add-hdmi-sound-card.patch)
-
-- audio codec
-
-  [0009-allwinner-h6-support-ac200-audio-codec.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/0009-allwinner-h6-support-ac200-audio-codec.patch)
-
-- misc
-
-  [0010-allwinner-add-sunxi_get_soc_chipid-and-sunxi_get_ser.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/0010-allwinner-add-sunxi_get_soc_chipid-and-sunxi_get_ser.patch)
-
-  [arm64-dts-sun50i-h6.dtsi-improve-thermals.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/arm64-dts-sun50i-h6.dtsi-improve-thermals.patch)
-
-  [arm64-dts-allwinner-h6-Add-SCPI-protocol.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/arm64-dts-allwinner-h6-Add-SCPI-protocol.patch)
-
-  [arm64-dts-allwinner-h6-Protect-SCP-clocks.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.megous/arm64-dts-allwinner-h6-Protect-SCP-clocks.patch)
-
-  [drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-pinctrl-sunxi-pinctrl-sun50i-h6.c-GPIO-disable_strict_mode.patch)
-
-- media &&cedrus (VPU driver)
-
-  [WIP-media-uapi-hevc-add-fields-needed-for-rkvdec.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/WIP-media-uapi-hevc-add-fields-needed-for-rkvdec.patch)
-
-  [HACK-media-uapi-hevc-tiles-and-num_slices.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/HACK-media-uapi-hevc-tiles-and-num_slices.patch)
-
-  [Revert-net-Remove-net-ipx.h-and-uapi-linux-ipx.h-hea.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/Revert-net-Remove-net-ipx.h-and-uapi-linux-ipx.h-hea.patch)
-
-  [drv-media-cedrus-10-bit-HEVC-support.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-10-bit-HEVC-support.patch)
-
-  [drv-media-cedrus-Add-callback-for-buffer-cleanup.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-Add-callback-for-buffer-cleanup.patch)
-
-  [drv-media-cedrus-h264-Improve-buffer-management.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-h264-Improve-buffer-management.patch)
-
-  [drv-media-cedrus-hevc-Improve-buffer-management.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-hevc-Improve-buffer-management.patch)
-
-  [drv-media-cedrus-hevc-tiles-hack.patch](https://github.com/armbian/build/blob/master/patch/kernel/archive/sunxi-5.17/patches.armbian/drv-media-cedrus-hevc-tiles-hack.patch)
+HDMI audio : https://github.com/armbian/build/tree/main/patch/kernel/archive/sunxi-6.18/patches.megous/hdmi-audio-6.18
 
 ## Firmware
-
-### firmware packge for Arch Linux ARM
-
-  [firmware-tqc-a01](https://aur.archlinux.org/packages/firmware-tqc-a01/)
 
 ### WiFi
 
@@ -242,15 +93,11 @@ connect to USB 2.0 port instead of the USB OTG port :).
 
 ### BT 
 
-  > BCM43430A1.bin
-
-Firmware url could get from [firmware-tqc-a01](https://aur.archlinux.org/cgit/aur.git/plain/.SRCINFO?h=firmware-tqc-a01)
+  > BCM43430A1.hcd
 
 ## Mainline U-Boot
 
-[uboot-tqc-a01](https://github.com/Izumiko/uboot-tqc-a01)
-
-[uboot-tqc-a01 package](https://aur.archlinux.org/packages/uboot-tqc-a01)
+see [uboot-tqc-a01](https://github.com/Izumiko/uboot-tqc-a01)
 
 ### Video Hardware Decode
 
@@ -299,18 +146,4 @@ Arch Linux ARM users can install from AUR.
 [熊娃成全了他爹！40块包邮的泰奇猫电视盒子，还能刷芝杜系统](https://post.m.smzdm.com/p/ar66vp5z/)
 
 [记录某全志H6矿渣LibreELEC系统适配过程](https://www.amobbs.com/thread-5751326-1-1.html)
-
-## TODO
-
-- install arch to eMMC
-
-- ~~enable WiFi~~ 
-
-- enable IrDA
-
-- enable hdmi sound output
-
-- ~~dump kernel verion~~
-
-- build usable U-Boot for H6
 
