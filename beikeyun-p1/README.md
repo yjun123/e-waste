@@ -1,8 +1,6 @@
 # 美贝壳 Meibeike 贝壳云 P1
 
-[Beikeyun official website](http://www.meibeike.com/index.php/Product/index/cat_id/2)
-
-![Beikeyun Spec](http://www.meibeike.com/Uploads/goods/1530780946.jpg)
+[Beikeyun official website (closed)](https://web.archive.org/web/20210730230732/http://www.meibeike.com/index.php/Product/index/cat_id/2)
 
 ## Hardware
 
