@@ -53,7 +53,7 @@ The debug serial port is located at the test point near the Type-C port on the C
 
 Level: 3.3V
 
-![](Images/Debug/CPU Board Debug UART.jpg)
+![Debug UART](./Images/Debug/CPU_Board_Debug_UART.jpg)
 
 
 
