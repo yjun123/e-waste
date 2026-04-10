@@ -35,3 +35,7 @@
 
 - 红米 Note 4G Xiaomi Redmi Note 4G
 
+## HTPC
+
+- 锐角云 Acute Angle Cloud
+
