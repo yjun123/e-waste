@@ -1,0 +1,293 @@
+AXG:BL1:d95c53:a4926f;FEAT:E0DC318C:2000;POC:F;EMMC:800;NAND:0;READ:0;0.0;CHK:0;
+sdio debug board detected 
+TE: 22912
+
+BL2 Built : 20:39:23, Oct 25 2017. axg gca76a34 - yonghui.yu@droid06-sz
+
+set vcck to 1100 mv
+set vddee to 950 mv
+Board ID = 2
+CPU clk: 1200MHz
+DDR low power enabled
+DDR DQS-calibration enabled
+DDR scramble enabled
+DDR3 chl: Rank0 16bit @ 912MHz - PASS
+Rank0: 256MB(auto)-2T-13
+DataBus test pass!
+AddrBus test pass!
+NAND init
+chk page: 00000500
+chk page: 00000540
+chk page: 00000580
+chk page: 000005c0
+bbt blk:00000014
+bbt page:00000000
+0000000000000000000000000000000000000000000000000000000000000000
+Load FIP HDR from NAND, src: 0x0000c000, des: 0x01700000, size: 0x00004000
+Load BL3x from NAND, src: 0x00010000, des: 0x01704000, size: 0x0009c000
+NOTICE:  BL31: v1.3(release):a1a8551
+NOTICE:  BL31: Built : 15:59:55, Nov  9 2017
+NOTICE:  BL31: AXG normal boot!
+NOTICE:  BL31: BL33 decompress pass
+[Image: axg_v1.1.3268-b93dd79 2017-12-01 14:22:18 huan.biao@droid12]
+OPS=0x42
+43 2e 43 35 f4 64 80 9e ed 5b 95 cd bl30:axg ver: 9 mode: 0
+bl30:axg thermal0
+[0.014613 Inits done]
+secure task start!
+high task start!
+low task start!
+ERROR:   Error initializing runtime service opteed_fast
+
+
+U-Boot 2015.01 (Jan 22 2019 - 23:21:04), Build: jenkins-amlogic_a113_audio_mini_ctc_dev-485
+
+DRAM:  256 MiB
+Relocation Offset is: 0eeb6000
+register usb cfg[0][1] = 000000000ff550a8
+NAND:  get_sys_clk_rate_mtd() 261, clock setting 200!
+nand id: 0xec 0xdc 
+512MiB, SLC, page size: 2048, OOB size: 64
+NAND device id: ec dc 10 95 56 c6 
+NAND device: Manufacturer ID: 0xec, Chip ID: 0xec (Samsung SamSung NAND K9F4G08U0F 4Gb)
+get_sys_clk_rate_mtd() 261, clock setting 200!
+m3_nand_adjust_timing() sys_clk_rate 200, bus_c 6, bus_t 7
+oob_fill_cnt =32 oob_size =64, bch_bytes =14
+ecc mode:6 ecc_page_num=2 eep_need_oobsize=16
+plane_num=1 writesize=0x800 ecc.size=0x200 bch_mode=1
+oob avail size 6
+Creating 1 MTD partitions on "SamSung NAND K9F4G08U0F 4Gb":
+0x000000000000-0x000000200000 : "bootloader"
+SamSung NAND K9F4G08U0F 4Gb initialized ok
+get_sys_clk_rate_mtd() 261, clock setting 200!
+nand id: 0xec 0xdc 
+512MiB, SLC, page size: 2048, OOB size: 64
+NAND device id: ec dc 10 95 56 c6 
+NAND device: Manufacturer ID: 0xec, Chip ID: 0xec (Samsung SamSung NAND K9F4G08U0F 4Gb)
+get_sys_clk_rate_mtd() 261, clock setting 200!
+m3_nand_adjust_timing() sys_clk_rate 200, bus_c 6, bus_t 7
+oob_fill_cnt =32 oob_size =64, bch_bytes =14
+ecc mode:6 ecc_page_num=2 eep_need_oobsize=16
+PLANE change!
+plane_num=1 writesize=0x800 ecc.size=0x200 bch_mode=1
+aml_nand_init :oobmul=1,oobfree.length=8,oob_size=64
+oob avail size 8
+tpl: off 8388608, size 8388608
+ NAND bbt detect factory Bad block at 10180000 
+ NAND bbt detect factory Bad block at 101a0000 
+ NAND bbt detect factory Bad block at 1ffc0000 
+ NAND bbt detect factory Bad block at 1ffe0000 
+Creating 5 MTD partitions on "SamSung NAND K9F4G08U0F 4Gb":
+0x000000800000-0x000001000000 : "tpl"
+0x000001000000-0x000001200000 : "misc"
+0x000001200000-0x000002200000 : "recovery"
+0x000002200000-0x000002c00000 : "boot"
+0x000002c00000-0x000020000000 : "system"
+ NAND bbt detect factory Bad block at 10180000 
+ NAND bbt detect factory Bad block at 101a0000 
+ NAND bbt detect factory Bad block at 1ffc0000 
+ NAND bbt detect factory Bad block at 1ffe0000 
+SamSung NAND K9F4G08U0F 4Gb initialized ok
+aml_key_init 170
+MMC:   aml_priv->desc_buf = 0x000000000eebe820
+aml_priv->desc_buf = 0x000000000eec0b40
+SDIO Port B: 0, SDIO Port C: 1
+uboot env amlnf_env_read : ####
+In:    serial
+Out:   serial
+Err:   serial
+reboot_mode=cold_boot
+[store]To run cmd[amlnf dtb_read 0x1000000 0x40000]
+sub cmd dtb
+new argv[1] dtb_read
+do_dtb_ops(): argc 4
+arg 0: amlnf
+arg 1: dtb_read
+arg 2: 0x1000000
+arg 3: 0x40000
+do_dtb_ops() read
+amlnf_dtb_read: ####
+warnning!!! amlnf_dtb_read dtd length too much
+do_dtb_ops(): 262144 bytes read : OK
+      Amlogic multi-dtb tool
+      Single dtb detected
+SARADC channel(1) is 0xa9. 
+hardwareid :0x2
+[sn3236]==================
+[sn3236]one chip led numbers=36
+[sn3236]i2c addr0=0x3c
+[sn3236]color=99
+[sn3236]==================
+[rokid_i2c_init:]bus_id=1, plat=000000000ff58df0, i2c=000000000ffb9fe8
+Net:   Phy 0 not found
+dwmac.ff3f0000amlkey_init() enter!
+amlnf_key_read key data len too much
+[EFUSE_MSG]keynum is 3
+[KM]Error:f[keymanage_dts_get_key_device]L85:mac key name is not exist
+[KM]Error:f[_get_km_ops_by_name]L231:key mac not know device 4
+[KM]Error:f[key_unify_query_exist]L350:key[mac] not cfg in dts
+MACADDR:02:9e:ed:5b:95:cd(from chipid)
+
+wipe_data=successful
+wipe_cache=successful
+upgrade_step=2
+amlkey_init() enter!
+amlkey_init() 71: already init!
+[EFUSE_MSG]keynum is 3
+[KM]Error:f[key_manage_query_size]L507:key[usid] not programed yet
+[KM]Error:f[keymanage_dts_get_key_device]L85:mac key name is not exist
+[KM]Error:f[_get_km_ops_by_name]L231:key mac not know device 4
+[KM]Error:f[key_manage_query_exist]L546:There isn't dts cfg for key[mac]
+[KM]Error:f[key_manage_query_size]L503:Fail in query key exist
+[KM]Error:f[key_manage_query_size]L507:key[deviceid] not programed yet
+[KM]Error:f[key_manage_query_size]L507:key[factory_date] not programed yet
+amlkey_init() enter!
+amlkey_init() 71: already init!
+[EFUSE_MSG]keynum is 3
+success:serialno=180001751019426 
+success:rokidseed=mjb7RLC6igaxBinZXwI5E0AUQc7O83 
+sweet ftm=0
+amlkey_init() enter!
+amlkey_init() 71: already init!
+[EFUSE_MSG]keynum is 3
+[KM]Error:f[key_manage_query_size]L507:key[usid] not programed yet
+[KM]Error:f[keymanage_dts_get_key_device]L85:mac key name is not exist
+[KM]Error:f[_get_km_ops_by_name]L231:key mac not know device 4
+[KM]Error:f[key_manage_query_exist]L546:There isn't dts cfg for key[mac]
+[KM]Error:f[key_manage_query_size]L503:Fail in query key exist
+[KM]Error:f[key_manage_query_size]L507:key[deviceid] not programed yet
+[KM]Error:f[key_manage_query_size]L507:key[factory_date] not programed yet
+69 6e 69 74 6d 6f 64 65 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+======
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+======
+00 65 63 6f 76 65 72 79 5f 6f 6b 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+======
+Hit Enter or space or Ctrl+C key to stop autoboot -- :  1  0 
+[burnup]Rd:Up sz 0x5acc4f to align 0x1000
+save_power_post ...
+## Booting Android Image at 0x01080000 ...
+reloc_addr =eee9610
+copy done
+Kernel command line: root=/dev/mtdblock5 rootfstype=squashfs ro init=/sbin/init
+load dtb from 0x1000000 ......
+      Amlogic multi-dtb tool
+      Single dtb detected
+   Uncompressing Kernel Image ... OK
+   kernel loaded at 0x01080000, end = 0x02146200
+   Loading Ramdisk to 0eccc000, end 0eea3b79 ... OK
+   Loading Device Tree to 000000000ecc0000, end 000000000eccbc4e ... OK
+
+Starting kernel ...
+
+uboot time: 2861234 us
+[    0.000000@0] Booting Linux on physical CPU 0x0
+[    0.000000@0] Linux version 4.9.54 (jenkins@ws15) (gcc version 6.3.1 20170109 (Linaro GCC 6.3-2017.02) ) #1 SMP PREEMPT Tue Jan 22 22:48:54 HKT 2019
+[    0.000000@0] Boot CPU: AArch64 Processor [410fd034]
+[    0.000000@0] earlycon: aml_uart0 at MMIO 0x00000000ff803000 (options '')
+[    0.000000@0] bootconsole [aml_uart0] enabled
+domain-0 init dvfs: 1
+[    0.284923@1] dmi: Firmware registration failed.
+[    0.372419@3] Wifi: bcmdhd_init_wlan_mem: bcmdhd_init_wlan_mem prealloc ok
+[    1.331483@2] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    1.343376@2] ff803000.serial: clock gate not found
+[    1.351105@3] amlogic-new-usb3 ffe09080.usb3phy: This phy has no usb port
+[    1.353538@3] Meson I2C adapter,nr=0
+[    1.356495@3] Meson I2C adapter,nr=1
+[    1.360531@3] Meson I2C adapter,nr=2
+[    1.363547@3] Meson I2C adapter,nr=3
+[    1.415360@3] nand: Could not find valid JEDEC parameter page; aborting
+[    1.421357@3] nand: Could not find valid JEDEC parameter page; aborting
+[    1.824177@0] tlv320 adc3101_i2c_probe ...
+[    1.827124@0] platform ff642000.audiobus:loopback: Can't retrieve tdmin_mpll clock
+[    1.830264@0] faild to get mclk-fs node, set it default
+[    1.830264@0]  
+[    1.837084@0] if use extern loopback, pls set datalb-lane-mask-in
+[    2.567770@0] hub 2-0:1.0: config failed, hub doesn't have any ports! (err -19)
+[    2.570222@0] platform ff642000.audiobus:loopback: Can't retrieve tdmin_mpll clock
+[    2.576959@0] faild to get mclk-fs node, set it default
+[    2.576959@0]  
+[    2.583851@0] if use extern loopback, pls set datalb-lane-mask-in
+[    2.591132@0] asoc-aml-card meson_sound: ASoC: DAPM unknown pin Headphones
+[    2.602119@2] ### cap1xxx_module_init,794
+[    2.602443@2] [TOUCHKEY]cap1xxx_touchkey_probe
+[    2.605102@2] [TOUCHKEY]cap1xxx_dt_parse
+[    2.609263@2] [TOUCHKEY]cap1xxx_touchkey_i2c_probe
+[    2.614197@0] [TOUCHKEY]cap1xxx_check cap1xxx chip id:0x3a, trycount:-4.
+[    2.636003@0] [TOUCHKEY]cap1xxx_regs_init cap1xxx registers init success.
+[    2.638328@0] ### sn3xxx_modinit, 1239
+[    2.641212@0] [LED]sn3xxx_leds_probe
+[    2.644912@0] [LED]sn3xxx_leds_i2c_probe
+[    2.648316@0] [LED]+gpio_init
+[    2.704539@2] [LED]sn3xxx_leds_i2c_probe
+[    2.726216@2] [LED]+sn3xxx_leds_probe leds init success.
+[    2.752155@0] asoc-aml-card meson_sound: ASoC: DAPM unknown pin Headphones
+[    2.840987@2] thermal thermal_zone0: binding zone soc_thermal with cdev thermal-cpufreq-0 failed:-22
+sh: =: argument expected
+/dev/mtdblock5 is ready now.
+UBI device number 0, total 3740 LEBs (474890240 bytes, 452.9 MiB), available 0 LEBs (0 bytes), LEB size 126976 bytes (124.0 KiB)
+[FAILED] Failed to start Create Volatile Files and Directories.
+See 'systemctl status systemd-tmpfiles-setup.service' for details.
+         Starting Update UTMP about System Boot/Shutdown...
+         Starting Network Time Synchronization...
+[  OK  ] Started property service.
+[  OK  ] Started Update UTMP about System Boot/Shutdown.
+[  OK  ] Started Network Time Synchronization.
+[  OK  ] Reached target System Time Synchronized.
+[  OK  ] Started udev Coldplug all Devices.
+[  OK  ] Found device /dev/ttyS0.
+[  OK  ] Reached target Sound Card.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Reached target Basic System.
+         Starting SYSV: This is a daemon whi�.freedesktop.org/software/dbus/...
+[  OK  ] Started Rokid binder service.
+[  OK  ] Started Rokid turenproc.
+         Starting ADB service...
+[  OK  ] Reached target Containers.
+[  OK  ] Started Rokid ota timer.
+         Starting PulseAudio Sound System...
+[  OK  ] Started Rokid zygote service.
+[  OK  ] Started Rokid track service.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target Timers.
+[  OK  ] Started PulseAudio Sound System.
+[  OK  ] Started ADB service.
+[  OK  ] Started SYSV: This is a daemon whic�ww.freedesktop.org/software/dbus/.
+[  OK  ] Started Rokid light service.
+         Starting network manager service...
+         Starting Network Service...
+[  OK  ] Started Network Service.
+[  OK  ] Reached target Network.
+         Starting Network Name Resolution...
+         Starting /etc/rc.local Compatibility...
+[  OK  ] Started /etc/rc.local Compatibility.
+[  OK  ] Started Getty on tty1.
+[  OK  ] Started Serial Getty on ttyS0.
+[  OK  ] Reached target Login Prompts.
+[  OK  ] Started Network Name Resolution.
+found the match wifi is: bcm6212
+[sdio_wifi_load_driver:457]module_path(/lib/modules/4.9.54/kernel/broadcom/wifi/dhd.ko)
+[sdio_wifi_load_driver:458]module_arg(firmware_path=/etc/wifi/6212/fw_bcm43438a0.bin nvram_path=/etc/wifi/6212/nvram.txt)
+[insmod:262]filename(/lib/modules/4.9.54/kernel/broadcom/wifi/dhd.ko) options(firmware_path=/etc/wifi/6212/fw_bcm43438a0.bin nvram_path=/etc/wifi/6212/nvram.txt)
+[  OK  ] Started network manager service.
+         Starting Rokid bsa_server service...
+[  OK  ] Started Rokid bsa_server service.
+         Starting Rokid activation...
+[  OK  ] Started Rokid activation.
+[  OK  ] Started Rokid Homebase Bootstrap.
+[  OK  ] Started Rokid mqtt service.
+[  OK  ] Reached target Multi-User System.
+         Starting Update UTMP about System Runlevel Changes...
+[  OK  ] Started Update UTMP about System Runlevel Changes.
+
+Welcome to Buildroot
+buildroot login: root
+# cat /proc/mtd 
+dev:    size   erasesize  name
+mtd0: 00200000 00020000 "bootloader"
+mtd1: 00800000 00020000 "tpl"
+mtd2: 00200000 00020000 "misc"
+mtd3: 01000000 00020000 "recovery"
+mtd4: 00a00000 00020000 "boot"
+mtd5: 1d400000 00020000 "system"
+# 

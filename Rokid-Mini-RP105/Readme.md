@@ -1,8 +1,8 @@
 # Rokid Mini 若琪 繁星 RP105
 
-An entry-level desktop smart speaker launched by Rokid, featuring a 4-microphone array and a 12 RGB LED light ring.
+An entry-level desktop smart speaker launched by Rokid, featuring a 4-microphone array and a
 
-
+circular RGB LED ring and a ring-shaped touch button.
 
 ## Officail Documents
 
@@ -12,28 +12,32 @@ https://github.com/rokid/docs/blob/master/rokidos-linux-docs/reference/dev_board
 
 The schematic diagram is currently unavailable.
 
-
-
 ## Hardware
-| Specifications            | Description                                                  |
-| ------------------------- | ------------------------------------------------------------ |
-| Size                      | 92×92×37mm                                                   |
-| PCB revision              | RM-MPEG-214G VER1.0 2017                                     |
-| Model                     | RP105                                                        |
-| SoC                       | Amlogic [A113X](https://www.amlogic.cn/product/stencil.html#Products/232/index.html)/Quad-Core ARM Cortex-A53@1.5GHz |
-| DRAM                      | 2Gb DDR3 SDRAM Nanya [NT5CB128M16IP-EK](https://item.szlcsc.com/3042430.html)/933MHz |
-| NAND Flash                | 4Gb NAND Flash Samsung [K9F4G08U0F-SCB0](https://flashinfo.top/FlashInfo?pn=K9F4G08U0F) |
-| Wireless Module           | 802.11b/g/n BT4.0 AMPAK [AP6212](https://fccid.io/PJ5-AX905/User-Manual/User-manual-3321089.pdf)/C11310661 1905/1T1R |
-| Stereo DAC                | Everest-semi [ES7154](https://www.pawpaw.cn/media/documents/2021-12/ES7154_DS.pdf) |
-| Audio Power Amp           | Powtech [PT5305N](https://www.sunnyqi.com/blog/post/687.html)/3W/Class D |
-| Cap Touch + LED Driver IC | Microchip [CAP1114](https://ww1.microchip.com/downloads/en/DeviceDoc/1114db.pdf) |
+| Specifications  | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| Size            | 92×92×37mm                                                   |
+| PCB revision    | RM-MPEG-214G VER1.0 2017                                     |
+| Model           | RP105                                                        |
+| SoC             | Amlogic [A113X](https://www.amlogic.cn/product/stencil.html#Products/232/index.html)/Quad-Core ARM Cortex-A53@1.5GHz |
+| DRAM            | 2Gb DDR3 SDRAM Nanya [NT5CB128M16IP-EK](https://file.elecfans.com/web2/M00/73/A5/pYYBAGNXxrWAehC-ADVm5Z_TwYs953.pdf)/933MHz/DDR3-1866 |
+| NAND Flash      | 4Gb NAND Flash Samsung [K9F4G08U0F-SCB0](https://flashinfo.top/FlashInfo?pn=K9F4G08U0F) |
+| Wireless Module | 802.11b/g/n BT4.0 AMPAK [AP6212](https://fccid.io/PJ5-AX905/User-Manual/User-manual-3321089.pdf)/C11310661 1905/1T1R |
+| Stereo DAC      | Everest-semi [ES7154](https://www.pawpaw.cn/media/documents/2021-12/ES7154_DS.pdf) |
+| Audio Power Amp | Powtech [PT5305N](https://www.sunnyqi.com/blog/post/687.html)/3W/Class D |
+| Cap Touch IC    | Microchip [CAP1114](https://ww1.microchip.com/downloads/en/DeviceDoc/1114db.pdf) |
+| LED Driver 1    | ISSI [IS31FL3236A](https://assets.sourcengine.com/datasheets/aa297992-b93d-4ac6-847c-3ccfa56f72ec.pdf)/QFN-44/36 channels |
+| LED Driver 2    | ISSI [IS31FL3193](https://item.szlcsc.com/datasheet/IS31FL3193-DLS2-TR/2745272.html)/DFN-10/3 channels |
+| LED             | 12-channel circular RGB LED ring driven by *IS31FL3236A*, central RGB LED driven by *IS31FL3193* |
+| Touch area      | 8 capacitive touch areas connected to *CAP1114*              |
+| Microphone      | 4-microphone array                                           |
+| Speaker         | Single 27 mm full-range speaker, 4 Ω impedance,driven by *PT5305N* |
 
 
 
-| Interface     | Description                                               |
-| ------------- | --------------------------------------------------------- |
-| USB Type-C    | *1, USB 2.0, power supply and ADB debug (vendor firmware) |
-| 3.5mm AUX Out | *1                                                        |
+| Interface     | Description                                                |
+| ------------- | ---------------------------------------------------------- |
+| USB Type-C    | * 1, USB 2.0, power supply and ADB debug (vendor firmware) |
+| 3.5mm AUX Out | * 1, connected to *ES7154*                                 |
 
 
 
@@ -57,11 +61,28 @@ Level: 3.3V
 
 
 
+
+## Leds
+
+![Leds placement](Images/Led/Leds-placement.jpg)
+
+| Driver IC   | Led  | Drvier IC Pin                                                |
+| ----------- | ---- | ------------------------------------------------------------ |
+| IS31FL3236A | 1    | <span style="color: green;">OUT1</span>, <span style="color: blue;">OUT2</span>, <span style="color: red;">OUT3</span> |
+|             | 2    | <span style="color: green;">OUT4</span>, <span style="color: blue;">OUT5</span>, <span style="color: red;">OUT6</span> |
+|             | .... |                                                              |
+|             | 12   | <span style="color: green;">OUT34</span>, <span style="color: blue;">OUT35</span>, <span style="color: red;">OUT36</span> |
+| IS31FL3193  | 13   | <span style="color: red;">OUT1</span>, <span style="color: green;">OUT2</span>, <span style="color: blue;">OUT3</span> |
+
+The SDB pins of IS31FL3236A and IS31FL3193 are controlled by the same GPIO - *GPIOAO_3*.
+
+
+
 ## Mainline Linux
 
 The mainline Linux currently supports the AXG series, the S400 development board, and the jethome-jethub.
 
-
+see https://github.com/yjun123/linux/tree/add_rokid_rp105_support
 
 ## Blogs and Forums
 
