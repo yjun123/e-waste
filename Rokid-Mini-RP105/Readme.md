@@ -4,6 +4,9 @@ An entry-level desktop smart speaker launched by Rokid, featuring a 4-microphone
 
 circular RGB LED ring and a ring-shaped touch button.
 
+![RP105](./Images/Exterior/RP105.jpg)
+
+
 ## Officail Documents
 
 ~~https://developer.rokid.com/docs/rokidos-linux-docs/reference/dev_board/amlogic/usermanual_a113.html#amlogica113~~
@@ -11,6 +14,7 @@ circular RGB LED ring and a ring-shaped touch button.
 https://github.com/rokid/docs/blob/master/rokidos-linux-docs/reference/dev_board/amlogic/usermanual_a113.md
 
 The schematic diagram is currently unavailable.
+
 
 ## Hardware
 | Specifications  | Description                                                  |
