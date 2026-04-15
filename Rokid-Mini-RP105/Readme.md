@@ -45,6 +45,10 @@ The schematic diagram is currently unavailable.
 | 3.5mm AUX Out | * 1, connected to *ES7154*                                 |
 
 
+## Images
+
+Device teardown details, see [Images](./Images)
+
 
 ## Amlogic A113X
 
@@ -82,12 +86,15 @@ Level: 3.3V
 The SDB pins of IS31FL3236A and IS31FL3193 are controlled by the same GPIO - *GPIOAO_3*.
 
 
-
 ## Mainline Linux
 
 The mainline Linux currently supports the AXG series, the S400 development board, and the jethome-jethub.
 
 see https://github.com/yjun123/linux/tree/add_rokid_rp105_support
+
+Device tree extracted from the original vendor firmware:
+
+[rokid-mini-rp105-vendor-dump.dts](Dumps/dts/rokid-mini-rp105-vendor-dump.dts)
 
 ## Blogs and Forums
 
