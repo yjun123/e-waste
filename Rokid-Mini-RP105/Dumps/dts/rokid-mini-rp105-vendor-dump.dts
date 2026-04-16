@@ -788,7 +788,7 @@
 				xtal_tick_en = <0x01>;
 				fifosize = <0x40>;
 				pinctrl-names = "default";
-				pinctrl-0 = <0x0d>;
+				pinctrl-0 = <0x0d>;  // ao_uart
 				support-sysrq = <0x00>;
 			};
 
@@ -801,7 +801,7 @@
 				clock-names = "clk_uart";
 				fifosize = <0x40>;
 				pinctrl-names = "default";
-				pinctrl-0 = <0x0e>;
+				pinctrl-0 = <0x0e>; // ao_b_uart
 			};
 		};
 
@@ -1474,9 +1474,9 @@
 		reg = <0x00 0xffe09080 0x00 0x20>;
 		interrupts = <0x00 0x10 0x04>;
 		otg = <0x01>;
-		usb_sel = <0x11 0x07 0x00>;
+		usb_sel = <0x11 0x07 0x00>;  // GPIOAO_7
 		gpio-vbus-power = "GPIOAO_5";
-		gpios = <0x11 0x05 0x00>;
+		gpios = <0x11 0x05 0x00>; // GPIOAO_5
 		linux,phandle = <0x37>;
 		phandle = <0x37>;
 	};
@@ -1513,7 +1513,7 @@
 		clock-names = "clk_uart", "clk_gate";
 		fifosize = <0x80>;
 		pinctrl-names = "default";
-		pinctrl-0 = <0x38>;
+		pinctrl-0 = <0x38>; // a_uart
 	};
 
 	serial@ffd23000 {
@@ -1525,7 +1525,7 @@
 		clock-names = "clk_uart", "clk_gate";
 		fifosize = <0x40>;
 		pinctrl-names = "default";
-		pinctrl-0 = <0x39>;
+		pinctrl-0 = <0x39>; // b_uart
 	};
 
 	meson-irblaster {
@@ -1563,9 +1563,9 @@
 	meson_sound {
 		compatible = "amlogic, sound-card";
 		aml-audio-card,name = "AML-AXGSOUND";
-		aml-audio-card,hp-det-gpio = <0x11 0x0d 0x00>;
+		aml-audio-card,hp-det-gpio = <0x11 0x0d 0x00>; // GPIOAO_13
 		hp-det-gpio-pull = <0x02>;
-		spk_mute = <0x14 0x1b 0x01>;
+		spk_mute = <0x14 0x1b 0x01>; // GPIOA_1
 		aml-audio-card,loopback = <0x3b>;
 
 		aml-audio-card,dai-link@0 {
@@ -1647,7 +1647,7 @@
 		compatible = "amlogic, bt-dev";
 		dev_name = "bt-dev";
 		status = "okay";
-		gpio_reset = <0x14 0x44 0x00>;
+		gpio_reset = <0x14 0x44 0x00>; // GPIOX_21
 	};
 
 	wifi {
@@ -1953,7 +1953,7 @@
 	circleled {
 		compatible = "amlogic, circleled";
 		status = "okay";
-		led_gpio_sdb = <0x11 0x03 0x00>;
+		led_gpio_sdb = <0x11 0x03 0x00>; // GPIOAO_3
 		#address-cells = <0x01>;
 		#size-cells = <0x00>;
 
@@ -1999,7 +1999,7 @@
 	touchkey {
 		compatible = "amlogic, touchkey";
 		status = "okay";
-		touch_gpio_en = <0x14 0x2c 0x01>;
+		touch_gpio_en = <0x14 0x2c 0x01>; // GPIOA_18
 		#address-cells = <0x01>;
 		#size-cells = <0x00>;
 
@@ -2016,7 +2016,7 @@
 		compatible = "amlogic, vibrator";
 		status = "okay";
 		dev_name = "vibrator";
-		vib_en = <0x14 0x2d 0x00>;
+		vib_en = <0x14 0x2d 0x00>; // GPIOA_19
 		vib_gpio_en = <0x14 0x3f 0x00>;
 		pwm = <0x03>;
 		polarity = <0x01>;

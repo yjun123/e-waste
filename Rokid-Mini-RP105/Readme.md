@@ -29,7 +29,7 @@ The schematic diagram is currently unavailable.
 | Wireless Module   | 802.11b/g/n BT4.0 AMPAK [AP6212](https://fccid.io/PJ5-AX905/User-Manual/User-manual-3321089.pdf)/C11310661 1905/1T1R |
 | Stereo DAC        | Everest-semi [ES7154](https://www.pawpaw.cn/media/documents/2021-12/ES7154_DS.pdf)/I2S audio input |
 | Audio Power Amp   | Powtech [PT5305N](https://www.sunnyqi.com/blog/post/687.html)/3W/Class D |
-| Cap Touch IC      | Microchip [CAP1114](https://ww1.microchip.com/downloads/en/DeviceDoc/1114db.pdf)/14 channels |
+| Cap Touch IC      | Microchip [CAP1114](https://ww1.microchip.com/downloads/en/DeviceDoc/00002444A.pdf)/14 channels |
 | LED Driver 1      | ISSI [IS31FL3236A](https://assets.sourcengine.com/datasheets/aa297992-b93d-4ac6-847c-3ccfa56f72ec.pdf)/QFN-44/36 channels |
 | LED Driver 2      | ISSI [IS31FL3193](https://item.szlcsc.com/datasheet/IS31FL3193-DLS2-TR/2745272.html)/DFN-10/3 channels |
 | LED               | 12-channel circular RGB LED ring driven by *IS31FL3236A*, central RGB LED driven by *IS31FL3193* |
