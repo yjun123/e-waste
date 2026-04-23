@@ -42,7 +42,7 @@ The schematic diagram is currently unavailable.
 | Interface     | Description                                                |
 | ------------- | ---------------------------------------------------------- |
 | USB Type-C    | * 1, USB 2.0, power supply and ADB debug (vendor firmware) |
-| 3.5mm AUX Out | * 1, connected to *ES7154*                                 |
+| 3.5mm Line-out| * 1, connected to *ES7154*                                 |
 
 
 ## Images
@@ -85,6 +85,16 @@ Level: 3.3V
 
 The SDB pins of IS31FL3236A and IS31FL3193 are controlled by the same GPIO - *GPIOAO_3*.
 
+## Mainline U-Boot
+
+The mainline U-Boot currently supports the AXG series, the S400 development board, and the jethome-jethub.
+
+NAND support is ongoing and remains marked as NO in the [mainline-u-boot-support-matrix](https://linux-meson.com/u-boot.html#mainline-u-boot-support-matrix).
+
+see https://github.com/yjun123/u-boot/tree/amlogic
+
+![image-20260424001008198](Images/Debug/Mainline-U-Boot-Output.png)
+
 
 ## Mainline Linux
 
@@ -111,3 +121,5 @@ Device tree extracted from the original vendor firmware:
 [CNX-Software - Amlogic A111, A112 & A113 Processors are Designed for Audio Applications, Smart Speakers](https://www.cnx-software.com/2017/09/09/amlogic-a111-a112-a113-processors-are-designed-for-audio-applications-smart-speakers/)
 
 [CNX-Software - Amlogic A113X1 6-Mic Far-Field Devkit is Designed for Amazon Alexa](https://www.cnx-software.com/2018/01/11/amlogic-a113x1-6-mic-far-field-devkit-is-designed-for-amazon-alexa/)
+
+[Zhihu - Rokid携新品Mini亮相AWE，真的能实现IoT全智能家居吗？](https://zhuanlan.zhihu.com/p/34409660)

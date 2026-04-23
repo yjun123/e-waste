@@ -1654,7 +1654,7 @@
 		compatible = "amlogic, aml_wifi";
 		dev_name = "aml_wifi";
 		status = "okay";
-		interrupt_pin = <0x14 0x35 0x00>;
+		interrupt_pin = <0x14 0x35 0x00>; // GPIOX_6
 		irq_trigger_type = "GPIO_IRQ_LOW";
 		power_on_pin = <0x14 0x36 0x00>;
 		dhd_static_buf;
@@ -2006,7 +2006,7 @@
 		cap_i2c {
 			compatible = "amlogic, cap1xxx_i2c";
 			i2c_bus = "i2c_bus_ao";
-			interrupt = <0x06>;
+			interrupt = <0x06>; // GPIOAO_6
 			reg = <0x28>;
 			status = "okay";
 		};
