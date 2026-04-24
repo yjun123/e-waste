@@ -85,6 +85,16 @@ Level: 3.3V
 
 The SDB pins of IS31FL3236A and IS31FL3193 are controlled by the same GPIO - *GPIOAO_3*.
 
+
+
+## Vendor firmware device tree
+
+Device tree extracted from the original vendor firmware:
+
+[rokid-mini-rp105-vendor-dump.dts](Dumps/dts/rokid-mini-rp105-vendor-dump.dts)
+
+
+
 ## Mainline U-Boot
 
 The mainline U-Boot currently supports the AXG series, the S400 development board, and the jethome-jethub.
@@ -102,9 +112,13 @@ The mainline Linux currently supports the AXG series, the S400 development board
 
 see https://github.com/yjun123/linux/tree/add_rokid_rp105_support
 
-Device tree extracted from the original vendor firmware:
 
-[rokid-mini-rp105-vendor-dump.dts](Dumps/dts/rokid-mini-rp105-vendor-dump.dts)
+
+Boot the kernel via Amlogic USB Boot using [pyamlboot](https://github.com/superna9999/pyamlboot).
+
+![img](Images/Debug/Mainline-Linux-Output.png)
+
+
 
 ## Blogs and Forums
 
@@ -114,7 +128,7 @@ Device tree extracted from the original vendor firmware:
 
 [Bilibili - 老刘玩机@Rokid Mini 若琪梵星 移动定制智能音箱拆解](https://www.bilibili.com/video/av797327309/)
 
-[HardYun - laoliu@#53 Rokid Mini 若琪梵星 移动定制智能音箱拆解](http://www.hardyun.com/376.html)
+~~[HardYun - laoliu@#53 Rokid Mini 若琪梵星 移动定制智能音箱拆解](http://www.hardyun.com/376.html)~~
 
 [CNX-Software - JetHome JetHub D1 is a Linux automation controller based on Amlogic A113X SoC](https://www.cnx-software.com/2022/02/01/jethome-jethub-d1-linux-automation-controller-based-on-amlogic-a113x-soc/)
 
