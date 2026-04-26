@@ -7,6 +7,7 @@ circular RGB LED ring and a ring-shaped touch area.
 ![RP105](./Images/Exterior/RP105.jpg)
 
 
+
 ## Officail Documents
 
 ~~https://developer.rokid.com/docs/rokidos-linux-docs/reference/dev_board/amlogic/usermanual_a113.html#amlogica113~~
@@ -16,7 +17,9 @@ https://github.com/rokid/docs/blob/master/rokidos-linux-docs/reference/dev_board
 The schematic diagram is currently unavailable.
 
 
+
 ## Hardware
+
 | Specifications    | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
 | Size              | 92×92×37mm                                                   |
@@ -45,9 +48,11 @@ The schematic diagram is currently unavailable.
 | 3.5mm Line-out| * 1, connected to *ES7154*                                 |
 
 
+
 ## Images
 
 Device teardown details, see [Images](./Images)
+
 
 
 ## Amlogic A113X
@@ -57,6 +62,8 @@ https://linux-meson.com/hardware.html
 >- AXG : Audio/IOT dedicated SoC derived from GX family with enhanced audio and MIPI DSI display support and 2xPCIe 2.0 x1 lanes
 >  - A113D
 >  - A113X: similar to A113D, without PCIe and MIPI DSI Output
+
+The A113X datasheet is available on this [Amlogic A113X datasheet](https://dl.21ic.com/download/a113x-361997.html)
 
 
 
@@ -106,6 +113,7 @@ see https://github.com/yjun123/u-boot/tree/amlogic
 ![image-20260424001008198](Images/Debug/Mainline-U-Boot-Output.png)
 
 
+
 ## Mainline Linux
 
 The mainline Linux currently supports the AXG series, the S400 development board, and the jethome-jethub.
@@ -117,6 +125,20 @@ see https://github.com/yjun123/linux/tree/add_rokid_rp105_support
 Boot the kernel via Amlogic USB Boot using [pyamlboot](https://github.com/superna9999/pyamlboot).
 
 ![img](Images/Debug/Mainline-Linux-Output.png)
+
+
+
+To support the Rokid Mini RP105 with the IS31FL3236A, modifications to the existing **leds-is31fl32xx** driver are required, see:
+
+https://github.com/yjun123/linux/commits/feat_is31fl32xx_enhanced/
+
+To support the Rokid Mini RP105 device with the IS31FL3193, modifications to the existing **leds-is31fl319x** driver are required, see:
+
+https://github.com/yjun123/linux/commits/fix_is31fl319x
+
+To support the Rokid Mini RP105 device with the CAP1114, modifications to the existing **cap11xx** driver are required, see:
+
+https://github.com/yjun123/linux/commits/add_cap1114_support
 
 
 
