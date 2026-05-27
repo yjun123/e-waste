@@ -2,7 +2,7 @@
 
 An entry-level desktop smart speaker launched by Rokid, featuring a 4-microphone array and a
 
-circular RGB LED ring and a ring-shaped touch area.
+circular RGB LED ring and a ring-shaped touch keys.
 
 ![RP105](./Images/Exterior/RP105.jpg)
 
@@ -36,7 +36,7 @@ The schematic diagram is currently unavailable.
 | LED Driver 1      | ISSI [IS31FL3236A](https://assets.sourcengine.com/datasheets/aa297992-b93d-4ac6-847c-3ccfa56f72ec.pdf)/QFN-44/36 channels |
 | LED Driver 2      | ISSI [IS31FL3193](https://item.szlcsc.com/datasheet/IS31FL3193-DLS2-TR/2745272.html)/DFN-10/3 channels |
 | LED               | 12-channel circular RGB LED ring driven by *IS31FL3236A*, central RGB LED driven by *IS31FL3193* |
-| Touch area        | 8 capacitive touch areas connected to *CAP1114*              |
+| Touch keys        | 9 capacitive touch keys connected to *CAP1114*               |
 | Microphone        | 4-microphone array                                           |
 | Speaker           | Single 27 mm full-range speaker, 4 Ω impedance,driven by *PT5305N* |
 
@@ -63,7 +63,7 @@ https://linux-meson.com/hardware.html
 >  - A113D
 >  - A113X: similar to A113D, without PCIe and MIPI DSI Output
 
-The A113X datasheet is available on this [Amlogic A113X datasheet](https://dl.21ic.com/download/a113x-361997.html)
+The A113X datasheet is available on this [Amlogic A113X datasheet](https://dl.21ic.com/download/a113x-361997.html).
 
 
 
@@ -91,6 +91,14 @@ Level: 3.3V
 | IS31FL3193  | 13   | <span style="color: red;">OUT1</span>, <span style="color: green;">OUT2</span>, <span style="color: blue;">OUT3</span> |
 
 The SDB pins of IS31FL3236A and IS31FL3193 are controlled by the same GPIO - *GPIOAO_3*.
+
+
+
+## Touch keys
+
+Connection of touch keys to CAP1114 pins
+
+<img src="Images/Touch/touch-keys-connection.jpg" style="zoom: 25%;" />
 
 
 
