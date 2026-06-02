@@ -70,13 +70,15 @@ connect to USB 2.0 port instead of the USB OTG port :).
 
 ## Mainline Linux
 
-It is currently in the process of being mainlined. 
+~~It is currently in the process of being mainlined.~~
 
-https://lore.kernel.org/linux-sunxi/20260226084850.417731-1-jerrysteve1101@gmail.com/T/
+~~https://lore.kernel.org/linux-sunxi/20260226084850.417731-1-jerrysteve1101@gmail.com/T/~~
+
+The corresponding devicetree is included in Linux v7.1.
 
 ### Device Tree
 
-[sun50i-h6-taiqicat-a01.dts](./dts/sun50i-h6-taiqicat-a01.dts)
+https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/allwinner/sun50i-h6-taiqicat-a01.dts
 
 ### Patches
 
