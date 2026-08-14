@@ -1,0 +1,26 @@
+Disk /dev/block/mmcblk2: 15147008 sectors, 7.2 GiB
+Logical sector size: 512 bytes
+Disk identifier (GUID): DD400000-0000-466F-8000-334D0000497B
+Partition table holds up to 128 entries
+First usable sector is 34, last usable sector is 15146974
+Partitions will be aligned on 1024-sector boundaries
+Total free space is 16350 sectors (8.0 MiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1           16384           24575   4.0 MiB     FFFF  uboot
+   2           24576           32767   4.0 MiB     FFFF  trust
+   3           32768           40959   4.0 MiB     FFFF  misc
+   4           40960           49151   4.0 MiB     FFFF  dtb
+   5           49152           57343   4.0 MiB     FFFF  dtbo
+   6           57344           59391   1024.0 KiB  FFFF  vbmeta
+   7           59392          124927   32.0 MiB    FFFF  boot
+   8          124928          321535   96.0 MiB    FFFF  recovery
+   9          321536          550911   112.0 MiB   FFFF  backup
+  10          550912          559103   4.0 MiB     FFFF  security
+  11          559104         1345535   384.0 MiB   FFFF  cache
+  12         1345536         6670335   2.5 GiB     FFFF  system
+  13         6670336         6703103   16.0 MiB    FFFF  metadata
+  14         6703104         7489535   384.0 MiB   FFFF  vendor
+  15         7489536         7751679   128.0 MiB   FFFF  oem
+  16         7751680         7752703   512.0 KiB   FFFF  frp
+  17         7752704        15146974   3.5 GiB     FFFF  userdata

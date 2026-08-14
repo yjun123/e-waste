@@ -26,6 +26,7 @@
 ## Smart Speaker
 
 - 若琪 繁星 Rokid Mini RP105
+- 任你说 Sayinfo RNS-008
 
 ## Advertising Machine
 
