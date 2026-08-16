@@ -19,7 +19,7 @@ The RNS-008 is a smart speaker with a display screen manufactured by Hangzhou Sa
 | eMMC                    | 8GB eMMC 5.1 Foresee [NCEMAD9D-08G](https://pese.oss-cn-shenzhen.aliyuncs.com/pdfs/2008141506_FORESEE-NCEMAD9D-08G_C520993.pdf)/HS400 |
 | Camera                  | GalaxyCore [GC5025](https://www.gophotonics.com/products/cmos-image-sensors/galaxycore-microelectronics/21-117-gc5025)/5MP/30fps |
 | WiFi/BT                 | Realtek [RTL8723BS](https://www.realtek.com/Product/Index?id=610&cate_id=194) / 802.11 b/g/n 1T1R/BT 4.0 |
-| Display                 | Sitronix [ST7703](https://files.pine64.org/doc/datasheet/pinephone/ST7703_DS_v01_20160128.pdf)/MIPI-DSI/6.89inch/1024x600/170x179dpi |
+| Display                 | Sitronix [ST7703](https://files.pine64.org/doc/datasheet/pinephone/ST7703_DS_v01_20160128.pdf)/MIPI-DSI/153x85mm(6.89inch)/1024x600px/170x179dpi |
 | Touch Screen            | Silead [GSL1680](https://www.gigadevice.com.cn/product/sensor/capacitive-touch-controllers/gsl1680)/16TX×10RX/10‑point touch/up to 7‑inch |
 | Audio Amplifier         | X‑Audio [XA952](http://www.xptek.cn/uploadfile/download/201707211827314120.pdf)/Class‑G stereo |
 | Battery Charger         | TI [BQ24133](https://www.ti.com/product/BQ24133)/1~3-cell/max 2.5A |
@@ -43,19 +43,35 @@ See [images](./images) for device disassembly details.
 
 
 
-## Debug TTL
+## Debug Uart
+
+Baud rate: **1 500 000 baud**, 8N1
+
+<img src="images/debug/debug_uart.jpg" alt="Debug Uart" style="zoom: 25%;" />
 
 
 
 ## Maskrom Mode
 
+Connect to UART serial console, press Ctrl+C to abort boot on startup.
+
+Run `rockusb 0 mmc 0` to switch into Loader mode.
+
+Run `rbrom` to enter Maskrom mode.
+
 
 
 ## Mainline Linux
 
+Test and run Linux kernel 7.2.0.
+
+<img src="images/debug/mainline_linux.jpg" alt="image-20260816181003253"  />
+
 ### Device Tree
 
-Device tree extracted from Android vendor firmware, see [Sayinfo-RNS-008-rk3326_m2g_dump.dts](backup/dtb/Sayinfo-RNS-008-rk3326_m2g_dump.dts)
+Device tree extracted from Android vendor firmware, see [Sayinfo-RNS-008-rk3326_m2g_dump.dts](backup/dtb/Sayinfo-RNS-008-rk3326_m2g_dump.dts).
+
+Mainline device‑tree rewritten based on the Android device tree, see [rk3326-rns-008.dts](https://github.com/yjun123/linux/blob/add_rns_008_rk3326/arch/arm64/boot/dts/rockchip/rk3326-rns-008.dts).
 
 ### Drivers
 
