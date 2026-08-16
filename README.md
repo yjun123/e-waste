@@ -1,3 +1,5 @@
+
+
 # Electronic Waste Collection
 
 ## OTT Box
@@ -5,7 +7,7 @@
 - 数码视讯 Q5
 - 泰奇猫 TQC-A01
 - 外贸电视盒子 A5X-Max
-- FMX1 电视盒子
+- FMX1 PRO-V10 电视盒子
 
 ## NAS
 
@@ -39,4 +41,3 @@
 ## HTPC
 
 - 锐角云 Acute Angle Cloud
-
