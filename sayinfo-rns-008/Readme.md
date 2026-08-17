@@ -2,6 +2,8 @@
 
 The RNS-008 is a smart speaker with a display screen manufactured by Hangzhou Sayinfo Intelligent Technology Co., Ltd. (Sayinfo), featuring an interactive screen interface and voice assistant capabilities.
 
+ODM/OEM: [RK3326智能语音音箱](http://www.szbnd.cn/product_xq.php?id=228).
+
 ![Overview](images/outside/external-overview.jpg)
 
 
@@ -61,11 +63,21 @@ Run `rbrom` to enter Maskrom mode.
 
 
 
+Loader mode can also be entered via the reserved key.
+
+Hold the Loader Mode key, short‑press Reset, and continue holding for 2 seconds.
+
+<img src="images/debug/reset_loader_mode_keys.jpg" style="zoom: 33%;" />
+
+
+
 ## Mainline Linux
 
 Test and run Linux kernel 7.2.0.
 
 <img src="images/debug/mainline_linux.jpg" alt="image-20260816181003253"  />
+
+
 
 ### Device Tree
 
@@ -81,6 +93,22 @@ Mainline device‑tree rewritten based on the Android device tree, see [rk3326-r
 | RTL8723BS | `r8723bs` (staging)     | Mainlined     | `drivers/staging/rtl8723bs/`                    | WiFi SDIO 部分已入主线 (staging); 蓝牙由 `drivers/bluetooth/btrtl.c` 提供 HCI 支持 |
 | ST7703    | `panel-sitronix-st7703` | Mainlined     | `drivers/gpu/drm/panel/panel-sitronix-st7703.c` | 已支持多款 720x1440 面板, 但本机 1024x600/6.89" 变体需新增 compatible + init sequence |
 | GSL1680   | `silead_ts`             | Mainlined     | `drivers/input/touchscreen/silead.c`            | 支持 `silead,gsl1680` 兼容串; 注意需 `firmware-name` 固件文件 (未随 linux-firmware 分发) |
+
+
+
+## Notes
+
+1. SDMMC (SD‑Card) and UART2 (debug UART) share the same physical pins, which results in a pin conflict.
+
+   >[   1.239482] rockchip-pinctrl pinctrl: pin gpio1-26 already requested by ff160000.serial; cannot claim for ff370000.mmc 
+   >[   1.240476] rockchip-pinctrl pinctrl: error -EINVAL: pin-58 (ff370000.mmc) 
+   >[   1.241716] rockchip-pinctrl pinctrl: error -EINVAL: could not request pin 58 (gpio1-26) from group sdmmc-bus4 on device rockchip-pinctrl
+
+​		![sdmmc_uart2_conflict](images/debug/sdmmc_uart2_conflict.png)
+
+​	This design enables the SD‑card slot to be repurposed as a debug UART, removing the need for wiring modifications or device disassembly.
+
+​	This introduces a constraint under U‑Boot: when the debug UART is enabled, the SD card cannot be detected. After the kernel loads and boots, the debug UART must be disabled whenever the SD card is to be used.
 
 
 
