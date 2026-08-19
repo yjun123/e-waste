@@ -96,6 +96,15 @@ Mainline device‑tree rewritten based on the Android device tree, see [rk3326-r
 
 
 
+### Firmware
+
+| Chip      | Firmware                                                     |
+| --------- | ------------------------------------------------------------ |
+| GSL1680   | [gsl1680.fw](./firmware/silead/gsl1680.fw)                   |
+| RTL8723BS | see [linux-firmware/rtl_bt](https://gitlab.com/kernel-firmware/linux-firmware/-/tree/main/rtl_bt) [linux-firmware/rtlwifi](https://gitlab.com/kernel-firmware/linux-firmware/-/tree/main/rtlwifi) |
+
+
+
 ## Notes
 
 1. SDMMC (SD‑Card) and UART2 (debug UART) share the same physical pins, which results in a pin conflict.
