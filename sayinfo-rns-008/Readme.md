@@ -23,7 +23,7 @@ ODM/OEM: [RK3326智能语音音箱](http://www.szbnd.cn/product_xq.php?id=228).
 | WiFi/BT                 | Realtek [RTL8723BS](https://www.realtek.com/Product/Index?id=610&cate_id=194) / 802.11 b/g/n 1T1R/BT 4.0 |
 | Display                 | Sitronix [ST7703](https://files.pine64.org/doc/datasheet/pinephone/ST7703_DS_v01_20160128.pdf)/MIPI-DSI/153x85mm(6.89inch)/1024x600px/170x179dpi |
 | Touch Screen            | Silead [GSL1680](https://www.gigadevice.com.cn/product/sensor/capacitive-touch-controllers/gsl1680)/16TX×10RX/10‑point touch/up to 7‑inch |
-| Audio Amplifier         | X‑Audio [XA952](http://www.xptek.cn/uploadfile/download/201707211827314120.pdf)/Class‑G stereo |
+| Audio Amplifier         | X‑Audio [XA9521](http://www.xptek.cn/uploadfile/download/201707211827314120.pdf)/Class‑G stereo |
 | Battery Charger         | TI [BQ24133](https://www.ti.com/product/BQ24133)/1~3-cell/max 2.5A |
 | Size                    | 183 * 80 * 178mm                                             |
 
