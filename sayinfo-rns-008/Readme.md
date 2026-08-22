@@ -69,9 +69,15 @@ Baud rate: **1 500 000 baud**, 8N1
 
 
 
-- Loader mode can also be entered via the reserved key.Hold the Loader Mode key, short‑press Reset, and continue holding for 2 seconds.
+- Loader mode can also be entered via the reserved key.Hold the Loader Mode key, short‑press Reset, and continue holding for 2 seconds.
 
   <img src="images/debug/reset_loader_mode_keys.jpg" style="zoom: 33%;" />
+
+
+
+## Mic Board Interface
+
+see [Mic Board FPC Interface Pin Definition](./hardware/Mic_board_FPC_interface_pin_definition.xlsx)
 
 
 
