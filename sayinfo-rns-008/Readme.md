@@ -55,19 +55,23 @@ Baud rate: **1 500 000 baud**, 8N1
 
 ## Maskrom Mode
 
-Connect to UART serial console, press Ctrl+C to abort boot on startup.
+- Connect to UART serial console, press Ctrl+C to abort boot on startup.
 
-Run `rockusb 0 mmc 0` to switch into Loader mode.
+​		Run `rockusb 0 mmc 0` to switch into Loader mode.
 
-Run `rbrom` to enter Maskrom mode.
+​		~~Run `rbrom` to enter Maskrom mode.~~ Don't work!!!
 
 
 
-Loader mode can also be entered via the reserved key.
+- Short this capacitor, then plug in power to enter MaskROM mode.
 
-Hold the Loader Mode key, short‑press Reset, and continue holding for 2 seconds.
+  <img src="./images/debug/maskrom_shorting_point.jpg" style="zoom: 25%;" />
 
-<img src="images/debug/reset_loader_mode_keys.jpg" style="zoom: 33%;" />
+
+
+- Loader mode can also be entered via the reserved key.Hold the Loader Mode key, short‑press Reset, and continue holding for 2 seconds.
+
+  <img src="images/debug/reset_loader_mode_keys.jpg" style="zoom: 33%;" />
 
 
 
