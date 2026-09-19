@@ -1,0 +1,105 @@
+DDR Version 1.11 20190328
+LPDDR3
+333MHz
+BW=32 Col=10 Bk=8 CS0 Row=14 CS1 Row=14 CS=2 Die BW=32 Size=1024MB
+OUT
+Boot1 Release Time: Jun 24 2019 11:20:00, version: slc: 1.17
+chip_id:524b3326_0,0
+ChipType = 0x12, 487
+mmc2:cmd19,100
+SdmmcInit=2 0
+BootCapSize=2000
+UserCapSize=7396MB
+FwPartOffset=2000 , 2000
+SdmmcInit=0 NOT PRESENT
+StorageInit ok = 8838
+SecureMode = 0
+Secure read PBA: 0x4
+Secure read PBA: 0x404
+Secure read PBA: 0x804
+Secure read PBA: 0xc04
+Secure read PBA: 0x1004
+SecureInit ret = 0, SecureMode = 0
+atags_set_bootdev: ret:(0)
+GPT part:  0, name:            uboot, start:0x4000, size:0x2000
+GPT part:  1, name:            trust, start:0x6000, size:0x2000
+GPT part:  2, name:             misc, start:0x8000, size:0x2000
+GPT part:  3, name:             boot, start:0xa000, size:0x10000
+GPT part:  4, name:           system, start:0x1a000, size:0x20000
+GPT part:  5, name:           rootfs, start:0x3a000, size:0xe37fdf
+find part:uboot OK. first_lba:0x4000.
+find part:trust OK. first_lba:0x6000.
+LoadTrust Addr:0x6000
+No find bl30.bin
+Load uboot, ReadLba = 4000
+Load OK, addr=0x200000, size=0xd8dfc
+RunBL31 0x10000
+NOTICE:  BL31: v1.3(debug):6e39e59
+NOTICE:  BL31: Built : 10:01:40, Mar 26 2019
+NOTICE:  BL31:Rockchip release version: v1.0
+INFO:    ARM GICv2 driver initialized
+INFO:    Using opteed sec cpu_context!
+INFO:    boot cpu mask: 1
+INFO:    plat_rockchip_pmu_init: pd status f00e
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: Initializing BL32
+I/TC: console use rk_atags param! console_data.base.pa=0xff160000
+I/TC: 
+I/TC: Start rockchip platform init
+I/TC: Rockchip release version: 1.1
+I/TC: OP-TEE version: 3.3.0-146-g369430b2 #12 Wed Dec  5 07:40:03 UTC 2018 aarch64
+I/TC: Initialized
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x200000
+INFO:    SPSR = 0x3c9
+
+
+U-Boot 2017.09 (Oct 23 2019 - 21:03:18 +0800)
+
+Model: Rockchip RK3326 EVB
+PreSerial: 2
+DRAM:  992 MiB
+Sysmem: init
+Relocation Offset is: 3dbe2000
+Using default environment
+
+dwmmc@ff370000: 1, dwmmc@ff390000: 0
+Bootdev(atags): mmc 0
+PartType: EFI
+boot mode: None
+Load FDT from boot part
+DTB: rk-kernel.dtb
+android_get_dtbo: failed to get dtbo part info, ret=-1
+I2c speed: 100000Hz
+PMIC:  RK8090 (on=0x69, off=0x00)
+vdd_logic 1100000 uV
+vdd_arm 1100000 uV
+Model: Rockchip rk3326 S863 7 avb board
+Enable charge animation display
+Exit charge: due to not enable uboot charge
+Rockchip UBOOT DRM driver version: v1.0.1
+Using display timing dts
+Detailed mode clock 80000 kHz, flags[a]
+    H: 1024 1184 1194 1354
+    V: 0600 0612 0613 0636
+bus_format: 100e
+final DSI-Link bandwidth: 498 Mbps x 4
+CLK: (sync kernel. arm: enter 600000 KHz, init 600000 KHz, kernel 600000 KHz)
+  apll 600000 KHz
+  dpll 664000 KHz
+  cpll 640000 KHz
+  npll 1188000 KHz
+  gpll 1200000 KHz
+  aclk_bus 200000 KHz
+  hclk_bus 150000 KHz
+  pclk_bus 100000 KHz
+  aclk_peri 200000 KHz
+  hclk_peri 150000 KHz
+  pclk_pmu 100000 KHz
+Net:   Net Initialization Skipped
+No ethernet found.
+Hit key to stop autoboot('CTRL+C'):  0 
+Retrieving file: /extlinux/extlinux.conf
+306 bytes read in 8 ms (37.1 KiB/s)
+1:	linux
+Retrieving file: /Image

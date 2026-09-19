@@ -112,7 +112,7 @@ Mainline device‑tree rewritten based on the Android device tree, see [rk3326-r
 | --------------- | ------------------------------------------------------------ |
 | MIPI-DSI Screen | Worked.                                                      |
 | Touch Screen    | Worked. need extra firmware, see [Firmware](###Firmware).    |
-| WiFi            | Partial. Can detect Wi‑Fi but fails to connect. need extra firmware, see [Firmware](###Firmware). |
+| WiFi            | Worked. need extra firmware, see [Firmware](###Firmware).    |
 | BT              | Worked. need extra firmware, see [Firmware](###Firmware).    |
 | Speaker         | Worked.                                                      |
 | Headphone       | Worked.                                                      |
@@ -121,6 +121,10 @@ Mainline device‑tree rewritten based on the Android device tree, see [rk3326-r
 | Keys            | Worked.                                                      |
 | MicroSD         | Worked. Need to disable the debug serial port, see [Notes](##Notes). |
 | USB             | Worked.                                                      |
+
+
+
+## Mainline U-Boot
 
 
 
