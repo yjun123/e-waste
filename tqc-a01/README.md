@@ -90,6 +90,8 @@ HDMI audio : https://github.com/armbian/build/tree/main/patch/kernel/archive/sun
 
 ## Firmware
 
+Add symlink config for brcmfmac43430-sdio.ultrapower,taiqicat-a01.txt: [WHENCE: add missing symlink for TaiqiCat (TQC) A01](https://gitlab.com/kernel-firmware/linux-firmware/-/merge_requests/1240/commits)
+
 ### WiFi
 
   > brcmfmac43430-sdio.bin

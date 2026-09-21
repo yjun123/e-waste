@@ -1,5 +1,7 @@
 # Sunniwell Z96A
 
+English · [简体中文](README.zh-CN.md)
+
 The [Sunniwell](https://www.sunniwell.com/) Z96A is an RK3568‑based ARM cloud laptop pre‑loaded with Android 11 for cloud desktop VDI usage.
 
 The Z96A ships in two hardware revisions that differ in power input:
@@ -7,7 +9,11 @@ The Z96A ships in two hardware revisions that differ in power input:
 - **Early revision (2022?)** — charges via a DC barrel jack.
 - **Later revision (2023)** — charges via Type‑C PD; the firmware identifies this board as *Z97A* in some places, although the shell label still reads *Z96A*.
 
-A further **Z96H** variant (also Type‑C PD charging) exists but never saw wide circulation on the second-hand market.
+A further *Z96H* variant (also Type‑C PD charging) exists but never saw wide circulation on the second-hand market.
+
+
+
+![Z96A](./images/laptop.jpg)
 
 
 

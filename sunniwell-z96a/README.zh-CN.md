@@ -1,6 +1,6 @@
 # Sunniwell Z96A
 
-[English](Readme.md) · 简体中文
+[English](README.md) · 简体中文
 
 [Sunniwell](https://www.sunniwell.com/) Z96A 是一款基于 RK3568 的 ARM 云笔电，预装 Android 11，用于云桌面 VDI 场景。
 
@@ -9,7 +9,11 @@ Z96A 有两个硬件版本，区别在于供电输入方式：
 - **早期版本（2022？）** — 通过 DC 圆口充电。
 - **后期版本（2023）** — 通过 Type‑C PD 充电；固件在部分地方将此主板识别为 *Z97A*，但外壳标签仍为 *Z96A*。
 
-此外还有 **Z96H** 变体（同样为 Type‑C PD 充电），但未在二手市场上广泛流通。
+此外还有 *Z96H* 变体（同样为 Type‑C PD 充电），但未在二手市场上广泛流通。
+
+
+
+![Z96A](./images/laptop.jpg)
 
 
 
