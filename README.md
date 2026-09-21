@@ -41,3 +41,7 @@
 ## HTPC
 
 - 锐角云 Acute Angle Cloud
+
+## Laptop
+
+- 朝歌 Z96A 云笔记本电脑 Sunniwell Z96A Cloud Laptop

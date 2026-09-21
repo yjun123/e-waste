@@ -1,0 +1,1797 @@
+DDR Version V1.13 20220218
+In
+ddrconfig:7
+LPDDR4X, 324MHz
+BW=32 Col=10 Bk=8 CS0 Row=16 CS1 Row=16 CS=2 Die BW=16 Size=4096MB
+tdqss: cs0 dqs0: 48ps, dqs1: -72ps, dqs2: -48ps, dqs3: -144ps, 
+tdqss: cs1 dqs0: 48ps, dqs1: -72ps, dqs2: -48ps, dqs3: -144ps, 
+
+change to: 324MHz
+PHY drv:clk:36,ca:36,DQ:29,odt:0
+vrefinner:24%, vrefout:41%
+dram drv:40,odt:0
+clk skew:0x61
+
+change to: 528MHz
+PHY drv:clk:36,ca:36,DQ:29,odt:0
+vrefinner:24%, vrefout:41%
+dram drv:40,odt:0
+clk skew:0x58
+
+change to: 780MHz
+PHY drv:clk:36,ca:36,DQ:29,odt:0
+vrefinner:24%, vrefout:41%
+dram drv:40,odt:0
+clk skew:0x58
+
+change to: 1184MHz(final freq)
+PHY drv:clk:36,ca:36,DQ:29,odt:60
+vrefinner:16%, vrefout:22%
+dram drv:40,odt:80
+vref_ca:00000071
+clk skew:0x3b
+cs 0:
+the read training result:
+DQS0:0x36, DQS1:0x34, DQS2:0x38, DQS3:0x34, 
+min  : 0xb  0xb  0xe  0xc  0x2  0x4  0x6  0x4 , 0x8  0x7  0x2  0x2  0xc  0x9  0xc  0x7 ,
+       0xc  0xe  0xb  0x9  0x2  0x1  0x2  0x4 , 0xa  0x7  0x5  0x2  0xd  0xb  0xb  0xc ,
+mid  :0x26 0x28 0x29 0x26 0x1d 0x21 0x22 0x1f ,0x23 0x22 0x1d 0x1d 0x26 0x24 0x26 0x22 ,
+      0x29 0x29 0x25 0x25 0x1d 0x1c 0x1e 0x20 ,0x26 0x23 0x21 0x1e 0x29 0x28 0x27 0x28 ,
+max  :0x42 0x45 0x45 0x40 0x38 0x3e 0x3e 0x3b ,0x3e 0x3d 0x38 0x38 0x41 0x3f 0x41 0x3e ,
+      0x46 0x44 0x3f 0x42 0x39 0x38 0x3a 0x3d ,0x42 0x3f 0x3e 0x3a 0x45 0x45 0x43 0x44 ,
+range:0x37 0x3a 0x37 0x34 0x36 0x3a 0x38 0x37 ,0x36 0x36 0x36 0x36 0x35 0x36 0x35 0x37 ,
+      0x3a 0x36 0x34 0x39 0x37 0x37 0x38 0x39 ,0x38 0x38 0x39 0x38 0x38 0x3a 0x38 0x38 ,
+the write training result:
+DQS0:0x42, DQS1:0x31, DQS2:0x34, DQS3:0x26, 
+min  :0x66 0x69 0x6a 0x69 0x5b 0x5e 0x62 0x63 0x63 ,0x56 0x56 0x51 0x50 0x59 0x58 0x57 0x58 0x54 ,
+      0x5a 0x5a 0x57 0x57 0x4f 0x4d 0x4e 0x52 0x54 ,0x4b 0x4b 0x4a 0x46 0x4f 0x4f 0x4d 0x50 0x49 ,
+mid  :0x82 0x85 0x86 0x84 0x77 0x7a 0x7e 0x7e 0x7e ,0x71 0x71 0x6b 0x6b 0x74 0x73 0x73 0x72 0x6f ,
+      0x77 0x76 0x73 0x73 0x6b 0x68 0x6a 0x6e 0x70 ,0x67 0x66 0x65 0x61 0x6b 0x6b 0x68 0x6b 0x65 ,
+max  :0x9f 0xa2 0xa3 0xa0 0x94 0x97 0x9a 0x9a 0x99 ,0x8c 0x8c 0x86 0x87 0x90 0x8f 0x8f 0x8d 0x8b ,
+      0x94 0x93 0x90 0x90 0x87 0x84 0x87 0x8b 0x8d ,0x84 0x82 0x81 0x7c 0x87 0x87 0x84 0x87 0x82 ,
+range:0x39 0x39 0x39 0x37 0x39 0x39 0x38 0x37 0x36 ,0x36 0x36 0x35 0x37 0x37 0x37 0x38 0x35 0x37 ,
+      0x3a 0x39 0x39 0x39 0x38 0x37 0x39 0x39 0x39 ,0x39 0x37 0x37 0x36 0x38 0x38 0x37 0x37 0x39 ,
+cs 1:
+the read training result:
+DQS0:0x38, DQS1:0x36, DQS2:0x38, DQS3:0x34, 
+min  : 0xa  0xa  0xd  0xc  0x0  0x4  0x7  0x4 , 0x8  0x7  0x2  0x3  0xb  0x9  0xc  0x8 ,
+       0xd  0xe  0xc  0x9  0x2  0x1  0x2  0x4 , 0xb  0x8  0x6  0x2  0xd  0xc  0xc  0xe ,
+mid  :0x26 0x27 0x29 0x27 0x1d 0x21 0x23 0x20 ,0x24 0x23 0x1e 0x1f 0x27 0x26 0x28 0x24 ,
+      0x29 0x29 0x27 0x25 0x1e 0x1d 0x1e 0x21 ,0x27 0x23 0x22 0x1e 0x29 0x29 0x27 0x29 ,
+max  :0x43 0x45 0x46 0x43 0x3a 0x3f 0x3f 0x3d ,0x41 0x3f 0x3a 0x3b 0x43 0x43 0x44 0x41 ,
+      0x46 0x44 0x42 0x42 0x3a 0x39 0x3b 0x3e ,0x43 0x3f 0x3e 0x3a 0x46 0x46 0x43 0x44 ,
+range:0x39 0x3b 0x39 0x37 0x3a 0x3b 0x38 0x39 ,0x39 0x38 0x38 0x38 0x38 0x3a 0x38 0x39 ,
+      0x39 0x36 0x36 0x39 0x38 0x38 0x39 0x3a ,0x38 0x37 0x38 0x38 0x39 0x3a 0x37 0x36 ,
+the write training result:
+DQS0:0x42, DQS1:0x31, DQS2:0x34, DQS3:0x26, 
+min  :0x65 0x69 0x69 0x67 0x5a 0x5d 0x60 0x61 0x61 ,0x56 0x56 0x52 0x50 0x59 0x59 0x58 0x58 0x54 ,
+      0x5a 0x5a 0x58 0x58 0x4f 0x4e 0x4e 0x53 0x56 ,0x4b 0x4b 0x49 0x46 0x4f 0x4f 0x4c 0x50 0x4a ,
+mid  :0x82 0x85 0x86 0x83 0x77 0x7a 0x7c 0x7d 0x7d ,0x71 0x71 0x6c 0x6c 0x74 0x74 0x73 0x72 0x70 ,
+      0x77 0x77 0x74 0x74 0x6b 0x69 0x6a 0x6f 0x72 ,0x67 0x66 0x65 0x61 0x6b 0x6b 0x68 0x6b 0x66 ,
+max  :0x9f 0xa1 0xa3 0x9f 0x94 0x97 0x99 0x9a 0x99 ,0x8d 0x8c 0x87 0x88 0x90 0x8f 0x8e 0x8d 0x8c ,
+      0x94 0x94 0x90 0x90 0x87 0x85 0x87 0x8b 0x8e ,0x84 0x82 0x81 0x7c 0x87 0x87 0x84 0x87 0x82 ,
+range:0x3a 0x38 0x3a 0x38 0x3a 0x3a 0x39 0x39 0x38 ,0x37 0x36 0x35 0x38 0x37 0x36 0x36 0x35 0x38 ,
+      0x3a 0x3a 0x38 0x38 0x38 0x37 0x39 0x38 0x38 ,0x39 0x37 0x38 0x36 0x38 0x38 0x38 0x37 0x38 ,
+CA Training result:
+cs:0 min  :0x47 0x40 0x40 0x36 0x40 0x31 0x40 ,0x44 0x3c 0x3e 0x33 0x3b 0x32 0x42 ,
+cs:0 mid  :0x82 0x83 0x7b 0x79 0x7b 0x74 0x6f ,0x80 0x7f 0x79 0x76 0x76 0x76 0x70 ,
+cs:0 max  :0xbe 0xc6 0xb7 0xbc 0xb6 0xb8 0x9f ,0xbc 0xc2 0xb4 0xba 0xb2 0xba 0x9e ,
+cs:0 range:0x77 0x86 0x77 0x86 0x76 0x87 0x5f ,0x78 0x86 0x76 0x87 0x77 0x88 0x5c ,
+cs:1 min  :0x43 0x43 0x3b 0x37 0x3c 0x33 0x40 ,0x43 0x3e 0x3b 0x36 0x39 0x32 0x40 ,
+cs:1 mid  :0x82 0x82 0x7a 0x77 0x7a 0x74 0x71 ,0x81 0x7e 0x7a 0x76 0x76 0x74 0x6f ,
+cs:1 max  :0xc1 0xc2 0xb9 0xb8 0xb8 0xb5 0xa3 ,0xbf 0xbf 0xb9 0xb6 0xb4 0xb6 0x9f ,
+cs:1 range:0x7e 0x7f 0x7e 0x81 0x7c 0x82 0x63 ,0x7c 0x81 0x7e 0x80 0x7b 0x84 0x5f ,
+out
+U-Boot SPL board init
+U-Boot SPL 2017.09-gaaca6ffec1-211203 #zzz (Dec 03 2021 - 18:42:16)
+unknown raw ID phN
+unrecognized JEDEC id bytes: 00, 00, 00
+Trying to boot from MMC2
+MMC error: The cmd index is 1, ret is -110
+Card did not respond to voltage select!
+mmc_init: -95, time 10
+spl: mmc init failed with error: -95
+Trying to boot from MMC1
+SPL: A/B-slot: _a, successful: 0, tries-remain: 7
+Trying fit image at 0x4000 sector
+## Verified-boot: 0
+## Checking atf-1 0x00040000 ... sha256(b5946ac63d...) + OK
+## Checking uboot 0x00a00000 ... sha256(cc3ebbded9...) + OK
+## Checking fdt 0x00b30370 ... sha256(fcfda359c0...) + OK
+## Checking atf-2 0xfdcc1000 ... sha256(b8dca786b4...) + OK
+## Checking atf-3 0x0006b000 ... sha256(2f91089eb7...) + OK
+## Checking atf-4 0xfdcd0000 ... sha256(0b2b146c60...) + OK
+## Checking atf-5 0xfdcce000 ... sha256(86ef885748...) + OK
+## Checking atf-6 0x00069000 ... sha256(a9a1e63bef...) + OK
+## Checking optee 0x08400000 ... sha256(66bbd17352...) + OK
+Jumping to U-Boot(0x00a00000) via ARM Trusted Firmware(0x00040000)
+Total: 238.860 ms
+
+INFO:    Preloader serial: 2
+NOTICE:  BL31: v2.3():v2.3-645-g8cea6ab0b:cl, fwver: v1.44
+NOTICE:  BL31: Built : 16:36:43, Sep 19 2023
+INFO:    GICv3 without legacy support detected.
+INFO:    ARM GICv3 driver initialized in EL3
+INFO:    pmu v1 is valid 220114
+INFO:    l3 cache partition cfg-0
+INFO:    dfs DDR fsp_param[0].freq_mhz= 1184MHz
+INFO:    dfs DDR fsp_param[1].freq_mhz= 324MHz
+INFO:    dfs DDR fsp_param[2].freq_mhz= 528MHz
+INFO:    dfs DDR fsp_param[3].freq_mhz= 780MHz
+INFO:    Using opteed sec cpu_context!
+INFO:    boot cpu mask: 0
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: Initializing BL32
+I/TC: 
+I/TC: OP-TEE version: 3.13.0-641-g4167319d3 #hisping.lin (gcc version 10.2.1 20201103 (GNU Toolchain for the A-profile Architecture 10.2-2020.11 (arm-10.16))) #8 Wed Mar 16 15:14:56 CST 2022 aarch64
+I/TC: Primary CPU initializing
+I/TC: Primary CPU switching to normal world boot
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0xa00000
+INFO:    SPSR = 0x3c9
+
+
+U-Boot 2017.09-gf06e383e-dirty #liuguodong (Mar 04 2025 - 15:40:42 +0800)
+
+Model: Rockchip RK3568 Evaluation Board
+PreSerial: 2, raw, 0xfe660000
+DRAM:  4 GiB
+Sysmem: init
+Relocation Offset: ed348000
+Relocation fdt: eb9f9040 - eb9fecd0
+CR: M/C/I
+Using default environment
+
+dwmmc@fe2b0000: 1, dwmmc@fe2c0000: 2, sdhci@fe310000: 0
+Bootdev(atags): mmc 0
+MMC0: HS200, 200Mhz
+PartType: EFI
+DM: v1
+boot mode: recovery (misc)
+boot mode: None
+Android 11.0, Build 2021.10, v2
+Found DTB in boot part
+DTB: rk-kernel.dtb
+HASH(c): OK
+ANDROID: fdt overlay OK
+I2c0 speed: 100000Hz
+vsel-gpios- not found! Error: -2
+vdd_cpu init 900000 uV
+PMIC:  RK8090 (on=0x40, off=0x00)
+vdd_logic init 900000 uV
+vdd_gpu init 900000 uV
+vdd_npu init 900000 uV
+io-domain: OK
+Model: Sunniwell RK3568 RH218 V01 Board
+enter undefine!
+OCV Value:6600  6840  6922  7000  7064  7122  7162  7190  7218  7250  7292  7364  7448  7532  7618  7714  7812  7918  8030  8158  8362  ocvsize: 21
+battery->design_cap: 5125
+battery->qmax: 5500
+battery->bat_res_up: 140
+battery->bat_res_down: 20
+reg read version:0 dts read version:0
+battery = 984
+rk817_bat_rsoc_init: is_first_power_on = 1, pwroff_min = 0, pwron_voltage = 4192
+rk817_bat_rsoc_init: shutdown_flag = 1
+rk817_bat_first_pwron, rsoc = 0, dsoc = 0, fcc = 5125, nac = 0
+<rk817_bat_calc_linek>. meet=0, diff=0, link=1000, calc: dsoc=0, rsoc=0
+voltage_k = 18, voltage_b = 19
+voltage_sys = 192
+voltage usb: 968
+battery: 968
+current_avg = 0
+current_pwron = 7
+remain_cap = 0
+fcc = 5125
+qmax = 5500
+dsoc = 0
+rsoc = 0
+charge type: 2
+charger->low_temp_off = 0, charger->high_temp_off = 43
+bq25700 charger->channel is 4
+battery_valid: read saradc, ret=0, value = 1023
+has no battery
+battery_valid: read saradc, ret=0, value = 1023
+Enable charge animation display
+bmsg->command = 
+battery_valid: read saradc, ret=0, value = 1023
+has no battery
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+wait power key press down
+power key press down, goto kernel and has no battery
+Rockchip UBOOT DRM driver version: v1.0.1
+VOP have 2 active VP
+vp0 have layer nr:3[1 3 5 ], primary plane: 5
+vp1 have layer nr:3[0 2 4 ], primary plane: 4
+vp2 have layer nr:0[], primary plane: 0
+disp info 2, type:14, id:0
+base2_disp_info couldn't be found, screen_info type[0] or id[0] mismatched
+failed to get display timings from DT
+EDID version: 1.4
+Product ID code: 03f4
+Manufacturer: BOE
+Serial number: 00000000
+Manufactured in week: 19 year: 2018
+Video input definition: digital signal, voltage level 1, composite sync, serration v
+Monitor is non-RGB
+Maximum visible display size: 31 cm x 17 cm
+Power management features: no active off, no suspend, no standby
+Estabilished timings:
+Standard timings:
+	1920x1080 	60 Hz (detailed)
+	1920x1080 	40 Hz (detailed)
+Monitor ID: STARRY
+Monitor ID: NV140FHD-N43
+edp@fe0c0000:  detailed mode clock 140240 kHz, flags[9]
+    H: 1920 1968 2000 2124
+    V: 1080 1083 1089 1100
+bus_format: 1009
+VOP update mode to: 1920x1080p0, type: eDP0 for VP1
+rockchip_vop2_init: Failed to get hdmi0_phy_pll ret=-22
+rockchip_vop2_init: Failed to get hdmi1_phy_pll ret=-22
+VOP VP1 enable Smart0[1280x720->1920x1080@0x0] fmt[1] addr[0xee1a4000]
+get dts sunniwell,rh218, sw_rh218=1
+edp: dts have sunniwell,rh218 property, set TX LV3
+edp: dts have sunniwell,rh218 property, set RX LV3
+Link Training success!
+final link rate = 0x0a, lane count = 0x02
+disp info 0, type:11, id:0
+hdmi@fe0a0000 disconnected
+volume up: read 'keyup-threshold-microvolt' failed, ret=-61
+volume up: read 'keyup-threshold-microvolt' failed, ret=-61
+CLK: (sync kernel. arm: enter 816000 KHz, init 816000 KHz, kernel 0N/A)
+  apll 1416000 KHz
+  dpll 592000 KHz
+  gpll 1188000 KHz
+  cpll 1000000 KHz
+  npll 1200000 KHz
+  vpll 701000 KHz
+  hpll 24000 KHz
+  ppll 200000 KHz
+  armclk 1416000 KHz
+  aclk_bus 150000 KHz
+  pclk_bus 100000 KHz
+  aclk_top_high 500000 KHz
+  aclk_top_low 400000 KHz
+  hclk_top 150000 KHz
+  pclk_top 100000 KHz
+  aclk_perimid 300000 KHz
+  hclk_perimid 150000 KHz
+  pclk_pmu 100000 KHz
+vendor_model=Z96A
+Net:   No ethernet found.
+Hit key to stop autoboot('CTRL+C'):  0 
+ANDROID: reboot reason: "(none)"
+optee api revision: 2.0
+Vboot=0, AVB images, AVB verify
+read_is_device_unlocked() ops returned that device is UNLOCKED
+avb_slot_verify.c:762: ERROR: vbmeta: Error verifying vbmeta image: OK_NOT_SIGNED
+get image from preloaded partition...
+ANDROID: Hash OK
+Could not find "system" partition
+Booting IMAGE kernel at 0x00280000 with fdt at 0x0a100000...
+
+
+Fdt Ramdisk skip relocation
+## Booting Android Image at 0x0027f800 ...
+Kernel: 0x00280000 - 0x0211c010 (31345 KiB)
+ramdisk:    0x0a200000 - 0x0a2c8c37 (804 KiB)
+## Flattened Device Tree blob at 0x0a100000
+   Booting using the fdt blob at 0x0a100000
+   XIP Kernel Image from 0x00280000 to 0x00280000 ... OK
+   kernel loaded at 0x00280000, end = 0x0211c010
+  'reserved-memory' linux,cma: addr=10000000 size=800000
+  'reserved-memory' ramoops@110000: addr=110000 size=f0000
+   Using Device Tree in place at 000000000a100000, end 000000000a1250a0
+vp0, plane_mask:0x2a, primary-id:5, curser-id:-1
+vp1, plane_mask:0x15, primary-id:4, curser-id:-1
+vp2, plane_mask:0x0, primary-id:0, curser-id:-1
+Adding bank: 0x00200000 - 0x08400000 (size: 0x08200000)
+Adding bank: 0x09400000 - 0xf0000000 (size: 0xe6c00000)
+Adding bank: 0x1f0000000 - 0x200000000 (size: 0x10000000)
+Total: 25159.532 ms
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x412fd050]
+[    0.000000] Linux version 4.19.232+-ab78 (jenkins@ssh_ci) (Android (6573524 based on r383902b) clang version 11.0.2 (https://android.googlesource.com/toolchain/llvm-project b397f81060ce6d701042b782172ed13bee898b79), LLD 11.0.2 (/buildbot/tmp/tmpF3FjA8 b397f81060ce6d701042b782172ed13bee898b79)) #3 SMP PREEMPT Tue Jul 29 14:49:38 CST 2025
+[    0.000000] Machine model: Sunniwell RK3568 RH218 V01 Board
+[    0.000000] earlycon: uart8250 at MMIO32 0x00000000fe660000 (options '')
+[    0.000000] bootconsole [uart8250] enabled
+[    0.000000] Reserved memory: created CMA memory pool at 0x0000000010000000, size 8 MiB
+[    0.000000] OF: reserved mem: initialized node linux,cma, compatible id shared-dma-pool
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: Trusted OS migration not required
+[    0.000000] psci: SMC Calling Convention v1.2
+[    0.000000] percpu: Embedded 24 pages/cpu s58840 r8192 d31272 u98304
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: Virtualization Host Extensions
+[    0.000000] CPU features: detected: Speculative Store Bypassing Safe (SSBS)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1027656
+[    0.000000] Kernel command line: storagemedia=emmc androidboot.storagemedia=emmc androidboot.mode=normal  androidboot.dtb_idx=0 androidboot.dtbo_idx=0 console=ttyFIQ0 androidboot.console=ttyFIQ0  androidboot.verifiedbootstate=orange androidboot.serialno=S561-0AAC-00000348 androidboot.model=Z96A console=ttyFIQ0 androidboot.baseband=N/A androidboot.wificountrycode=CN androidboot.veritymode=enforcing androidboot.hardware=rk30board androidboot.console=ttyFIQ0 androidboot.verifiedbootstate=orange firmware_class.path=/vendor/etc/firmware init=/init rootwait ro loop.max_part=7 androidboot.selinux=permissive buildvariant=userdebug earlycon=uart8250,mmio32,0xfe660000 androidboot.boot_devices=fe310000.sdhci,fe330000.nandc
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] software IO TLB: mapped [mem 0xe9f00000-0xedf00000] (64MB)
+[    0.000000] Memory: 3967724K/4175872K available (15934K kernel code, 2098K rwdata, 9240K rodata, 4032K init, 975K bss, 199956K reserved, 8192K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=4.
+[    0.000000] 	Tasks RCU enabled.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
+[    0.000000] GICv3: Distributor has no Range Selector support
+[    0.000000] GICv3: no VLPI support, no direct LPI support
+[    0.000000] ITS [mem 0xfd440000-0xfd45ffff]
+[    0.000000] ITS@0x00000000fd440000: allocated 8192 Devices @210000 (indirect, esz 8, psz 64K, shr 0)
+[    0.000000] ITS@0x00000000fd440000: allocated 32768 Interrupt Collections @220000 (flat, esz 2, psz 64K, shr 0)
+[    0.000000] ITS: using cache flushing for cmd queue
+[    0.000000] GIC: using LPI property table @0x0000000000230000
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x00000000fd460000
+[    0.000000] CPU0: using LPI pending table @0x0000000000240000
+[    0.000000] GIC: using cache flushing for LPI property table
+[    0.000000] random: random: get_random_bytes called from start_kernel+0x22c/0x3d0 with crng_init=0
+[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000004] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.001642] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=80000)
+[    0.002589] pid_max: default: 32768 minimum: 301
+[    0.003093] Security Framework initialized
+[    0.003477] SELinux:  Initializing.
+[    0.003883] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.004512] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.006524] ASID allocator initialised with 32768 entries
+[    0.007121] rcu: Hierarchical SRCU implementation.
+[    0.007962] Platform MSI: interrupt-controller@fd440000 domain created
+[    0.008952] PCI/MSI: /interrupt-controller@fd400000/interrupt-controller@fd440000 domain created
+[    0.010418] smp: Bringing up secondary CPUs ...
+I/TC: Secondary CPU 1 initializing
+I/TC: Secondary CPU 1 switching to normal world boot
+I/TC: Secondary CPU 2 initializing
+I/TC: Secondary CPU 2 switching to normal world boot
+I/TC: Secondary CPU 3 initializing
+I/TC: Secondary CPU 3 switching to normal world boot
+[    0.012030] Detected VIPT I-cache on CPU1
+[    0.012057] GICv3: CPU1: found redistributor 100 region 0:0x00000000fd480000
+[    0.012096] CPU1: using LPI pending table @0x0000000000250000
+[    0.012137] CPU1: Booted secondary processor 0x0000000100 [0x412fd050]
+[    0.013381] Detected VIPT I-cache on CPU2
+[    0.013401] GICv3: CPU2: found redistributor 200 region 0:0x00000000fd4a0000
+[    0.013437] CPU2: using LPI pending table @0x0000000000260000
+[    0.013467] CPU2: Booted secondary processor 0x0000000200 [0x412fd050]
+[    0.014677] Detected VIPT I-cache on CPU3
+[    0.014698] GICv3: CPU3: found redistributor 300 region 0:0x00000000fd4c0000
+[    0.014734] CPU3: using LPI pending table @0x0000000000270000
+[    0.014762] CPU3: Booted secondary processor 0x0000000300 [0x412fd050]
+[    0.014855] smp: Brought up 1 node, 4 CPUs
+[    0.021672] SMP: Total of 4 processors activated.
+[    0.022107] CPU features: detected: GIC system register CPU interface
+[    0.022697] CPU features: detected: Privileged Access Never
+[    0.023220] CPU features: detected: LSE atomic instructions
+[    0.023730] CPU features: detected: User Access Override
+[    0.024216] CPU features: detected: 32-bit EL0 Support
+[    0.024688] CPU features: detected: RAS Extension Support
+[    0.032617] CPU: All CPU(s) started at EL2
+[    0.033020] alternatives: patching kernel code
+[    0.039349] devtmpfs: initialized
+[    0.055771] Trying to unpack rootfs image as initramfs...
+[    0.056278] Registered cp15_barrier emulation handler
+[    0.056749] Registered setend emulation handler
+[    0.057568] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 6370867519511994 ns
+[    0.058467] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[    0.059218] pinctrl core: initialized pinctrl subsystem
+[    0.060495] NET: Registered protocol family 16
+[    0.065421] schedtune: configured to support 6 boost groups
+[    0.066078] audit: initializing netlink subsys (disabled)
+[    0.066747] audit: type=2000 audit(0.059:1): state=initialized audit_enabled=0 res=1
+[    0.068969] cpuidle: using governor menu
+[    0.069354] Registered FIQ tty driver
+[    0.070146] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.071042] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.074397] console [pstore-1] enabled
+[    0.074970] pstore: Registered ramoops as persistent store backend
+[    0.075567] ramoops: attached 0xf0000@0x110000, ecc: 0/0
+[    0.079991] Freeing initrd memory: 800K
+[    0.095480] rockchip-gpio fdd60000.gpio: probed gpio0 (fdd60000.gpio)
+[    0.096494] rockchip-gpio fe740000.gpio: probed gpio1 (fe740000.gpio)
+[    0.097443] rockchip-gpio fe750000.gpio: probed gpio2 (fe750000.gpio)
+[    0.098384] rockchip-gpio fe760000.gpio: probed gpio3 (fe760000.gpio)
+[    0.099342] rockchip-gpio fe770000.gpio: probed gpio4 (fe770000.gpio)
+[    0.100009] rockchip-pinctrl pinctrl: probed pinctrl
+[    0.110034] cryptd: max_cpu_qlen set to 1000
+[[    0.112038] console [ttyFIQ0] enabled
+    0.112038] console [ttyFIQ0] enabled
+[    0.112710] bootconsole [uart8250] disabled
+[    0.112710] bootconsole [uart8250] disabled
+[    0.113307] Registered fiq debugger ttyFIQ0
+[    0.113960] vcc3v3_sys: supplied by dc_12v
+[    0.114185] vcc5v0_sys: supplied by dc_12v
+[    0.114424] vcc5v0_usb: supplied by dc_12v
+[    0.114856] vcc5v0_host: supplied by vcc5v0_usb
+[    0.115154] vcc5v0_otg: supplied by vcc5v0_usb
+[    0.115311] vcc3v3_lcd0_n: supplied by vcc3v3_sys
+[    0.115688] vcc5v0_usb_keyboard: supplied by vcc5v0_sys
+[    0.116008] vcc5v0_usb2_host1: supplied by vcc5v0_sys
+[    0.116304] vcc5v0_usb2_host2: supplied by vcc5v0_sys
+[    0.117042] rk_iommu fde4b000.iommu: version = 2
+[    0.117455] rk_iommu fdea0800.iommu: version = 2
+[    0.117703] rk_iommu fded0480.iommu: version = 2
+[    0.117987] rk_iommu fdee0800.iommu: version = 2
+[    0.118247] rk_iommu fdef0800.iommu: version = 2
+[    0.118487] rk_iommu fdf40f00.iommu: version = 2
+[    0.118759] rk_iommu fdf80800.iommu: version = 2
+[    0.118983] rk_iommu fe043e00.iommu: version = 2
+[    0.119608] SCSI subsystem initialized
+[    0.119814] usbcore: registered new interface driver usbfs
+[    0.119905] usbcore: registered new interface driver hub
+[    0.119953] usbcore: registered new device driver usb
+[    0.120361] media: Linux media interface: v0.10
+[    0.120404] videodev: Linux video capture interface: v2.00
+[    0.120483] pps_core: LinuxPPS API ver. 1 registered
+[    0.120500] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.120523] PTP clock support registered
+[    0.120766] arm-scmi firmware:scmi: SCMI Protocol v2.0 'rockchip:' Firmware version 0x0
+[    0.122835] Advanced Linux Sound Architecture Driver Initialized.
+[    0.123255] Bluetooth: Core ver 2.22
+[    0.123301] NET: Registered protocol family 31
+[    0.123316] Bluetooth: HCI device and connection manager initialized
+[    0.123341] Bluetooth: HCI socket layer initialized
+[    0.123358] Bluetooth: L2CAP socket layer initialized
+[    0.123392] Bluetooth: SCO socket layer initialized
+[    0.124908] rockchip-cpuinfo cpuinfo: SoC		: 35682000
+[    0.124936] rockchip-cpuinfo cpuinfo: Serial		: c60110861d474350
+[    0.125881] clocksource: Switched to clocksource arch_sys_counter
+[    0.179999] VFS: Disk quotas dquot_6.6.0
+[    0.180097] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.181366] thermal thermal_zone1: power_allocator: sustainable_power will be estimated
+[    0.181641] NET: Registered protocol family 2
+[    0.181843] IP idents hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.183406] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes)
+[    0.183455] TCP established hash table entries: 32768 (order: 6, 262144 bytes)
+[    0.183619] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)
+[    0.184025] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.184132] UDP hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.184197] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)
+[    0.184337] NET: Registered protocol family 1
+[    0.186611] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    0.188143] Initialise system trusted keyrings
+[    0.188343] workingset: timestamp_bits=45 max_order=20 bucket_order=0
+[    0.192399] exFAT: Version 1.2.9
+[    0.192676] utf8_selftest: All 154 tests passed
+[    0.192692] ntfs: driver 2.1.32 [Flags: R/O].
+[    0.192830] fuse init (API version 7.27)
+[    0.193932] 
+[    0.193932] TEE Core Framework initialization (ver 1:0.1)
+[    0.193965] TEE armv7 Driver initialization
+[    0.194462] tz_tee_probe: name="armv7sec", id=0, pdev_name="armv7sec.0"
+[    0.194482] TEE core: Alloc the misc device "opteearmtz00" (id=0)
+[    0.194667] TEE Core: Register the misc device "opteearmtz00" (id=0,minor=62)
+[    0.195988] Key type asymmetric registered
+[    0.196006] Asymmetric key parser 'x509' registered
+[    0.196050] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 243)
+[    0.196062] io scheduler noop registered
+[    0.196191] io scheduler cfq registered (default)
+[    0.196208] io scheduler mq-deadline registered
+[    0.196221] io scheduler kyber registered
+[    0.196309] io scheduler bfq registered
+[    0.198186] rockchip-usb2phy fe8b0000.usb2-phy: dts not have sunniwell,mk054 property
+[    0.198291] phy phy-fe8b0000.usb2-phy.0: Linked as a consumer to regulator.5
+[    0.198431] phy phy-fe8b0000.usb2-phy.1: Linked as a consumer to regulator.5
+[    0.198523] phy phy-fe8b0000.usb2-phy.1: No vbus specified for otg port
+[    0.205055] pwm-backlight backlight: backlight supply power not found, using dummy regulator
+[    0.205156] pwm-backlight backlight: Linked as a consumer to regulator.0
+[    0.205360] pwm-backlight backlight1: backlight1 supply power not found, using dummy regulator
+[    0.205418] pwm-backlight backlight1: Linked as a consumer to regulator.0
+[    0.205740] iep: Module initialized.
+[    0.205801] mpp_service mpp-srv: 0b16f7dac author: liangjunhui 2023-09-26 Modify:åå…¥rk356x_11_clouddesk_advance_media_v1.0.2çèäïæäçå¤©çäæéäç
+[    0.205820] mpp_service mpp-srv: probe start
+[    0.206524] iommu: Adding device fdf40000.rkvenc to group 5
+[    0.206560] mpp_rkvenc fdf40000.rkvenc: Linked as a consumer to fdf40f00.iommu
+[    0.206724] mpp_rkvenc fdf40000.rkvenc: probing start
+[    0.207143] mpp_rkvenc fdf40000.rkvenc: venc regulator not ready, retry
+[    0.207162] rkvenc_init:1199: failed to add venc devfreq
+[    0.208286] iommu: Adding device fdea0400.vdpu to group 1
+[    0.208322] mpp_vdpu2 fdea0400.vdpu: Linked as a consumer to fdea0800.iommu
+[    0.208447] mpp_vdpu2 fdea0400.vdpu: probe device
+[    0.208964] mpp_vdpu2 fdea0400.vdpu: probing finish
+[    0.209458] iommu: Adding device fdee0000.vepu to group 3
+[    0.209490] mpp_vepu2 fdee0000.vepu: Linked as a consumer to fdee0800.iommu
+[    0.209642] mpp_vepu2 fdee0000.vepu: probe device
+[    0.210089] mpp_vepu2 fdee0000.vepu: probing finish
+[    0.210525] iommu: Adding device fdef0000.iep to group 4
+[    0.210555] mpp-iep2 fdef0000.iep: Linked as a consumer to fdef0800.iommu
+[    0.210669] mpp-iep2 fdef0000.iep: probe device
+[    0.211042] mpp-iep2 fdef0000.iep: allocate roi buffer failed
+[    0.211181] mpp-iep2 fdef0000.iep: probing finish
+[    0.211588] iommu: Adding device fded0000.jpegd to group 2
+[    0.211619] mpp_jpgdec fded0000.jpegd: Linked as a consumer to fded0480.iommu
+[    0.211728] mpp_jpgdec fded0000.jpegd: probe device
+[    0.212140] mpp_jpgdec fded0000.jpegd: probing finish
+[    0.212608] iommu: Adding device fdf80200.rkvdec to group 6
+[    0.212640] mpp_rkvdec2 fdf80200.rkvdec: Linked as a consumer to fdf80800.iommu
+[    0.212821] mpp_rkvdec2 fdf80200.rkvdec: probing start
+[    0.212949] mpp_rkvdec2 fdf80200.rkvdec: 16 task capacity link mode detected
+[    0.213218] mpp_rkvdec2 fdf80200.rkvdec: shared_niu_a is not found!
+[    0.213236] rkvdec2_init:904: No niu aclk reset resource define
+[    0.213252] mpp_rkvdec2 fdf80200.rkvdec: shared_niu_h is not found!
+[    0.213265] rkvdec2_init:907: No niu hclk reset resource define
+[    0.213305] mpp_rkvdec2 fdf80200.rkvdec: vdec regulator not ready, retry
+[    0.213320] rkvdec2_init:921: failed to add vdec devfreq
+[    0.213560] mpp_rkvdec2 fdf80200.rkvdec: probe sub driver failed
+[    0.213840] mpp_service mpp-srv: probe success
+[    0.217132] dma-pl330 fe530000.dmac: Loaded driver for PL330 DMAC-241330
+[    0.217158] dma-pl330 fe530000.dmac: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
+[    0.218748] dma-pl330 fe550000.dmac: Loaded driver for PL330 DMAC-241330
+[    0.218770] dma-pl330 fe550000.dmac: 	DBUFF-128x8bytes Num_Chans-8 Num_Peri-32 Num_Events-16
+[    0.219628] rockchip-system-monitor rockchip-system-monitor: system monitor probe
+[    0.220713] Serial: 8250/16550 driver, 10 ports, IRQ sharing disabled
+[    0.221422] fe650000.serial: ttyS1 at MMIO 0xfe650000 (irq = 54, base_baud = 1500000) is a 16550A
+[    0.222962] random: fast init done
+[    0.223252] random: crng init done
+[    0.223294] iommu: Adding device fe040000.vop to group 7
+[    0.223330] rockchip-vop2 fe040000.vop: Linked as a consumer to fe043e00.iommu
+[    0.226878] rockchip-drm display-subsystem: Linked as a consumer to fe040000.vop
+[    0.227325] rockchip-drm display-subsystem: Linked as a consumer to fe0c0000.edp
+[    0.227703] rockchip-drm display-subsystem: Linked as a consumer to fe0a0000.hdmi
+[    0.231842] /edp_panel: could not find display-timings node
+[    0.231864] /edp_panel: no timings specified
+[    0.231941] panel-simple edp_panel: Linked as a consumer to regulator.7
+[    0.231974] panel-simple edp_panel: edp_panel supply vsp not found, using dummy regulator
+[    0.232034] panel-simple edp_panel: Linked as a consumer to regulator.0
+[    0.232058] panel-simple edp_panel: edp_panel supply vsn not found, using dummy regulator
+[    0.232980] mali fde60000.gpu: Kernel DDK version g7p1-01bet0
+[    0.233032] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.233095] mali fde60000.gpu: Device initialization Deferred
+[    0.238584] brd: module loaded
+[    0.250049] loop: module loaded
+[    0.250426] zram: Added device: zram0
+[    0.250837] RTD2513 driver installing...
+[    0.251163] sw_regulator_ctrl regulator-ctrl: Linked as a consumer to regulator.9
+[    0.251236] sw_regulator_ctrl regulator-ctrl: Linked as a consumer to regulator.10
+[    0.251293] sw_regulator_ctrl regulator-ctrl: Linked as a consumer to regulator.8
+[    0.251665] SCSI Media Changer driver v0.25 
+[    0.252739] ahci fc800000.sata: forcing port_map 0x0 -> 0x1
+[    0.252794] ahci fc800000.sata: AHCI 0001.0300 32 slots 1 ports 6 Gbps 0x1 impl platform mode
+[    0.252815] ahci fc800000.sata: flags: ncq sntf pm led clo only pmp fbs pio slum part ccc apst 
+[    0.252840] ahci fc800000.sata: port 0 is not capable of FBS
+[    0.253465] scsi host0: ahci
+[    0.253764] ata1: SATA max UDMA/133 mmio [mem 0xfc800000-0xfc800fff] port 0x100 irq 11
+[    0.255411] tun: Universal TUN/TAP device driver, 1.6
+[    0.256063] PPP generic driver version 2.4.2
+[    0.256197] PPP BSD Compression module registered
+[    0.256214] PPP Deflate Compression module registered
+[    0.256250] PPP MPPE Compression module registered
+[    0.256263] NET: Registered protocol family 24
+[    0.256290] PPTP driver version 0.8.5
+[    0.256532] SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic channels, max=256) (6 bit encapsulation enabled).
+[    0.256549] CSLIP: code copyright 1989 Regents of the University of California.
+[    0.256652] usbcore: registered new interface driver catc
+[    0.256702] usbcore: registered new interface driver kaweth
+[    0.256717] pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus II USB Ethernet driver
+[    0.256759] usbcore: registered new interface driver pegasus
+[    0.256801] usbcore: registered new interface driver rtl8150
+[    0.256849] usbcore: registered new interface driver r8152
+[    0.256865] hso: drivers/net/usb/hso.c: Option Wireless
+[    0.256922] usbcore: registered new interface driver hso
+[    0.256967] usbcore: registered new interface driver asix
+[    0.257014] usbcore: registered new interface driver ax88179_178a
+[    0.257058] usbcore: registered new interface driver cdc_ether
+[    0.257100] usbcore: registered new interface driver cdc_eem
+[    0.257143] usbcore: registered new interface driver dm9601
+[    0.257189] usbcore: registered new interface driver smsc75xx
+[    0.257241] usbcore: registered new interface driver smsc95xx
+[    0.257283] usbcore: registered new interface driver gl620a
+[    0.257317] usbcore: registered new interface driver net1080
+[    0.257363] usbcore: registered new interface driver plusb
+[    0.257410] usbcore: registered new interface driver rndis_host
+[    0.257454] usbcore: registered new interface driver cdc_subset
+[    0.257497] usbcore: registered new interface driver zaurus
+[    0.257541] usbcore: registered new interface driver MOSCHIP usb-ethernet driver
+[    0.257590] usbcore: registered new interface driver int51x1
+[    0.257641] usbcore: registered new interface driver kalmia
+[    0.257685] usbcore: registered new interface driver ipheth
+[    0.257726] usbcore: registered new interface driver sierra_net
+[    0.257770] usbcore: registered new interface driver cx82310_eth
+[    0.257817] usbcore: registered new interface driver cdc_ncm
+[    0.257861] usbcore: registered new interface driver qmi_wwan
+[    0.257906] usbcore: registered new interface driver cdc_mbim
+[    0.258983] dwc3 fcc00000.dwc3: Failed to get clk 'ref': -2
+[    0.259777] dwc3 fd000000.dwc3: Failed to get clk 'ref': -2
+[    0.261342] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.261361] ehci-pci: EHCI PCI platform driver
+[    0.261438] ehci-platform: EHCI generic platform driver
+[    0.263671] ehci-platform fd800000.usb: EHCI Host Controller
+[    0.263839] ehci-platform fd800000.usb: new USB bus registered, assigned bus number 1
+[    0.263981] ehci-platform fd800000.usb: irq 12, io mem 0xfd800000
+[    0.275890] ehci-platform fd800000.usb: USB 2.0 started, EHCI 1.00
+[    0.276073] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 4.19
+[    0.276085] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.276093] usb usb1: Product: EHCI Host Controller
+[    0.276100] usb usb1: Manufacturer: Linux 4.19.232+-ab78 ehci_hcd
+[    0.276114] usb usb1: SerialNumber: fd800000.usb
+[    0.276519] hub 1-0:1.0: USB hub found
+[    0.276565] hub 1-0:1.0: 1 port detected
+[    0.279027] ehci-platform fd880000.usb: EHCI Host Controller
+[    0.279188] ehci-platform fd880000.usb: new USB bus registered, assigned bus number 2
+[    0.279330] ehci-platform fd880000.usb: irq 14, io mem 0xfd880000
+[    0.292569] ehci-platform fd880000.usb: USB 2.0 started, EHCI 1.00
+[    0.292725] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 4.19
+[    0.292743] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.292762] usb usb2: Product: EHCI Host Controller
+[    0.292774] usb usb2: Manufacturer: Linux 4.19.232+-ab78 ehci_hcd
+[    0.292788] usb usb2: SerialNumber: fd880000.usb
+[    0.293144] hub 2-0:1.0: USB hub found
+[    0.293189] hub 2-0:1.0: 1 port detected
+[    0.293843] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    0.293875] ohci-platform: OHCI generic platform driver
+[    0.294098] ohci-platform fd840000.usb: Generic Platform OHCI controller
+[    0.294263] ohci-platform fd840000.usb: new USB bus registered, assigned bus number 3
+[    0.294394] ohci-platform fd840000.usb: irq 13, io mem 0xfd840000
+[    0.353379] usb usb3: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 4.19
+[    0.353397] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.353406] usb usb3: Product: Generic Platform OHCI controller
+[    0.353413] usb usb3: Manufacturer: Linux 4.19.232+-ab78 ohci_hcd
+[    0.353421] usb usb3: SerialNumber: fd840000.usb
+[    0.353779] hub 3-0:1.0: USB hub found
+[    0.353822] hub 3-0:1.0: 1 port detected
+[    0.354224] ohci-platform fd8c0000.usb: Generic Platform OHCI controller
+[    0.354382] ohci-platform fd8c0000.usb: new USB bus registered, assigned bus number 4
+[    0.354495] ohci-platform fd8c0000.usb: irq 15, io mem 0xfd8c0000
+[    0.413365] usb usb4: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 4.19
+[    0.413384] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.413392] usb usb4: Product: Generic Platform OHCI controller
+[    0.413399] usb usb4: Manufacturer: Linux 4.19.232+-ab78 ohci_hcd
+[    0.413406] usb usb4: SerialNumber: fd8c0000.usb
+[    0.413759] hub 4-0:1.0: USB hub found
+[    0.413808] hub 4-0:1.0: 1 port detected
+[    0.415153] usbcore: registered new interface driver cdc_acm
+[    0.415177] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    0.415233] usbcore: registered new interface driver cdc_wdm
+[    0.415443] usbcore: registered new interface driver uas
+[    0.415523] usbcore: registered new interface driver usb-storage
+[    0.415569] usbcore: registered new interface driver ums-alauda
+[    0.415615] usbcore: registered new interface driver ums-cypress
+[    0.415663] usbcore: registered new interface driver ums-datafab
+[    0.415708] usbcore: registered new interface driver ums_eneub6250
+[    0.415756] usbcore: registered new interface driver ums-freecom
+[    0.415801] usbcore: registered new interface driver ums-isd200
+[    0.415847] usbcore: registered new interface driver ums-jumpshot
+[    0.415918] usbcore: registered new interface driver ums-karma
+[    0.415966] usbcore: registered new interface driver ums-onetouch
+[    0.416011] usbcore: registered new interface driver ums-sddr09
+[    0.416056] usbcore: registered new interface driver ums-sddr55
+[    0.416105] usbcore: registered new interface driver ums-usbat
+[    0.416197] usbcore: registered new interface driver usbserial_generic
+[    0.416230] usbserial: USB Serial support registered for generic
+[    0.416278] usbcore: registered new interface driver option
+[    0.416309] usbserial: USB Serial support registered for GSM modem (1-port)
+[    0.416416] usbcore: registered new interface driver trancevibrator
+[    0.416758] mousedev: PS/2 mouse device common for all mice
+[    0.417259] usbcore: registered new interface driver xpad
+[    0.417319] usbcore: registered new interface driver usb_acecad
+[    0.417374] usbcore: registered new interface driver aiptek
+[    0.417423] usbcore: registered new interface driver gtco
+[    0.417475] usbcore: registered new interface driver hanwang
+[    0.417525] usbcore: registered new interface driver kbtab
+[    0.417857] cyttsp5_loader_init: Parade TTSP FW Loader Driver (Built TTDA.03.08.874312) rc=0
+[    0.417875] cyttsp5_device_access_init: Parade TTSP Device Access Driver (Built TTDA.03.08.874312) rc=0
+[    0.419080] input: hall-mh248 as /devices/platform/hall-mh248/input/input0
+[    0.419526] mh248 hall-mh248: hall_mh248_probe success.
+[    0.420087] i2c /dev entries driver
+[    0.421818] fan53555-regulator 0-001c: FAN53555 Option[12] Rev[15] Detected!
+[    0.423558] vdd_cpu: supplied by vcc5v0_sys
+[    0.429088] tcpm_log---->init extcon finished
+[    0.429088] 
+[    0.429169] husb311 0-004e: Linked as a consumer to regulator.6
+[    0.429252] husb311 0-004e: switch_ctl_gpio = 154
+[    0.432890] tcpm_log---->vbus is already Off
+[    0.434013] tcpm_log---->Setting voltage/current limit 0 mV 0 mA
+[    0.434031] tcpm_log---->polarity 0
+[    0.434078] SWDEBUG:sw_test_cc create file error
+[    0.436096] tcpm_log---->Requesting mux state 0, usb-role 0, orientation 0
+[    0.436911] tcpm_log---->state change INVALID_STATE -> SRC_UNATTACHED [rev1 NONE_AMS]
+[    0.437842] tcpm_log---->CC1: 0 -> 0, CC2: 0 -> 0 [state SRC_UNATTACHED, polarity 0, disconnected]
+[    0.437867] tcpm_log---->0-004e: registered
+[    0.438213] tcpm_log---->vbus is already Off
+[    0.439373] tcpm_log---->Setting voltage/current limit 0 mV 0 mA
+[    0.439386] tcpm_log---->polarity 0
+[    0.439423] SWDEBUG:sw_test_cc create file error
+[    0.441881] tcpm_log---->Requesting mux state 0, usb-role 0, orientation 0
+[    0.442346] rk808 0-0020: chip id: 0x8090
+[    0.442390] rk808 0-0020: No cache defaults, reading back from HW
+[    0.442692] tcpm_log---->cc:=0
+[    0.466358] rk808 0-0020: source: on=0x40, off=0x00
+[    0.466380] rk808 0-0020: support dcdc3 fb mode:-22, 0
+[    0.466390] rk808 0-0020: support pmic reset mode:0,0
+[    0.466589] tcpm_log---->pending state change PORT_RESET -> PORT_RESET_WAIT_OFF @ 100 ms [rev1 NONE_AMS]
+[    0.466612] tcpm_log---->state change PORT_RESET -> PORT_RESET_WAIT_OFF [delayed 100 ms]
+[    0.466629] tcpm_log---->state change PORT_RESET_WAIT_OFF -> SRC_UNATTACHED [rev1 NONE_AMS]
+[    0.466659] SWDEBUG:sw_test_cc create file error
+[    0.466668] tcpm_log---->Start toggling
+[    0.472772] rk808-regulator rk808-regulator: there is no dvs0 gpio
+[    0.472812] rk808-regulator rk808-regulator: there is no dvs1 gpio
+[    0.473217] vdd_logic: supplied by vcc3v3_sys
+[    0.473851] vdd_gpu: supplied by vcc3v3_sys
+[    0.474120] vcc_ddr: supplied by vcc3v3_sys
+[    0.474389] vdd_npu: supplied by vcc3v3_sys
+[    0.474986] vcc_1v8: supplied by vcc3v3_sys
+[    0.475220] vdda0v9_image: supplied by vcc3v3_sys
+[    0.475778] vdda_0v9: supplied by vcc3v3_sys
+[    0.476059] vdda0v9_pmu: supplied by vcc3v3_sys
+[    0.476306] vccio_acodec: supplied by vcc3v3_sys
+[    0.476881] vccio_sd: supplied by vcc3v3_sys
+[    0.477118] vcc3v3_pmu: supplied by vcc3v3_sys
+[    0.477697] vcca_1v8: supplied by vcc3v3_sys
+[    0.477951] vcca1v8_pmu: supplied by vcc3v3_sys
+[    0.478199] vcca1v8_image: supplied by vcc3v3_sys
+[    0.478763] vcc_3v3: supplied by vcc3v3_sys
+[    0.479335] vcc3v3_sd: supplied by vcc3v3_sys
+[    0.479704] rk817-battery rk817-battery: DMA mask not set
+[    0.479824] rk817-battery rk817-battery: fb_temperature missing!
+[    0.479843] rk817-battery rk817-battery: energy_mode missing!
+[    0.479859] rk817-battery rk817-battery: zero_reserve_dsoc missing!
+[    0.479876] rk817-battery rk817-battery: low_power_sleep missing!
+[    0.479893] rk817-battery rk817-battery: battery res_up_old missing
+[    0.479905] rk817-battery rk817-battery: battery res_down_old missing!
+[    0.479919] rk817-battery rk817-battery: not have to register chg psy!
+[    0.479942] rk817-bat: rk817_bat_parse_dt : saradc not ready, retry later
+[    0.479957] rk817-battery rk817-battery: battery parse dt failed!
+[    0.480328] rk817-charger rk817-charger: Failed to find matching dt id
+[    0.480675] rk805-pwrkey of_find_node_by_path /dc-det error 
+[    0.480703] rk805-pwrkey of_get_named_gpio error dc_det_gpio = -2
+[    0.483553] input: rk805 pwrkey as /devices/platform/fdd40000.i2c/i2c-0/0-0020/rk805-pwrkey/input/input1
+[    0.489563] rk808-rtc rk808-rtc: registered as rtc0
+[    0.491272] rk808-rtc rk808-rtc: setting system clock to 2017-08-04 09:00:26 UTC (1501837226)
+[    0.493843] gsensor_mxc6655 5-0015: sensor_register_device: gs_mxc6655xa, id = 24
+[    0.493869] i2c i2c-5: sensor_probe: gs_mxc6655xa,000000009f4f961b
+[    0.525905] usb 1-1: new high-speed USB device number 2 using ehci-platform
+[    0.565646] ata1: SATA link down (SStatus 0 SControl 300)
+[    0.674406] usb 1-1: New USB device found, idVendor=05e3, idProduct=0610, bcdDevice=61.60
+[    0.674426] usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[    0.674434] usb 1-1: Product: USB2.0 Hub
+[    0.675138] hub 1-1:1.0: USB hub found
+[    0.675528] hub 1-1:1.0: 4 ports detected
+[    0.955895] usb 1-1.1: new low-speed USB device number 3 using ehci-platform
+[    1.061278] usb 1-1.1: New USB device found, idVendor=6080, idProduct=8060, bcdDevice= 2.03
+[    1.061297] usb 1-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    1.061305] usb 1-1.1: Product: USB KEYBOARD
+[    1.061313] usb 1-1.1: Manufacturer: AMR-TOUCH-MOUSE 202110
+[    1.135899] usb 1-1.2: new high-speed USB device number 4 using ehci-platform
+[    1.278405] usb 1-1.2: New USB device found, idVendor=0c45, idProduct=6368, bcdDevice= 1.00
+[    1.278424] usb 1-1.2: New USB device strings: Mfr=2, Product=1, SerialNumber=3
+[    1.278432] usb 1-1.2: Product: USB 2.0 Camera
+[    1.278440] usb 1-1.2: Manufacturer: Sonix Technology Co., Ltd.
+[    1.278447] usb 1-1.2: SerialNumber: SN0001
+[    1.594749] gsensor_mxc6655 5-0015: sensor_chip_init:fail to read gs_mxc6655xa devid:0xf
+[    1.594770] i2c i2c-5: sensor_probe failed -2
+[    1.594770] 
+[    1.598366] uvcvideo: Found UVC 1.00 device USB 2.0 Camera (0c45:6368)
+[    1.610682] input: USB 2.0 Camera: USB Camera as /devices/platform/fd800000.usb/usb1/1-1/1-1.2/1-1.2:1.0/input/input2
+[    1.610902] usbcore: registered new interface driver uvcvideo
+[    1.610917] USB Video Class driver (1.1.1)
+[    1.611212] rockchip-iodomain fdc20000.syscon:io-domains: Linked as a consumer to regulator.24
+[    1.611241] rockchip-iodomain fdc20000.syscon:io-domains: pmuio2(1800000 uV) supplied by vcca1v8_pmu
+[    1.611330] rockchip-iodomain fdc20000.syscon:io-domains: Linked as a consumer to regulator.20
+[    1.611360] rockchip-iodomain fdc20000.syscon:io-domains: vccio1(3300000 uV) supplied by vccio_acodec
+[    1.611443] rockchip-iodomain fdc20000.syscon:io-domains: Linked as a consumer to regulator.21
+[    1.611465] rockchip-iodomain fdc20000.syscon:io-domains: vccio3(3300000 uV) supplied by vccio_sd
+[    1.611535] rockchip-iodomain fdc20000.syscon:io-domains: vccio4(1800000 uV) supplied by vcca1v8_pmu
+[    1.611603] rockchip-iodomain fdc20000.syscon:io-domains: Linked as a consumer to regulator.16
+[    1.611631] rockchip-iodomain fdc20000.syscon:io-domains: vccio5(1800000 uV) supplied by vcc_1v8
+[    1.611717] rockchip-iodomain fdc20000.syscon:io-domains: vccio6(1800000 uV) supplied by vcc_1v8
+[    1.611791] rockchip-iodomain fdc20000.syscon:io-domains: Linked as a consumer to regulator.26
+[    1.611822] rockchip-iodomain fdc20000.syscon:io-domains: vccio7(3300000 uV) supplied by vcc_3v3
+[    1.613179] __power_supply_register: Expected proper parent device for 'test_ac'
+[    1.613349] __power_supply_register: Expected proper parent device for 'test_battery'
+[    1.613570] thermal thermal_zone2: power_allocator: sustainable_power will be estimated
+[    1.613653] __power_supply_register: Expected proper parent device for 'test_usb'
+[    1.615308] ti,charge-current, val: 1000000, tbl_id =15
+[    1.615329] ti,max-charge-voltage, val: 8404000, tbl_id =525
+[    1.615337] ti,input-current-sdp, val: 2000000, tbl_id =40
+[    1.615344] ti,input-current-dcp, val: 2000000, tbl_id =40
+[    1.615363] ti,input-current-cdp, val: 3500000, tbl_id =70
+[    1.615376] ti,minimum-sys-voltage, val: 6600000, tbl_id =21
+[    1.615390] ti,otg-voltage, val: 5000000, tbl_id =29
+[    1.615403] ti,otg-current, val: 500000, tbl_id =10
+[    1.628951] 	 CHARGE_CURRENT: 960mA
+[    1.629516] MAX_CHARGE_VOLTAGE: 8400mV
+[    1.630076] 	  INPUT_VOLTAGE: 3776mV
+[    1.630637] 	  INPUT_CURRENT: 3250mA
+[    1.631197] 	 MIN_SYS_VOTAGE: 6400mV
+[    1.650282] bq25700_parse_dt : saradc not ready, retry later
+[    1.650303] bq25700-charger 0-006b: Cannot parse bq25700 dt.
+[    1.652106] rockchip-thermal fe710000.tsadc: tsadc is probed successfully!
+[    1.653327] device-mapper: uevent: version 1.0.3
+[    1.653574] device-mapper: ioctl: 4.39.0-ioctl (2018-04-03) initialised: dm-devel@redhat.com
+[    1.653769] device-mapper: verity-avb: AVB error handler initialized with vbmeta device: 
+[    1.653789] Bluetooth: HCI UART driver ver 2.3
+[    1.653803] Bluetooth: HCI UART protocol H4 registered
+[    1.654101] cpu cpu0: leakage=31
+[    1.654153] cpu cpu0: pvtm = 89610, from nvmem
+[    1.654174] cpu cpu0: pvtm-volt-sel=1
+[    1.654938] cpu cpu0: Linked as a consumer to regulator.11
+[    1.654992] cpu cpu0: Dropping the link to regulator.11
+[    1.655581] cpu cpu0: Linked as a consumer to regulator.11
+[    1.656296] cpu cpu0: avs=0
+[    1.656353] energy_model: pd0: hertz/watts ratio non-monotonically decreasing: em_cap_state 2 >= em_cap_state1
+[    1.656561] cpu cpu0: l=0 h=2147483647 hyst=5000 l_limit=0 h_limit=0 h_table=0
+[    1.659908] cpu cpu0: failed to find power_model node
+[    1.661218] sdhci: Secure Digital Host Controller Interface driver
+[    1.661236] sdhci: Copyright(c) Pierre Ossman
+[    1.661243] Synopsys Designware Multimedia Card Interface Driver
+[    1.662211] dwmmc_rockchip fe2c0000.dwmmc: IDMAC supports 32-bit address mode.
+[    1.662266] dwmmc_rockchip fe2c0000.dwmmc: Using internal DMA controller.
+[    1.662286] dwmmc_rockchip fe2c0000.dwmmc: Version ID is 270a
+[    1.662338] dwmmc_rockchip fe2c0000.dwmmc: DW MMC controller at irq 38,32 bit host data width,256 deep fifo
+[    1.662461] dwmmc_rockchip fe2c0000.dwmmc: allocated mmc-pwrseq
+[    1.662482] mmc_host mmc1: card is non-removable.
+[    1.675749] mmc_host mmc1: Bus speed (slot 0) = 375000Hz (slot req 400000Hz, actual 375000HZ div = 0)
+[    1.688668] sdhci-pltfm: SDHCI platform and OF driver helper
+[    1.689932] mmc2: Unknown controller version (5). You may experience problems.
+[    1.695720] dwmmc_rockchip fe2c0000.dwmmc: card claims to support voltages below defined range
+[    1.708111] mmc_host mmc1: Bus speed (slot 0) = 198000000Hz (slot req 200000000Hz, actual 198000000HZ div = 0)
+[    1.721071] mmc2: SDHCI controller on fe310000.sdhci [fe310000.sdhci] using ADMA
+[    1.723189] cryptodev: driver 1.12 loaded.
+[    1.723254] hidraw: raw HID events driver (C) Jiri Kosina
+[    1.730738] input: AMR-TOUCH-MOUSE 202110 USB KEYBOARD as /devices/platform/fd800000.usb/usb1/1-1/1-1.1/1-1.1:1.0/0003:6080:8060.0001/input/input3
+[    1.754280] mmc2: new HS200 MMC card at address 0001
+[    1.755098] mmcblk2: mmc2:0001 2S32BG 29.1 GiB 
+[    1.755742] mmcblk2boot0: mmc2:0001 2S32BG partition 1 4.00 MiB
+[    1.756398] mmcblk2boot1: mmc2:0001 2S32BG partition 2 4.00 MiB
+[    1.756653] mmcblk2rpmb: mmc2:0001 2S32BG partition 3 4.00 MiB, chardev (237:0)
+[    1.760427]  mmcblk2: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15
+[    1.786492] hid-generic 0003:6080:8060.0001: input,hidraw0: USB HID v1.10 Keyboard [AMR-TOUCH-MOUSE 202110 USB KEYBOARD] on usb-fd800000.usb-1.1/input0
+[    1.800595] input: AMR-TOUCH-MOUSE 202110 USB KEYBOARD Mouse as /devices/platform/fd800000.usb/usb1/1-1/1-1.1/1-1.1:1.1/0003:6080:8060.0002/input/input4
+[    1.809316] dwmmc_rockchip fe2c0000.dwmmc: Successfully tuned phase to 112
+[    1.809711] mmc1: new ultra high speed SDR104 SDIO card at address 0001
+[    1.856415] input: AMR-TOUCH-MOUSE 202110 USB KEYBOARD System Control as /devices/platform/fd800000.usb/usb1/1-1/1-1.1/1-1.1:1.1/0003:6080:8060.0002/input/input5
+[    1.857352] input: AMR-TOUCH-MOUSE 202110 USB KEYBOARD Consumer Control as /devices/platform/fd800000.usb/usb1/1-1/1-1.1/1-1.1:1.1/0003:6080:8060.0002/input/input6
+[    1.859017] hid-generic 0003:6080:8060.0002: input,hiddev96,hidraw1: USB HID v1.10 Mouse [AMR-TOUCH-MOUSE 202110 USB KEYBOARD] on usb-fd800000.usb-1.1/input1
+[    1.859450] usbcore: registered new interface driver usbhid
+[    1.859502] usbhid: USB HID core driver
+[    1.859724] ion_device_add_heap: ion_system_contig_heap id=0 type=1
+[    1.859775] orders[0] = 6
+[    1.859813] orders[1] = 4
+[    1.859853] orders[2] = 0
+[    1.860507] ion_device_add_heap: ion_system_heap id=1 type=0
+[    1.860573] ion_device_add_heap: linux,cma id=2 type=4
+[    1.861192] ashmem: initialized
+[    1.861990] rockchip,bus bus-npu: Linked as a consumer to regulator.12
+[    1.862074] rockchip,bus bus-npu: Failed to get leakage
+[    1.862209] rockchip,bus bus-npu: pvtm = 89610, from nvmem
+[    1.862260] rockchip,bus bus-npu: pvtm-volt-sel=1
+[    1.863091] rockchip,bus bus-npu: avs=0
+[    1.867056] rockchip-saradc fe720000.saradc: Linked as a consumer to regulator.23
+[    1.867584] optee: probing for conduit method from DT.
+[    1.867623] optee: revision 3.13 (4167319d)
+[    1.867920] optee: initialized driver
+[    1.867943] rknandbase v1.2 2021-01-07
+[    1.868518] rknand fe330000.nandc: rknand_probe clk rate = 148500000
+[    2.693988] ftl_init fffffffe
+[    2.694004] rk_ftl_init fail
+[    2.694372] usbcore: registered new interface driver snd-usb-audio
+[    2.696366] rk817-codec rk817-codec: DMA mask not set
+[    2.701167] netem: version 1.3
+[    2.701210] u32 classifier
+[    2.701215]     Actions configured
+[    2.701694] xt_time: kernel timezone is -0000
+[    2.701779] gre: GRE over IPv4 demultiplexor driver
+[    2.701790] IPv4 over IPsec tunneling driver
+[    2.702304] Initializing XFRM netlink socket
+[    2.702328] IPsec XFRM device driver
+[    2.702663] NET: Registered protocol family 10
+[    2.703473] Segment Routing with IPv6
+[    2.703545] mip6: Mobile IPv6
+[    2.704023] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    2.704516] NET: Registered protocol family 17
+[    2.704541] NET: Registered protocol family 15
+[    2.704598] Bridge firewalling registered
+[    2.704851] Bluetooth: RFCOMM TTY layer initialized
+[    2.704873] Bluetooth: RFCOMM socket layer initialized
+[    2.704905] Bluetooth: RFCOMM ver 1.11
+[    2.704920] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[    2.704925] Bluetooth: BNEP filters: protocol multicast
+[    2.704933] Bluetooth: BNEP socket layer initialized
+[    2.704940] Bluetooth: HIDP (Human Interface Emulation) ver 1.2
+[    2.704951] Bluetooth: HIDP socket layer initialized
+[    2.704973] l2tp_core: L2TP core driver, V2.0
+[    2.704987] l2tp_ppp: PPPoL2TP kernel driver, V2.0
+[    2.704996] [BT_RFKILL]: Enter rfkill_rk_init
+[    2.705003] [WLAN_RFKILL]: Enter rfkill_wlan_init
+[    2.705466] [WLAN_RFKILL]: Enter rfkill_wlan_probe
+[    2.705509] [WLAN_RFKILL]: wlan_platdata_parse_dt: wifi_chip_type = rtl8822cs
+[    2.705520] [WLAN_RFKILL]: wlan_platdata_parse_dt: enable wifi power control.
+[    2.705529] [WLAN_RFKILL]: wlan_platdata_parse_dt: wifi power controled by gpio.
+[    2.705559] [WLAN_RFKILL]: wlan_platdata_parse_dt: WIFI,host_wake_irq = 20, flags = 0.
+[    2.705572] [WLAN_RFKILL]: wlan_platdata_parse_dt: The ref_wifi_clk not found !
+[    2.705582] [WLAN_RFKILL]: rfkill_wlan_probe: init gpio
+[    2.705591] [WLAN_RFKILL]: rfkill_set_wifi_bt_power: 1
+[    2.705600] [WLAN_RFKILL]: Exit rfkill_wlan_probe
+[    2.706123] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: uart_rts_gpios = 77.
+[    2.706143] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: BT,reset_gpio = 17.
+[    2.706154] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: BT,wake_gpio = 8.
+[    2.706171] [BT_RFKILL]: bluetooth_platdata_parse_dt: get property: BT,wake_host_irq = 15.
+[    2.706220] [BT_RFKILL]: Request irq for bt wakeup host
+[    2.706289] [BT_RFKILL]: ** disable irq
+[    2.706400] [BT_RFKILL]: bt_default device registered.
+[    2.707764] registered taskstats version 1
+[    2.707775] Loading compiled-in X.509 certificates
+[    2.707881] Key type ._fscrypt registered
+[    2.707894] Key type .fscrypt registered
+[    2.707903] Key type fscrypt-provisioning registered
+[    2.708142] pstore: Using compression: deflate
+[    2.709018] rga: rga2_irq, irq = 23, match scheduler
+[    2.709350] rga: rga2 hardware loaded successfully, hw_version:3.2.63318.
+[    2.709405] rga: rga2 probe successfully
+[    2.709657] rga2_mmu: IOMMU binding successfully, default mapping core[0x4]
+[    2.709905] rga: Module initialized. v1.2.20
+[    2.720834] vendor storage:20190527 ret = 0
+[    2.729820] rockchip-usb2phy fe8a0000.usb2-phy: dts not have sunniwell,mk054 property
+[    2.729948] phy phy-fe8a0000.usb2-phy.7: Linked as a consumer to regulator.5
+[    2.730123] phy phy-fe8a0000.usb2-phy.8: No vbus specified for otg port
+[    2.731272] mpp_rkvenc fdf40000.rkvenc: probing start
+[    2.731722] mpp_rkvenc fdf40000.rkvenc: Linked as a consumer to regulator.12
+[    2.731745] mpp_rkvenc fdf40000.rkvenc: Failed to get leakage
+[    2.731795] mpp_rkvenc fdf40000.rkvenc: pvtm = 89610, from nvmem
+[    2.731810] mpp_rkvenc fdf40000.rkvenc: pvtm-volt-sel=1
+[    2.731963] mpp_rkvenc fdf40000.rkvenc: avs=0
+[    2.732061] mpp_rkvenc fdf40000.rkvenc: failed to find power_model node
+[    2.732073] mpp_rkvenc fdf40000.rkvenc: failed to initialize power model
+[    2.732083] mpp_rkvenc fdf40000.rkvenc: failed to get dynamic-coefficient
+[    2.732364] mpp_rkvenc fdf40000.rkvenc: probing finish
+[    2.732678] mpp_rkvdec2 fdf80200.rkvdec: probing start
+[    2.732840] mpp_rkvdec2 fdf80200.rkvdec: 16 task capacity link mode detected
+[    2.733116] mpp_rkvdec2 fdf80200.rkvdec: shared_niu_a is not found!
+[    2.733130] rkvdec2_init:904: No niu aclk reset resource define
+[    2.733141] mpp_rkvdec2 fdf80200.rkvdec: shared_niu_h is not found!
+[    2.733150] rkvdec2_init:907: No niu hclk reset resource define
+[    2.733240] mpp_rkvdec2 fdf80200.rkvdec: Linked as a consumer to regulator.12
+[    2.733295] mpp_rkvdec2 fdf80200.rkvdec: leakage=60
+[    2.733309] mpp_rkvdec2 fdf80200.rkvdec: leakage-volt-sel=0
+[    2.733343] mpp_rkvdec2 fdf80200.rkvdec: pvtm = 89610, from nvmem
+[    2.733356] mpp_rkvdec2 fdf80200.rkvdec: pvtm-volt-sel=1
+[    2.733504] mpp_rkvdec2 fdf80200.rkvdec: avs=0
+[    2.733604] mpp_rkvdec2 fdf80200.rkvdec: failed to find power_model node
+[    2.733617] mpp_rkvdec2 fdf80200.rkvdec: failed to initialize power model
+[    2.733626] mpp_rkvdec2 fdf80200.rkvdec: failed to get dynamic-coefficient
+[    2.733710] mpp_rkvdec2 fdf80200.rkvdec: sram_start 0x00000000fdcc0000
+[    2.733722] mpp_rkvdec2 fdf80200.rkvdec: rcb_iova 0x0000000010000000
+[    2.733731] mpp_rkvdec2 fdf80200.rkvdec: sram_size 45056
+[    2.733741] mpp_rkvdec2 fdf80200.rkvdec: rcb_size 65536
+[    2.733750] mpp_rkvdec2 fdf80200.rkvdec: min_width 512
+[    2.733801] mpp_rkvdec2 fdf80200.rkvdec: link mode probe finish
+[    2.733853] mpp_rkvdec2 fdf80200.rkvdec: probing finish
+[    2.734249] rockchip-drm display-subsystem: defer getting devfreq
+[    2.734469] rockchip-vop2 fe040000.vop: [drm:vop2_bind] vp0 assign plane mask: 0x2a, primary plane phy id: 5
+[    2.734485] rockchip-vop2 fe040000.vop: [drm:vop2_bind] vp1 assign plane mask: 0x15, primary plane phy id: 4
+[    2.734497] rockchip-vop2 fe040000.vop: [drm:vop2_bind] vp2 assign plane mask: 0x0, primary plane phy id: -1
+[    2.734830] [drm] unsupported AFBC format[3432564e]
+[    2.735035] rockchip-drm display-subsystem: bound fe040000.vop (ops vop2_component_ops)
+[    2.736003] rockchip-drm display-subsystem: bound fe0c0000.edp (ops rockchip_dp_component_ops)
+[    2.736174] dwhdmi-rockchip fe0a0000.hdmi: Detected HDMI TX controller v2.11a with HDCP (DWC HDMI 2.0 TX PHY)
+[    2.736875] dwhdmi-rockchip fe0a0000.hdmi: registered DesignWare HDMI I2C bus driver
+[    2.737704] input: hdmi_cec_key as /devices/platform/fe0a0000.hdmi/dw-hdmi-cec.4.auto/input/input7
+[    2.738178] rockchip-drm display-subsystem: bound fe0a0000.hdmi (ops dw_hdmi_rockchip_ops)
+[    2.738197] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+[    2.738208] [drm] No driver support for vblank timestamp query.
+[    2.855135] rockchip-drm display-subsystem: connector[HDMI-A-1] can't found any modes
+[    2.881985] rockchip-drm display-subsystem: fb0:  frame buffer device
+[    2.882850] [drm] Initialized rockchip 2.0.0 20140818 for display-subsystem on minor 0
+[    2.883614] mali fde60000.gpu: Kernel DDK version g7p1-01bet0
+[    2.883639] dwc3 fcc00000.dwc3: Failed to get clk 'ref': -2
+[    2.883826] mali fde60000.gpu: Linked as a consumer to regulator.13
+[    2.883959] mali fde60000.gpu: dev_pm_opp_set_regulators: no regulator (shadercores) found: -19
+[    2.884057] mali fde60000.gpu: leakage=9
+[    2.884104] mali fde60000.gpu: pvtm = 89610, from nvmem
+[    2.884124] mali fde60000.gpu: pvtm-volt-sel=1
+[    2.884571] mali fde60000.gpu: avs=0
+[    2.884596] W : [File] : drivers/gpu/arm/bifrost/platform/rk/mali_kbase_config_rk.c; [Line] : 112; [Func] : kbase_platform_rk_init(); power-off-delay-ms not available.
+[    2.884982] mali fde60000.gpu: GPU identified as 0x2 arch 7.4.0 r1p0 status 0
+[    2.885070] mali fde60000.gpu: No priority control manager is configured
+[    2.885089] mali fde60000.gpu: No memory group manager is configured
+[    2.885688] mali fde60000.gpu: l=-2147483648 h=2147483647 hyst=0 l_limit=0 h_limit=0 h_table=0
+[    2.886674] mali fde60000.gpu: Probed as mali0
+[    2.887526] dwc3 fd000000.dwc3: Failed to get clk 'ref': -2
+[    2.891495] xhci-hcd xhci-hcd.6.auto: xHCI Host Controller
+[    2.891785] xhci-hcd xhci-hcd.6.auto: new USB bus registered, assigned bus number 5
+[    2.891966] xhci-hcd xhci-hcd.6.auto: hcc params 0x0220fe64 hci version 0x110 quirks 0x0000011002010010
+[    2.892027] xhci-hcd xhci-hcd.6.auto: irq 67, io mem 0xfd000000
+[    2.892336] usb usb5: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 4.19
+[    2.892353] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.892367] usb usb5: Product: xHCI Host Controller
+[    2.892379] usb usb5: Manufacturer: Linux 4.19.232+-ab78 xhci-hcd
+[    2.892392] usb usb5: SerialNumber: xhci-hcd.6.auto
+[    2.892868] hub 5-0:1.0: USB hub found
+[    2.892907] hub 5-0:1.0: 1 port detected
+[    2.893170] xhci-hcd xhci-hcd.6.auto: xHCI Host Controller
+[    2.893396] xhci-hcd xhci-hcd.6.auto: new USB bus registered, assigned bus number 6
+[    2.893424] xhci-hcd xhci-hcd.6.auto: Host supports USB 3.0 SuperSpeed
+[    2.893496] usb usb6: We don't know the algorithms for LPM for this host, disabling LPM.
+[    2.893618] usb usb6: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 4.19
+[    2.893636] usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.893649] usb usb6: Product: xHCI Host Controller
+[    2.893661] usb usb6: Manufacturer: Linux 4.19.232+-ab78 xhci-hcd
+[    2.893673] usb usb6: SerialNumber: xhci-hcd.6.auto
+[    2.894100] hub 6-0:1.0: USB hub found
+[    2.894142] hub 6-0:1.0: 1 port detected
+[    2.894837] input: adc-keys as /devices/platform/adc-keys/input/input8
+[    2.895172] rk817-battery rk817-battery: fb_temperature missing!
+[    2.895191] rk817-battery rk817-battery: energy_mode missing!
+[    2.895207] rk817-battery rk817-battery: zero_reserve_dsoc missing!
+[    2.895223] rk817-battery rk817-battery: low_power_sleep missing!
+[    2.895238] rk817-battery rk817-battery: battery res_up_old missing
+[    2.895251] rk817-battery rk817-battery: battery res_down_old missing!
+[    2.895264] rk817-battery rk817-battery: not have to register chg psy!
+[    2.895289] rk817-bat: rk817_bat_parse_dt : bat_res_up = 140, bat_res_down = 20
+[    2.895330] rk817-bat: rk817_bat_parse_dt : enough-led-ctl-gpio 30
+[    2.895360] rk817-bat: rk817_bat_parse_dt : charing_led_ctl_gpio 29
+[    2.923836] rk817-bat: initialized yet..
+[    2.984812] thermal thermal_zone3: power_allocator: sustainable_power will be estimated
+[    2.992725] ti,charge-current, val: 1000000, tbl_id =15
+[    2.992765] ti,max-charge-voltage, val: 8404000, tbl_id =525
+[    2.992774] ti,input-current-sdp, val: 2000000, tbl_id =40
+[    2.992780] ti,input-current-dcp, val: 2000000, tbl_id =40
+[    2.992787] ti,input-current-cdp, val: 3500000, tbl_id =70
+[    2.992794] ti,minimum-sys-voltage, val: 6600000, tbl_id =21
+[    2.992803] ti,otg-voltage, val: 5000000, tbl_id =29
+[    2.992810] ti,otg-current, val: 500000, tbl_id =10
+[    2.997309] devfreq fde60000.gpu: Couldn't update frequency transition information.
+[    3.005657] 	 CHARGE_CURRENT: 960mA
+[    3.006291] MAX_CHARGE_VOLTAGE: 8400mV
+[    3.006925] 	  INPUT_VOLTAGE: 3776mV
+[    3.007559] 	  INPUT_CURRENT: 3250mA
+[    3.008192] 	 MIN_SYS_VOTAGE: 6400mV
+[    3.024564] thermal thermal_zone4: power_allocator: sustainable_power will be estimated
+[    3.024854] bq25700-charger 0-006b: Invalid or missing extcon dev0
+[    3.024872] bq25700-charger 0-006b: Invalid or missing extcon dev1
+[    3.025889] bq25700-charger 0-006b: cannot find regulators node
+[    3.025899] bq25700-charger 0-006b: Cannot register otg vbus regulator
+[    3.025907] bq25700-charger 0-006b: automode not supported
+[    3.027510] rockchip-dmc dmc: Linked as a consumer to regulator.12
+[    3.027618] rockchip-dmc dmc: leakage=60
+[    3.027641] rockchip-dmc dmc: leakage-volt-sel=0
+[    3.027684] rockchip-dmc dmc: pvtm = 89610, from nvmem
+[    3.027703] rockchip-dmc dmc: pvtm-volt-sel=1
+[    3.027853] rockchip-dmc dmc: avs=0
+[    3.027878] rockchip-dmc dmc: current ATF version 0x102
+[    3.028700] rockchip-dmc dmc: normal_rate = 780000000
+[    3.028719] rockchip-dmc dmc: reboot_rate = 1184000000
+[    3.028734] rockchip-dmc dmc: suspend_rate = 324000000
+[    3.028747] rockchip-dmc dmc: video_4k_rate = 780000000
+[    3.028760] rockchip-dmc dmc: video_4k_10b_rate = 780000000
+[    3.028769] rockchip-dmc dmc: boost_rate = 1184000000
+[    3.028776] rockchip-dmc dmc: fixed_rate(isp|cif0|cif1|dualview) = 1184000000
+[    3.028783] rockchip-dmc dmc: performance_rate = 1184000000
+[    3.028811] rockchip-dmc dmc: failed to get vop pn to msch rl
+[    3.028979] rockchip-dmc dmc: l=0 h=2147483647 hyst=5000 l_limit=0 h_limit=0 h_table=0
+[    3.029042] rockchip-dmc dmc: could not find power_model node
+[    3.039957] rk817-codec rk817-codec: rk817_probe: chip_name:0x80, chip_ver:0x95
+[    3.046416] asoc-simple-card rk809-sound: rk817-hifi <-> fe410000.i2s mapping ok
+[    3.049127] asoc-simple-card spdif-sound: dit-hifi <-> fe460000.spdif mapping ok
+[    3.052027] asoc-simple-card bt-sound: bt-sco-pcm <-> fe420000.i2s mapping ok
+[    3.055216] rk-hdmi-sound hdmi-sound: i2s-hifi <-> fe400000.i2s mapping ok
+[    3.061365] It doesn't contain Rogue gpu
+[    3.062442] rockchip_headset rk-headset: Can not read property mic_sw_gpio
+[    3.062469] rockchip_headset rk-headset: Can not read property hook_gpio
+[    3.062484] rockchip_headset rk-headset: have not set adc chan
+[    3.062493] rockchip_headset rk-headset: headset have no hook mode
+[    3.062824] input: rk-headset as /devices/platform/rk-headset/input/input9
+[    3.064775] iommu: Adding device fde40000.npu to group 0
+[    3.064828] RKNPU fde40000.npu: Linked as a consumer to fde4b000.iommu
+[    3.065797] RKNPU fde40000.npu: RKNPU: rknpu iommu is enabled, using iommu mode
+[    3.066194] RKNPU fde40000.npu: Linked as a consumer to regulator.15
+[    3.066287] RKNPU fde40000.npu: can't request region for resource [mem 0xfde40000-0xfde4ffff]
+[    3.067306] [drm] Initialized rknpu 0.7.2 20220428 for fde40000.npu on minor 1
+[    3.067465] RKNPU fde40000.npu: leakage=5
+[    3.067512] RKNPU fde40000.npu: pvtm = 89610, from nvmem
+[    3.067532] RKNPU fde40000.npu: pvtm-volt-sel=1
+[    3.068162] RKNPU fde40000.npu: avs=0
+[    3.068986] RKNPU fde40000.npu: l=0 h=2147483647 hyst=5000 l_limit=0 h_limit=0 h_table=0
+[    3.069035] RKNPU fde40000.npu: failed to find power_model node
+[    3.069050] RKNPU fde40000.npu: RKNPU: failed to initialize power model
+[    3.069064] RKNPU fde40000.npu: RKNPU: failed to get dynamic-coefficient
+[    3.071560] enter into es7202_i2c_probe()
+[    3.071599] es7202_i2c_probe()-----1
+[    3.072494] enter into es7202_probe()
+[    3.072687] enter into es7202_i2c_probe()
+[    3.072702] es7202_i2c_probe()-----1
+[    3.090973] asoc-simple-card sound_es7202: es7202 pdm 0 <-> fe440000.pdm mapping ok
+[    3.091918] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[    3.093100] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[    3.093281] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[    3.093303] cfg80211: failed to load regulatory.db
+[    3.095094] rockchip-pm rockchip-suspend: not set pwm-regulator-config
+[    3.096281] I : [File] : drivers/gpu/arm/mali400/mali/linux/mali_kernel_linux.c; [Line] : 417; [Func] : mali_module_init(); svn_rev_string_from_arm of this mali_ko is '', rk_ko_ver is '5', built at '14:47:07', on 'Jul 29 2025'.
+[    3.096919] Mali: 
+[    3.096920] Mali device driver loaded
+[    3.097289] ALSA device list:
+[    3.097301]   #0: rockchip,rk809-codec
+[    3.097311]   #1: ROCKCHIP,SPDIF
+[    3.097317]   #2: rockchip,bt
+[    3.097322]   #3: rockchip,hdmi
+[    3.097327]   #4: rockchip,es7202
+[    3.101792] Freeing unused kernel memory: 4032K
+[    3.102100] Run /init as init process
+[    3.106031] init: init first stage started!
+[    3.106328] init: Unable to open /lib/modules, skipping module loading.
+[    3.106773] init: [libfs_mgr]ReadFstabFromDt(): failed to read fstab from dt
+[    3.107630] init: Using Android DT directory /proc/device-tree/firmware/android/
+[    3.180440] init: [libfs_mgr]superblock s_max_mnt_count:65535,/dev/block/by-name/metadata
+[    3.180667] init: [libfs_mgr]Filesystem on /dev/block/by-name/metadata was not cleanly shutdown; state flags: 0x1, incompat feature flags: 0x46
+[    3.180858] init: [libfs_mgr]check_fs(): mount(/dev/block/by-name/metadata,/metadata,ext4)=-1: No such file or directory
+[    3.181048] init: [libfs_mgr]Not running /system/bin/e2fsck on /dev/block/mmcblk2p12 (executable not in system image)
+[    3.188461] EXT4-fs (mmcblk2p12): recovery complete
+[    3.188906] EXT4-fs (mmcblk2p12): mounted filesystem with ordered data mode. Opts: discard
+[    3.189164] init: [libfs_mgr]__mount(source=/dev/block/by-name/metadata,target=/metadata,type=ext4)=0: Success
+[    3.191077] init: Failed to copy /avb into /metadata/gsi/dsu/avb/: No such file or directory
+[    3.207824] EXT4-fs (dm-0): mounted filesystem without journal. Opts: barrier=1
+[    3.220207] EXT4-fs (dm-2): mounted filesystem without journal. Opts: barrier=1
+[    3.225136] EXT4-fs (dm-4): mounted filesystem without journal. Opts: barrier=1
+[    3.230373] EXT4-fs (dm-3): mounted filesystem without journal. Opts: barrier=1
+[    3.235205] EXT4-fs (dm-1): mounted filesystem without journal. Opts: barrier=1
+[    3.250978] init: 18 output lines suppressed due to ratelimiting
+[    3.408947] init: Loading SELinux policy
+[    3.457512] SELinux:  Permission nlmsg_getneigh in class netlink_route_socket not defined in policy.
+[    3.458081] SELinux: the above unknown classes and permissions will be denied
+[    3.458200] SELinux:  policy capability network_peer_controls=1
+[    3.458217] SELinux:  policy capability open_perms=1
+[    3.458233] SELinux:  policy capability extended_socket_class=1
+[    3.458246] SELinux:  policy capability always_check_network=0
+[    3.458262] SELinux:  policy capability cgroup_seclabel=0
+[    3.458270] SELinux:  policy capability nnp_nosuid_transition=1
+[    3.582867] ---headsetobserve_work---
+[    3.641033] audit: type=1403 audit(1501837229.646:2): auid=4294967295 ses=4294967295 lsm=selinux res=1
+[    3.641410] selinux: SELinux: Loaded policy from /odm/etc/selinux/precompiled_sepolicy
+[    3.641445] selinux: 
+[    3.649553] selinux: SELinux: Loaded file_contexts
+[    3.649625] selinux: 
+[    3.689341] old_status == headset_info->headset_status
+[    3.703638] init: init second stage started!
+[    3.772305] init: Using Android DT directory /proc/device-tree/firmware/android/
+[    3.774187] init: Init cannot set 'ro.boot.console' to 'ttyFIQ0': Read-only property was already set
+[    3.774268] init: Init cannot set 'ro.boot.verifiedbootstate' to 'orange': Read-only property was already set
+[    3.774754] init: open file failed:No such file or directory
+[    3.776920] init: vendor model get=Z96A
+[    3.777139] init: load properties file=/system/build_Z96A.prop
+[    3.778789] init: load properties file=/system_ext/build_Z96A.prop
+[    3.781353] init: load properties file=/vendor/build_Z96A.prop
+[    3.786282] init: load properties file=/product/build_Z96A.prop
+[    3.859001] audit: type=1107 audit(1501837229.863:3): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=persist.sys.adb_enable pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:system_prop:s0 tclass=file permissive=1'
+[    3.860036] audit: type=1107 audit(1501837229.866:4): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=flash.success pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=1'
+[    4.120067] ueventd: ueventd started!
+[    4.123690] selinux: SELinux: Loaded file_contexts
+[    4.123754] selinux: 
+[    4.124230] ueventd: Parsing file /system/etc/ueventd.rc...
+[    4.125593] ueventd: Parsing file /vendor/ueventd.rc...
+[    4.127254] ueventd: Parsing file /odm/ueventd.rc...
+[    4.127382] ueventd: Unable to read config file '/odm/ueventd.rc': open() failed: No such file or directory
+[    4.127436] ueventd: Parsing file /ueventd.rk30board.rc...
+[    4.127470] ueventd: Unable to read config file '/ueventd.rk30board.rc': open() failed: No such file or directory
+[    4.164923] apexd: This device does not support updatable APEX. Exiting
+[    4.795266] bifrost_kbase: disagrees about version of symbol module_layout
+[    4.950729] ueventd: Coldboot took 0.822 seconds
+[    5.231436] Registered swp emulation handler
+[    5.290695] logd.auditd: start
+[    5.290796] logd.klogd: 5281583725
+console:/ # [    5.303517] EXT4-fs (mmcblk2p11): Ignoring removed nomblk_io_submit option
+[    5.312498] EXT4-fs (mmcblk2p11): recovery complete
+[    5.313970] EXT4-fs (mmcblk2p11): mounted filesystem with ordered data mode. Opts: errors=remount-ro,nomblk_io_submit
+[    5.381684] e2fsck: e2fsck 1.45.4 (23-Sep-2019)
+[    5.386986] e2fsck: Pass 1: Checking inodes, blocks, and sizes
+[    5.389473] e2fsck: Pass 2: Checking directory structure
+[    5.391513] e2fsck: Pass 3: Checking directory connectivity
+[    5.391848] e2fsck: Pass 4: Checking reference counts
+[    5.395954] panel-simple edp_panel: get VENDOR_MODEL_ID = shutdown_true
+[    5.395985] panel-simple edp_panel: panel config: prepare=0, enable=0, disable=0, unprepare=0
+[    5.396068] e2fsck: Pass 5: Checking group summary information
+[    5.408332] e2fsck: /dev/block/by-name/cache: 32/65536 files (0.0% non-contiguous), 12443/262144 blocks
+[    5.413464] EXT4-fs (mmcblk2p11): mounted filesystem with ordered data mode. Opts: noauto_da_alloc,discard
+[    5.543007] wait_for_keymaster: Waiting for Keymaster device
+[    5.585023] HidlServiceManagement: getService: Trying again for android.hardware.keymaster@4.0::IKeymasterDevice/default...
+I/TA: Hello Rockchip Keymaster! rpmb :0
+[    5.630331] wait_for_keymaster: List of Keymaster HALs found:
+[    5.630666] wait_for_keymaster: Keymaster HAL #1: OpteeKeymasterDevice from Rockchip SecurityLevel: TRUSTED_ENVIRONMENT HAL: android.hardware.keymaster@4.1::IKeymasterDevice/default
+[    5.631207] wait_for_keymaster: Using OpteeKeymasterDevice from Rockchip for encryption.  Security level: TRUSTED_ENVIRONMENT, HAL: android.hardware.keymaster@4.1::IKeymasterDevice/default
+[    5.631240] wait_for_keymaster: Keymaster device ready
+[    5.702877] type=1400 audit(1501837231.706:5): avc: denied { create } for comm="kdevtmpfs" name="dm-5" scontext=u:r:kernel:s0 tcontext=u:object_r:device:s0 tclass=blk_file permissive=1
+[    5.703246] type=1400 audit(1501837231.706:6): avc: denied { setattr } for comm="kdevtmpfs" name="dm-5" dev="devtmpfs" ino=805 scontext=u:r:kernel:s0 tcontext=u:object_r:device:s0 tclass=blk_file permissive=1
+[    5.731147] fsck.f2fs: Info: Fix the reported corruption.
+[    5.732083] fsck.f2fs: 	Info: No support kernel version!
+[    5.732182] fsck.f2fs: Info: Segments per section = 1
+[    5.732203] fsck.f2fs: Info: Sections per zone = 1
+[    5.732214] fsck.f2fs: Info: sector size = 4096
+[    5.732224] fsck.f2fs: Info: total sectors = 6417912 (25069 MB)
+[    5.733284] fsck.f2fs: Info: MKFS version
+[    5.733466] fsck.f2fs:   "4.19.232+-ab27 #3 SMP PREEMPT Wed Nov 22 20:54:15 CST 2023"
+[    5.733501] fsck.f2fs: Info: FSCK version
+[    5.733526] fsck.f2fs:   from "4.19.232+-ab78 #3 SMP PREEMPT Tue Jul 29 14:49:38 CST 2025"
+[    5.889874] F2FS-fs (dm-5): Using encoding defined by superblock: utf8-12.1.0 with flags 0x0
+[    6.073828] F2FS-fs (dm-5): Mounted with checkpoint version = 4671857b
+[    6.205398] fscrypt: AES-256-CTS-CBC using implementation "cts(cbc-aes-ce)"
+[    6.217381] fscrypt: AES-256-XTS using implementation "xts-aes-ce"
+[    6.243995] apexd: This device does not support updatable APEX. Exiting
+[    6.244055] apexd: Marking APEXd as activated
+[    6.552381] type=1400 audit(1501837232.556:7): avc: denied { read } for comm="android.hardwar" name="u:object_r:default_prop:s0" dev="tmpfs" ino=11234 scontext=u:r:hal_graphics_composer_default:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=1
+[    6.552712] type=1400 audit(1501837232.556:8): avc: denied { open } for comm="android.hardwar" path="/dev/__properties__/u:object_r:default_prop:s0" dev="tmpfs" ino=11234 scontext=u:r:hal_graphics_composer_default:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=1
+[    6.552831] type=1400 audit(1501837232.556:9): avc: denied { getattr } for comm="android.hardwar" path="/dev/__properties__/u:object_r:default_prop:s0" dev="tmpfs" ino=11234 scontext=u:r:hal_graphics_composer_default:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=1
+[    6.552920] type=1400 audit(1501837232.556:10): avc: denied { map } for comm="android.hardwar" path="/dev/__properties__/u:object_r:default_prop:s0" dev="tmpfs" ino=11234 scontext=u:r:hal_graphics_composer_default:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=1
+[    6.626704] apexd: This device does not support updatable APEX. Exiting
+[    6.626765] apexd: Marking APEXd as ready
+[    6.736427] logd.daemon: reinit
+[    6.859727] type=1400 audit(1501837232.860:11): avc: denied { setattr } for comm="init" name="nfc" dev="dm-5" ino=100 scontext=u:r:vendor_init:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+[    6.863129] init: Verified that /data/nfc has the encryption policy 3856f3107102520c137ad152ecb43658 v2 modes 1/4 flags 0xa
+[    6.863554] init: Inferred action different from explicit one, expected 0 but got 2
+[    6.863913] init: Verified that /data/nfc/param has the encryption policy 3856f3107102520c137ad152ecb43658 v2 modes 1/4 flags 0xa
+[    7.372441] healthd: BatteryCycleCountPath not found
+[    7.402010] healthd: battery l=0 v=8400 t=18.8 h=2 st=2 c=0 fc=5125000 chg=au
+I/TA: Hello Rockchip Weaver! rpmb :0
+[    7.514507] file system registered
+[    7.518030] using random self ethernet address
+[    7.518086] using random host ethernet address
+[    8.043635] RTW: module init start
+[    8.059429] RTW: rtl88x2cs v5.14.0.3-0-g4c549b2.20230512_COEX20211210-2727
+[    8.059529] RTW: build time: Nov 14 2024 18:38:22
+[    8.059550] RTW: rtl88x2cs BT-Coex version = COEX20211210-2727
+[    8.059615] RTW: rtw_inetaddr_notifier_register
+[    8.064596] RTW: == SDIO Card Info ==
+[    8.064695] RTW:   card: 000000005d7f16ec
+[    8.064719] RTW:   clock: 200000000 Hz
+[    8.064737] RTW:   timing spec: sd uhs SDR104
+[    8.064756] RTW:   sd3_bus_mode: TRUE
+[    8.064773] RTW:   func num: 1
+[    8.064790] RTW:   func1: 00000000e8e37d85 (*)
+[    8.064805] RTW: ================
+[    8.064825] RTW: CHIP TYPE: RTL8822C
+[    8.065111] RTW: loadparam, Select P2P interface: iface_id:1
+[    8.065172] RTW: [HALMAC]55772M
+[    8.065172] HALMAC_MAJOR_VER = 1
+[    8.065172] HALMAC_PROTOTYPE_VER = 6
+[    8.065172] HALMAC_MINOR_VER = 6
+[    8.065172] HALMAC_PATCH_VER = 26
+[    8.075306] RTW: Chip Version Info: CHIP_8822C_U4_2T2R_RomVer(3)
+[    8.082506] RTW: SetHwReg: bMacPwrCtrlOn=1
+[    8.111301] read descriptors
+[    8.111346] read strings
+[    8.113028] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_LOGICAL_EFUSE
+[    8.113084] RTW: HW EFUSE
+[    8.113092] RTW: 0x000: 29 81 00 8F  FF 20 28 00  9A 04 ED 75  10 0F F1 EB  
+[    8.113110] RTW: 0x010: 51 52 53 52  51 51 44 45  46 46 46 02  00 00 FF FF  
+[    8.113125] RTW: 0x020: FF FF 4C 49  49 48 40 3E  3C 3E 3F 3F  3C 3C 3D 3E  
+[    8.113141] RTW: 0x030: 02 00 FF FF  00 FF 30 00  FF FF 5F 60  60 61 61 61  
+[    8.113158] RTW: 0x040: 4D 4E 4F 4F  50 02 00 00  FF FF FF FF  4E 4B 4B 4B  
+[    8.113172] RTW: 0x050: 47 45 43 44  44 46 43 42  43 44 02 00  FF FF 00 FF  
+[    8.113186] RTW: 0x060: 30 00 FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113202] RTW: 0x070: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113216] RTW: 0x080: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113231] RTW: 0x090: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113245] RTW: 0x0A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113260] RTW: 0x0B0: FF FF FF FF  FF FF FF FF  7F 4A FF 00  FF FF FF FF  
+[    8.113275] RTW: 0x0C0: FF 21 00 11  00 00 FF FF  00 33 03 FF  FF FF FF FF  
+[    8.113289] RTW: 0x0D0: 1C 20 FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113304] RTW: 0x0E0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113318] RTW: 0x0F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113332] RTW: 0x100: F0 94 65 D3  58 C5 FF FF  CD F0 FF FF  FF FF FF FF  
+[    8.113346] RTW: 0x110: 4A 4A FC A0  D8 D8 FD FF  35 8C FF FF  FF FF FF FF  
+[    8.113360] RTW: 0x120: FE DF 01 23  34 FF FF FF  FF FF 4C 02  22 C8 FF FF  
+[    8.113375] RTW: 0x130: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113411] RTW: 0x140: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113425] RTW: 0x150: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113439] RTW: 0x160: FF FF FF FF  FF FF FF FF  FF FF 8C EA  12 07 67 E0  
+[    8.113453] RTW: 0x170: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113467] RTW: 0x180: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113485] RTW: 0x190: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113499] RTW: 0x1A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113514] RTW: 0x1B0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113528] RTW: 0x1C0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113542] RTW: 0x1D0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113557] RTW: 0x1E0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113573] RTW: 0x1F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113590] RTW: 0x200: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113620] RTW: 0x210: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113635] RTW: 0x220: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113649] RTW: 0x230: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113664] RTW: 0x240: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113679] RTW: 0x250: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113693] RTW: 0x260: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113707] RTW: 0x270: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113721] RTW: 0x280: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113735] RTW: 0x290: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113750] RTW: 0x2A0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113764] RTW: 0x2B0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113778] RTW: 0x2C0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113793] RTW: 0x2D0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113807] RTW: 0x2E0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113821] RTW: 0x2F0: FF FF FF FF  FF FF FF FF  FF FF FF FF  FF FF FF FF  
+[    8.113840] RTW: EEPROM ID = 0x8129
+[    8.113846] RTW: EEPROM Version = 0
+[    8.113855] RTW: Hal_EfuseParseTxPowerInfo tpt_mode=0, PG with PWR_IDX
+[    8.113859] RTW: EEPROM Regulatory=0x01
+[    8.113864] RTW: EEPROM Board Type=0x01
+[    8.113869] RTW: EEPROM Enable BT-coex, ant_num=1
+[    8.113877] RTW: rtw_rfctl_decide_init_chplan chplan:0x7F
+[    8.113884] RTW: valid crystal_cap value 0x4A4A is found in XCAP_SRC_H_EFUSE_B9!
+[    8.113889] RTW: EEPROM crystal_cap=0x4a
+[    8.113893] RTW: EEPROM ThermalMeter=0x1e
+[    8.113898] RTW: EEPROM efuse[0xc9]=0x33 is valid
+[    8.113903] RTW: EEPROM Customer ID=0x00
+[    8.113908] RTW: EEPROM SupportRemoteWakeup=0
+[    8.113913] RTW: EEPROM PAType_2G is 0x0, ExternalPA_2G = 0
+[    8.113918] RTW: EEPROM PAType_5G is 0x0, external_pa_5g = 0
+[    8.113923] RTW: EEPROM LNAType_2G is 0x0, ExternalLNA_2G = 0
+[    8.113927] RTW: EEPROM LNAType_5G is 0x0, external_lna_5g = 0
+[    8.113932] RTW: EEPROM TypeGPA = 0x0
+[    8.113936] RTW: EEPROM TypeAPA = 0x0
+[    8.113940] RTW: EEPROM TypeGLNA = 0x0
+[    8.113944] RTW: EEPROM TypeALNA = 0x0
+[    8.113949] RTW: EEPROM rfe_type=0x3
+[    8.116480] RTW: rtl8822c_fw_dl fw source from array
+[    8.147238] RTW: _rtw_hal_set_fw_rsvd_page((null)) Get [ NOR ] RsvdPageNUm  ==>
+[    8.147268] RTW: LocPsPoll: 4
+[    8.147284] RTW: WARN Invalid rate 0x0 in MRateToHwRate
+[    8.147295] RTW: LocNullData: 5
+[    8.147307] RTW: WARN Invalid rate 0x0 in MRateToHwRate
+[    8.147317] RTW: LocQosNull: 6
+[    8.147327] RTW: WARN Invalid rate 0x0 in MRateToHwRate
+[    8.147336] RTW: LocBTQosNull: 7
+[    8.147346] RTW: WARN Invalid rate 0x0 in MRateToHwRate
+[    8.147357] RTW: _rtw_hal_set_fw_rsvd_page((null)) Get [ NOR ] RsvdPageNUm <==
+[    8.155638] RTW: rtw_halmac_rx_agg_switch: RX aggregation threshold: timeout=32 size=255
+[    8.156673] RTW: rtl8822c_fw_dl Download Firmware from array success
+[    8.156721] RTW: NIC FW Version:9 SubVersion:13 FW size:196888
+[    8.157615] RTW: hal_read_mac_hidden_rpt OK! (1, 0ms), fwdl:1, id:0x19
+[    8.157774] RTW: SetHwReg: bMacPwrCtrlOn=0
+[    8.160752] RTW: rtw_hal_read_chip_info in 87 ms
+[    8.160808] RTW: [RF_PATH] ver_id.RF_TYPE:RF_2T2R
+[    8.160829] RTW: [RF_PATH] HALSPEC's rf_reg_trx_path_bmp:0x33, rf_reg_path_avail_num:2, max_tx_cnt:2
+[    8.160869] RTW: [RF_PATH] PG's trx_path_bmp:0x33, max_tx_cnt:0
+[    8.160887] RTW: [RF_PATH] Registry's trx_path_bmp:0x00, tx_path_lmt:0, rx_path_lmt:0
+[    8.160904] RTW: [RF_PATH] HALDATA's trx_path_bmp:0x33, max_tx_cnt:2
+[    8.160921] RTW: [RF_PATH] HALDATA's rf_type:RF_2T2R, NumTotalRFPath:2
+[    8.160938] RTW: rtw_hal_rfpath_init trx_path_bmp:0x33(RF_2T2R), NumTotalRFPath:2, max_tx_cnt:2
+[    8.160956] RTW: [TRX_Nss] HALSPEC - tx_nss:2, rx_nss:2
+[    8.160971] RTW: [TRX_Nss] Registry - tx_nss:0, rx_nss:0
+[    8.160987] RTW: [TRX_Nss] HALDATA - tx_nss:2, rx_nss:2
+[    8.161002] RTW: rtw_hal_trxnss_init tx_nss:2, rx_nss:2
+[    8.161020] RTW: txpath=0x3, rxpath=0x3
+[    8.161036] RTW: txpath_1ss:0x1, num:1
+[    8.161052] RTW: txpath_2ss:0x3, num:2
+[    8.161409] RTW: init_mlme_default_rate_set: support CCK
+[    8.161431] RTW: init_mlme_default_rate_set: support OFDM
+[    8.162268] RTW: rtw_alloc_macid((null)) if1, mac_addr:ff:ff:ff:ff:ff:ff macid:1
+[    8.162296] RTW: rtw_init_pwrctrl_priv: IPS_mode=1, LPS_mode=2, LPS_level=1, LPS_1T1R=0
+[    8.162415] RTW: IQK FW offload:disable
+[    8.162433] RTW: init_phydm_cominfo: Fv=1 Cv=3
+[    8.162791] RTW: rtw_regsty_chk_target_tx_power_valid return _FALSE for band:0, path:0, rs:0, t:-1
+[    8.162897] RTW: phy_ConfigBBWithPgParaFile(): No File PHY_REG_PG.txt, Load from HWImg Array!
+[    8.162920] RTW: default power by rate loaded
+[    8.162938] RTW: init_channel_set_from_rtk_priv_2g_5g((null)) chplan:0x7F
+[    8.162950] RTW: band:5G ch52 is NO_IR DFS while beacon hint not allowed
+[    8.162955] RTW: band:5G ch56 is NO_IR DFS while beacon hint not allowed
+[    8.162960] RTW: band:5G ch60 is NO_IR DFS while beacon hint not allowed
+[    8.162965] RTW: band:5G ch64 is NO_IR DFS while beacon hint not allowed
+[    8.162970] RTW: band:5G ch100 is NO_IR DFS while beacon hint not allowed
+[    8.162975] RTW: band:5G ch104 is NO_IR DFS while beacon hint not allowed
+[    8.162980] RTW: band:5G ch108 is NO_IR DFS while beacon hint not allowed
+[    8.162985] RTW: band:5G ch112 is NO_IR DFS while beacon hint not allowed
+[    8.162989] RTW: band:5G ch116 is NO_IR DFS while beacon hint not allowed
+[    8.162994] RTW: band:5G ch120 is NO_IR DFS while beacon hint not allowed
+[    8.162999] RTW: band:5G ch124 is NO_IR DFS while beacon hint not allowed
+[    8.163003] RTW: band:5G ch128 is NO_IR DFS while beacon hint not allowed
+[    8.163008] RTW: band:5G ch132 is NO_IR DFS while beacon hint not allowed
+[    8.163012] RTW: band:5G ch136 is NO_IR DFS while beacon hint not allowed
+[    8.163017] RTW: band:5G ch140 is NO_IR DFS while beacon hint not allowed
+[    8.163022] RTW: band:5G ch144 is NO_IR DFS while beacon hint not allowed
+[    8.163029] RTW: init_channel_set_from_rtk_priv((null)) ch num:38
+[    8.164528] RTW: rtw_macaddr_cfg mac addr:8c:ea:12:07:67:e0
+[    8.164702] RTW: disable_interrupt: update SDIO HIMR=0
+[    8.164715] RTW: bDriverStopped:True, bSurpriseRemoved:False, bup:0, hw_init_completed:0
+[    8.164772] RTW: loadparam, Select P2P interface: iface_id:1
+[    8.164954] RTW: init_mlme_default_rate_set: support CCK
+[    8.164991] RTW: init_mlme_default_rate_set: support OFDM
+[    8.166410] RTW: rtw_alloc_macid((null)) if2, mac_addr:ff:ff:ff:ff:ff:ff macid:1
+[    8.166471] RTW: rtw_drv_add_vir_if if2 mac_addr : 8e:ea:12:07:67:e0
+[    8.166514] RTW: rtw_cfg80211_init_wiphy_band:rf_type=2
+[    8.166540] RTW: [HT] HAL Support LDPC = 0x03
+[    8.166592] RTW: [HT] HAL Support STBC = 0x01
+[    8.166615] RTW: [HT] HAL Support LDPC = 0x03
+[    8.166632] RTW: [HT] HAL Support STBC = 0x01
+[    8.166650] RTW: [VHT] Support LDPC = 0x03
+[    8.166667] RTW: [VHT] Support STBC = 0x03
+[    8.166682] RTW: [VHT] Support Beamformee
+[    8.166697] RTW: [VHT] Support MU-MIMO STA
+[    8.166725] RTW: [VHT] Declare supporting MAX MPDU len = 11454 bytes
+[    8.166741] RTW: [VHT] Declare supporting RX LDPC
+[    8.166757] RTW: [VHT] Declare supporting SGI 80MHz
+[    8.166772] RTW: [VHT] Declare supporting TX STBC
+[    8.166787] RTW: [VHT] Declare supporting 1SS RX STBC
+[    8.166826] RTW: [VHT] Declare supporting SU Beamformee
+[    8.166842] RTW: [VHT] Declare supporting MU Beamformee
+[    8.166858] RTW: [VHT] Declare supporting VHT variant HT Control
+[    8.166874] RTW: [VHT] Declare supporting RX A-MPDU Length Exponent = 7
+[    8.166907] RTW: rtw_wiphy_alloc(phy0)
+[    8.166951] RTW: rtw_wdev_alloc(padapter=00000000d8c1442b)
+[    8.166980] RTW: rtw_wdev_alloc(padapter=000000004877d79c)
+[    8.167000] RTW: rtw_wiphy_register(phy0)
+[    8.167018] RTW: Register RTW cfg80211 vendor cmd(0x67) interface
+[    8.174975] RTW: rtw_ndev_init(wlan0) if1 mac_addr=8c:ea:12:07:67:e0
+[    8.175280] RTW: rtw_ndev_notifier_call(wlan0) state:16
+[    8.183299] healthd: battery l=0 v=8400 t=18.8 h=2 st=2 c=-1000 fc=5125000 chg=au
+[    8.193610] RTW: cfg80211_rtw_get_txpower(wlan0) total max: -10000 mbm
+[    8.193833] RTW: rtw_ndev_notifier_call(wlan0) state:5
+[    8.194197] RTW: rtw_ndev_init(p2p0) if2 mac_addr=8e:ea:12:07:67:e0
+[    8.194450] RTW: rtw_ndev_notifier_call(p2p0) state:16
+[    8.196825] RTW: cfg80211_rtw_get_txpower(p2p0) total max: -10000 mbm
+[    8.196981] RTW: rtw_ndev_notifier_call(p2p0) state:5
+[    8.197393] RTW: module init ret=0
+[    9.126087] init: Command 'setprop sys.usb.state ${sys.usb.config}' action=sys.usb.config=adb && sys.usb.configfs=1 && sys.usb.ffs.ready=1 (/system/etc/init/hw/init.usb.configfs.rc:24) took 441ms and succeeded
+[    9.126371] init: Service 'rockchip.drmservice' (pid 376) exited with status 0 oneshot service took 0.572000 seconds in background
+[    9.126437] init: Sending signal 9 to service 'rockchip.drmservice' (pid 376) process group...
+[    9.126836] libprocessgroup: Successfully killed process cgroup uid 0 pid 376 in 0ms
+[    9.133046] init: Service 'usbd' (pid 383) exited with status 0 oneshot service took 0.475000 seconds in background
+[    9.133097] init: Sending signal 9 to service 'usbd' (pid 383) process group...
+[    9.133393] libprocessgroup: Successfully killed process cgroup uid 0 pid 383 in 0ms
+[    9.137508] init: processing action (wlan.driver.status=ok) from (/vendor/etc/init/hw/init.connectivity.rc:57)
+[    9.138843] init: processing action (wlan.driver.status=ok) from (/vendor/etc/init/hw/init.connectivity.rc:57)
+[    9.140455] init: processing action (init.svc.media=*) from (/system/etc/init/mediaserver.rc:1)
+[   11.405116] Freeing drm_logo memory: 10808K
+[   11.546628] type=1400 audit(1501837237.553:59): avc: denied { create } for comm="SWRootService" scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=udp_socket permissive=1
+[   11.546808] type=1400 audit(1501837237.553:60): avc: denied { ioctl } for comm="SWRootService" path="socket:[21403]" dev="sockfs" ino=21403 ioctlcmd=0x8913 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=udp_socket permissive=1
+[   12.749067] type=1400 audit(1501837238.753:61): avc: denied { net_admin } for comm="SWRootService" capability=12 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=capability permissive=1
+[   12.749529] type=1400 audit(1501837238.753:62): avc: denied { sys_module } for comm="SWRootService" capability=16 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=capability permissive=1
+[   13.521120] type=1400 audit(1501837239.526:63): avc: denied { read } for comm="Binder:173_2" name="wakeup4" dev="sysfs" ino=22711 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[   13.521449] type=1400 audit(1501837239.526:64): avc: denied { open } for comm="Binder:173_2" path="/sys/devices/platform/fdd40000.i2c/i2c-0/0-004e/power_supply/tcpm-source-psy-0-004e/wakeup4" dev="sysfs" ino=22711 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[   13.521767] type=1400 audit(1501837239.526:65): avc: denied { read } for comm="Binder:173_2" name="event_count" dev="sysfs" ino=22718 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   13.521927] type=1400 audit(1501837239.526:66): avc: denied { open } for comm="Binder:173_2" path="/sys/devices/platform/fdd40000.i2c/i2c-0/0-004e/power_supply/tcpm-source-psy-0-004e/wakeup4/event_count" dev="sysfs" ino=22718 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   13.522030] type=1400 audit(1501837239.526:67): avc: denied { getattr } for comm="Binder:173_2" path="/sys/devices/platform/fdd40000.i2c/i2c-0/0-004e/power_supply/tcpm-source-psy-0-004e/wakeup4/event_count" dev="sysfs" ino=22718 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   13.524269] type=1400 audit(1501837239.530:68): avc: denied { read } for comm="Binder:173_2" name="wakeup16" dev="sysfs" ino=29339 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=dir permissive=1
+[   15.599510] init: Control message: Processed ctl.start for 'idmap2d' from pid: 440 (system_server)
+[   15.805166] healthd: battery l=0 v=8400 t=18.8 h=2 st=2 c=-1000 fc=5125000 chg=au
+[   16.610630] init: processing action (sys.sysctl.extra_free_kbytes=*) from (/system/etc/init/hw/init.rc:1001)
+[   17.158289] type=1400 audit(1754451132.000:94): avc: denied { create } for comm="SWRootService" scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=udp_socket permissive=1
+[   17.158471] type=1400 audit(1754451132.000:95): avc: denied { ioctl } for comm="SWRootService" path="socket:[24752]" dev="sockfs" ino=24752 ioctlcmd=0x8913 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=udp_socket permissive=1
+[   18.173571] read descriptors
+[   18.173615] read strings
+[   18.173722] read descriptors
+[   18.173739] read strings
+[   18.676503] type=1400 audit(1754451133.513:96): avc: denied { read } for comm="Binder:173_2" name="wakeup4" dev="sysfs" ino=22711 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[   18.676717] type=1400 audit(1754451133.513:97): avc: denied { open } for comm="Binder:173_2" path="/sys/devices/platform/fdd40000.i2c/i2c-0/0-004e/power_supply/tcpm-source-psy-0-004e/wakeup4" dev="sysfs" ino=22711 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
+[   18.676829] type=1400 audit(1754451133.513:98): avc: denied { read } for comm="Binder:173_2" name="event_count" dev="sysfs" ino=22718 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   18.677600] type=1400 audit(1754451133.513:99): avc: denied { open } for comm="Binder:173_2" path="/sys/devices/platform/fdd40000.i2c/i2c-0/0-004e/power_supply/tcpm-source-psy-0-004e/wakeup4/event_count" dev="sysfs" ino=22718 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   18.677764] type=1400 audit(1754451133.513:100): avc: denied { getattr } for comm="Binder:173_2" path="/sys/devices/platform/fdd40000.i2c/i2c-0/0-004e/power_supply/tcpm-source-psy-0-004e/wakeup4/event_count" dev="sysfs" ino=22718 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=1
+[   18.686624] type=1400 audit(1754451133.516:101): avc: denied { read } for comm="Binder:173_2" name="wakeup16" dev="sysfs" ino=29339 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=dir permissive=1
+[   18.689624] type=1400 audit(1754451133.516:102): avc: denied { open } for comm="Binder:173_2" path="/sys/devices/platform/fdd40000.i2c/i2c-0/0-0020/rk817-battery/power_supply/battery/wakeup16" dev="sysfs" ino=29339 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=dir permissive=1
+[   18.689853] type=1400 audit(1754451133.516:103): avc: denied { read } for comm="Binder:173_2" name="event_count" dev="sysfs" ino=29346 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs_batteryinfo:s0 tclass=file permissive=1
+[   18.700453] RTW: cfg80211_rtw_get_txpower(p2p0) total max: -10000 mbm
+[   18.700501] RTW: cfg80211_rtw_get_txpower(wlan0) total max: -10000 mbm
+[   18.718380] init: processing action (wlan.driver.status=ok) from (/vendor/etc/init/hw/init.connectivity.rc:57)
+[   18.752717] RTW: rtw_ndev_notifier_call(wlan0) state:13
+[   18.752752] RTW: _netdev_open(wlan0) , bup=0
+[   18.752762] RTW: rtl8822c_hal_init fw source from array
+[   18.753162] init: processing action (wlan.driver.status=ok) from (/vendor/etc/init/hw/init.connectivity.rc:57)
+[   18.779960] RTW: SetHwReg: bMacPwrCtrlOn=1
+[   18.805188] RTW: _rtw_hal_set_fw_rsvd_page(wlan0) Get [ NOR ] RsvdPageNUm  ==>
+[   18.805276] RTW: LocPsPoll: 4
+[   18.805301] RTW: LocNullData: 5
+[   18.805322] RTW: LocQosNull: 6
+[   18.805341] RTW: LocBTQosNull: 7
+[   18.805360] RTW: _rtw_hal_set_fw_rsvd_page(wlan0) Get [ NOR ] RsvdPageNUm <==
+[   18.814422] RTW: rtw_halmac_rx_agg_switch: RX aggregation threshold: timeout=32 size=255
+[   18.814870] RTW: rtw_start_drv_threads(wlan0) enter
+[   18.814902] RTW: rtw_start_drv_threads(wlan0) start RTW_XMIT_THREAD
+[   18.816496] RTW: rtw_start_drv_threads(wlan0) start RTW_RECV_THREAD
+[   18.817314] RTW: rtw_start_drv_threads(wlan0) start RTW_CMD_THREAD
+[   18.817543] RTW: rtw_recv_thread(wlan0) enter
+[   18.817700] RTW: _run_thread(wlan0) start RTWHALXT
+[   18.817840] RTW: start rtl8822cs_xmit_thread(wlan0)
+[   18.817935] RTW: enable_interrupt(wlan0): update SDIO HIMR=0x00000001
+[   19.186142] RTW: rtl8822c_hal_init Download Firmware from array success
+[   19.186184] RTW: NIC FW Version:9 SubVersion:13 FW size:196888
+[   19.188217] RTW: rtl8822c_mac_verify successful
+[   19.364588] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.364713] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.364797] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.364845] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.364893] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.364935] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.364983] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365030] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365079] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365127] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365169] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365216] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365266] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365315] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365362] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365406] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365453] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365500] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365548] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.365596] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.367553] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.367624] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.367707] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.367787] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.367859] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368323] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368384] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368432] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368483] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368524] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368572] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368619] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368666] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368713] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368754] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368801] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368849] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368896] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368943] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.368986] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.369033] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   19.406794] start_addr=(0x20000), end_addr=(0x40000), buffer_size=(0x20000), smp_number_max=(16384)
+[   19.407310] RTW: rtw_hal_set_default_port_id_cmd (wlan0) port_id :0, mad_id:0
+[   19.410516] RTW: rtw_hal_set_wifi_btc_port_id_cmd (wlan0) - hw_port :0
+[   19.410986] RTW: rtw_hal_set_macaddr_port wlan0- hw port(0) mac_addr =8c:ea:12:07:67:e0
+[   19.411167] RTW: rtw_hal_set_macaddr_port p2p0- hw port(1) mac_addr =8e:ea:12:07:67:e0
+[   19.411647] RTW: [HW_VAR_ENABLE_RX_BAR] 0x6A2=0x100
+[   19.418186] RTW: wlan0: hw_port(0) will set mode to 2
+[   19.418379] RTW: set_opmode_port0(wlan0): hw_port(0) mode=2
+[   19.418834] RTW: rtw_hal_init: padapter->registrypriv.set_rrsr_value=0xffffffff
+[   19.418849] RTW: MAC Address = 8c:ea:12:07:67:e0
+[   19.418865] RTW: _netdev_vir_if_open(p2p0) , bup=0
+[   19.418876] RTW: rtw_start_drv_threads(p2p0) enter
+[   19.418886] RTW: _run_thread(p2p0) start RTWHALXT
+[   19.419092] RTW: _netdev_vir_if_open(p2p0) (bup=1) exit
+[   19.419105] RTW: -871x_drv - drv_open, bup=1
+[   19.419351] RTW: cfg80211_rtw_set_power_mgmt(wlan0) enabled:1, timeout:-1
+[   19.419371] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[   19.419381] RTW: rtw_ndev_notifier_call(wlan0) state:1
+[   19.419773] RTW: start rtl8822cs_xmit_thread(p2p0)
+[   19.427032] RTW: rtw_cfgvendor_set_nodfs_flag nodfs=0, err=0
+[   19.448885] RTW: cfg80211_rtw_get_txpower(p2p0) total max: -10000 mbm
+[   19.448919] RTW: cfg80211_rtw_get_txpower(wlan0) total max: -10000 mbm
+[   19.588073] init: starting service 'wpa_supplicant'...
+[   19.590981] init: Created socket '/dev/socket/wpa_wlan0', mode 660, user 1010, group 1010
+[   19.595647] init: Control message: Processed ctl.interface_start for 'android.hardware.wifi.supplicant@1.0::ISupplicant/default' from pid: 151 (/system/bin/hwservicemanager)
+[   19.931477] capability: warning: `wpa_supplicant' uses 32-bit capabilities (legacy support in use)
+[   20.010282] RTW: cfg80211_rtw_get_txpower(wlan0) total max: -10000 mbm
+[   20.010568] RTW: cfg80211_rtw_get_txpower(wlan0) total max: -10000 mbm
+[   20.012119] RTW: cfg80211_rtw_get_txpower(wlan0) total max: -10000 mbm
+[   20.012209] RTW: cfg80211_rtw_get_txpower(wlan0) total max: -10000 mbm
+[   20.022464] RTW: cfg80211_rtw_get_txpower(wlan0) total max: -10000 mbm
+[   20.024966] RTW: rtw_ndev_notifier_call(wlan0) state:4
+[   20.054748] RTW: cfg80211_rtw_flush_pmksa(wlan0)
+[   20.973323] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   20.973862] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   21.247517] init: processing action (vendor.wifi.direct.interface=p2p0) from (/vendor/etc/init/hw/init.connectivity.rc:61)
+[   21.386302] RTW: cfg80211_rtw_get_txpower(p2p0) total max: -10000 mbm
+[   21.386481] RTW: cfg80211_rtw_get_txpower(p2p0) total max: -10000 mbm
+[   21.388415] RTW: cfg80211_rtw_get_txpower(p2p0) total max: -10000 mbm
+[   21.388838] RTW: cfg80211_rtw_get_txpower(p2p0) total max: -10000 mbm
+[   21.391039] [BT_RFKILL]: bt shut off power
+[   21.391682] RTW: cfg80211_rtw_get_txpower(p2p0) total max: -10000 mbm
+[   21.391879] RTW: rtw_ndev_notifier_call(p2p0) state:13
+[   21.391914] RTW: _netdev_vir_if_open(p2p0) , bup=1
+[   21.391937] RTW: _netdev_vir_if_open(p2p0) (bup=1) exit
+[   21.395375] RTW: cfg80211_rtw_set_power_mgmt(p2p0) enabled:1, timeout:-1
+[   21.395422] IPv6: ADDRCONF(NETDEV_UP): p2p0: link is not ready
+[   21.395468] RTW: rtw_ndev_notifier_call(p2p0) state:1
+[   21.399369] RTW: rtw_ndev_notifier_call(p2p0) state:4
+[   21.424420] RTW: cfg80211_rtw_flush_pmksa(p2p0)
+[   21.499807] RTW: rtw_android_priv_cmd: Android private cmd "COUNTRY CN" on wlan0
+[   21.499855] RTW: WARN rtw_set_country(): not applied
+[   21.515031] RTW: rtw_android_priv_cmd: Android private cmd "BTCOEXSCAN-STOP" on wlan0
+[   21.515975] RTW: rtw_android_priv_cmd: Android private cmd "RXFILTER-STOP" on wlan0
+[   21.516689] RTW: rtw_android_priv_cmd: Android private cmd "RXFILTER-ADD 2" on wlan0
+[   21.517445] RTW: rtw_android_priv_cmd: Android private cmd "RXFILTER-START" on wlan0
+[   21.518293] RTW: rtw_android_priv_cmd: Android private cmd "RXFILTER-STOP" on wlan0
+[   21.518939] RTW: rtw_android_priv_cmd: Android private cmd "RXFILTER-ADD 3" on wlan0
+[   21.519698] RTW: rtw_android_priv_cmd: Android private cmd "RXFILTER-START" on wlan0
+[   21.520607] RTW: rtw_android_priv_cmd: Android private cmd "SETSUSPENDMODE 0" on wlan0
+[   21.591433] [BT_RFKILL]: rfkill_rk_set_power: set bt wake_host high!
+[   21.642702] [BT_RFKILL]: ENABLE UART_RTS
+[   21.665961] RTW: ==>rtw_ps_processor .fw_state(8)
+[   21.666571] RTW: ==>ips_enter cnts:1
+[   21.666596] RTW: nolinked power save enter
+[   21.666601] RTW: ===> rtw_ips_pwr_down...................
+[   21.666606] RTW: ====> rtw_ips_dev_unload...
+[   21.666733] RTW: disable_interrupt: update SDIO HIMR=0
+[   21.666811] RTW: SetHwReg: bMacPwrCtrlOn=0
+[   21.667982] RTW: <=== rtw_ips_pwr_down..................... in 0ms
+[   21.749247] [BT_RFKILL]: DISABLE UART_RTS
+[   21.749312] [BT_RFKILL]: bt turn on power
+[   21.749333] [BT_RFKILL]: Request irq for bt wakeup host
+[   21.749367] [BT_RFKILL]: ** disable irq
+[   21.750138] of_dma_request_slave_channel: dma-names property of node '/serial@fe650000' missing or empty
+[   21.750163] ttyS1 - failed to request DMA, use interrupt mode
+[   21.971223] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   22.430507] type=1400 audit(1754451137.273:153): avc: denied { write } for comm="HwBinder:268_1" laddr=127.0.0.1 lport=30001 scontext=u:r:hal_bluetooth_default:s0 tcontext=u:r:hal_bluetooth_default:s0 tclass=udp_socket permissive=1
+[   22.897589] init: processing action (sys.boot_completed=1) from (/system/etc/init/hw/init.rc:992)
+[   22.898542] init: starting service 'exec 14 (/bin/rm -rf /data/per_boot)'...
+[   22.901052] init: SVC_EXEC service 'exec 14 (/bin/rm -rf /data/per_boot)' pid 1074 (uid 1000 gid 1000+0 context default) started; waiting...
+[   22.929820] init: Service 'exec 14 (/bin/rm -rf /data/per_boot)' (pid 1074) exited with status 0 waiting took 0.029000 seconds
+[   22.929889] init: Sending signal 9 to service 'exec 14 (/bin/rm -rf /data/per_boot)' (pid 1074) process group...
+[   22.930150] libprocessgroup: Successfully killed process cgroup uid 1000 pid 1074 in 0ms
+[   23.084690] RTW: cfg80211_rtw_scan(wlan0)
+[   23.085056] RTW: _rtw_pwr_wakeup call ips_leave....
+[   23.085084] RTW: ==>ips_leave cnts:1
+[   23.085101] RTW: ===>  rtw_ips_pwr_up..............
+[   23.085132] RTW: ===> ips_netdrv_open.........
+[   23.085152] RTW: rtl8822c_hal_init fw source from array
+[   23.108059] RTW: SetHwReg: bMacPwrCtrlOn=1
+[   23.146060] RTW: _rtw_hal_set_fw_rsvd_page(wlan0) Get [ NOR ] RsvdPageNUm  ==>
+[   23.146101] RTW: LocPsPoll: 4
+[   23.146115] RTW: LocNullData: 5
+[   23.146124] RTW: LocQosNull: 6
+[   23.146131] RTW: LocBTQosNull: 7
+[   23.146141] RTW: _rtw_hal_set_fw_rsvd_page(wlan0) Get [ NOR ] RsvdPageNUm <==
+[   23.157251] RTW: rtw_halmac_rx_agg_switch: RX aggregation threshold: timeout=32 size=255
+[   23.157535] RTW: enable_interrupt(wlan0): update SDIO HIMR=0x00000001
+[   23.196765] type=1400 audit(1754451138.016:154): avc: denied { create } for comm="SWRootService" scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=udp_socket permissive=1
+[   23.197004] type=1400 audit(1754451138.016:155): avc: denied { ioctl } for comm="SWRootService" path="socket:[27738]" dev="sockfs" ino=27738 ioctlcmd=0x8913 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=udp_socket permissive=1
+[   23.197091] type=1400 audit(1754451138.016:156): avc: denied { net_admin } for comm="SWRootService" capability=12 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=capability permissive=1
+[   23.197170] type=1400 audit(1754451138.016:157): avc: denied { sys_module } for comm="SWRootService" capability=16 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=capability permissive=1
+[   23.415818] type=1400 audit(1754451138.256:158): avc: denied { dac_read_search } for comm="ls" capability=2 scontext=u:r:shell:s0 tcontext=u:r:shell:s0 tclass=capability permissive=1
+[   23.418458] audit: audit_lost=1 audit_rate_limit=5 audit_backlog_limit=64
+[   23.418838] audit: rate limit exceeded
+[   23.429365] type=1400 audit(1754451138.260:159): avc: denied { read } for comm="ls" name="data" dev="dm-5" ino=82 scontext=u:r:shell:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+[   23.439707] type=1400 audit(1754451138.260:160): avc: denied { open } for comm="ls" path="/data/data" dev="dm-5" ino=82 scontext=u:r:shell:s0 tcontext=u:object_r:system_data_file:s0 tclass=dir permissive=1
+[   23.439938] type=1400 audit(1754451138.260:161): avc: denied { getattr } for comm="ls" path="/data/data/net.sunniwell.app.stb.accessory.upgrade" dev="dm-5" ino=1826 scontext=u:r:shell:s0 tcontext=u:object_r:system_app_data_file:s0 tclass=dir permissive=1
+[   23.440124] type=1400 audit(1754451138.260:162): avc: denied { getattr } for comm="ls" path="/data/data/com.android.providers.telephony" dev="dm-5" ino=1835 scontext=u:r:shell:s0 tcontext=u:object_r:radio_data_file:s0 tclass=dir permissive=1
+[   23.496014] zram0: detected capacity change from 0 to 2039480320
+[   23.535115] mkswap: Swapspace size: 1991676k, UUID=f4b58ccb-6a48-48df-812b-a9f64098d70a
+[   23.539540] Adding 1991676k swap on /dev/block/zram0.  Priority:-2 extents:1 across:1991676k SS
+[   23.562060] RTW: rtl8822c_hal_init Download Firmware from array success
+[   23.562132] RTW: NIC FW Version:9 SubVersion:13 FW size:196888
+[   23.563324] RTW: rtl8822c_mac_verify successful
+[   23.583880] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584034] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584180] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584250] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584318] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584384] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584448] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584506] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584573] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584638] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584703] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584768] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584833] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584898] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.584964] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.585030] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.585095] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.585160] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.585225] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.585291] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.590599] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.590702] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.590828] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.590958] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591077] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591191] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591255] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591326] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591391] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591458] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591528] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591596] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591668] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591734] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591801] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591869] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.591935] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.592000] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.592078] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.592144] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.592208] RTW: is_valid_id_status: HALMAC_FEATURE_DUMP_PHYSICAL_EFUSE
+[   23.629899] start_addr=(0x20000), end_addr=(0x40000), buffer_size=(0x20000), smp_number_max=(16384)
+[   23.630430] RTW: rtw_hal_set_default_port_id_cmd (wlan0) port_id :0, mad_id:0
+[   23.633894] RTW: rtw_hal_set_wifi_btc_port_id_cmd (wlan0) - hw_port :0
+[   23.634485] RTW: rtw_hal_set_macaddr_port wlan0- hw port(0) mac_addr =8c:ea:12:07:67:e0
+[   23.634636] RTW: rtw_hal_set_macaddr_port p2p0- hw port(1) mac_addr =8e:ea:12:07:67:e0
+[   23.635222] RTW: [HW_VAR_ENABLE_RX_BAR] 0x6A2=0x100
+[   23.644081] RTW: wlan0: hw_port(0) will set mode to 2
+[   23.644305] RTW: set_opmode_port0(wlan0): hw_port(0) mode=2
+[   23.644875] RTW: rtw_hal_init: padapter->registrypriv.set_rrsr_value=0xffffffff
+[   23.644901] RTW: <===  rtw_ips_pwr_up.............. in 560ms
+[   23.644915] RTW: nolinked power save leave
+[   23.644956] RTW: ==> ips_leave.....LED(0x0062a282)...
+[   23.656261] RTW: LeaveAllPowerSaveModeDirect.....
+[   23.656303] RTW: rtw_hal_set_macaddr_port wlan0- hw port(0) mac_addr =76:95:e6:83:f3:df
+[   23.656428] RTW: wlan0- hw port(0) mac_addr =76:95:e6:83:f3:df
+[   23.656481] RTW: p2p0- hw port(1) mac_addr =8e:ea:12:07:67:e0
+[   23.656496] RTW: sitesurvey_cmd_hdl pno_scan_seq_num 2272
+[   23.657109] RTW: [HW_VAR_CHECK_TXBUF] Empty in 0 ms
+[   23.657188] RTW: wlan0 sleep m0=0x00000002, ori reg_0x4d4=0x00000000
+[   23.933375] RTW: RTW_Rx:ch=3(3), ta=18:8b:15:47:3b:3e
+[   23.933425] RTW: RTW_Rx:ACT_PUB_RSVD(token:67)
+[   23.933448] RTW: RTW_Rx:ch=3(3), ta=18:8b:15:47:3b:3e
+[   23.933462] RTW: RTW_Rx:ACT_PUB_RSVD(token:67)
+[   24.971202] RTW: rtw_process_beacon_hint: change band:2.4G ch:13 to active
+[   25.223891] RTW: rtw_process_beacon_hint: change band:5G ch:36 to active
+[   25.333467] RTW: rtw_process_beacon_hint: change band:5G ch:40 to active
+[   25.377347] audit: audit_lost=9 audit_rate_limit=5 audit_backlog_limit=64
+[   25.377385] audit: rate limit exceeded
+[   25.979256] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   26.977846] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   27.408156] init: Service 'bootanim' (pid 176) exited with status 0 oneshot service took 21.909000 seconds in background
+[   27.408243] init: Sending signal 9 to service 'bootanim' (pid 176) process group...
+[   27.408629] libprocessgroup: Successfully killed process cgroup uid 1003 pid 176 in 0ms
+[   27.478155] type=1400 audit(1754451142.306:198): avc: denied { call } for comm=".floatingwindow" scontext=u:r:system_app:s0 tcontext=u:r:vendor-swrootservice-hal-1-0:s0 tclass=binder permissive=1
+[   27.496849] RTW: rtw_process_beacon_hint: change band:5G ch:149 to active
+[   27.583342] type=1400 audit(1754451142.426:199): avc: denied { net_admin } for comm="SWRootService" capability=12 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=capability permissive=1
+[   27.583882] type=1400 audit(1754451142.426:200): avc: denied { sys_module } for comm="SWRootService" capability=16 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=capability permissive=1
+[   27.593655] audit: audit_lost=24 audit_rate_limit=5 audit_backlog_limit=64
+[   27.593885] audit: rate limit exceeded
+[   27.759000] RTW: rtw_process_beacon_hint: change band:5G ch:161 to active
+[   27.956217] RTW: LeaveAllPowerSaveModeDirect.....
+[   27.956284] RTW: rtw_hal_set_macaddr_port wlan0- hw port(0) mac_addr =8c:ea:12:07:67:e0
+[   27.956413] RTW: wlan0- hw port(0) mac_addr =8c:ea:12:07:67:e0
+[   27.956480] RTW: p2p0- hw port(1) mac_addr =8e:ea:12:07:67:e0
+[   27.961068] RTW: wlan0 wakeup m0=0x00000002, ori reg_0x4d4=0x00000002
+[   27.961161] RTW: survey done event(23) band:0 for wlan0
+[   27.961189] ========== ACS (VER-3) ==========
+[   27.961213] Best 24G Channel:13
+[   27.961218] Best 5G Channel:100
+[   27.961218] 
+[   27.961409] RTW: rtw_indicate_scan_done(wlan0)
+[   27.969142] RTW: cfg80211_rtw_get_txpower(p2p0) total max: -10000 mbm
+[   27.980229] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   27.981022] RTW: ==>rtw_ps_processor .fw_state(8)
+[   27.981311] RTW: ==>ips_enter cnts:2
+[   27.981335] RTW: nolinked power save enter
+[   27.981341] RTW: ===> rtw_ips_pwr_down...................
+[   27.981347] RTW: ====> rtw_ips_dev_unload...
+[   27.981487] RTW: disable_interrupt: update SDIO HIMR=0
+[   27.981576] RTW: SetHwReg: bMacPwrCtrlOn=0
+[   27.982792] RTW: <=== rtw_ips_pwr_down..................... in 4ms
+[   28.385847] type=1400 audit(1754451143.226:215): avc: denied { create } for comm="SWRootService" scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=udp_socket permissive=1
+[   28.388357] type=1400 audit(1754451143.226:216): avc: denied { ioctl } for comm="SWRootService" path="socket:[37151]" dev="sockfs" ino=37151 ioctlcmd=0x8913 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=udp_socket permissive=1
+[   28.574336] type=1400 audit(1754451143.416:217): avc: denied { dac_read_search } for comm="sed" capability=2 scontext=u:r:shell:s0 tcontext=u:r:shell:s0 tclass=capability permissive=1
+[   28.577820] type=1400 audit(1754451143.420:218): avc: denied { dac_override } for comm="sed" capability=1 scontext=u:r:shell:s0 tcontext=u:r:shell:s0 tclass=capability permissive=1
+[   28.586737] type=1400 audit(1754451143.426:219): avc: denied { chown } for comm="sed" capability=0 scontext=u:r:shell:s0 tcontext=u:r:shell:s0 tclass=capability permissive=1
+[   28.687930] audit: audit_lost=40 audit_rate_limit=5 audit_backlog_limit=64
+[   28.687984] audit: rate limit exceeded
+[   28.745331] binder_alloc: 1529: binder_alloc_buf, no vma
+[   28.746556] binder: 1623:1644 transaction failed 29189/-3, size 244-16 line 3232
+[   28.750680] binder: release 1529:1618 transaction 27963 out, still active
+[   28.750721] binder: undelivered TRANSACTION_COMPLETE
+[   28.752191] binder: undelivered transaction 28029, process died.
+[   28.752932] binder: send failed reply for transaction 27963, target dead
+[   28.944344] init.sunniwell. (325): drop_caches: 1
+[   28.959720] init: Service 'sunniwell-setup' (pid 325) exited with status 0 oneshot service took 21.302000 seconds in background
+[   28.959806] init: Sending signal 9 to service 'sunniwell-setup' (pid 325) process group...
+[   28.960249] libprocessgroup: Successfully killed process cgroup uid 0 pid 325 in 0ms
+[   28.981716] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   29.389066] type=1400 audit(1754451144.230:231): avc: denied { net_admin } for comm="SWRootService" capability=12 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=capability permissive=1
+[   29.389749] type=1400 audit(1754451144.230:232): avc: denied { sys_module } for comm="SWRootService" capability=16 scontext=u:r:swrootservice:s0 tcontext=u:r:swrootservice:s0 tclass=capability permissive=1
+[   29.989822] audit: audit_lost=49 audit_rate_limit=5 audit_backlog_limit=64
+[   29.989854] audit: rate limit exceeded
+[   30.988511] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   31.989778] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   32.993946] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   33.769511] vcc5v0_otg: disabling
+[   33.995074] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   34.999828] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   36.003033] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   37.006367] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   38.007474] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
+[   39.011405] init: Control message: Processed ctl.interface_start for 'android.hardware.radio@1.1::IRadio/slot1' from pid: 151 (/system/bin/hwservicemanager)
