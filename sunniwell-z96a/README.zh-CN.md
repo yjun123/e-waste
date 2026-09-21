@@ -4,7 +4,7 @@
 
 [Sunniwell](https://www.sunniwell.com/) Z96A 是一款基于 RK3568 的 ARM 云笔电，预装 Android 11，用于云桌面 VDI 场景。
 
-Z96A 有两个硬件版本，区别在于供电输入方式：
+Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有一些小的差异）：
 
 - **早期版本（2022？）** — 通过 DC 圆口充电。
 - **后期版本（2023）** — 通过 Type‑C PD 充电；固件在部分地方将此主板识别为 *Z97A*，但外壳标签仍为 *Z96A*。
@@ -19,19 +19,21 @@ Z96A 有两个硬件版本，区别在于供电输入方式：
 
 ## 硬件
 
+列出的硬件目前只包含 PD（Type-C 充电）版本。
+
 | 规格 | 描述 |
 | --- | --- |
 | 型号 | Z96A |
 | 主板 PCB 版本 | V02 201132 |
 | USB 小板 PCB 版本 | V01 528032 |
-| SoC | Rockchip [RK3568](https://www.rock-chips.com/a/en/products/RK35_Series/2021/0113/1276.html) @2.0GHz / 四核 ARM Cortex-A55 / Mali-G52 2EE GPU |
+| SoC | Rockchip [RK3568B2](https://www.rock-chips.com/a/en/products/RK35_Series/2021/0113/1276.html) @2.0GHz / 四核 ARM Cortex-A55 / Mali-G52 2EE GPU |
 | PMIC | Rockchip [RK809-5](https://rockchip.fr/RK809%20datasheet%20V2.7.pdf) / PMIC / 音频编解码器 |
 | DRAM | 4GB Rayson [RS1G32LO4D2BDS-53BT](https://szrayson.com/product_23/136.html) / LPDDR4X / x32 / 3733Mbps / FBGA 200-ball / 1.8/1.1/0.6V |
 | eMMC | 32GB SiliconGo [SGM8200C-S32BBG]() / HS400 / eMMC 5.1 / FBGA153 |
 | WiFi/BT | Realtek [RTL8822CS](https://bbs.16rd.com/thread-602771-1-1.html) / 802.11 a/b/g/n/ac / BT4.2 / 2T2R |
 | 显示屏 | BOE [NV140FHM‑N43](https://www.panelook.cn/NV140FHM-N43_BOE_14.0_LCM_overview_cn_27125.html) / 14 英寸 16:9 IPS / 1920x1080 / 31 cm x 17 cm / 60HZ / eDP |
-| 键盘 | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / USB 1.1 |
-| USB Hub | Genesys Logic [GL852G](https://www.genesyslogic.com.tw/en/product/show.php?num=GL852G&kind=USB2_Hub) / USB 2.0 / 4 MTT / QFN 28 |
+| 键盘/触控板 | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / AMR-TOUCH-MOUSE 202110 USB KEYBOARD / USB 1.1 / 6080:8060 |
+| USB Hub | Genesys Logic [GL852G](https://www.genesyslogic.com.tw/en/product/show.php?num=GL852G&kind=USB2_Hub) / USB 2.0 / 4 MTT / QFN 28 / 05e3:0610 |
 | 摄像头 | Microdia 摄像头 / USB 2.0 / UVC 1.00 / 0c45:6368 |
 | PD 控制器 | Hynetek [HUSB311BLA](https://www.hynetek.com/2422.html) / USB PD3.0 / 100W / QFN-14L |
 | USB 3.1 切换开关 | 未知 / D3EB 2342 F1 |
@@ -48,7 +50,7 @@ Z96A 有两个硬件版本，区别在于供电输入方式：
 | 接口 | 描述 |
 | --- | --- |
 | 电源 | Type-C PD *1 |
-| USB | USB 2.0 Type A Host * 2 / USB 3.0 Type A Host * 1 / USB 3.1 Type C * 1 |
+| USB | USB 2.0 Type A Host * 2 / USB 3.0 Type A Host * 1 / USB 3.1 Type C OTG * 1 |
 | HDMI | HDMI 2.0 * 1 |
 | 音频 | 3.5mm 耳机孔 *1 |
 | 麦克风 | 模拟麦克风 * 2 |
@@ -95,7 +97,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 ### 设备树
 
-每个硬件版本都带有 Rockchip **BSP** 设备树：
+感谢 [bingo1991](https://github.com/bingo1991) 和 [kemp233](https://github.com/kemp233) 完成了两个版本在 Rockchip **BSP** 内核上的设备树适配：
 
 - **早期版本（DC）** — [rk3568-z96a.dts](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a/blob/main/rk3568-z96a.dts)
 - **后期版本（PD）** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
@@ -114,6 +116,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | WiFi | Realtek RTL8822CS | `rtw88`（`CONFIG_RTW88_8822CS`） | 主线（SDIO，自 v6.3） |
 | 蓝牙 | Realtek RTL8822CS | `hci_uart` + `btrtl` | 主线 |
 | 键盘 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
+| 触控板 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
 | 摄像头 | Microdia 0c45:6368 | `uvcvideo`（USB UVC） | 主线 |
 | 显示屏 | BOE NV140FHM-N43 | `rockchip-vop2`（DRM）+ `panel-simple` | 主线（VOP2 自 v5.19） |
 | 音频 ADC | Everest ES7202 | — | 树外（[`snd_soc_es7202`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/sound/soc/codecs/es7202.c)） |

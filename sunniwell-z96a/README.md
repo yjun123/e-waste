@@ -4,7 +4,7 @@ English · [简体中文](README.zh-CN.md)
 
 The [Sunniwell](https://www.sunniwell.com/) Z96A is an RK3568‑based ARM cloud laptop pre‑loaded with Android 11 for cloud desktop VDI usage.
 
-The Z96A ships in two hardware revisions that differ in power input:
+The Z96A ships in two hardware revisions that differ mainly in power input (with other minor differences):
 
 - **Early revision (2022?)** — charges via a DC barrel jack.
 - **Later revision (2023)** — charges via Type‑C PD; the firmware identifies this board as *Z97A* in some places, although the shell label still reads *Z96A*.
@@ -19,19 +19,21 @@ A further *Z96H* variant (also Type‑C PD charging) exists but never saw wide c
 
 ## Hardware
 
+The hardware listed below currently only includes the PD (Type‑C charging) revision.
+
 | Specifications          | Description                                                  |
 | ----------------------- | ------------------------------------------------------------ |
 | Model                   | Z96A                                                         |
 | Main board PCB revision | V02 201132                                                   |
 | USB board PCB resvison  | V01 528032                                                   |
-| SoC                     | Rockchip [RK3568](https://www.rock-chips.com/a/en/products/RK35_Series/2021/0113/1276.html) @2.0GHz / Quad-Core ARM Cortex-A55 / Mali-G52 2EE GPU |
+| SoC                     | Rockchip [RK3568B2](https://www.rock-chips.com/a/en/products/RK35_Series/2021/0113/1276.html) @2.0GHz / Quad-Core ARM Cortex-A55 / Mali-G52 2EE GPU |
 | PMIC                    | Rockchip [RK809-5](https://rockchip.fr/RK809%20datasheet%20V2.7.pdf) / PMIC / Audio codec |
 | DRAM                    | 4GB Rayson [RS1G32LO4D2BDS-53BT](https://szrayson.com/product_23/136.html) / LPDDR4X / x32 / 3733Mbps / FBGA 200-ball / 1.8/1.1/0.6V |
 | eMMC                    | 32GB SiliconGo [SGM8200C-S32BBG]() / HS400 / eMMC 5.1 / FBGA153 |
 | WiFi/BT                 | Realtek [RTL8822CS](https://bbs.16rd.com/thread-602771-1-1.html) / 802.11 a/b/g/n/ac / BT4.2 / 2T2R |
 | Display                 | BOE [NV140FHM‑N43](https://www.panelook.cn/NV140FHM-N43_BOE_14.0_LCM_overview_cn_27125.html) / 14 inch 16:9 IPS / 1920x1080 / 31 cm x 17 cm / 60HZ / eDP |
-| Keyboard                | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / USB 1.1 |
-| USB Hub                 | Genesys Logic [GL852G](https://www.genesyslogic.com.tw/en/product/show.php?num=GL852G&kind=USB2_Hub) / USB 2.0 / 4 MTT / QFN 28 |
+| Keyboard/Touchpad       | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / AMR-TOUCH-MOUSE 202110 USB KEYBOARD / USB 1.1 / 6080:8060 |
+| USB Hub                 | Genesys Logic [GL852G](https://www.genesyslogic.com.tw/en/product/show.php?num=GL852G&kind=USB2_Hub) / USB 2.0 / 4 MTT / QFN 28 / 05e3:0610 |
 | Camera                  | Microdia Camera / USB 2.0 / UVC 1.00 / 0c45:6368             |
 | PD Controller           | Hynetek [HUSB311BLA](https://www.hynetek.com/2422.html) / USB PD3.0 / 100W / QFN-14L |
 | USB 3.1 Switch          | Unknown / D3EB 2342 F1                                       |
@@ -48,7 +50,7 @@ A further *Z96H* variant (also Type‑C PD charging) exists but never saw wide c
 | Interface | Description |
 | --------- | ----------- |
 | Power     | Type-C PD *1 |
-| USB   | USB 2.0 Type A Host * 2 / USB 3.0 Type A Host * 1 / USB 3.1 Type C * 1 |
+| USB   | USB 2.0 Type A Host * 2 / USB 3.0 Type A Host * 1 / USB 3.1 Type C OTG * 1 |
 | HDMI | HDMI 2.0 * 1 |
 | Audio | 3.5mm Jack *1 |
 | Mic | Analog Mic * 2 |
@@ -95,7 +97,7 @@ followed by the [VOP2](https://github.com/torvalds/linux/commit/604be85547ce4d61
 
 ### Device Tree
 
-Each hardware revision ships with Rockchip **BSP** device tree:
+Thanks to [bingo1991](https://github.com/bingo1991) and [kemp233](https://github.com/kemp233), device-tree adaptation for both revisions on the Rockchip **BSP** kernel is already complete:
 
 - **Early revision (DC)** — [rk3568-z96a.dts](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a/blob/main/rk3568-z96a.dts)
 - **Later revision (PD)** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
@@ -113,6 +115,7 @@ Mainline support status for the key peripherals.
 | WiFi               | Realtek RTL8822CS    | `rtw88` (`CONFIG_RTW88_8822CS`)         | Mainline (SDIO, since v6.3)                                  |
 | Bluetooth          | Realtek RTL8822CS    | `hci_uart` + `btrtl`                    | Mainline                                                     |
 | Keyboard           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                      | Mainline                                                     |
+| Touchpad           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                      | Mainline                                                     |
 | Camera             | Microdia 0c45:6368   | `uvcvideo` (USB UVC)                    | Mainline                                                     |
 | Display            | BOE NV140FHM-N43     | `rockchip-vop2` (DRM) + `panel-simple`  | Mainline (VOP2 since v5.19)                                  |
 | Audio ADC          | Everest ES7202       | —                                       | Out-of-tree ([`snd_soc_es7202`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/sound/soc/codecs/es7202.c)) |
