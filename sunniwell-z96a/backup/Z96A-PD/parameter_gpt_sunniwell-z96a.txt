@@ -1,0 +1,28 @@
+# ============================================================
+#  Sunniwell Z96A (Type-C PD 版) — Rockchip RK3568 GPT 参数文件
+# ============================================================
+#  依据: 设备实际 GPT（rkdeveloptool 读回, 2026-09-22）
+#  偏移: 分区起始 LBA, 与设备 GPT 完全一致
+#  大小: 相邻分区偏移之差（连续布局, 无间隙/无重叠）
+#  单位: 扇区（512B/扇区; 1 MiB = 2048 扇区 = 0x800）
+#
+#  备注:
+#    - super 为 Android 动态分区容器, 内含 system/vendor/product 等逻辑子分区
+#    - userdata 使用 grow 占满剩余空间
+#    - ATAG/PWR_HLD/MACHINE_ID 等板级字段继承自参考文件, 刷写前请按 RK3568 实际核对
+# ============================================================
+FIRMWARE_VER: 6.0.0
+MACHINE_MODEL: Sunniwell
+MACHINE_ID: Z96A
+MANUFACTURER: Sunniwell
+MAGIC: 0x5041524B
+ATAG: 0x00200800
+MACHINE: Z96A
+CHECK_MASK: 0x80
+PWR_HLD: 0,0,A,0,1
+#uuid:rootfs=00000000-0000-0000-0000-00000000
+#KERNEL_IMG: 0x00280000
+#FDT_NAME: rk-kernel.dtb
+#RECOVER_KEY: 1,1,0,20,0
+#in section; per section 512(0x200) bytes
+CMDLINE: mtdparts=rk29xxnand:0x00002000@0x00002000(security),0x00002000@0x00004000(uboot),0x00002000@0x00006000(trust),0x00002000@0x00008000(misc),0x00002000@0x0000A000(proinfo),0x00002000@0x0000C000(dtbo),0x00000800@0x0000E000(vbmeta),0x00020000@0x0000E800(boot),0x0003C000@0x0002E800(recovery),0x000C0000@0x0006A800(backup),0x00200000@0x0012A800(cache),0x00008000@0x0032A800(metadata),0x00000800@0x00332800(baseparameter),0x00614000@0x00333000(super),-@0x00947000(userdata:grow)

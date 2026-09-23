@@ -119,7 +119,7 @@ Mainline support status for the key peripherals.
 | Keyboard           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                      | Mainline                                                     |
 | Touchpad           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                      | Mainline                                                     |
 | Camera             | Microdia 0c45:6368   | `uvcvideo` (USB UVC)                    | Mainline                                                     |
-| Display            | BOE NV140FHM-N43     | `rockchip-vop2` (DRM) + `panel-simple`  | Mainline (VOP2 since v5.19)                                  |
+| Display            | BOE NV140FHM-N43     | `rockchip-vop2` (DRM) + Analogix `analogix_dp` (eDP) + `panel-simple`  | VOP2 mainline (v5.19); eDP output unsupported — vendor kernel only                                  |
 | Audio ADC          | Everest ES7202       | —                                       | Out-of-tree ([`snd_soc_es7202`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/sound/soc/codecs/es7202.c)) |
 | USB Hub            | Genesys Logic GL852G | `usbcore` (generic hub)                 | Mainline                                                     |
 | Hall Effect Switch | Magnesensor MH248    | — (GPIO interrupt, no dedicated driver) | Not needed (GPIO)                                            |

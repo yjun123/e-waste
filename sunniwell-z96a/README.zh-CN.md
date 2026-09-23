@@ -120,7 +120,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 键盘 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
 | 触控板 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
 | 摄像头 | Microdia 0c45:6368 | `uvcvideo`（USB UVC） | 主线 |
-| 显示屏 | BOE NV140FHM-N43 | `rockchip-vop2`（DRM）+ `panel-simple` | 主线（VOP2 自 v5.19） |
+| 显示屏 | BOE NV140FHM-N43 | `rockchip-vop2`（DRM）+ Analogix `analogix_dp`（eDP）+ `panel-simple` | VOP2 主线（v5.19）；eDP 输出不支持 —— 仅 vendor 内核 |
 | 音频 ADC | Everest ES7202 | — | 树外（[`snd_soc_es7202`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/sound/soc/codecs/es7202.c)） |
 | USB Hub | Genesys Logic GL852G | `usbcore`（generic hub） | 主线 |
 | 霍尔开关 | Magnesensor MH248 | —（GPIO 中断，无需专用驱动） | 无需（GPIO） |
