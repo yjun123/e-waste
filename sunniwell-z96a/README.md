@@ -139,6 +139,36 @@ Mainline support status for the key peripherals.
 
 
 
+### Peripheral status
+
+Actual (tested) status of each peripheral on the mainline kernel:
+
+- ✅ Working
+- ❌ Broken
+- 🟡 Partial
+- ⬜ No test
+
+| Peripheral | Status | Notes |
+| --- | --- | --- |
+| Wi-Fi (RTL8822CS) | ✅ | |
+| Bluetooth (RTL8822CS) | ✅ | |
+| Display — HDMI | ✅ | |
+| Display — eDP panel | ❌ | No mainline eDP driver — `analogix_dp` needs `ROCKCHIP_VOP`, not `VOP2`; vendor kernel only |
+| Keyboard (SH61F83Q) | ⬜ | |
+| Touchpad (SH61F83Q) | ⬜ | |
+| Camera (Microdia 0c45:6368) | ⬜ | |
+| Audio — speaker (AW8737AFCR) | ⬜ | |
+| Audio — headphone (3.5mm jack) | ⬜ | |
+| Microphone (ES7202 ADC) | ❌ | No mainline codec driver (ES7202 is out-of-tree) |
+| USB-C PD / charging (HUSB311) | ⬜ | |
+| Battery / charger (SC8886) | ❌ | No mainline charger driver (SC8886 is out-of-tree) |
+| USB 2.0 Type-A host (×2) | ❌ | |
+| USB 3.0 Type-A host | ✅ | |
+| USB 3.1 Type-C OTG | ⬜ | |
+| Lid switch (MH248) | ✅ | |
+
+
+
 ### Firmware
 
 
