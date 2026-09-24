@@ -41,6 +41,7 @@ Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有
 | 电池 | SHT [3585130-2S](https://www.newlaptopaccessory.com/cn/sht-3585130-2s-3585130-7.4v-37wh-batteries-p-11746.html) / 5000mAh / 37Wh / 8.4V（2S） |
 | 霍尔开关 | Magnesensor [MH248](https://www.yasemi.com.cn/productinfo/2155346.html?templateId=1133605) |
 | 音频 ADC | 3 * Everest [ES7202](http://www.everest-semi.com/pdf/ES7202%20PB.pdf) / Analog -> PDM / 2 通道 |
+| 音频功放 | Awinic [AW8737AFCR](https://www.awinic.com/en/evbInfo/AW8737AFCR/289) / Class-K 音频功率放大器 / FCQFN-16L |
 | 扬声器 | 2 * [BER-NM14G-R](https://rozetka.com.ua/ua/438553034/p438553034/) |
 | DC-DC | Torch [TCS4525](https://www.tctek.cn/product/tcs4525/) / 6A / WCSP-20 |
 | N MOSFET | Vgsemi [VS3652DB](https://vgsemi.com/index/good_detail/?id=30&series_id=1) / 非对称双 N 沟道 / 30V / 24A |
@@ -122,6 +123,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 摄像头 | Microdia 0c45:6368 | `uvcvideo`（USB UVC） | 主线 |
 | 显示屏 | BOE NV140FHM-N43 | `rockchip-vop2`（DRM）+ Analogix `analogix_dp`（eDP）+ `panel-simple` | VOP2 主线（v5.19）；eDP 输出不支持 —— 仅 vendor 内核 |
 | 音频 ADC | Everest ES7202 | — | 树外（[`snd_soc_es7202`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/sound/soc/codecs/es7202.c)） |
+| 音频功放 | Awinic AW8737AFCR | `simple-amplifier`（GPIO `enable-gpios`） | 主线 |
 | USB Hub | Genesys Logic GL852G | `usbcore`（generic hub） | 主线 |
 | 霍尔开关 | Magnesensor MH248 | —（GPIO 中断，无需专用驱动） | 无需（GPIO） |
 | PD 控制器 | Hynetek HUSB311 | `tcpci_rt1711h` | 主线（自 v7.1） |

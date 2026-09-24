@@ -41,6 +41,7 @@ The hardware listed below currently only includes the PD (Type‑C charging) rev
 | Battery                 | SHT [3585130-2S](https://www.newlaptopaccessory.com/cn/sht-3585130-2s-3585130-7.4v-37wh-batteries-p-11746.html) / 5000mAh / 37Wh / 8.4V (2S) |
 | Hall Effect Switch      | Magnesensor [MH248](https://www.yasemi.com.cn/productinfo/2155346.html?templateId=1133605) |
 | Audio ADC               | 3 * Everest [ES7202](http://www.everest-semi.com/pdf/ES7202%20PB.pdf) / Analog -> PDM / 2 channels |
+| Audio Amplifier         | Awinic [AW8737AFCR](https://www.awinic.com/en/evbInfo/AW8737AFCR/289) / Class-K audio power amplifier / FCQFN-16L |
 | Speaker                 | 2 * [BER-NM14G-R](https://rozetka.com.ua/ua/438553034/p438553034/) |
 | DC-DC                   | Torch [TCS4525](https://www.tctek.cn/product/tcs4525/) / 6A / WCSP-20 |
 | N MOSFET                | Vgsemi [VS3652DB](https://vgsemi.com/index/good_detail/?id=30&series_id=1) / Asymmetric Dual N-Channel / 30V / 24A |
@@ -121,6 +122,7 @@ Mainline support status for the key peripherals.
 | Camera             | Microdia 0c45:6368   | `uvcvideo` (USB UVC)                    | Mainline                                                     |
 | Display            | BOE NV140FHM-N43     | `rockchip-vop2` (DRM) + Analogix `analogix_dp` (eDP) + `panel-simple`  | VOP2 mainline (v5.19); eDP output unsupported — vendor kernel only                                  |
 | Audio ADC          | Everest ES7202       | —                                       | Out-of-tree ([`snd_soc_es7202`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/sound/soc/codecs/es7202.c)) |
+| Audio Amplifier    | Awinic AW8737AFCR    | `simple-amplifier` (GPIO `enable-gpios`) | Mainline                                                     |
 | USB Hub            | Genesys Logic GL852G | `usbcore` (generic hub)                 | Mainline                                                     |
 | Hall Effect Switch | Magnesensor MH248    | — (GPIO interrupt, no dedicated driver) | Not needed (GPIO)                                            |
 | PD Controller      | Hynetek HUSB311      | `tcpci_rt1711h`                         | Mainline (since v7.1)                                        |
