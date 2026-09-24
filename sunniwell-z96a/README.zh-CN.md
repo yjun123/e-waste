@@ -100,10 +100,18 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 ### 设备树
 
+#### BSP 内核
+
 感谢 [bingo1991](https://github.com/bingo1991) 和 [kemp233](https://github.com/kemp233) 完成了两个版本在 Rockchip **BSP** 内核上的设备树适配：
 
 - **早期版本（DC）** — [rk3568-z96a.dts](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a/blob/main/rk3568-z96a.dts)
 - **后期版本（PD）** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
+
+#### 主线（upstream）
+
+- **后期版本（PD）** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
+
+由于 RK3568 eDP 没有主线驱动，可用显示输出为 HDMI；内部 eDP 面板已在文件中描述，但在 eDP 支持合入前保持禁用。
 
 
 

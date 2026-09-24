@@ -100,10 +100,18 @@ followed by the [VOP2](https://github.com/torvalds/linux/commit/604be85547ce4d61
 
 ### Device Tree
 
+#### BSP kernel
+
 Thanks to [bingo1991](https://github.com/bingo1991) and [kemp233](https://github.com/kemp233), device-tree adaptation for both revisions on the Rockchip **BSP** kernel is already complete:
 
 - **Early revision (DC)** — [rk3568-z96a.dts](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a/blob/main/rk3568-z96a.dts)
 - **Later revision (PD)** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
+
+#### Mainline (upstream)
+
+- **Later revision (PD)** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
+
+As RK3568 eDP has no mainline driver, HDMI is the usable display output; the internal eDP panel is described in the file but left disabled until eDP support lands.
 
 
 
