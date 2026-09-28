@@ -117,7 +117,8 @@ As RK3568 eDP has no mainline driver, HDMI is the usable display output; the int
 
 ### Drivers
 
-Mainline support status for the key peripherals. 
+Mainline support status for the key peripherals.
+
 "Out-of-tree" items are covered by the Rockchip BSP vendor drivers carried in the [armbian/linux-rockchip](https://github.com/armbian/linux-rockchip) fork, not yet in upstream Linux.
 
 | Component          | Chip                 | Mainline driver                         | Status                                                       |
@@ -152,22 +153,22 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | --- | --- | --- |
 | Wi-Fi (RTL8822CS) | ✅ | |
 | Bluetooth (RTL8822CS) | ✅ | |
-| Display — HDMI | ✅ | |
-| Display — eDP panel | ❌ | No mainline eDP driver — `analogix_dp` needs `ROCKCHIP_VOP`, not `VOP2`; vendor kernel only |
-| Keyboard (SH61F83Q) | ⬜ | |
-| Touchpad (SH61F83Q) | ⬜ | |
-| Camera (Microdia 0c45:6368) | ⬜ | |
-| Audio — speaker (AW8737AFCR) | ⬜ | |
-| Audio — headphone (3.5mm jack) | ⬜ | |
-| Microphone (ES7202 ADC) | ❌ | No mainline codec driver (ES7202 is out-of-tree) |
+| Display — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
+| Display — eDP panel | ❌ | No mainline eDP driver |
+| Keyboard (SH61F83Q) | ✅ | |
+| Touchpad (SH61F83Q) | ✅ | |
+| Camera (Microdia 0c45:6368) | ✅ | |
+| Audio — speaker (AW8737AFCR) | ✅ | |
+| Audio — headphone playback (3.5mm jack) | ⬜ | |
+| Audio — headphone mic (3.5mm jack) | ❌ | No mainline codec driver (ES7202 is out-of-tree) |
+| Audio — microphone (ES7202 ADC) | ❌ | No mainline codec driver (ES7202 is out-of-tree) |
+| Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
 | USB-C PD / charging (HUSB311) | ⬜ | |
 | Battery / charger (SC8886) | ❌ | No mainline charger driver (SC8886 is out-of-tree) |
-| USB 2.0 Type-A host (×2) | ❌ | |
+| USB 2.0 Type-A host (×2) | ✅ | |
 | USB 3.0 Type-A host | ✅ | |
 | USB 3.1 Type-C OTG | ⬜ | |
 | Lid switch (MH248) | ✅ | |
-
-
 
 ### Firmware
 
