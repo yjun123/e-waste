@@ -161,7 +161,7 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Audio — speaker (AW8737AFCR) | ✅ | |
 | Audio — headphone playback (3.5mm jack) | 🟡 | Mono (right channel) output |
 | Audio — headphone mic (3.5mm jack) | ❌ | No mainline codec driver (ES7202 is out-of-tree) |
-| Audio — microphone (ES7202 ADC) | ❌ | No mainline codec driver (ES7202 is out-of-tree) |
+| Audio — microphone (ES7202 ADC) | ❌ | No mainline codec driver (mainline style, pending upstream submission: [`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c)) |
 | Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
 | Battery / charger (SC8886) | ❌ | No mainline charger driver (SC8886 is out-of-tree) |
 | USB 2.0 Type-A host (×2) | ✅ | |
