@@ -154,20 +154,19 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | Wi-Fi（RTL8822CS） | ✅ | |
 | 蓝牙（RTL8822CS） | ✅ | |
 | 显示 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
-| 显示 — eDP 面板 | ❌ | 主线无 eDP 驱动 —— `analogix_dp` 依赖 `ROCKCHIP_VOP` 而非 `VOP2`；仅 vendor 内核 |
+| 显示 — eDP 面板 | ❌ | 主线无 eDP 驱动 |
 | 键盘（SH61F83Q） | ✅ | |
 | 触控板（SH61F83Q） | ✅ | |
 | 摄像头（Microdia 0c45:6368） | ✅ | |
 | 音频 — 扬声器（AW8737AFCR） | ✅ | |
-| 音频 — 耳机播放（3.5mm 插孔） | ⬜ | |
+| 音频 — 耳机播放（3.5mm 插孔） | 🟡 | 单声道（右声道）输出 |
 | 音频 — 耳机麦克风（3.5mm 插孔） | ❌ | ES7202 无主线 codec 驱动（out-of-tree） |
 | 音频 — 麦克风（ES7202 ADC） | ❌ | ES7202 无主线 codec 驱动（out-of-tree） |
 | 音频 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
-| USB-C PD / 充电（HUSB311） | ⬜ | |
 | 电池 / 充电（SC8886） | ❌ | SC8886 无主线充电驱动（out-of-tree） |
 | USB 2.0 Type-A 主机口（×2） | ✅ | |
 | USB 3.0 Type-A 主机口 | ✅ | |
-| USB 3.1 Type-C OTG | ⬜ | |
+| USB 3.1 Type-C 主机口 (HUSB311) | ✅ | |
 | 霍尔开关（MH248） | ✅ | |
 
 ### 固件

@@ -159,15 +159,14 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Touchpad (SH61F83Q) | ✅ | |
 | Camera (Microdia 0c45:6368) | ✅ | |
 | Audio — speaker (AW8737AFCR) | ✅ | |
-| Audio — headphone playback (3.5mm jack) | ⬜ | |
+| Audio — headphone playback (3.5mm jack) | 🟡 | Mono (right channel) output |
 | Audio — headphone mic (3.5mm jack) | ❌ | No mainline codec driver (ES7202 is out-of-tree) |
 | Audio — microphone (ES7202 ADC) | ❌ | No mainline codec driver (ES7202 is out-of-tree) |
 | Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
-| USB-C PD / charging (HUSB311) | ⬜ | |
 | Battery / charger (SC8886) | ❌ | No mainline charger driver (SC8886 is out-of-tree) |
 | USB 2.0 Type-A host (×2) | ✅ | |
 | USB 3.0 Type-A host | ✅ | |
-| USB 3.1 Type-C OTG | ⬜ | |
+| USB 3.1 Type-C host (HUSB311) | ✅ | |
 | Lid switch (MH248) | ✅ | |
 
 ### Firmware
