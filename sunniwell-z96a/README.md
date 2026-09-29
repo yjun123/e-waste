@@ -111,7 +111,13 @@ Thanks to [bingo1991](https://github.com/bingo1991) and [kemp233](https://github
 
 - **Later revision (PD)** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
 
-As RK3568 eDP has no mainline driver, HDMI is the usable display output; the internal eDP panel is described in the file but left disabled until eDP support lands.
+
+
+### Distribution
+
+#### Arch Linux ARM
+
+[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64) carrying the Z96A PD patch series, for building a mainline kernel package.
 
 
 

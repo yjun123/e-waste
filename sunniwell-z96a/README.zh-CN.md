@@ -111,7 +111,13 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 - **后期版本（PD）** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
 
-由于 RK3568 eDP 没有主线驱动，可用显示输出为 HDMI；内部 eDP 面板已在文件中描述，但在 eDP 支持合入前保持禁用。
+
+
+### 发行版
+
+#### Arch Linux ARM
+
+[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64)，携带 Z96A PD 补丁系列，用于构建主线内核包。
 
 
 
