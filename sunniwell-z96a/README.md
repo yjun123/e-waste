@@ -121,22 +121,22 @@ Mainline support status for the key peripherals.
 
 "Out-of-tree" items are covered by the Rockchip BSP vendor drivers carried in the [armbian/linux-rockchip](https://github.com/armbian/linux-rockchip) fork, not yet in upstream Linux.
 
-| Component          | Chip                 | Mainline driver                         | Status                                                       |
-| ------------------ | -------------------- | --------------------------------------- | ------------------------------------------------------------ |
-| PMIC               | Rockchip RK809-5     | `rk808` (MFD/regulator)                 | Mainline                                                     |
-| WiFi               | Realtek RTL8822CS    | `rtw88` (`CONFIG_RTW88_8822CS`)         | Mainline (SDIO, since v6.3)                                  |
-| Bluetooth          | Realtek RTL8822CS    | `hci_uart` + `btrtl`                    | Mainline                                                     |
-| Keyboard           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                      | Mainline                                                     |
-| Touchpad           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                      | Mainline                                                     |
-| Camera             | Microdia 0c45:6368   | `uvcvideo` (USB UVC)                    | Mainline                                                     |
-| Display            | BOE NV140FHM-N43     | `rockchip-vop2` (DRM) + Analogix `analogix_dp` (eDP) + `panel-simple`  | VOP2 mainline (v5.19); eDP output unsupported — vendor kernel only                                  |
-| Audio ADC          | Everest ES7202       | —                                       | Out-of-tree ([`snd_soc_es7202`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/sound/soc/codecs/es7202.c)) |
-| Audio Amplifier    | Awinic AW8737AFCR    | `simple-amplifier` (GPIO `enable-gpios`) | Mainline                                                     |
-| USB Hub            | Genesys Logic GL852G | `usbcore` (generic hub)                 | Mainline                                                     |
-| Hall Effect Switch | Magnesensor MH248    | — (GPIO interrupt, no dedicated driver) | Not needed (GPIO)                                            |
-| PD Controller      | Hynetek HUSB311      | `tcpci_rt1711h`                         | Mainline (since v7.1)                                        |
-| Battery Charger    | SouthChip SC8886     | —                                       | Out-of-tree ([`bq25700_charger`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/drivers/power/supply/bq25700_charger.c)) |
-| DC-DC              | Torch TCS4525        | `fan53555` (regulator)                  | Mainline (since v5.13)                                       |
+| Component          | Chip                 | Mainline driver                                              | Status                                                       |
+| ------------------ | -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| PMIC               | Rockchip RK809-5     | `rk808` (MFD/regulator)                                      | Mainline                                                     |
+| WiFi               | Realtek RTL8822CS    | `rtw88` (`CONFIG_RTW88_8822CS`)                              | Mainline (SDIO, since v6.3)                                  |
+| Bluetooth          | Realtek RTL8822CS    | `hci_uart` + `btrtl`                                         | Mainline                                                     |
+| Keyboard           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                                           | Mainline                                                     |
+| Touchpad           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                                           | Mainline                                                     |
+| Camera             | Microdia 0c45:6368   | `uvcvideo` (USB UVC)                                         | Mainline                                                     |
+| Display            | BOE NV140FHM-N43     | `rockchip-vop` (DRM) + Analogix `analogix_dp` (eDP) + `phy-rockchip-naneng-edp` (PHY) + `panel-edp` | `rockchip-vop`  mainline. developing driver,  pending upstream submission: [rk3568-edp](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
+| Audio ADC          | Everest ES7202       | `snd_soc_es7202`                                             | developing codec driver, pending upstream submission: [`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
+| Audio Amplifier    | Awinic AW8737AFCR    | `simple-amplifier` (GPIO `enable-gpios`)                     | Mainline                                                     |
+| USB Hub            | Genesys Logic GL852G | `usbcore` (generic hub)                                      | Mainline                                                     |
+| Hall Effect Switch | Magnesensor MH248    | — (GPIO interrupt, no dedicated driver)                      | Not needed (GPIO)                                            |
+| PD Controller      | Hynetek HUSB311      | `tcpci_rt1711h`                                              | Mainline (since v7.1)                                        |
+| Battery Charger    | SouthChip SC8886     | —                                                            | Out-of-tree ([`bq25700_charger`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/drivers/power/supply/bq25700_charger.c)) |
+| DC-DC              | Torch TCS4525        | `fan53555` (regulator)                                       | Mainline (since v5.13)                                       |
 
 
 
@@ -154,14 +154,14 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Wi-Fi (RTL8822CS) | ✅ | |
 | Bluetooth (RTL8822CS) | ✅ | |
 | Display — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
-| Display — eDP panel | ❌ | No mainline eDP driver |
+| Display — eDP panel | ✅ | Needs non-mainline driver; see [Drivers -> Display](#drivers)                                   |
 | Keyboard (SH61F83Q) | ✅ | |
 | Touchpad (SH61F83Q) | ✅ | |
 | Camera (Microdia 0c45:6368) | ✅ | |
 | Audio — speaker (AW8737AFCR) | ✅ | |
 | Audio — headphone playback (3.5mm jack) | 🟡 | Mono (right channel) output |
-| Audio — headphone mic (3.5mm jack) | ⬜ | mainline codec driver, pending upstream submission: [`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
-| Audio — microphone (ES7202 ADC) | ✅ | mainline codec driver, pending upstream submission: [`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
+| Audio — headphone mic (3.5mm jack) | ⬜ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
+| Audio — microphone (ES7202 ADC) | ✅ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
 | Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
 | Battery / charger (SC8886) | ❌ | No mainline charger driver (SC8886 is out-of-tree) |
 | USB 2.0 Type-A host (×2) | ✅ | |

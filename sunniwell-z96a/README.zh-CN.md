@@ -129,8 +129,8 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 键盘 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
 | 触控板 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
 | 摄像头 | Microdia 0c45:6368 | `uvcvideo`（USB UVC） | 主线 |
-| 显示屏 | BOE NV140FHM-N43 | `rockchip-vop2`（DRM）+ Analogix `analogix_dp`（eDP）+ `panel-simple` | VOP2 主线（v5.19）；eDP 输出不支持 —— 仅 vendor 内核 |
-| 音频 ADC | Everest ES7202 | — | 树外（[`snd_soc_es7202`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/sound/soc/codecs/es7202.c)） |
+| 显示屏 | BOE NV140FHM-N43 | `rockchip-vop`（DRM）+ Analogix `analogix_dp`（eDP）+ `phy-rockchip-naneng-edp`（PHY）+ `panel-edp` | `rockchip-vop` 已主线。驱动开发中，待提交上游：[rk3568-edp](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
+| 音频 ADC | Everest ES7202 | `snd_soc_es7202` | codec 驱动开发中，待提交上游：[`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
 | 音频功放 | Awinic AW8737AFCR | `simple-amplifier`（GPIO `enable-gpios`） | 主线 |
 | USB Hub | Genesys Logic GL852G | `usbcore`（generic hub） | 主线 |
 | 霍尔开关 | Magnesensor MH248 | —（GPIO 中断，无需专用驱动） | 无需（GPIO） |
@@ -154,14 +154,14 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | Wi-Fi（RTL8822CS） | ✅ | |
 | 蓝牙（RTL8822CS） | ✅ | |
 | 显示 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
-| 显示 — eDP 面板 | ❌ | 主线无 eDP 驱动 |
+| 显示 — eDP 面板 | ✅ | 需要非主线驱动，见 [驱动 -> 显示屏](#驱动) |
 | 键盘（SH61F83Q） | ✅ | |
 | 触控板（SH61F83Q） | ✅ | |
 | 摄像头（Microdia 0c45:6368） | ✅ | |
 | 音频 — 扬声器（AW8737AFCR） | ✅ | |
 | 音频 — 耳机播放（3.5mm 插孔） | 🟡 | 单声道（右声道）输出 |
-| 音频 — 耳机麦克风（3.5mm 插孔） | ⬜ | 主线 codec 驱动，待提交上游：[`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
-| 音频 — 麦克风（ES7202 ADC） | ✅ | 主线 codec 驱动，待提交上游：[`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
+| 音频 — 耳机麦克风（3.5mm 插孔） | ⬜ | 需要非主线驱动，见 [驱动 -> 音频 ADC](#驱动) |
+| 音频 — 麦克风（ES7202 ADC） | ✅ | 需要非主线驱动，见 [驱动 -> 音频 ADC](#驱动) |
 | 音频 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
 | 电池 / 充电（SC8886） | ❌ | SC8886 无主线充电驱动（out-of-tree） |
 | USB 2.0 Type-A 主机口（×2） | ✅ | |
