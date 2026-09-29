@@ -160,8 +160,8 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 摄像头（Microdia 0c45:6368） | ✅ | |
 | 音频 — 扬声器（AW8737AFCR） | ✅ | |
 | 音频 — 耳机播放（3.5mm 插孔） | 🟡 | 单声道（右声道）输出 |
-| 音频 — 耳机麦克风（3.5mm 插孔） | ❌ | ES7202 无主线 codec 驱动（out-of-tree） |
-| 音频 — 麦克风（ES7202 ADC） | ❌ | ES7202 无主线 codec 驱动（主线风格，待提交上游：[`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c)） |
+| 音频 — 耳机麦克风（3.5mm 插孔） | ⬜ | 主线 codec 驱动，待提交上游：[`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
+| 音频 — 麦克风（ES7202 ADC） | ✅ | 主线 codec 驱动，待提交上游：[`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
 | 音频 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
 | 电池 / 充电（SC8886） | ❌ | SC8886 无主线充电驱动（out-of-tree） |
 | USB 2.0 Type-A 主机口（×2） | ✅ | |
