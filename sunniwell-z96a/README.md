@@ -164,6 +164,7 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Audio — microphone (ES7202 ADC) | ✅ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
 | Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
 | Battery / charger (SC8886) | ❌ | No mainline charger driver (SC8886 is out-of-tree) |
+| Battery monitor | ❌ | Vendor kernel hacks the rk817 driver; not acceptable to mainline |
 | USB 2.0 Type-A host (×2) | ✅ | |
 | USB 3.0 Type-A host | ✅ | |
 | USB 3.1 Type-C host (HUSB311) | ✅ | |
