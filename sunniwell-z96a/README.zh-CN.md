@@ -170,11 +170,28 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 音频 — 麦克风（ES7202 ADC） | ✅ | 需要非主线驱动，见 [驱动 -> 音频 ADC](#驱动) |
 | 音频 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
 | 电池 / 充电（SC8886） | ❌ | SC8886 无主线充电驱动（out-of-tree） |
-| 电池监测 | ❌ | 厂商内核通过 hack rk817 驱动实现，主线无法接受 |
+| 电池监测 | ❌ |  |
 | USB 2.0 Type-A 主机口（×2） | ✅ | |
 | USB 3.0 Type-A 主机口 | ✅ | |
 | USB 3.1 Type-C 主机口 (HUSB311) | ✅ | |
 | 霍尔开关（MH248） | ✅ | |
+
+### 电池与充电
+
+电池接口定义：
+
+| 引脚 | 颜色 | 功能 | 备注 |
+| --- | --- | --- | --- |
+| 1 | 红 | 电源+ | |
+| 2 | 红 | 电源+ | |
+| 3 | 红 | 电源+ | |
+| 4 | 黄 | ID（电池识别） | SARADC 通道 5 |
+| 5 | 白 | T（NTC，温度） | SARADC 通道 4 |
+| 6 | 蓝 | IN（接入检测） | 未使用？ |
+| 7 | NC | 空 | |
+| 8 | 黑 | 电源- | |
+| 9 | 黑 | 电源- | |
+| 10 | 黑 | 电源- | |
 
 ### 固件
 
@@ -185,6 +202,8 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 [华为云商店 - Z96A云笔电](https://marketplace.huaweicloud.com/contents/bfc3050c-2596-4c18-91ea-d2482201a308)
 
 [Github - bingo1991/rk3568_laptop_sunniwell_z96a](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a)
+
+[Github - baidxi/rk35xx_kernel_5_10](https://github.com/baidxi/rk35xx_kernel_5_10/blob/master/arch/arm64/boot/dts/rockchip/rk3568-z96a.dts)
 
 [Github - kemp233/armbian-build-sunniwell-Z96a](https://github.com/kemp233/armbian-build-sunniwell-Z96a)
 

@@ -170,11 +170,28 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Audio — microphone (ES7202 ADC) | ✅ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
 | Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
 | Battery / charger (SC8886) | ❌ | No mainline charger driver (SC8886 is out-of-tree) |
-| Battery monitor | ❌ | Vendor kernel hacks the rk817 driver; not acceptable to mainline |
+| Battery monitor | ❌ | |
 | USB 2.0 Type-A host (×2) | ✅ | |
 | USB 3.0 Type-A host | ✅ | |
 | USB 3.1 Type-C host (HUSB311) | ✅ | |
 | Lid switch (MH248) | ✅ | |
+
+### Battery & Charging
+
+Battery connector definition:
+
+| Pin | Color | Function | Notes |
+| --- | --- | --- | --- |
+| 1 | Red | Power + | |
+| 2 | Red | Power + | |
+| 3 | Red | Power + | |
+| 4 | Yellow | ID (battery identification) | SARADC ch5 |
+| 5 | White | T (NTC, temperature) | SARADC ch4 |
+| 6 | Blue | IN (presence detection) | unused? |
+| 7 | NC | Not connected | |
+| 8 | Black | Power − | |
+| 9 | Black | Power − | |
+| 10 | Black | Power − | |
 
 ### Firmware
 
@@ -185,6 +202,8 @@ Actual (tested) status of each peripheral on the mainline kernel:
 [华为云商店 - Z96A云笔电](https://marketplace.huaweicloud.com/contents/bfc3050c-2596-4c18-91ea-d2482201a308)
 
 [Github - bingo1991/rk3568_laptop_sunniwell_z96a](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a)
+
+[Github - baidxi/rk35xx_kernel_5_10](https://github.com/baidxi/rk35xx_kernel_5_10/blob/master/arch/arm64/boot/dts/rockchip/rk3568-z96a.dts)
 
 [Github - kemp233/armbian-build-sunniwell-Z96a](https://github.com/kemp233/armbian-build-sunniwell-Z96a)
 
