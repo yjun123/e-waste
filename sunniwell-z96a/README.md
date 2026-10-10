@@ -140,8 +140,8 @@ Mainline support status for the key peripherals.
 | Audio Amplifier    | Awinic AW8737AFCR    | `simple-amplifier` (GPIO `enable-gpios`)                     | Mainline                                                     |
 | USB Hub            | Genesys Logic GL852G | `usbcore` (generic hub)                                      | Mainline                                                     |
 | Hall Effect Switch | Magnesensor MH248    | — (GPIO interrupt, no dedicated driver)                      | Not needed (GPIO)                                            |
-| PD Controller      | Hynetek HUSB311      | `tcpci_rt1711h`                                              | Mainline (since v7.1)                                        |
-| Battery Charger    | SouthChip SC8886     | —                                                            | Reuses mainline bq257xx; driver in development, pending upstream submission: [sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
+| PD Controller      | Hynetek HUSB311      | `tcpci_rt1711h` (tcpm)                                              | Mainline (since v7.1)                                        |
+| Battery Charger    | SouthChip SC8886     | `bq257xx` (power_supply)                                                            | Reuses mainline bq257xx; driver in development, pending upstream submission: [sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | DC-DC              | Torch TCS4525        | `fan53555` (regulator)                                       | Mainline (since v5.13)                                       |
 
 
@@ -175,6 +175,8 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | USB 3.0 Type-A host | ✅ | |
 | USB 3.1 Type-C host (HUSB311) | ✅ | |
 | Lid switch (MH248) | ✅ | |
+
+
 
 ### Battery & Charging
 

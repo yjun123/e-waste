@@ -140,8 +140,8 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 音频功放 | Awinic AW8737AFCR | `simple-amplifier`（GPIO `enable-gpios`） | 主线 |
 | USB Hub | Genesys Logic GL852G | `usbcore`（generic hub） | 主线 |
 | 霍尔开关 | Magnesensor MH248 | —（GPIO 中断，无需专用驱动） | 无需（GPIO） |
-| PD 控制器 | Hynetek HUSB311 | `tcpci_rt1711h` | 主线（自 v7.1） |
-| 电池充电芯片 | SouthChip SC8886 | `bq257xx`(power_supply) | 复用主线 bq257xx ， 驱动开发中，待提交上游：[sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
+| PD 控制器 | Hynetek HUSB311 | `tcpci_rt1711h`（tcpm） | 主线（自 v7.1） |
+| 电池充电芯片 | SouthChip SC8886 | `bq257xx`（power_supply） | 复用主线 bq257xx，驱动开发中，待提交上游：[sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | DC-DC | Torch TCS4525 | `fan53555`（regulator） | 主线（自 v5.13） |
 
 
@@ -175,6 +175,8 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | USB 3.0 Type-A 主机口 | ✅ | |
 | USB 3.1 Type-C 主机口（HUSB311） | ✅ | |
 | 霍尔开关（MH248） | ✅ | |
+
+
 
 ### 电池与充电
 
