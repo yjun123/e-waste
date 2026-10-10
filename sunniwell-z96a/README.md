@@ -31,7 +31,7 @@ The hardware listed below currently only includes the PD (Type‑C charging) rev
 | DRAM                    | 4GB Rayson [RS1G32LO4D2BDS-53BT](https://szrayson.com/product_23/136.html) / LPDDR4X / x32 / 3733Mbps / FBGA 200-ball / 1.8/1.1/0.6V |
 | eMMC                    | 32GB SiliconGo SGM8200C-S32BBG / HS400 / eMMC 5.1 / FBGA153 |
 | WiFi/BT                 | Realtek [RTL8822CS](https://bbs.16rd.com/thread-602771-1-1.html) / 802.11 a/b/g/n/ac / BT4.2 / 2T2R |
-| Display                 | BOE [NV140FHM‑N43](https://www.panelook.cn/NV140FHM-N43_BOE_14.0_LCM_overview_cn_27125.html) / 14 inch 16:9 IPS / 1920x1080 / 31 cm x 17 cm / 60HZ / eDP |
+| Display                 | BOE [NV140FHD‑N43](https://www.panelook.cn/NV140FHM-N43_BOE_14.0_LCM_overview_cn_27125.html) / 14 inch 16:9 IPS / 1920x1080 / 31 cm x 17 cm / 60HZ / eDP |
 | Keyboard/Touchpad       | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / AMR-TOUCH-MOUSE 202110 USB KEYBOARD / USB 1.1 / 6080:8060 |
 | USB Hub                 | Genesys Logic [GL852G](https://www.genesyslogic.com.tw/en/product/show.php?num=GL852G&kind=USB2_Hub) / USB 2.0 / 4 MTT / QFN 28 / 05e3:0610 |
 | Camera                  | Microdia Sonix Camera / USB 2.0 / UVC 1.00 / 0c45:6368 |
@@ -135,13 +135,13 @@ Mainline support status for the key peripherals.
 | Keyboard           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                                           | Mainline                                                     |
 | Touchpad           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                                           | Mainline                                                     |
 | Camera             | Microdia 0c45:6368   | `uvcvideo` (USB UVC)                                         | Mainline                                                     |
-| Display            | BOE NV140FHM-N43     | `rockchip-vop` (DRM) + Analogix `analogix_dp` (eDP) + `phy-rockchip-naneng-edp` (PHY) + `panel-edp` | `rockchip-vop`  mainline. developing driver,  pending upstream submission: [rk3568-edp](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
+| Display            | BOE NV140FHD-N43     | `rockchip-vop` (DRM) + Analogix `analogix_dp` (eDP) + `phy-rockchip-naneng-edp` (PHY) + `panel-edp` | `rockchip-vop`  mainline. developing driver,  pending upstream submission: [rk3568-edp](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | Audio ADC          | Everest ES7202       | `snd_soc_es7202`                                             | developing codec driver, pending upstream submission: [`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
 | Audio Amplifier    | Awinic AW8737AFCR    | `simple-amplifier` (GPIO `enable-gpios`)                     | Mainline                                                     |
 | USB Hub            | Genesys Logic GL852G | `usbcore` (generic hub)                                      | Mainline                                                     |
 | Hall Effect Switch | Magnesensor MH248    | — (GPIO interrupt, no dedicated driver)                      | Not needed (GPIO)                                            |
 | PD Controller      | Hynetek HUSB311      | `tcpci_rt1711h`                                              | Mainline (since v7.1)                                        |
-| Battery Charger    | SouthChip SC8886     | —                                                            | Out-of-tree ([`bq25700_charger`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/drivers/power/supply/bq25700_charger.c)) |
+| Battery Charger    | SouthChip SC8886     | —                                                            | Reuses mainline bq257xx; driver in development, pending upstream submission: [sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | DC-DC              | Torch TCS4525        | `fan53555` (regulator)                                       | Mainline (since v5.13)                                       |
 
 
@@ -169,8 +169,8 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Audio — headphone mic (3.5mm jack) | ⬜ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
 | Audio — microphone (ES7202 ADC) | ✅ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
 | Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
-| Battery / charger (SC8886) | ❌ | No mainline charger driver (SC8886 is out-of-tree) |
-| Battery monitor | ❌ | |
+| Battery / charger (SC8886) | ✅ | Needs non-mainline patch; see [Drivers -> Battery Charger](#drivers) |
+| Battery monitor (temperature and battery level display) | ✅ | Needs non-mainline patch; see [Drivers -> Battery Charger](#drivers) |
 | USB 2.0 Type-A host (×2) | ✅ | |
 | USB 3.0 Type-A host | ✅ | |
 | USB 3.1 Type-C host (HUSB311) | ✅ | |
@@ -185,9 +185,9 @@ Battery connector definition:
 | 1 | Red | Power + | |
 | 2 | Red | Power + | |
 | 3 | Red | Power + | |
-| 4 | Yellow | ID (battery identification) | SARADC ch5 |
-| 5 | White | T (NTC, temperature) | SARADC ch4 |
-| 6 | Blue | IN (presence detection) | unused? |
+| 4 | Yellow | ID (battery identification) | SARADC ch5, 98.3 Ω to GND |
+| 5 | White | T (NTC, temperature) | SARADC ch4, 9.3 Ω to GND |
+| 6 | Blue | IN (presence detection) | unused?, 9.2 Ω to GND |
 | 7 | NC | Not connected | |
 | 8 | Black | Power − | |
 | 9 | Black | Power − | |

@@ -31,7 +31,7 @@ Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有
 | DRAM | 4GB Rayson [RS1G32LO4D2BDS-53BT](https://szrayson.com/product_23/136.html) / LPDDR4X / x32 / 3733Mbps / FBGA 200-ball / 1.8/1.1/0.6V |
 | eMMC | 32GB SiliconGo SGM8200C-S32BBG / HS400 / eMMC 5.1 / FBGA153 |
 | WiFi/BT | Realtek [RTL8822CS](https://bbs.16rd.com/thread-602771-1-1.html) / 802.11 a/b/g/n/ac / BT4.2 / 2T2R |
-| 显示屏 | BOE [NV140FHM‑N43](https://www.panelook.cn/NV140FHM-N43_BOE_14.0_LCM_overview_cn_27125.html) / 14 英寸 16:9 IPS / 1920x1080 / 31 cm x 17 cm / 60HZ / eDP |
+| 显示屏 | BOE [NV140FHD‑N43](https://www.panelook.cn/NV140FHM-N43_BOE_14.0_LCM_overview_cn_27125.html) / 14 英寸 16:9 IPS / 1920x1080 / 31 cm x 17 cm / 60HZ / eDP |
 | 键盘/触控板 | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / AMR-TOUCH-MOUSE 202110 USB KEYBOARD / USB 1.1 / 6080:8060 |
 | USB Hub | Genesys Logic [GL852G](https://www.genesyslogic.com.tw/en/product/show.php?num=GL852G&kind=USB2_Hub) / USB 2.0 / 4 MTT / QFN 28 / 05e3:0610 |
 | 摄像头 | Microdia Sonix 摄像头 / USB 2.0 / UVC 1.00 / 0c45:6368 |
@@ -135,13 +135,13 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 键盘 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
 | 触控板 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
 | 摄像头 | Microdia 0c45:6368 | `uvcvideo`（USB UVC） | 主线 |
-| 显示屏 | BOE NV140FHM-N43 | `rockchip-vop`（DRM）+ Analogix `analogix_dp`（eDP）+ `phy-rockchip-naneng-edp`（PHY）+ `panel-edp` | `rockchip-vop` 已主线。驱动开发中，待提交上游：[rk3568-edp](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
+| 显示屏 | BOE NV140FHD-N43 | `rockchip-vop`（DRM）+ Analogix `analogix_dp`（eDP）+ `phy-rockchip-naneng-edp`（PHY）+ `panel-edp` | `rockchip-vop` 已主线。驱动开发中，待提交上游：[rk3568-edp](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | 音频 ADC | Everest ES7202 | `snd_soc_es7202` | codec 驱动开发中，待提交上游：[`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
 | 音频功放 | Awinic AW8737AFCR | `simple-amplifier`（GPIO `enable-gpios`） | 主线 |
 | USB Hub | Genesys Logic GL852G | `usbcore`（generic hub） | 主线 |
 | 霍尔开关 | Magnesensor MH248 | —（GPIO 中断，无需专用驱动） | 无需（GPIO） |
 | PD 控制器 | Hynetek HUSB311 | `tcpci_rt1711h` | 主线（自 v7.1） |
-| 电池充电芯片 | SouthChip SC8886 | — | 树外（[`bq25700_charger`](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/drivers/power/supply/bq25700_charger.c)） |
+| 电池充电芯片 | SouthChip SC8886 | `bq257xx`(power_supply) | 复用主线 bq257xx ， 驱动开发中，待提交上游：[sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | DC-DC | Torch TCS4525 | `fan53555`（regulator） | 主线（自 v5.13） |
 
 
@@ -169,11 +169,11 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 音频 — 耳机麦克风（3.5mm 插孔） | ⬜ | 需要非主线驱动，见 [驱动 -> 音频 ADC](#驱动) |
 | 音频 — 麦克风（ES7202 ADC） | ✅ | 需要非主线驱动，见 [驱动 -> 音频 ADC](#驱动) |
 | 音频 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
-| 电池 / 充电（SC8886） | ❌ | SC8886 无主线充电驱动（out-of-tree） |
-| 电池监测 | ❌ |  |
+| 电池 / 充电（SC8886） | ✅ | 需要非主线补丁，见 [驱动 -> 电池充电芯片](#驱动) |
+| 电池监测（温度和电量显示） | ✅ | 需要非主线补丁，见 [驱动 -> 电池充电芯片](#驱动) |
 | USB 2.0 Type-A 主机口（×2） | ✅ | |
 | USB 3.0 Type-A 主机口 | ✅ | |
-| USB 3.1 Type-C 主机口 (HUSB311) | ✅ | |
+| USB 3.1 Type-C 主机口（HUSB311） | ✅ | |
 | 霍尔开关（MH248） | ✅ | |
 
 ### 电池与充电
@@ -185,9 +185,9 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 1 | 红 | 电源+ | |
 | 2 | 红 | 电源+ | |
 | 3 | 红 | 电源+ | |
-| 4 | 黄 | ID（电池识别） | SARADC 通道 5 |
-| 5 | 白 | T（NTC，温度） | SARADC 通道 4 |
-| 6 | 蓝 | IN（接入检测） | 未使用？ |
+| 4 | 黄 | ID（电池识别） | SARADC 通道 5，对地电阻 98.3 Ω |
+| 5 | 白 | T（NTC，温度） | SARADC 通道 4，对地电阻 9.3 Ω |
+| 6 | 蓝 | IN（接入检测） | 未使用？，对地电阻 9.2 Ω |
 | 7 | NC | 空 | |
 | 8 | 黑 | 电源- | |
 | 9 | 黑 | 电源- | |
