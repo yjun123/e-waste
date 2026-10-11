@@ -32,14 +32,15 @@ The hardware listed below currently only includes the PD (Type‑C charging) rev
 | eMMC                    | 32GB SiliconGo SGM8200C-S32BBG / HS400 / eMMC 5.1 / FBGA153 |
 | WiFi/BT                 | Realtek [RTL8822CS](https://bbs.16rd.com/thread-602771-1-1.html) / 802.11 a/b/g/n/ac / BT4.2 / 2T2R |
 | Display                 | BOE [NV140FHD‑N43](https://www.panelook.cn/NV140FHM-N43_BOE_14.0_LCM_overview_cn_27125.html) / 14 inch 16:9 IPS / 1920x1080 / 31 cm x 17 cm / 60HZ / eDP |
-| Keyboard/Touchpad       | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / AMR-TOUCH-MOUSE 202110 USB KEYBOARD / USB 1.1 / 6080:8060 |
+| Keyboard                | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / AMR-TOUCH-MOUSE 202110 USB KEYBOARD / USB 1.1 / 6080:8060 |
+| Touchpad                | Hynitron [CST128-A](http://www.hynitron.com/product/pen/208) / connected to SH61F83Q |
 | USB Hub                 | Genesys Logic [GL852G](https://www.genesyslogic.com.tw/en/product/show.php?num=GL852G&kind=USB2_Hub) / USB 2.0 / 4 MTT / QFN 28 / 05e3:0610 |
 | Camera                  | Microdia Sonix Camera / USB 2.0 / UVC 1.00 / 0c45:6368 |
-| PD Controller           | Hynetek [HUSB311BLA](https://www.hynetek.com/2422.html) / USB PD3.0 / 100W / QFN-14L |
+| Type-C Controller        | Hynetek [HUSB311BLA](https://www.hynetek.com/2422.html) / CC detection / QFN-14L |
 | USB 3.1 Switch          | Unknown / D3EB 2342 F1                                       |
 | Battery Charger         | SouthChip [SC8886SQDER](https://www.southchip.com/product/SC8886S) / 8A / QFN-32 |
 | Battery                 | SHT [3585130-2S](https://www.newlaptopaccessory.com/cn/sht-3585130-2s-3585130-7.4v-37wh-batteries-p-11746.html) / 5000mAh / 37Wh / 8.4V (2S) |
-| Hall Effect Switch      | Magnesensor [MH248](https://www.yasemi.com.cn/productinfo/2155346.html?templateId=1133605) |
+| Hall Effect Switch      | Yasemi Magnesensor [MH248](https://www.yasemi.com.cn/productinfo/2155346.html?templateId=1133605) |
 | Audio ADC               | 3 * Everest [ES7202](http://www.everest-semi.com/pdf/ES7202%20PB.pdf) / Analog -> PDM / 2 channels |
 | Audio Amplifier         | Awinic [AW8737AFCR](https://www.awinic.com/en/evbInfo/AW8737AFCR/289) / Class-K audio power amplifier / FCQFN-16L |
 | Speaker                 | 2 * [BER-NM14G-R](https://rozetka.com.ua/ua/438553034/p438553034/) |
@@ -56,7 +57,7 @@ The hardware listed below currently only includes the PD (Type‑C charging) rev
 | Audio | 3.5mm Jack *1 |
 | Mic | Analog Mic * 2 |
 | Speaker | Speaker * 2                                                  |
-| LED | Power LED / Caps Lock LED / Mic Mute LED |
+| LED | Power LED / Caps Lock LED / Mic Mute LED / Charging LED / Charged LED |
 
 
 
@@ -140,7 +141,7 @@ Mainline support status for the key peripherals.
 | Audio Amplifier    | Awinic AW8737AFCR    | `simple-amplifier` (GPIO `enable-gpios`)                     | Mainline                                                     |
 | USB Hub            | Genesys Logic GL852G | `usbcore` (generic hub)                                      | Mainline                                                     |
 | Hall Effect Switch | Magnesensor MH248    | — (GPIO interrupt, no dedicated driver)                      | Not needed (GPIO)                                            |
-| PD Controller      | Hynetek HUSB311      | `tcpci_rt1711h` (tcpm)                                              | Mainline (since v7.1)                                        |
+| Type-C Controller   | Hynetek HUSB311      | `tcpci_rt1711h` (tcpm)                                              | Mainline (since v7.1)                                        |
 | Battery Charger    | SouthChip SC8886     | `bq257xx` (power_supply)                                                            | Reuses mainline bq257xx; driver in development, pending upstream submission: [sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | DC-DC              | Torch TCS4525        | `fan53555` (regulator)                                       | Mainline (since v5.13)                                       |
 
@@ -173,12 +174,18 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Battery monitor (temperature and battery level display) | ✅ | Needs non-mainline patch; see [Drivers -> Battery Charger](#drivers) |
 | USB 2.0 Type-A host (×2) | ✅ | |
 | USB 3.0 Type-A host | ✅ | |
-| USB 3.1 Type-C host (HUSB311) | ✅ | |
+| USB 3.1 Type-C OTG port (HUSB311) | ✅ | |
 | Lid switch (MH248) | ✅ | |
 
 
 
 ### Battery & Charging
+
+Battery protection board disassembly photo (from @不如茶相伴 in the QQ group):
+
+<img src="./images/Z96A-PD/debug/battery-protection-board.jpg" alt="battery-protection-board" style="zoom:50%;" />
+
+
 
 Battery connector definition:
 
@@ -198,6 +205,16 @@ Battery connector definition:
 ### Firmware
 
 
+
+## Open Questions
+
+The following details are not yet fully understood:
+
+1. How is the PD protocol implemented for the Type-C charging port? Is there a separate PD trigger/decoy chip?
+
+   Disassembly reveals a QFN20 chip on the back of the motherboard near the charging port, suspected to be a fast-charge protocol chip. Tracing the Type-C pins to the chip, D+/D- are routed to it, VBUS is broken out (whether it reaches the chip is uncertain), and TX- is also broken out, but the CC pins appear not to be connected. With an adapter plugged in, VBUS measures 15 V — pointing to a D+/D--negotiated fast-charge protocol (rather than PD-over-CC); the exact chip and protocol are still TBD.
+2. How is the power-connection indicator LED state toggled under the Android firmware?
+3. Does the Type-C charging port support reverse charging (powering external devices)?
 
 ## Reference
 

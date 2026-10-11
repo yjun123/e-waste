@@ -32,14 +32,15 @@ Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有
 | eMMC | 32GB SiliconGo SGM8200C-S32BBG / HS400 / eMMC 5.1 / FBGA153 |
 | WiFi/BT | Realtek [RTL8822CS](https://bbs.16rd.com/thread-602771-1-1.html) / 802.11 a/b/g/n/ac / BT4.2 / 2T2R |
 | 显示屏 | BOE [NV140FHD‑N43](https://www.panelook.cn/NV140FHM-N43_BOE_14.0_LCM_overview_cn_27125.html) / 14 英寸 16:9 IPS / 1920x1080 / 31 cm x 17 cm / 60HZ / eDP |
-| 键盘/触控板 | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / AMR-TOUCH-MOUSE 202110 USB KEYBOARD / USB 1.1 / 6080:8060 |
+| 键盘 | SinoWealth [SH61F83Q](https://www.sinowealth.com/detaile?pro_id=100) / AMR-TOUCH-MOUSE 202110 USB KEYBOARD / USB 1.1 / 6080:8060 |
+| 触控板 | Hynitron [CST128-A](http://www.hynitron.com/product/pen/208) / 连接至 SH61F83Q |
 | USB Hub | Genesys Logic [GL852G](https://www.genesyslogic.com.tw/en/product/show.php?num=GL852G&kind=USB2_Hub) / USB 2.0 / 4 MTT / QFN 28 / 05e3:0610 |
 | 摄像头 | Microdia Sonix 摄像头 / USB 2.0 / UVC 1.00 / 0c45:6368 |
-| PD 控制器 | Hynetek [HUSB311BLA](https://www.hynetek.com/2422.html) / USB PD3.0 / 100W / QFN-14L |
+| Type-C 控制器 | Hynetek [HUSB311BLA](https://www.hynetek.com/2422.html) / CC 检测 / QFN-14L |
 | USB 3.1 切换开关 | 未知 / D3EB 2342 F1 |
 | 电池充电芯片 | SouthChip [SC8886SQDER](https://www.southchip.com/product/SC8886S) / 8A / QFN-32 |
 | 电池 | SHT [3585130-2S](https://www.newlaptopaccessory.com/cn/sht-3585130-2s-3585130-7.4v-37wh-batteries-p-11746.html) / 5000mAh / 37Wh / 8.4V（2S） |
-| 霍尔开关 | Magnesensor [MH248](https://www.yasemi.com.cn/productinfo/2155346.html?templateId=1133605) |
+| 霍尔开关 | Yasemi Magnesensor [MH248](https://www.yasemi.com.cn/productinfo/2155346.html?templateId=1133605) |
 | 音频 ADC | 3 * Everest [ES7202](http://www.everest-semi.com/pdf/ES7202%20PB.pdf) / Analog -> PDM / 2 通道 |
 | 音频功放 | Awinic [AW8737AFCR](https://www.awinic.com/en/evbInfo/AW8737AFCR/289) / Class-K 音频功率放大器 / FCQFN-16L |
 | 扬声器 | 2 * [BER-NM14G-R](https://rozetka.com.ua/ua/438553034/p438553034/) |
@@ -56,7 +57,7 @@ Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有
 | 音频 | 3.5mm 耳机孔 *1 |
 | 麦克风 | 模拟麦克风 * 2 |
 | 扬声器 | 扬声器 * 2 |
-| LED | 电源 LED / 大写锁定 LED / 麦克风静音 LED |
+| LED | 电源 LED / 大写锁定 LED / 麦克风静音 LED / 充电中 LED / 已充满 LED |
 
 
 
@@ -140,7 +141,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 音频功放 | Awinic AW8737AFCR | `simple-amplifier`（GPIO `enable-gpios`） | 主线 |
 | USB Hub | Genesys Logic GL852G | `usbcore`（generic hub） | 主线 |
 | 霍尔开关 | Magnesensor MH248 | —（GPIO 中断，无需专用驱动） | 无需（GPIO） |
-| PD 控制器 | Hynetek HUSB311 | `tcpci_rt1711h`（tcpm） | 主线（自 v7.1） |
+| Type-C 控制器 | Hynetek HUSB311 | `tcpci_rt1711h`（tcpm） | 主线（自 v7.1） |
 | 电池充电芯片 | SouthChip SC8886 | `bq257xx`（power_supply） | 复用主线 bq257xx，驱动开发中，待提交上游：[sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | DC-DC | Torch TCS4525 | `fan53555`（regulator） | 主线（自 v5.13） |
 
@@ -173,12 +174,18 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 电池监测（温度和电量显示） | ✅ | 需要非主线补丁，见 [驱动 -> 电池充电芯片](#驱动) |
 | USB 2.0 Type-A 主机口（×2） | ✅ | |
 | USB 3.0 Type-A 主机口 | ✅ | |
-| USB 3.1 Type-C 主机口（HUSB311） | ✅ | |
+| USB 3.1 Type-C OTG口（HUSB311） | ✅ | |
 | 霍尔开关（MH248） | ✅ | |
 
 
 
 ### 电池与充电
+
+电池保护板拆机图(来自 QQ群的 @不如茶相伴)：
+
+<img src="./images/Z96A-PD/debug/battery-protection-board.jpg" alt="battery-protection-board" style="zoom:50%;" />
+
+
 
 电池接口定义：
 
@@ -195,9 +202,21 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 9 | 黑 | 电源- | |
 | 10 | 黑 | 电源- | |
 
+
+
 ### 固件
 
 
+
+## 待澄清的问题
+
+以下细节目前尚未完全弄清：
+
+1. Type-C 充电口的 PD 协议是如何完成的？是否有独立的 PD 诱骗芯片？
+
+   拆机发现主板背面充电口附近有一颗 QFN20 芯片，疑似快充协议芯片；观察 Type-C 引脚到芯片的走线，D+/D- 已接至芯片，VBUS 有引出（是否接至芯片不确定），TX- 也被引出，但 CC 脚似乎并未引出。插入适配器后实测 VBUS 为 15V。据此推断走的是 D+/D- 协商的快充协议（而非 PD 的 CC），具体芯片型号与协议待确认。
+2. 电源连接指示灯的状态在安卓固件下是如何切换的？
+3. Type-C 充电口是否支持反向给设备充电？
 
 ## 参考
 
