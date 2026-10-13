@@ -7,9 +7,9 @@ The [Sunniwell](https://www.sunniwell.com/) Z96A is an RK3568‑based ARM cloud 
 The Z96A ships in two hardware revisions that differ mainly in power input (with other minor differences):
 
 - **Early revision (2022?)** — charges via a DC barrel jack.
-- **Later revision (2023)** — charges via Type‑C PD; the firmware identifies this board as *Z97A* in some places, although the shell label still reads *Z96A*.
+- **Later revision (2023)** — charges via Type‑C; the firmware identifies this board as *Z97A* in some places, although the shell label still reads *Z96A*.
 
-A further *Z96H* variant (also Type‑C PD charging) exists but never saw wide circulation on the second-hand market.
+A further *Z96H* variant (also Type‑C charging) exists but never saw wide circulation on the second-hand market.
 
 
 
@@ -19,7 +19,7 @@ A further *Z96H* variant (also Type‑C PD charging) exists but never saw wide c
 
 ## Hardware
 
-The hardware listed below currently only includes the PD (Type‑C charging) revision.
+The hardware listed below currently only includes the Type‑C charging revision.
 
 | Specifications          | Description                                                  |
 | ----------------------- | ------------------------------------------------------------ |
@@ -51,7 +51,7 @@ The hardware listed below currently only includes the PD (Type‑C charging) rev
 
 | Interface | Description |
 | --------- | ----------- |
-| Power     | Type-C PD *1 |
+| Power     | Type-C *1 |
 | USB   | USB 2.0 Type A Host * 2 / USB 3.0 Type A Host * 1 / USB 3.1 Type C OTG * 1 |
 | HDMI | HDMI 2.0 * 1 |
 | Audio | 3.5mm Jack *1 |
@@ -69,23 +69,23 @@ See [images](./images) for device disassembly details.
 
 ## Debug UART
 
-Z96A-PD:
+Z96A-TYPEC:
 
 - **UART** — UART2
 - **Baud rate** — 1500000, 8N1
 - **Interface** — MX1.25mm 4P connector
 
-<img src="./images/Z96A-PD/debug/debug-uart.jpg" alt="debug-uart" style="zoom: 25%;" />
+<img src="./images/Z96A-TYPEC/debug/debug-uart.jpg" alt="debug-uart" style="zoom: 25%;" />
 
 
 
 ## Maskrom Mode
 
-Z96A-PD:
+Z96A-TYPEC:
 
 Short arrow-marked test points and enter Maskrom mode on power‑up.
 
-<img src="./images/Z96A-PD/debug/maskrom-mode.jpg" style="zoom: 25%;" />
+<img src="./images/Z96A-TYPEC/debug/maskrom-mode.jpg" style="zoom: 25%;" />
 
 
 
@@ -106,11 +106,11 @@ followed by the [VOP2](https://github.com/torvalds/linux/commit/604be85547ce4d61
 Thanks to [bingo1991](https://github.com/bingo1991) and [kemp233](https://github.com/kemp233), device-tree adaptation for both revisions on the Rockchip **BSP** kernel is already complete:
 
 - **Early revision (DC)** — [rk3568-z96a.dts](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a/blob/main/rk3568-z96a.dts)
-- **Later revision (PD)** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
+- **Later revision (Type‑C)** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
 
 #### Mainline (upstream)
 
-- **Later revision (PD)** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
+- **Later revision (Type‑C)** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
 
 
 
@@ -118,7 +118,7 @@ Thanks to [bingo1991](https://github.com/bingo1991) and [kemp233](https://github
 
 #### Arch Linux ARM
 
-[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64) carrying the Z96A PD patch series, for building a mainline kernel package.
+[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64) carrying the Z96A Type‑C patch series, for building a mainline kernel package.
 
 
 
@@ -184,7 +184,7 @@ Actual (tested) status of each peripheral on the mainline kernel:
 
 Battery protection board disassembly photo (from @不如茶相伴 in the QQ group):
 
-<img src="./images/Z96A-PD/debug/battery-protection-board.jpg" alt="battery-protection-board" style="zoom:50%;" />
+<img src="./images/Z96A-TYPEC/debug/battery-protection-board.jpg" alt="battery-protection-board" style="zoom:50%;" />
 
 
 

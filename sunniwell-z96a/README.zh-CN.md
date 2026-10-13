@@ -7,9 +7,9 @@
 Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有一些小的差异）：
 
 - **早期版本（2022？）** — 通过 DC 圆口充电。
-- **后期版本（2023）** — 通过 Type‑C PD 充电；固件在部分地方将此主板识别为 *Z97A*，但外壳标签仍为 *Z96A*。
+- **后期版本（2023）** — 通过 Type‑C 充电；固件在部分地方将此主板识别为 *Z97A*，但外壳标签仍为 *Z96A*。
 
-此外还有 *Z96H* 变体（同样为 Type‑C PD 充电），但未在二手市场上广泛流通。
+此外还有 *Z96H* 变体（同样为 Type‑C 充电），但未在二手市场上广泛流通。
 
 
 
@@ -19,7 +19,7 @@ Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有
 
 ## 硬件
 
-列出的硬件目前只包含 PD（Type-C 充电）版本。
+列出的硬件目前只包含 Type-C 充电版本。
 
 | 规格 | 描述 |
 | --- | --- |
@@ -51,7 +51,7 @@ Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有
 
 | 接口 | 描述 |
 | --- | --- |
-| 电源 | Type-C PD *1 |
+| 电源 | Type-C *1 |
 | USB | USB 2.0 Type A Host * 2 / USB 3.0 Type A Host * 1 / USB 3.1 Type C OTG * 1 |
 | HDMI | HDMI 2.0 * 1 |
 | 音频 | 3.5mm 耳机孔 *1 |
@@ -69,23 +69,23 @@ Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有
 
 ## 调试串口
 
-Z96A-PD：
+Z96A-TYPEC：
 
 - **UART** — UART2
 - **波特率** — 1500000, 8N1
 - **接口** — MX1.25mm 4P 连接器
 
-<img src="./images/Z96A-PD/debug/debug-uart.jpg" alt="debug-uart" style="zoom: 25%;" />
+<img src="./images/Z96A-TYPEC/debug/debug-uart.jpg" alt="debug-uart" style="zoom: 25%;" />
 
 
 
 ## Maskrom 模式
 
-Z96A-PD：
+Z96A-TYPEC：
 
 短接箭头标记的测试点，上电进入 Maskrom 模式。
 
-<img src="./images/Z96A-PD/debug/maskrom-mode.jpg" style="zoom: 25%;" />
+<img src="./images/Z96A-TYPEC/debug/maskrom-mode.jpg" style="zoom: 25%;" />
 
 
 
@@ -106,11 +106,11 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 感谢 [bingo1991](https://github.com/bingo1991) 和 [kemp233](https://github.com/kemp233) 完成了两个版本在 Rockchip **BSP** 内核上的设备树适配：
 
 - **早期版本（DC）** — [rk3568-z96a.dts](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a/blob/main/rk3568-z96a.dts)
-- **后期版本（PD）** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
+- **后期版本（Type‑C）** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
 
 #### 主线（upstream）
 
-- **后期版本（PD）** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
+- **后期版本（Type‑C）** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
 
 
 
@@ -118,7 +118,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 #### Arch Linux ARM
 
-[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64)，携带 Z96A PD 补丁系列，用于构建主线内核包。
+[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64)，携带 Z96A Type‑C 补丁系列，用于构建主线内核包。
 
 
 
@@ -184,7 +184,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 电池保护板拆机图(来自 QQ群的 @不如茶相伴)：
 
-<img src="./images/Z96A-PD/debug/battery-protection-board.jpg" alt="battery-protection-board" style="zoom:50%;" />
+<img src="./images/Z96A-TYPEC/debug/battery-protection-board.jpg" alt="battery-protection-board" style="zoom:50%;" />
 
 
 
