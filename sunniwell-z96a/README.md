@@ -165,9 +165,9 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Keyboard (SH61F83Q) | ✅ | |
 | Touchpad (SH61F83Q) | ✅ | |
 | Camera (Microdia 0c45:6368) | ✅ | |
-| Audio — speaker (AW8737AFCR) | ✅ | |
-| Audio — headphone playback (3.5mm jack) | 🟡 | Mono (right channel) output |
-| Audio — headphone mic (3.5mm jack) | ⬜ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
+| Audio — speaker (AW8737AFCR) | ✅ | Output via RK809 Headphone |
+| Audio — headphone playback (3.5mm jack) | 🟡 | Output via RK809 Headphone, mono (right channel) output |
+| Audio — headphone mic (3.5mm jack) | ✅ | Input via RK809 Microphone |
 | Audio — microphone (ES7202 ADC) | ✅ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
 | Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
 | Battery / charger (SC8886) | ✅ | Needs non-mainline patch; see [Drivers -> Battery Charger](#drivers) |
@@ -202,6 +202,8 @@ Battery connector definition:
 | 9 | Black | Power − | |
 | 10 | Black | Power − | |
 
+
+
 ### Firmware
 
 
@@ -213,8 +215,12 @@ The following details are not yet fully understood:
 1. How is the PD protocol implemented for the Type-C charging port? Is there a separate PD trigger/decoy chip?
 
    Disassembly reveals a QFN20 chip on the back of the motherboard near the charging port, suspected to be a fast-charge protocol chip. Tracing the Type-C pins to the chip, D+/D- are routed to it, VBUS is broken out (whether it reaches the chip is uncertain), and TX- is also broken out, but the CC pins appear not to be connected. With an adapter plugged in, VBUS measures 15 V — pointing to a D+/D--negotiated fast-charge protocol (rather than PD-over-CC); the exact chip and protocol are still TBD.
+   
 2. How is the power-connection indicator LED state toggled under the Android firmware?
+
 3. Does the Type-C charging port support reverse charging (powering external devices)?
+
+   No output support; the later TYC4A product supports powering external devices from the charging port.
 
 ## Reference
 
