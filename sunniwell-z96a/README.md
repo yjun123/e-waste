@@ -171,6 +171,7 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Audio — microphone (ES7202 ADC) | ✅ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
 | Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
 | Battery / charger (SC8886) | ✅ | Needs non-mainline patch; see [Drivers -> Battery Charger](#drivers) |
+| Charging indication (LED) | ✅ | Power connected, charging, fully charged |
 | Battery monitor (temperature and battery level display) | ✅ | Needs non-mainline patch; see [Drivers -> Battery Charger](#drivers) |
 | USB 2.0 Type-A host (×2) | ✅ | |
 | USB 3.0 Type-A host | ✅ | |
