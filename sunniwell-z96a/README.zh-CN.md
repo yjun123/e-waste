@@ -158,12 +158,12 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 | 外设 | 状态 | 备注 |
 | --- | --- | --- |
-| Wi-Fi（RTL8822CS） | ✅ | |
+| Wi-Fi（RTL8822CS） | ✅ | 禁用 LPS Deep 功能，规避 WiFi 断流问题<br />在 /etc/modprobe.d/rtw88.conf 添加以下 `options rtw88_core disable_lps_deep=y` |
 | 蓝牙（RTL8822CS） | ✅ | |
 | 显示 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
 | 显示 — eDP 面板 | ✅ | 需要非主线驱动，见 [驱动 -> 显示屏](#驱动) |
 | 键盘（SH61F83Q） | ✅ | |
-| 触控板（SH61F83Q） | ✅ | |
+| 触控板（SH61F83Q，CST128-A） | ✅ | |
 | 摄像头（Microdia 0c45:6368） | ✅ | |
 | 音频 — 扬声器（AW8737AFCR） | ✅ | 通过 RK809 Headphone 输出 |
 | 音频 — 耳机播放（3.5mm 插孔） | 🟡 | 通过 RK809 Headphone 输出,单声道（右声道）输出 |
@@ -202,6 +202,28 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 8 | 黑 | 电源- | |
 | 9 | 黑 | 电源- | |
 | 10 | 黑 | 电源- | |
+
+
+
+### 键盘
+
+功能键按键映射
+
+| 功能键             | 原始键码              | 扫描码      | 正确键码                         | 备注                                                         |
+| ------------------ | --------------------- | ----------- | -------------------------------- | ------------------------------------------------------------ |
+| 锁屏/F1            | KEY_SCREENLOCK        |             | KEY_SCREENLOCK                   | ✅                                                            |
+| 麦克风静音/F2      | KEY_REFRESH           | 700FA       | KEY_MICMUTE                      | ✅，键码已修正                                                |
+| 喇叭静音/F3        | KEY_MUTE              |             | KEY_MUTE                         | ✅                                                            |
+| 喇叭音量减/F4      | KEY_VOLUMEDOWN        |             | KEY_VOLUMEDOWN                   | ✅                                                            |
+| 喇叭音量加/F5      | KEY_VOLUMEUP          |             | KEY_VOLUMEUP                     | ✅                                                            |
+| 屏幕亮度减/F6      | KEY_BRIGHTNESSDOWN    |             | KEY_BRIGHTNESSDOWN               | ✅                                                            |
+| 屏幕亮度加/F7      | KEY_BRIGHTNESSUP      |             | KEY_BRIGHTNESSUP                 | ✅                                                            |
+| 无线开关/F8        | KEY_CALC              | 700FB       | KEY_RFKILL                       | 🟡，键码已修正，但是无线开关功能不可用，可能需要软硬件支持    |
+| 电池电量/F9        | KEY_UNKNOWN           | 700FC       | KEY_BATTERY                      | 🟡，键码已修正，但是电量显示功能不可用，可能需要软硬件支持    |
+| 触控板使能控制/F10 | KEY_FIND/KEY_SCROLLUP | 700F4/700F5 | KEY_TOUCHPAD_OFF/KEY_TOUCHPAD_ON | ✅，键码已修正，原始键码不对但是功能可用，可能是硬件实现的功能 |
+| 投屏切换/F11       | KEY_STOPCD            | 700E9       | KEY_SWITCHVIDEOMODE              | ✅，键码已修正                                                |
+
+注：配置 [99-sunniwell-z96a-typec-keyboard.hwdb](https://github.com/yjun123/PKGBUILDs/blob/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install/99-sunniwell-z96a-typec-keyboard.hwdb) 后，功能键键码均修正。
 
 
 

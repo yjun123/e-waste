@@ -158,12 +158,12 @@ Actual (tested) status of each peripheral on the mainline kernel:
 
 | Peripheral | Status | Notes |
 | --- | --- | --- |
-| Wi-Fi (RTL8822CS) | ✅ | |
+| Wi-Fi (RTL8822CS) | ✅ | Disable LPS Deep to work around Wi-Fi disconnects<br />Add `options rtw88_core disable_lps_deep=y` to /etc/modprobe.d/rtw88.conf |
 | Bluetooth (RTL8822CS) | ✅ | |
 | Display — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
 | Display — eDP panel | ✅ | Needs non-mainline driver; see [Drivers -> Display](#drivers)                                   |
 | Keyboard (SH61F83Q) | ✅ | |
-| Touchpad (SH61F83Q) | ✅ | |
+| Touchpad (SH61F83Q, CST128-A) | ✅ | |
 | Camera (Microdia 0c45:6368) | ✅ | |
 | Audio — speaker (AW8737AFCR) | ✅ | Output via RK809 Headphone |
 | Audio — headphone playback (3.5mm jack) | 🟡 | Output via RK809 Headphone, mono (right channel) output |
@@ -202,6 +202,28 @@ Battery connector definition:
 | 8 | Black | Power − | |
 | 9 | Black | Power − | |
 | 10 | Black | Power − | |
+
+
+
+### Keyboard
+
+Function key mapping
+
+| Function key        | Original keycode      | Scancode    | Correct keycode                  | Notes                                                                                                     |
+| ------------------- | --------------------- | ----------- | -------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Lock screen/F1      | KEY_SCREENLOCK        |             | KEY_SCREENLOCK                   | ✅                                                                                                         |
+| Mic mute/F2         | KEY_REFRESH           | 700FA       | KEY_MICMUTE                      | ✅, keycode corrected                                                                                      |
+| Speaker mute/F3     | KEY_MUTE              |             | KEY_MUTE                         | ✅                                                                                                         |
+| Volume down/F4      | KEY_VOLUMEDOWN        |             | KEY_VOLUMEDOWN                   | ✅                                                                                                         |
+| Volume up/F5        | KEY_VOLUMEUP          |             | KEY_VOLUMEUP                     | ✅                                                                                                         |
+| Brightness down/F6  | KEY_BRIGHTNESSDOWN    |             | KEY_BRIGHTNESSDOWN               | ✅                                                                                                         |
+| Brightness up/F7    | KEY_BRIGHTNESSUP      |             | KEY_BRIGHTNESSUP                 | ✅                                                                                                         |
+| Wireless switch/F8  | KEY_CALC              | 700FB       | KEY_RFKILL                       | 🟡, keycode corrected, but the wireless switch function is unavailable; may need software/hardware support |
+| Battery level/F9    | KEY_UNKNOWN           | 700FC       | KEY_BATTERY                      | 🟡, keycode corrected, but the battery level display is unavailable; may need software/hardware support    |
+| Touchpad toggle/F10 | KEY_FIND/KEY_SCROLLUP | 700F4/700F5 | KEY_TOUCHPAD_OFF/KEY_TOUCHPAD_ON | ✅, keycode corrected, original keycode is wrong but the function works; may be implemented in hardware    |
+| Screen cast/F11     | KEY_STOPCD            | 700E9       | KEY_SWITCHVIDEOMODE              | ✅, keycode corrected                                                                                      |
+
+Note: function key keycodes are corrected after configuring [99-sunniwell-z96a-typec-keyboard.hwdb](https://github.com/yjun123/PKGBUILDs/blob/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install/99-sunniwell-z96a-typec-keyboard.hwdb).
 
 
 
