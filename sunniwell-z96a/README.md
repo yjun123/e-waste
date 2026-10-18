@@ -4,16 +4,23 @@ English · [简体中文](README.zh-CN.md)
 
 The [Sunniwell](https://www.sunniwell.com/) Z96A is an RK3568‑based ARM cloud laptop pre‑loaded with Android 11 for cloud desktop VDI usage.
 
-The Z96A ships in two hardware revisions that differ mainly in power input (with other minor differences):
-
-- **Early revision (2022?)** — charges via a DC barrel jack.
-- **Later revision (2023)** — charges via Type‑C; the firmware identifies this board as *Z97A* in some places, although the shell label still reads *Z96A*.
-
-A further *Z96H* variant (also Type‑C charging) exists but never saw wide circulation on the second-hand market.
-
-
-
 ![Z96A](./images/laptop.jpg)
+
+Multiple hardware revisions exist on the market: although they all carry the *Z96A* label, they differ in their casing material, connectors (charging connector and Micro SD slot) and peripheral chips (charger, fuel gauge, Type-C controller, PMIC and Wi-Fi).
+
+The revision can be roughly identified by the serial number on the casing label (note: the serial number is visible in both the stock Android system and the device tree):
+
+| Serial number | Casing material | Charging port | Micro SD slot | Charger | Fuel gauge | Type-C controller | PMIC | Wi-Fi |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| S561-0AA4-xxxxxxxx | Metal | DC | reserved pads present? | CN3705? | none? | FUSB302? | RK817? | RTL8821CS? |
+| S561-0AA5-xxxxxxxx | Metal | DC | reserved pads present | CN3705 | none | FUSB302? | RK817 | RTL8821CS |
+| S561-0AA9-xxxxxxxx | Metal | DC | reserved pads present | CN3705 | none | HUSB311? | RK817 | RTL8821CS |
+| S561-0AAB-xxxxxxxx | Metal | DC? | present? | CN3705? | none? | HUSB311? | RK817? | RTL8821CS? |
+| S561-0AAC-xxxxxxxx | Plastic | Type-C | none | SC8886S | none | HUSB311 | RK809 | RTL882**2**CS |
+
+Note: values marked with "?" are guessed and not yet confirmed.
+
+
 
 
 
