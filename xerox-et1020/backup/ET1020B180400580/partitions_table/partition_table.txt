@@ -1,0 +1,28 @@
+ET1020 eMMC 分区表（Rockchip parameter / kernel cmdline mtdparts）
+设备序列号: ET1020B180400580
+块设备: /dev/block/mmcblk1   30535680 扇区 x 512 B = 15.63 GB
+
+说明:
+  - 本机没有 GPT：LBA 0-33 全为 0，没有 EFI PART 签名；分区由 Rockchip
+    parameter / U-Boot 传入的 kernel cmdline mtdparts 定义。
+  - 偏移/大小为 512 字节扇区；userdata 为剩余空间。
+  - 分区 0（扇区 0x0-0x1FFF，前 4 MiB）是隐藏的 parameter 区域，
+    不导出为 mmcblk1pX，内容非文本。
+
+ #  name         device               offset(hex)    offset(B)  size(hex)       size  /proc KiB
+ 1  uboot        /dev/block/mmcblk1p1 0x00002000      4194304 0x00002000    4.0 MiB       4096
+ 2  trust        /dev/block/mmcblk1p2 0x00004000      8388608 0x00002000    4.0 MiB       4096
+ 3  misc         /dev/block/mmcblk1p3 0x00006000     12582912 0x00002000    4.0 MiB       4096
+ 4  resource     /dev/block/mmcblk1p4 0x00008000     16777216 0x00008000   16.0 MiB      16384
+ 5  kernel       /dev/block/mmcblk1p5 0x00010000     33554432 0x0000C000   24.0 MiB      24576
+ 6  boot         /dev/block/mmcblk1p6 0x0001C000     58720256 0x00010000   32.0 MiB      32768
+ 7  recovery     /dev/block/mmcblk1p7 0x0002C000     92274688 0x00010000   32.0 MiB      32768
+ 8  backup       /dev/block/mmcblk1p8 0x0003C000    125829120 0x00038000  112.0 MiB     114688
+ 9  cache        /dev/block/mmcblk1p9 0x00074000    243269632 0x00040000  128.0 MiB     131072
+10  system       /dev/block/mmcblk1p10 0x000B4000    377487360 0x00300000 1536.0 MiB    1572864
+11  metadata     /dev/block/mmcblk1p11 0x003B4000   1988100096 0x00008000   16.0 MiB      16384
+12  verity_mode  /dev/block/mmcblk1p12 0x003BC000   2004877312 0x00000040     32 KiB         32
+13  baseparamer  /dev/block/mmcblk1p13 0x003BC040   2004910080 0x00002000    4.0 MiB       4096
+14  frp          /dev/block/mmcblk1p14 0x003BE040   2009104384 0x00000400    512 KiB        512
+15  userdata     /dev/block/mmcblk1p15 0x003BE440   2009628672 0x01960BC0 12993.5 MiB   13301216
+

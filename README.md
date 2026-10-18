@@ -45,3 +45,7 @@
 ## Laptop
 
 - 朝歌 Z96A 云笔记本电脑 Sunniwell Z96A Cloud Laptop
+
+## Tablet
+
+- 施乐打印机控制板 Xerox ET1020
