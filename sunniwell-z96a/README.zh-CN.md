@@ -69,11 +69,11 @@ Z96A 有两个硬件版本，主要区别在于供电输入方式（此外还有
 
 ## 调试串口
 
-Z96A-TYPEC：
+Z96A Type-C：
 
 - **UART** — UART2
 - **波特率** — 1500000, 8N1
-- **接口** — MX1.25mm 4P 连接器
+- **接口** — MX1.25mm 4P 扁款连接器
 
 <img src="./images/Z96A-TYPEC/debug/debug-uart.jpg" alt="debug-uart" style="zoom: 25%;" />
 
@@ -81,7 +81,7 @@ Z96A-TYPEC：
 
 ## Maskrom 模式
 
-Z96A-TYPEC：
+Z96A Type-C：
 
 短接箭头标记的测试点，上电进入 Maskrom 模式。
 
@@ -119,6 +119,14 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 #### Arch Linux ARM
 
 [`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64)，携带 Z96A Type‑C 补丁系列，用于构建主线内核包。
+
+[`z96a-typec-post-install` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install)，Z96A Type-C 专属的优化配置。
+
+
+
+#### Armbian
+
+[kemp233/armbian-build-sunniwell-Z96a](https://github.com/kemp233/armbian-build-sunniwell-Z96a)，基于 Rockchip BSP 内核的 Armbian Legacy 固件，支持 Z96A Type‑C。
 
 
 
@@ -158,7 +166,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 | 外设 | 状态 | 备注 |
 | --- | --- | --- |
-| Wi-Fi（RTL8822CS） | ✅ | 禁用 LPS Deep 功能，规避 WiFi 断流问题<br />在 /etc/modprobe.d/rtw88.conf 添加以下 `options rtw88_core disable_lps_deep=y` |
+| Wi-Fi（RTL8822CS） | ✅ | 禁用 LPS Deep 功能，以规避 WiFi 断流问题<br />在 /etc/modprobe.d/rtw88.conf 中添加 `options rtw88_core disable_lps_deep=y` |
 | 蓝牙（RTL8822CS） | ✅ | |
 | 显示 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
 | 显示 — eDP 面板 | ✅ | 需要非主线驱动，见 [驱动 -> 显示屏](#驱动) |
@@ -207,23 +215,23 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 ### 键盘
 
-功能键按键映射
+功能键映射
 
-| 功能键             | 原始键码              | 扫描码      | 正确键码                         | 备注                                                         |
-| ------------------ | --------------------- | ----------- | -------------------------------- | ------------------------------------------------------------ |
-| 锁屏/F1            | KEY_SCREENLOCK        |             | KEY_SCREENLOCK                   | ✅                                                            |
-| 麦克风静音/F2      | KEY_REFRESH           | 700FA       | KEY_MICMUTE                      | ✅，键码已修正                                                |
-| 喇叭静音/F3        | KEY_MUTE              |             | KEY_MUTE                         | ✅                                                            |
-| 喇叭音量减/F4      | KEY_VOLUMEDOWN        |             | KEY_VOLUMEDOWN                   | ✅                                                            |
-| 喇叭音量加/F5      | KEY_VOLUMEUP          |             | KEY_VOLUMEUP                     | ✅                                                            |
-| 屏幕亮度减/F6      | KEY_BRIGHTNESSDOWN    |             | KEY_BRIGHTNESSDOWN               | ✅                                                            |
-| 屏幕亮度加/F7      | KEY_BRIGHTNESSUP      |             | KEY_BRIGHTNESSUP                 | ✅                                                            |
-| 无线开关/F8        | KEY_CALC              | 700FB       | KEY_RFKILL                       | 🟡，键码已修正，但是无线开关功能不可用，可能需要软硬件支持    |
-| 电池电量/F9        | KEY_UNKNOWN           | 700FC       | KEY_BATTERY                      | 🟡，键码已修正，但是电量显示功能不可用，可能需要软硬件支持    |
-| 触控板使能控制/F10 | KEY_FIND/KEY_SCROLLUP | 700F4/700F5 | KEY_TOUCHPAD_OFF/KEY_TOUCHPAD_ON | ✅，键码已修正，原始键码不对但是功能可用，可能是硬件实现的功能 |
-| 投屏切换/F11       | KEY_STOPCD            | 700E9       | KEY_SWITCHVIDEOMODE              | ✅，键码已修正                                                |
+| 功能键             | 原始键码              | 扫描码      | 正确键码                         | 备注                                                           |
+| ------------------ | --------------------- | ----------- | -------------------------------- | -------------------------------------------------------------- |
+| 锁屏/F1            | KEY_SCREENLOCK        |             | KEY_SCREENLOCK                   | ✅                                                             |
+| 麦克风静音/F2      | KEY_REFRESH           | 700FA       | KEY_MICMUTE                      | ✅，键码已修正                                                 |
+| 喇叭静音/F3        | KEY_MUTE              |             | KEY_MUTE                         | ✅                                                             |
+| 喇叭音量减/F4      | KEY_VOLUMEDOWN        |             | KEY_VOLUMEDOWN                   | ✅                                                             |
+| 喇叭音量加/F5      | KEY_VOLUMEUP          |             | KEY_VOLUMEUP                     | ✅                                                             |
+| 屏幕亮度减/F6      | KEY_BRIGHTNESSDOWN    |             | KEY_BRIGHTNESSDOWN               | ✅                                                             |
+| 屏幕亮度加/F7      | KEY_BRIGHTNESSUP      |             | KEY_BRIGHTNESSUP                 | ✅                                                             |
+| 无线开关/F8        | KEY_CALC              | 700FB       | KEY_RFKILL                       | 🟡，键码已修正，但无线开关功能不可用，可能需软硬件支持     |
+| 电池电量/F9        | KEY_UNKNOWN           | 700FC       | KEY_BATTERY                      | 🟡，键码已修正，但电量显示功能不可用，可能需软硬件支持     |
+| 触控板使能控制/F10 | KEY_FIND/KEY_SCROLLUP | 700F4/700F5 | KEY_TOUCHPAD_OFF/KEY_TOUCHPAD_ON | ✅，键码已修正；原始键码有误，但功能可用，可能是硬件实现 |
+| 投屏切换/F11       | KEY_STOPCD            | 700E9       | KEY_SWITCHVIDEOMODE              | ✅，键码已修正                                                 |
 
-注：配置 [99-sunniwell-z96a-typec-keyboard.hwdb](https://github.com/yjun123/PKGBUILDs/blob/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install/99-sunniwell-z96a-typec-keyboard.hwdb) 后，功能键键码均修正。
+注：配置 [99-sunniwell-z96a-typec-keyboard.hwdb](https://github.com/yjun123/PKGBUILDs/blob/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install/99-sunniwell-z96a-typec-keyboard.hwdb) 后，功能键键码均已修正。
 
 
 
@@ -231,7 +239,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 
 
-## 待澄清的问题
+## 问题
 
 以下细节目前尚未完全弄清：
 
@@ -241,9 +249,23 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
    
 2. 电源连接指示灯的状态在安卓固件下是如何切换的？
 
+   目前的行为是：接入适配器后亮灯，拔掉适配器后灭灯。
+
 3. Type-C 充电口是否支持反向给设备充电？
 
    不支持输出，后续的产品 TYC4A 支持充电口对外供电。
+
+### 暂未实现的功能
+
+| 功能               | 描述                                                         |
+| ------------------ | ------------------------------------------------------------ |
+| 麦克风静音 LED     | 键盘左上角有三颗 LED，其中最右侧的麦克风状态 LED 尚未驱动，引脚未找到 |
+| 键盘无线开关功能键 | 见 [无线开关/F8](#键盘)，该功能需要用户层软件实现            |
+| 电池电量功能键     | 见 [电池电量/F9](#键盘)，该功能需要用户层软件实现。在 KDE 桌面下，该按键用于切换 power profile；RK3568 是否支持相应的 power profile 尚待确认 |
+| 三个 ES7202        | 硬件上有三颗 ES7202，其中一颗已成功驱动（接入麦克风），另外两颗的作用目前尚不清楚 |
+| Chromium 硬件解码  | VDEC 硬件解码功能已具备，仍需软件侧支持                      |
+
+
 
 ## 参考
 

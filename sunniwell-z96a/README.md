@@ -69,11 +69,11 @@ See [images](./images) for device disassembly details.
 
 ## Debug UART
 
-Z96A-TYPEC:
+Z96A Type-C:
 
 - **UART** — UART2
 - **Baud rate** — 1500000, 8N1
-- **Interface** — MX1.25mm 4P connector
+- **Interface** — MX1.25mm 4P flat connector
 
 <img src="./images/Z96A-TYPEC/debug/debug-uart.jpg" alt="debug-uart" style="zoom: 25%;" />
 
@@ -81,7 +81,7 @@ Z96A-TYPEC:
 
 ## Maskrom Mode
 
-Z96A-TYPEC:
+Z96A Type-C:
 
 Short arrow-marked test points and enter Maskrom mode on power‑up.
 
@@ -119,6 +119,14 @@ Thanks to [bingo1991](https://github.com/bingo1991) and [kemp233](https://github
 #### Arch Linux ARM
 
 [`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64) carrying the Z96A Type‑C patch series, for building a mainline kernel package.
+
+[`z96a-typec-post-install` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install), the Z96A Type-C specific tuning configuration.
+
+
+
+#### Armbian
+
+[kemp233/armbian-build-sunniwell-Z96a](https://github.com/kemp233/armbian-build-sunniwell-Z96a), Armbian Legacy firmware based on the Rockchip BSP kernel, supporting Z96A Type‑C.
 
 
 
@@ -223,7 +231,7 @@ Function key mapping
 | Touchpad toggle/F10 | KEY_FIND/KEY_SCROLLUP | 700F4/700F5 | KEY_TOUCHPAD_OFF/KEY_TOUCHPAD_ON | ✅, keycode corrected, original keycode is wrong but the function works; may be implemented in hardware    |
 | Screen cast/F11     | KEY_STOPCD            | 700E9       | KEY_SWITCHVIDEOMODE              | ✅, keycode corrected                                                                                      |
 
-Note: function key keycodes are corrected after configuring [99-sunniwell-z96a-typec-keyboard.hwdb](https://github.com/yjun123/PKGBUILDs/blob/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install/99-sunniwell-z96a-typec-keyboard.hwdb).
+Note: the function key keycodes have been corrected after configuring [99-sunniwell-z96a-typec-keyboard.hwdb](https://github.com/yjun123/PKGBUILDs/blob/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install/99-sunniwell-z96a-typec-keyboard.hwdb).
 
 
 
@@ -231,7 +239,7 @@ Note: function key keycodes are corrected after configuring [99-sunniwell-z96a-t
 
 
 
-## Open Questions
+## Questions
 
 The following details are not yet fully understood:
 
@@ -241,9 +249,23 @@ The following details are not yet fully understood:
    
 2. How is the power-connection indicator LED state toggled under the Android firmware?
 
+   Currently the behavior is: the LED turns on when the adapter is connected and off when it is removed.
+
 3. Does the Type-C charging port support reverse charging (powering external devices)?
 
    No output support; the later TYC4A product supports powering external devices from the charging port.
+
+### Not yet implemented
+
+| Feature                      | Description                                                                                                                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Mic mute LED                 | There are three LEDs at the top-left of the keyboard; the rightmost mic-status LED is not driven yet, and its pin has not been found                                                                   |
+| Keyboard wireless switch key | See [Wireless switch/F8](#keyboard); this function needs user-space software support                                                                                                                   |
+| Battery level key            | See [Battery level/F9](#keyboard); this function needs user-space software support. Under the KDE desktop this key switches the power profile; whether the RK3568 has a supported power profile is TBD |
+| Three ES7202                 | The hardware has three ES7202 chips; one of them (connected to the microphone) has been successfully driven, and the roles of the other two are not yet clear                                                                              |
+| Chromium hardware decoding   | VDEC hardware decoding support already exists; it still needs software support                                                                                                                         |
+
+
 
 ## Reference
 
