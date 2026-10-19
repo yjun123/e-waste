@@ -115,9 +115,9 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 - **早期版本（DC）** — [rk3568-z96a.dts](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a/blob/main/rk3568-z96a.dts)
 - **后期版本（Type‑C）** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
 
-#### 主线（upstream）
+#### 主线（not upstream）
 
-- **后期版本（Type‑C）** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
+- **后期版本（Type‑C）** — [rk3568-sunniwell-z96a-typec.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-typec.dts)
 
 
 
@@ -125,7 +125,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 #### Arch Linux ARM
 
-[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64)，携带 Z96A Type‑C 补丁系列，用于构建主线内核包。
+[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-sunniwell-z96a-typec/core/linux-aarch64)，携带 Z96A Type‑C 补丁系列，用于构建主线内核包。
 
 [`z96a-typec-post-install` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install)，Z96A Type-C 专属的优化配置。
 

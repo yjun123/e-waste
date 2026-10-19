@@ -115,9 +115,9 @@ Thanks to [bingo1991](https://github.com/bingo1991) and [kemp233](https://github
 - **Early revision (DC)** — [rk3568-z96a.dts](https://github.com/bingo1991/rk3568_laptop_sunniwell_z96a/blob/main/rk3568-z96a.dts)
 - **Later revision (Type‑C)** — [rk3568-z96a-laptop-v2.dts](https://github.com/kemp233/armbian-build-sunniwell-Z96a/blob/main/patch/kernel/rockchip-rk3568-z96a/legacy/dt/rk3568-z96a-laptop-v2.dts)
 
-#### Mainline (upstream)
+#### Mainline (not upstream)
 
-- **Later revision (Type‑C)** — [rk3568-sunniwell-z96a-pd.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-pd.dts)
+- **Later revision (Type‑C)** — [rk3568-sunniwell-z96a-typec.dts](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/arch/arm64/boot/dts/rockchip/rk3568-sunniwell-z96a-typec.dts)
 
 
 
@@ -125,7 +125,7 @@ Thanks to [bingo1991](https://github.com/bingo1991) and [kemp233](https://github
 
 #### Arch Linux ARM
 
-[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-linux-aarch64-sunniwell-z96a-pd/core/linux-aarch64) carrying the Z96A Type‑C patch series, for building a mainline kernel package.
+[`linux-aarch64` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-sunniwell-z96a-typec/core/linux-aarch64) carrying the Z96A Type‑C patch series, for building a mainline kernel package.
 
 [`z96a-typec-post-install` PKGBUILD](https://github.com/yjun123/PKGBUILDs/tree/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install), the Z96A Type-C specific tuning configuration.
 
