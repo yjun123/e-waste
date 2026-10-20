@@ -12,15 +12,8 @@
 
 | 序列号 | 外壳材质 | 充电接口 | Micro SD 卡槽 | 充电芯片 | 电量计 | Type-C 控制器 | 电源管理芯片 | 无线网卡 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| S561-0AA4-xxxxxxxx | 金属 | DC | 存在预留焊盘？ | CN3705？ | 无？ | FUSB302？ | RK817？ | RTL8821CS？ |
-| S561-0AA5-xxxxxxxx | 金属 | DC | 存在预留焊盘 | CN3705 | 无 | FUSB302？ | RK817 | RTL8821CS |
-| S561-0AA9-xxxxxxxx | 金属 | DC | 存在预留焊盘 | CN3705 | 无 | HUSB311？ | RK817 | RTL8821CS |
-| S561-0AAB-xxxxxxxx | 金属 | DC？ | 有？ | CN3705？ | 无？ | HUSB311？ | RK817？ | RTL8821CS？ |
+| S561-0AA4-xxxxxxxx<br />S561-0AA5-xxxxxxxx<br />S561-0AA9-xxxxxxxx<br />S561-0AAB-xxxxxxxx | 金属 | DC | 存在预留焊盘 | CN3705 | 无 | FUSB302<br />HUSB311 | RK817 | RTL8821CS |
 | S561-0AAC-xxxxxxxx | 塑料 | Type-C | 无 | SC8886S | 无 | HUSB311 | RK809 | RTL882**2**CS |
-
-注：带 “？” 的项为推测，尚未确认。
-
-
 
 
 
@@ -297,3 +290,5 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 [Github - gjrtimmer/ubuntu-rockchip - gjrtimmer@[BC-14] Add Sunniwell Z96A laptop (RK3568) board support #58](https://github.com/gjrtimmer/ubuntu-rockchip/issues/58)
 
 [Bilibili - 一路人甲一 - 朝歌z96a移植GarlicOS系统体验](https://www.bilibili.com/video/BV1e38TeCEKp)
+
+[CSDN - 云笔记本，刷linux，天翼云笔记本rk3568](https://blog.csdn.net/xueyizhi/article/details/163784149)

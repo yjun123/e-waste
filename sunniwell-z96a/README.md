@@ -12,15 +12,8 @@ The revision can be roughly identified by the serial number on the casing label 
 
 | Serial number | Casing material | Charging port | Micro SD slot | Charger | Fuel gauge | Type-C controller | PMIC | Wi-Fi |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| S561-0AA4-xxxxxxxx | Metal | DC | reserved pads present? | CN3705? | none? | FUSB302? | RK817? | RTL8821CS? |
-| S561-0AA5-xxxxxxxx | Metal | DC | reserved pads present | CN3705 | none | FUSB302? | RK817 | RTL8821CS |
-| S561-0AA9-xxxxxxxx | Metal | DC | reserved pads present | CN3705 | none | HUSB311? | RK817 | RTL8821CS |
-| S561-0AAB-xxxxxxxx | Metal | DC? | present? | CN3705? | none? | HUSB311? | RK817? | RTL8821CS? |
+| S561-0AA4-xxxxxxxx<br />S561-0AA5-xxxxxxxx<br />S561-0AA9-xxxxxxxx<br />S561-0AAB-xxxxxxxx | Metal | DC | reserved pads present | CN3705 | none | FUSB302<br />HUSB311 | RK817 | RTL8821CS |
 | S561-0AAC-xxxxxxxx | Plastic | Type-C | none | SC8886S | none | HUSB311 | RK809 | RTL882**2**CS |
-
-Note: values marked with "?" are guessed and not yet confirmed.
-
-
 
 
 
@@ -297,3 +290,5 @@ The following details are not yet fully understood:
 [Github - gjrtimmer/ubuntu-rockchip - gjrtimmer@[BC-14] Add Sunniwell Z96A laptop (RK3568) board support #58](https://github.com/gjrtimmer/ubuntu-rockchip/issues/58)
 
 [Bilibili - 一路人甲一 - 朝歌z96a移植GarlicOS系统体验](https://www.bilibili.com/video/BV1e38TeCEKp)
+
+[CSDN - 云笔记本，刷linux，天翼云笔记本rk3568](https://blog.csdn.net/xueyizhi/article/details/163784149)
