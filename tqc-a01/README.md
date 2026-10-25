@@ -25,9 +25,9 @@
 
 | 接口 | 说明  |
 | ------------ | --- |
-| USB 2.0 Host (Type-A) | * 1 |
+| USB 2.0 OTG (Type-A) | * 1 |
 | USB 3.0 Host (Type-A) | * 1 |
-| USB 2.0 OTG (Micro USB) | * 1 |
+| USB 2.0 Host (Micro USB) | * 1 |
 | HDMI         | * 1 |
 | 以太网     | 集成 10/100M PHY / RJ45 * 1 |
 | WiFi         | 集成于 AP6212 BCM43430 * 1 |
@@ -59,7 +59,7 @@
 
 > FEL 是全志设备 BootROM 中包含的底层子程序，用于通过 USB 对设备进行初始烧录和恢复。
 
-请连接 USB 2.0 口，而不是 USB OTG 口 :)。
+请连接 USB 2.0（Type-A）口，而不是 USB 2.0 （Micro USB）口 :)。
 
 
 
@@ -112,13 +112,25 @@ https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/allwinner/sun5
 | 蓝牙 (AP6212) | ✅      |                                                              |
 | 以太网           | ✅      | 已合入 v7.4。                                             |
 | 显示 - HDMI     | ✅      |                                                              |
-| USB 2.0 Host       | ✅      |                                                              |
-| USB 3.0 Host       | ✅      |                                                              |
-| USB 2.0 OTG        | ⬜      |                                                              |
+| USB 2.0 OTG （Type-A） | ✅      | 默认工作在 Host 模式；配置为 OTG 模式后，支持软件动态切换角色 |
+| USB 3.0 Host （Type-A） | ✅      |                                                              |
+| USB 2.0 Host（Micro USB) | ✅     |                                                              |
 | 音频 - HDMI       | ❌ | 需要额外补丁 [patches.megous/audio-7.3](https://github.com/armbian/build/tree/main/patch/kernel/archive/sunxi-7.3/patches.megous/audio-7.3) |
 | 音频 - SPDIF      | ⬜      |                                                              |
 | 存储 - MicroSD  | ✅      |                                                              |
 | 红外           | ⬜      |                                                              |
+
+
+
+### 视频硬件解码
+
+> 主线 FFmpeg 目前缺少使用基于 v4l2-requests 的 API 所需补丁，但存在一个可用的分支[https://github.com/jernejsk/FFmpeg.git]。
+>
+> https://wiki.pine64.org/wiki/Mainline_Hardware_Decoding
+
+Arch Linux ARM 用户可从 AUR 安装。
+
+[ffmpeg-v4l2-request-git](https://aur.archlinux.org/packages/ffmpeg-v4l2-request-git)
 
 
 
@@ -143,15 +155,87 @@ https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/allwinner/sun5
 
 
 
-### 视频硬件解码
+## 局域网测速
 
-> 主线 FFmpeg 目前缺少使用基于 v4l2-requests 的 API 所需补丁，但存在一个可用的分支[https://github.com/jernejsk/FFmpeg.git]。
->
-> https://wiki.pine64.org/wiki/Mainline_Hardware_Decoding
+```bash
+$ iperf3 -c 192.168.1.1
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.2 port 40082 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  4]   0.00-1.00   sec  11.9 MBytes  99.5 Mbits/sec    0    173 KBytes
+[  4]   1.00-2.00   sec  11.2 MBytes  94.4 Mbits/sec    0    180 KBytes
+[  4]   2.00-3.00   sec  11.1 MBytes  93.3 Mbits/sec    0    180 KBytes
+[  4]   3.00-4.00   sec  11.2 MBytes  94.4 Mbits/sec    0    180 KBytes
+[  4]   4.00-5.00   sec  11.5 MBytes  96.5 Mbits/sec    0    180 KBytes
+[  4]   5.00-6.00   sec  11.2 MBytes  94.4 Mbits/sec    0    189 KBytes
+[  4]   6.00-7.00   sec  11.2 MBytes  94.4 Mbits/sec    0    189 KBytes
+[  4]   7.00-8.00   sec  11.1 MBytes  93.3 Mbits/sec    0    189 KBytes
+[  4]   8.00-9.00   sec  11.2 MBytes  94.4 Mbits/sec    0    189 KBytes
+[  4]   9.00-10.01  sec  11.2 MBytes  94.0 Mbits/sec    0    189 KBytes
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  4]   0.00-10.01  sec   113 MBytes  94.8 Mbits/sec    0            sender
+[  4]   0.00-10.00  sec   112 MBytes  94.2 Mbits/sec                  receiver
 
-Arch Linux ARM 用户可从 AUR 安装。
+iperf Done.
+```
 
-[ffmpeg-v4l2-request-git](https://aur.archlinux.org/packages/ffmpeg-v4l2-request-git)
+
+
+## KVM
+
+1. 设备树配置：启用 USB2.0 (Type‑A) OTG 功能，默认工作为 Host 模式
+
+   ```dts
+   &usb2otg {
+   	dr_mode = "otg";
+   	status = "okay";
+   }; 
+   ```
+
+2. 安装 One-KVM 软件包
+
+   从 AUR 仓库安装预编译的 [one‑kvm‑bin](https://aur.archlinux.org/packages/one-kvm-bin)：
+
+   `yay -S one-kvm-bin`
+
+   启动 One-KVM
+
+   `systemctl enable --now one-kvm.service`
+
+3. USB模式配置：将 USB2.0 OTG (Type‑A) 切换为 Peripheral（从机）模式
+
+   - 自动切换
+
+     新增 udev 规则 `/etc/udev/rules.d/99-musb-otg-mode.rules`，在 musb‑hdrc 控制器加载时强制设置为 peripheral 模式：
+
+     ```
+     ACTION=="add", SUBSYSTEM=="platform", KERNEL=="musb-hdrc.*", DRIVER=="musb-hdrc", ATTR{mode}="peripheral"
+     ```
+
+   - 手动切换
+
+     ```shell
+     MODE=/sys/devices/platform/soc/5100000.usb/musb-hdrc.3.auto/mode
+     sudo sh -c "echo host > $MODE"
+     sudo sh -c "echo peripheral > $MODE"
+     sudo sh -c "echo otg > $MODE"
+     ```
+
+4. 硬件接线
+
+   - USB3.0 (Type‑A) 接口：连接 HDMI 采集器，采集器接入被控设备的 HDMI 输出端口
+   - USB2.0 (Type‑A) 接口：直接连接被控设备的 USB 端口，模拟 USB 键鼠虚拟 HID
+
+5. 访问管理页面
+
+   浏览器访问 `http://设备IP:8080`，完成 One‑KVM 后续参数配置即可使用。
+
+   
+
+## 已知问题
+
+1. 这块 USB2.0 OTG 的 VBUS 电源不可控；配置为从机（peripheral）模式时，VBUS 依旧会输出。
 
 
 

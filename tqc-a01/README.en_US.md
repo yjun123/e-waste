@@ -25,9 +25,9 @@
 
 | Interface | Description  |
 | ------------ | --- |
-| USB 2.0 Host (Type-A) | * 1 |
+| USB 2.0 OTG (Type-A) | * 1 |
 | USB 3.0 Host (Type-A) | * 1 |
-| USB 2.0 OTG (Mirco USB) | * 1 |
+| USB 2.0 Host (Micro USB) | * 1 |
 | HDMI         | * 1 |
 | Ethernet     | integrated 10/100M PHY / RJ45 * 1 |
 | WiFi         | integraed in AP6212 BCM43430 * 1 |
@@ -59,7 +59,7 @@
 
 > FEL is a low-level subroutine contained in the BootROM on Allwinner devices. It is used for initial programming and recovery of devices using USB. 
 
-connect to USB 2.0 port instead of the USB OTG port :). 
+connect to the USB 2.0 (Type-A) port instead of the USB 2.0 (Micro USB) port :). 
 
 
 
@@ -112,13 +112,25 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Bluetooth (AP6212) | ✅      |                                                              |
 | Ethernet           | ✅      | Merged for v7.4.                                             |
 | Display - HDMI     | ✅      |                                                              |
-| USB 2.0 Host       | ✅      |                                                              |
-| USB 3.0 Host       | ✅      |                                                              |
-| USB 2.0 OTG        | ⬜      |                                                              |
+| USB 2.0 OTG (Type-A) | ✅  | Works in Host mode by default; once configured as OTG, its role can be switched dynamically in software |
+| USB 3.0 Host (Type-A) | ✅ |                                                              |
+| USB 2.0 Host (Micro USB) | ✅ |                                                          |
 | Audio - HDMI       | ❌      | Need extra patches [patches.megous/audio-7.3](https://github.com/armbian/build/tree/main/patch/kernel/archive/sunxi-7.3/patches.megous/audio-7.3) |
 | Audio - SPDIF      | ⬜      |                                                              |
 | Storage - MicroSD  | ✅      |                                                              |
 | Infrared           | ⬜      |                                                              |
+
+
+
+### Video Hardware Decode
+
+> Mainline FFmpeg currently lacks the necessary patches to use the v4l2-requests based API, but a fork[https://github.com/jernejsk/FFmpeg.git] that can utilise it exists.
+>
+> https://wiki.pine64.org/wiki/Mainline_Hardware_Decoding
+
+Arch Linux ARM users can install from AUR.
+
+[ffmpeg-v4l2-request-git](https://aur.archlinux.org/packages/ffmpeg-v4l2-request-git)
 
 
 
@@ -143,15 +155,87 @@ see [uboot-tqc-a01](https://github.com/Izumiko/uboot-tqc-a01)
 
 
 
-### Video Hardware Decode
+## Local Ethernet Speed Test 
 
-> Mainline FFmpeg currently lacks the necessary patches to use the v4l2-requests based API, but a fork[https://github.com/jernejsk/FFmpeg.git] that can utilise it exists.
->
-> https://wiki.pine64.org/wiki/Mainline_Hardware_Decoding
+```bash
+$ iperf3 -c 192.168.1.1
+Connecting to host 192.168.1.1, port 5201
+[  4] local 192.168.1.2 port 40082 connected to 192.168.1.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  4]   0.00-1.00   sec  11.9 MBytes  99.5 Mbits/sec    0    173 KBytes
+[  4]   1.00-2.00   sec  11.2 MBytes  94.4 Mbits/sec    0    180 KBytes
+[  4]   2.00-3.00   sec  11.1 MBytes  93.3 Mbits/sec    0    180 KBytes
+[  4]   3.00-4.00   sec  11.2 MBytes  94.4 Mbits/sec    0    180 KBytes
+[  4]   4.00-5.00   sec  11.5 MBytes  96.5 Mbits/sec    0    180 KBytes
+[  4]   5.00-6.00   sec  11.2 MBytes  94.4 Mbits/sec    0    189 KBytes
+[  4]   6.00-7.00   sec  11.2 MBytes  94.4 Mbits/sec    0    189 KBytes
+[  4]   7.00-8.00   sec  11.1 MBytes  93.3 Mbits/sec    0    189 KBytes
+[  4]   8.00-9.00   sec  11.2 MBytes  94.4 Mbits/sec    0    189 KBytes
+[  4]   9.00-10.01  sec  11.2 MBytes  94.0 Mbits/sec    0    189 KBytes
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  4]   0.00-10.01  sec   113 MBytes  94.8 Mbits/sec    0            sender
+[  4]   0.00-10.00  sec   112 MBytes  94.2 Mbits/sec                  receiver
 
-Arch Linux ARM users can install from AUR.
+iperf Done.
+```
 
-[ffmpeg-v4l2-request-git](https://aur.archlinux.org/packages/ffmpeg-v4l2-request-git)
+
+
+## KVM
+
+1. Device tree: enable OTG on the USB 2.0 (Type-A) port; it works in Host mode by default
+
+   ```dts
+   &usb2otg {
+   	dr_mode = "otg";
+   	status = "okay";
+   }; 
+   ```
+
+2. Install the One-KVM package
+
+   Install the prebuilt [one-kvm-bin](https://aur.archlinux.org/packages/one-kvm-bin) from the AUR:
+
+   `yay -S one-kvm-bin`
+
+   Start One-KVM
+
+   `systemctl enable --now one-kvm.service`
+
+3. USB mode configuration: switch the USB 2.0 OTG (Type-A) port to peripheral (device) mode
+
+   - Automatic switching
+
+     Add the udev rule `/etc/udev/rules.d/99-musb-otg-mode.rules` to force peripheral mode when the musb-hdrc controller is loaded:
+
+     ```
+     ACTION=="add", SUBSYSTEM=="platform", KERNEL=="musb-hdrc.*", DRIVER=="musb-hdrc", ATTR{mode}="peripheral"
+     ```
+
+   - Manual switching
+
+     ```shell
+     MODE=/sys/devices/platform/soc/5100000.usb/musb-hdrc.3.auto/mode
+     sudo sh -c "echo host > $MODE"
+     sudo sh -c "echo peripheral > $MODE"
+     sudo sh -c "echo otg > $MODE"
+     ```
+
+4. Hardware wiring
+
+   - USB 3.0 (Type-A): connect an HDMI capture dongle, and plug the dongle into the target device's HDMI output
+   - USB 2.0 (Type-A): connect directly to the target device's USB port to emulate a USB HID keyboard/mouse
+
+5. Access the management page
+
+   Open `http://<device-ip>:8080` in a browser and complete the One-KVM configuration to start using it.
+
+   
+
+## Known Issues
+
+1. The VBUS power of this USB 2.0 OTG port cannot be controlled; it still outputs power when the port is configured in peripheral (device) mode.
 
 
 
