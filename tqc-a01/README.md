@@ -76,7 +76,7 @@
 
 ## TTL 串口
 
-![TQC-TTL](./image/TQC-TTL-UART.png)
+![TQC-TTL](./images/TQC-TTL-UART.png)
 
 
 
@@ -143,7 +143,7 @@ Arch Linux ARM 用户可从 AUR 安装。
   > brcmfmac43430-sdio.bin
     brcmfmac43430-sdio.AP6212.txt
 
-### 蓝牙 
+### 蓝牙
 
   > BCM43430A1.hcd
 
@@ -190,7 +190,7 @@ iperf Done.
    &usb2otg {
    	dr_mode = "otg";
    	status = "okay";
-   }; 
+   };
    ```
 
 2. 安装 One-KVM 软件包
@@ -231,7 +231,7 @@ iperf Done.
 
    浏览器访问 `http://设备IP:8080`，完成 One‑KVM 后续参数配置即可使用。
 
-   
+
 
 ## 已知问题
 

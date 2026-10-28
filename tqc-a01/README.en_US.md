@@ -76,7 +76,7 @@ connect to the USB 2.0 (Type-A) port instead of the USB 2.0 (Micro USB) port :).
 
 ## TTL UART
 
-![TQC-TTL](./image/TQC-TTL-UART.png)
+![TQC-TTL](./images/TQC-TTL-UART.png)
 
 
 
