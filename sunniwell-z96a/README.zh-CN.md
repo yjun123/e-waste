@@ -279,6 +279,8 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 [Github - kemp233/armbian-build-sunniwell-Z96a](https://github.com/kemp233/armbian-build-sunniwell-Z96a)
 
+[Github - alkaid-ops/armbian-build-sunniwell-Z96a](https://github.com/alkaid-ops/armbian-build-sunniwell-Z96a)
+
 [Github - dontshootitsme/armbian-build-sunniwell-Z96a](https://github.com/dontshootitsme/armbian-build-sunniwell-Z96a)
 
 [Github - momokind/armbian-build](https://github.com/momokind/armbian-build)
