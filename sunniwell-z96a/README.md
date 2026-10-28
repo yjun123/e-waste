@@ -128,6 +128,8 @@ Thanks to [bingo1991](https://github.com/bingo1991) and [kemp233](https://github
 
 [kemp233/armbian-build-sunniwell-Z96a](https://github.com/kemp233/armbian-build-sunniwell-Z96a), Armbian Legacy firmware based on the Rockchip BSP kernel, supporting Z96A Type‑C.
 
+[alkaid-ops/armbian-build-sunniwell-Z96a](https://github.com/alkaid-ops/armbian-build-sunniwell-Z96a), Armbian firmware based on the mainline kernel, supporting Z96A Type‑C.
+
 
 
 ### Drivers
