@@ -57,9 +57,9 @@
 
 [FEL](https://linux-sunxi.org/FEL)
 
-> FEL is a low-level subroutine contained in the BootROM on Allwinner devices. It is used for initial programming and recovery of devices using USB. 
+> FEL is a low-level subroutine contained in the BootROM on Allwinner devices. It is used for initial programming and recovery of devices using USB.
 
-connect to the USB 2.0 (Type-A) port instead of the USB 2.0 (Micro USB) port :). 
+connect to the USB 2.0 (Type-A) port instead of the USB 2.0 (Micro USB) port :).
 
 
 
@@ -115,10 +115,10 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | USB 2.0 OTG (Type-A) | ✅  | Works in Host mode by default; once configured as OTG, its role can be switched dynamically in software |
 | USB 3.0 Host (Type-A) | ✅ |                                                              |
 | USB 2.0 Host (Micro USB) | ✅ |                                                          |
-| Audio - HDMI       | ❌      | Need extra patches [patches.megous/audio-7.3](https://github.com/armbian/build/tree/main/patch/kernel/archive/sunxi-7.3/patches.megous/audio-7.3) |
+| Audio - HDMI       | ✅      | Needs extra patches [v7.3.y-enhance_tqc_a01_support](https://github.com/yjun123/linux/tree/v7.3.y-enhance_tqc_a01_support) |
 | Audio - SPDIF      | ⬜      |                                                              |
 | Storage - MicroSD  | ✅      |                                                              |
-| Infrared           | ⬜      |                                                              |
+| Infrared           | ⬜      | Needs extra patches [v7.3.y-enhance_tqc_a01_support](https://github.com/yjun123/linux/tree/v7.3.y-enhance_tqc_a01_support) |
 
 
 
@@ -143,7 +143,7 @@ Add symlink config for brcmfmac43430-sdio.ultrapower,taiqicat-a01.txt: [WHENCE: 
   > brcmfmac43430-sdio.bin
     brcmfmac43430-sdio.AP6212.txt
 
-### BT 
+### BT
 
   > BCM43430A1.hcd
 
@@ -155,7 +155,7 @@ see [uboot-tqc-a01](https://github.com/Izumiko/uboot-tqc-a01)
 
 
 
-## Local Ethernet Speed Test 
+## Local Ethernet Speed Test
 
 ```bash
 $ iperf3 -c 192.168.1.1
@@ -190,7 +190,7 @@ iperf Done.
    &usb2otg {
    	dr_mode = "otg";
    	status = "okay";
-   }; 
+   };
    ```
 
 2. Install the One-KVM package
@@ -231,7 +231,7 @@ iperf Done.
 
    Open `http://<device-ip>:8080` in a browser and complete the One-KVM configuration to start using it.
 
-   
+
 
 ## Known Issues
 

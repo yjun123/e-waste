@@ -115,10 +115,10 @@ https://github.com/torvalds/linux/blob/master/arch/arm64/boot/dts/allwinner/sun5
 | USB 2.0 OTG （Type-A） | ✅      | 默认工作在 Host 模式；配置为 OTG 模式后，支持软件动态切换角色 |
 | USB 3.0 Host （Type-A） | ✅      |                                                              |
 | USB 2.0 Host（Micro USB) | ✅     |                                                              |
-| 音频 - HDMI       | ❌ | 需要额外补丁 [patches.megous/audio-7.3](https://github.com/armbian/build/tree/main/patch/kernel/archive/sunxi-7.3/patches.megous/audio-7.3) |
+| 音频 - HDMI       | ✅ | 需要额外补丁 [v7.3.y-enhance_tqc_a01_support](https://github.com/yjun123/linux/tree/v7.3.y-enhance_tqc_a01_support) |
 | 音频 - SPDIF      | ⬜      |                                                              |
 | 存储 - MicroSD  | ✅      |                                                              |
-| 红外           | ⬜      |                                                              |
+| 红外           | ⬜      | 需要额外补丁 [v7.3.y-enhance_tqc_a01_support](https://github.com/yjun123/linux/tree/v7.3.y-enhance_tqc_a01_support) |
 
 
 
