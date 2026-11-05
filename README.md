@@ -49,3 +49,7 @@
 ## Tablet
 
 - 施乐打印机控制板 Xerox ET1020
+
+## Live Streaming Machine
+
+- 九鼎 Live3588V4 直播机主板 9Tripod Live3588V4 Live Streaming Machine Mainboard
