@@ -10,15 +10,16 @@ The board uses a separate carrier board and core board architecture; the core bo
 
 The specifications published on the official website only cover revision 4.0. Physical teardown confirms that the hardware revisions actually in circulation have advanced to V4.2 and V4.3, which differ from 4.0 by minor changes in peripheral component selection and PCB layout.
 
-Live-streaming devices on the market commonly use this board, for example:
+The table below lists common live-streaming devices that use 9Tripod live-streaming boards:
 
 | Device | Board |
 | --- | --- |
 | Lingxi all-in-one live-streaming device (聆晰直播一体机) | Live3588V4.2 |
+| Jiuying G5 (九影G5) | Live3588SV54 |
+
+**The information in the following sections corresponds to the Lingxi all-in-one live-streaming device (Live3588 V4.2) hardware revision.**
 
 ## Hardware
-
-The table below describes the Live3588 V4.2 hardware revision.
 
 | Specification | Description |
 | --- | --- |
