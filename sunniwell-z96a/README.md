@@ -38,6 +38,7 @@ The hardware listed below currently only includes the Type‑C charging revision
 | Camera                  | Microdia Sonix Camera / USB 2.0 / UVC 1.00 / 0c45:6368 |
 | Type-C Controller        | Hynetek [HUSB311BLA](https://www.hynetek.com/2422.html) / CC detection / QFN-14L |
 | USB 3.1 Switch          | Unknown / D3EB 2342 F1                                       |
+| Fast-charge chip        | Unknown / 15V / QFN20 / suspected QC / on the back of the mainboard near the charging port |
 | Battery Charger         | SouthChip [SC8886SQDER](https://www.southchip.com/product/SC8886S) / 8A / QFN-32 |
 | Battery                 | SHT [3585130-2S](https://www.newlaptopaccessory.com/cn/sht-3585130-2s-3585130-7.4v-37wh-batteries-p-11746.html) / 5000mAh / 37Wh / 8.4V (2S) |
 | Hall Effect Switch      | Yasemi Magnesensor [MH248](https://www.yasemi.com.cn/productinfo/2155346.html?templateId=1133605) |
@@ -146,8 +147,8 @@ Mainline support status for the key peripherals.
 | Keyboard           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                                           | Mainline                                                     |
 | Touchpad           | SinoWealth SH61F83Q  | `usbhid` (USB HID)                                           | Mainline                                                     |
 | Camera             | Microdia 0c45:6368   | `uvcvideo` (USB UVC)                                         | Mainline                                                     |
-| Display            | BOE NV140FHD-N43     | `rockchip-vop` (DRM) + Analogix `analogix_dp` (eDP) + `phy-rockchip-naneng-edp` (PHY) + `panel-edp` | `rockchip-vop`  mainline. developing driver,  pending upstream submission: [rk3568-edp](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
-| Audio ADC          | Everest ES7202       | `snd_soc_es7202`                                             | developing codec driver, pending upstream submission: [`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
+| Display            | BOE NV140FHD-N43     | `rockchip-vop` (DRM) + Analogix `analogix_dp` (eDP) + `phy-rockchip-naneng-edp` (PHY) + `panel-edp` | `rockchip-vop` mainline. eDP support has been accepted; the eDP phy and dtsi are still being iterated, thanks to Damon Ding's work: [[PATCH v4 0/6] Add eDP support for RK3568](https://lore.kernel.org/dri-devel/20261030064905.2248999-1-damon.ding@rock-chips.com/). Panel support has landed in mainline: [[PATCH] drm/panel-edp: Add BOE NV140FHD-N43 panel](https://lore.kernel.org/dri-devel/20261011164417.151770-1-jerrysteve1101@gmail.com/) |
+| Audio ADC          | Everest ES7202       | `snd_soc_es7202`                                             | Accepted by linux-sound, expected to land in 7.5: [[PATCH v3 0/2] ASoC: codecs: Add Everest ES7202 support](https://lore.kernel.org/linux-sound/20261101080926.267041-1-jerrysteve1101@gmail.com/) |
 | Audio Amplifier    | Awinic AW8737AFCR    | `simple-amplifier` (GPIO `enable-gpios`)                     | Mainline                                                     |
 | USB Hub            | Genesys Logic GL852G | `usbcore` (generic hub)                                      | Mainline                                                     |
 | Hall Effect Switch | Magnesensor MH248    | — (GPIO interrupt, no dedicated driver)                      | Not needed (GPIO)                                            |
@@ -187,6 +188,7 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | USB 3.0 Type-A host | ✅ | |
 | USB 3.1 Type-C OTG port (HUSB311) | ✅ | |
 | Lid switch (MH248) | ✅ | |
+| System indicator LED | ✅ | Power LED is controlled via GPIO; the Caps Lock LED (CapsLock LED) and the Mic Mute LED (NumLock LED) are controlled by the keyboard controller |
 
 
 
@@ -222,7 +224,7 @@ Function key mapping
 | Function key        | Original keycode      | Scancode    | Correct keycode                  | Notes                                                                                                     |
 | ------------------- | --------------------- | ----------- | -------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | Lock screen/F1      | KEY_SCREENLOCK        |             | KEY_SCREENLOCK                   | ✅                                                                                                         |
-| Mic mute/F2         | KEY_REFRESH           | 700FA       | KEY_MICMUTE                      | ✅, keycode corrected                                                                                      |
+| Mic mute/F2         | KEY_REFRESH           | 700FA       | KEY_MICMUTE                      | ✅, keycode corrected; mic-mute LED linkage requires [Mic-mute LED](https://github.com/yjun123/PKGBUILDs/blob/bc2e62f57ba42dd2423cf40111a20b06ad9cc3f2/alarm/z96a-typec-post-install/PKGBUILD#L71) |
 | Speaker mute/F3     | KEY_MUTE              |             | KEY_MUTE                         | ✅                                                                                                         |
 | Volume down/F4      | KEY_VOLUMEDOWN        |             | KEY_VOLUMEDOWN                   | ✅                                                                                                         |
 | Volume up/F5        | KEY_VOLUMEUP          |             | KEY_VOLUMEUP                     | ✅                                                                                                         |
@@ -259,13 +261,14 @@ The following details are not yet fully understood:
 
 ### Not yet implemented
 
-| Feature                      | Description                                                                                                                                                                                            |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Mic mute LED                 | There are three LEDs at the top-left of the keyboard; the rightmost mic-status LED is not driven yet, and its pin has not been found                                                                   |
-| Keyboard wireless switch key | See [Wireless switch/F8](#keyboard); this function needs user-space software support                                                                                                                   |
-| Battery level key            | See [Battery level/F9](#keyboard); this function needs user-space software support. Under the KDE desktop this key switches the power profile; whether the RK3568 has a supported power profile is TBD |
-| Three ES7202                 | The hardware has three ES7202 chips; one of them (connected to the microphone) has been successfully driven, and the roles of the other two are not yet clear                                                                              |
-| Chromium hardware decoding   | VDEC hardware decoding support already exists; it still needs software support                                                                                                                         |
+| Feature                      | Description                                                                                                                                                                                            | Conclusion                                                     |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| Mic mute LED                 | There are three LEDs at the top-left of the keyboard; the rightmost mic-status LED is not driven yet, and its pin has not been found                                                                   | Reuses the keyboard's NumLock LED for control. Discovered by @不知茶相伴 |
+| Keyboard wireless switch key | See [Wireless switch/F8](#keyboard); this function needs user-space software support                                                                                                                   | |
+| Battery level key            | See [Battery level/F9](#keyboard); this function needs user-space software support. Under the KDE desktop this key switches the power profile; whether the RK3568 has a supported power profile is TBD | |
+| Three ES7202                 | The hardware has three ES7202 chips; one of them (connected to the microphone) has been successfully driven, and the roles of the other two (located near the headphone jack and the speakers) are not yet clear | |
+| Headphone stereo playback    | Currently only the right channel produces sound through the headphones | |
+| Chromium hardware decoding   | VDEC hardware decoding support already exists; it still needs software support                                                                                                                         | |
 
 
 

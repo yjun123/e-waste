@@ -38,6 +38,7 @@
 | 摄像头 | Microdia Sonix 摄像头 / USB 2.0 / UVC 1.00 / 0c45:6368 |
 | Type-C 控制器 | Hynetek [HUSB311BLA](https://www.hynetek.com/2422.html) / CC 检测 / QFN-14L |
 | USB 3.1 切换开关 | 未知 / D3EB 2342 F1 |
+| 快充芯片 | 未知 / 15V / QFN20 / 疑似QC / 在主板背面靠经充电口位置 /
 | 电池充电芯片 | SouthChip [SC8886SQDER](https://www.southchip.com/product/SC8886S) / 8A / QFN-32 |
 | 电池 | SHT [3585130-2S](https://www.newlaptopaccessory.com/cn/sht-3585130-2s-3585130-7.4v-37wh-batteries-p-11746.html) / 5000mAh / 37Wh / 8.4V（2S） |
 | 霍尔开关 | Yasemi Magnesensor [MH248](https://www.yasemi.com.cn/productinfo/2155346.html?templateId=1133605) |
@@ -146,8 +147,8 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 键盘 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
 | 触控板 | SinoWealth SH61F83Q | `usbhid`（USB HID） | 主线 |
 | 摄像头 | Microdia 0c45:6368 | `uvcvideo`（USB UVC） | 主线 |
-| 显示屏 | BOE NV140FHD-N43 | `rockchip-vop`（DRM）+ Analogix `analogix_dp`（eDP）+ `phy-rockchip-naneng-edp`（PHY）+ `panel-edp` | `rockchip-vop` 已主线。驱动开发中，待提交上游：[rk3568-edp](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
-| 音频 ADC | Everest ES7202 | `snd_soc_es7202` | codec 驱动开发中，待提交上游：[`es7202.c`](https://github.com/yjun123/linux/blob/add_sunniwell_z96a/sound/soc/codecs/es7202.c) |
+| 显示屏 | BOE NV140FHD-N43 | `rockchip-vop`（DRM）+ Analogix `analogix_dp`（eDP）+ `phy-rockchip-naneng-edp`（PHY）+ `panel-edp` | `rockchip-vop` 已主线。eDP 的支持已经被接受，eDP phy 和 dtsi 仍在迭代中,感谢 Damon Ding 的工作：[[PATCH v4 0/6] Add eDP support for RK3568](https://lore.kernel.org/dri-devel/20261030064905.2248999-1-damon.ding@rock-chips.com/)。面板的支持已进入主线：[[PATCH] drm/panel-edp: Add BOE NV140FHD-N43 panel](https://lore.kernel.org/dri-devel/20261011164417.151770-1-jerrysteve1101@gmail.com/) |
+| 音频 ADC | Everest ES7202 | `snd_soc_es7202` | 已被 linux-sound 接受，预计 7.5 进入主线:[[PATCH v3 0/2] ASoC: codecs: Add Everest ES7202 support](https://lore.kernel.org/linux-sound/20261101080926.267041-1-jerrysteve1101@gmail.com/) |
 | 音频功放 | Awinic AW8737AFCR | `simple-amplifier`（GPIO `enable-gpios`） | 主线 |
 | USB Hub | Genesys Logic GL852G | `usbcore`（generic hub） | 主线 |
 | 霍尔开关 | Magnesensor MH248 | —（GPIO 中断，无需专用驱动） | 无需（GPIO） |
@@ -187,6 +188,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | USB 3.0 Type-A 主机口 | ✅ | |
 | USB 3.1 Type-C OTG口（HUSB311） | ✅ | |
 | 霍尔开关（MH248） | ✅ | |
+| 系统提示灯 LED | ✅ | 电源 LED 通过GPIO 控制，大写锁定 LED（CapsLock LED）和 麦克风静音 LED（NumLock LED) 由键盘控制器控制 |
 
 
 
@@ -219,19 +221,19 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 功能键映射
 
-| 功能键             | 原始键码              | 扫描码      | 正确键码                         | 备注                                                           |
-| ------------------ | --------------------- | ----------- | -------------------------------- | -------------------------------------------------------------- |
-| 锁屏/F1            | KEY_SCREENLOCK        |             | KEY_SCREENLOCK                   | ✅                                                             |
-| 麦克风静音/F2      | KEY_REFRESH           | 700FA       | KEY_MICMUTE                      | ✅，键码已修正                                                 |
-| 喇叭静音/F3        | KEY_MUTE              |             | KEY_MUTE                         | ✅                                                             |
-| 喇叭音量减/F4      | KEY_VOLUMEDOWN        |             | KEY_VOLUMEDOWN                   | ✅                                                             |
-| 喇叭音量加/F5      | KEY_VOLUMEUP          |             | KEY_VOLUMEUP                     | ✅                                                             |
-| 屏幕亮度减/F6      | KEY_BRIGHTNESSDOWN    |             | KEY_BRIGHTNESSDOWN               | ✅                                                             |
-| 屏幕亮度加/F7      | KEY_BRIGHTNESSUP      |             | KEY_BRIGHTNESSUP                 | ✅                                                             |
-| 无线开关/F8        | KEY_CALC              | 700FB       | KEY_RFKILL                       | 🟡，键码已修正，但无线开关功能不可用，可能需软硬件支持     |
-| 电池电量/F9        | KEY_UNKNOWN           | 700FC       | KEY_BATTERY                      | 🟡，键码已修正，但电量显示功能不可用，可能需软硬件支持     |
-| 触控板使能控制/F10 | KEY_FIND/KEY_SCROLLUP | 700F4/700F5 | KEY_TOUCHPAD_OFF/KEY_TOUCHPAD_ON | ✅，键码已修正；原始键码有误，但功能可用，可能是硬件实现 |
-| 投屏切换/F11       | KEY_STOPCD            | 700E9       | KEY_SWITCHVIDEOMODE              | ✅，键码已修正                                                 |
+| 功能键             | 原始键码              | 扫描码      | 正确键码                         | 备注                                                         |
+| ------------------ | --------------------- | ----------- | -------------------------------- | ------------------------------------------------------------ |
+| 锁屏/F1            | KEY_SCREENLOCK        |             | KEY_SCREENLOCK                   | ✅                                                            |
+| 麦克风静音/F2      | KEY_REFRESH           | 700FA       | KEY_MICMUTE                      | ✅，键码已修正；联动麦克风静音 LED 需 [Mic-mute LED](https://github.com/yjun123/PKGBUILDs/blob/bc2e62f57ba42dd2423cf40111a20b06ad9cc3f2/alarm/z96a-typec-post-install/PKGBUILD#L71) |
+| 喇叭静音/F3        | KEY_MUTE              |             | KEY_MUTE                         | ✅                                                            |
+| 喇叭音量减/F4      | KEY_VOLUMEDOWN        |             | KEY_VOLUMEDOWN                   | ✅                                                            |
+| 喇叭音量加/F5      | KEY_VOLUMEUP          |             | KEY_VOLUMEUP                     | ✅                                                            |
+| 屏幕亮度减/F6      | KEY_BRIGHTNESSDOWN    |             | KEY_BRIGHTNESSDOWN               | ✅                                                            |
+| 屏幕亮度加/F7      | KEY_BRIGHTNESSUP      |             | KEY_BRIGHTNESSUP                 | ✅                                                            |
+| 无线开关/F8        | KEY_CALC              | 700FB       | KEY_RFKILL                       | 🟡，键码已修正，但无线开关功能不可用，可能需软硬件支持        |
+| 电池电量/F9        | KEY_UNKNOWN           | 700FC       | KEY_BATTERY                      | 🟡，键码已修正，但电量显示功能不可用，可能需软硬件支持        |
+| 触控板使能控制/F10 | KEY_FIND/KEY_SCROLLUP | 700F4/700F5 | KEY_TOUCHPAD_OFF/KEY_TOUCHPAD_ON | ✅，键码已修正；原始键码有误，但功能可用，可能是硬件实现      |
+| 投屏切换/F11       | KEY_STOPCD            | 700E9       | KEY_SWITCHVIDEOMODE              | ✅，键码已修正                                                |
 
 注：配置 [99-sunniwell-z96a-typec-keyboard.hwdb](https://github.com/yjun123/PKGBUILDs/blob/feature-sunniwell-z96a-typec/alarm/z96a-typec-post-install/99-sunniwell-z96a-typec-keyboard.hwdb) 后，功能键键码均已修正。
 
@@ -259,14 +261,14 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 
 ### 暂未实现的功能
 
-| 功能               | 描述                                                         |
-| ------------------ | ------------------------------------------------------------ |
-| 麦克风静音 LED     | 键盘左上角有三颗 LED，其中最右侧的麦克风状态 LED 尚未驱动，引脚未找到 |
-| 键盘无线开关功能键 | 见 [无线开关/F8](#键盘)，该功能需要用户层软件实现            |
-| 电池电量功能键     | 见 [电池电量/F9](#键盘)，该功能需要用户层软件实现。在 KDE 桌面下，该按键用于切换 power profile；RK3568 是否支持相应的 power profile 尚待确认 |
-| 三个 ES7202        | 硬件上有三颗 ES7202，其中一颗已成功驱动（接入麦克风），另外两颗的作用目前尚不清楚 |
-| Chromium 硬件解码  | VDEC 硬件解码功能已具备，仍需软件侧支持                      |
-
+| 功能               | 描述                                                         | 结论                                    |
+| ------------------ | ------------------------------------------------------------ | --------------------------------------- |
+| 麦克风静音 LED     | 键盘左上角有三颗 LED，其中最右侧的麦克风状态 LED 尚未驱动，引脚未找到 | 复用键盘的 NumLock LED 进行控制。由 @不知茶相伴 发现 |
+| 键盘无线开关功能键 | 见 [无线开关/F8](#键盘)，该功能需要用户层软件实现            | |
+| 电池电量功能键     | 见 [电池电量/F9](#键盘)，该功能需要用户层软件实现。在 KDE 桌面下，该按键用于切换 power profile；RK3568 是否支持相应的 power profile 尚待确认 | |
+| 三个 ES7202        | 硬件上有三颗 ES7202，其中一颗已成功驱动（接入麦克风），另外两颗(位置在 耳机口和扬声器 附近）的作用目前尚不清楚 | |
+| 耳机双声道播放     | 目前测试耳机只有右声道有声音                                 | |
+| Chromium 硬件解码  | VDEC 硬件解码功能已具备，仍需软件侧支持                      | |
 
 
 ## 参考
