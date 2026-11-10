@@ -153,7 +153,7 @@ Mainline support status for the key peripherals.
 | USB Hub            | Genesys Logic GL852G | `usbcore` (generic hub)                                      | Mainline                                                     |
 | Hall Effect Switch | Magnesensor MH248    | — (GPIO interrupt, no dedicated driver)                      | Not needed (GPIO)                                            |
 | Type-C Controller   | Hynetek HUSB311      | `tcpci_rt1711h` (tcpm)                                              | Mainline (since v7.1)                                        |
-| Battery Charger    | SouthChip SC8886     | `bq257xx` (power_supply)                                                            | Reuses mainline bq257xx; driver in development, pending upstream submission: [sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
+| Battery Charger    | SouthChip SC8886S    | `bq257xx` (power_supply)                                                            | Reuses mainline bq257xx; driver in development, pending upstream submission: [sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | DC-DC              | Torch TCS4525        | `fan53555` (regulator)                                       | Mainline (since v5.13)                                       |
 
 
@@ -181,7 +181,7 @@ Actual (tested) status of each peripheral on the mainline kernel:
 | Audio — headphone mic (3.5mm jack) | ✅ | Input via RK809 Microphone |
 | Audio — microphone (ES7202 ADC) | ✅ | Needs non-mainline driver; see [Drivers -> Audio ADC](#drivers)                                 |
 | Audio — HDMI | 🟡 | Sometimes only detected when booted with HDMI plugged in |
-| Battery / charger (SC8886) | ✅ | Needs non-mainline patch; see [Drivers -> Battery Charger](#drivers) |
+| Battery / charger (SC8886S) | ✅ | Needs non-mainline patch; see [Drivers -> Battery Charger](#drivers) |
 | Charging indication (LED) | ✅ | Power connected, charging, fully charged |
 | Battery monitor (temperature and battery level display) | ✅ | Needs non-mainline patch; see [Drivers -> Battery Charger](#drivers) |
 | USB 2.0 Type-A host (×2) | ✅ | |

@@ -153,7 +153,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | USB Hub | Genesys Logic GL852G | `usbcore`（generic hub） | 主线 |
 | 霍尔开关 | Magnesensor MH248 | —（GPIO 中断，无需专用驱动） | 无需（GPIO） |
 | Type-C 控制器 | Hynetek HUSB311 | `tcpci_rt1711h`（tcpm） | 主线（自 v7.1） |
-| 电池充电芯片 | SouthChip SC8886 | `bq257xx`（power_supply） | 复用主线 bq257xx，驱动开发中，待提交上游：[sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
+| 电池充电芯片 | SouthChip SC8886S | `bq257xx`（power_supply） | 复用主线 bq257xx，驱动开发中，待提交上游：[sc8886s](https://github.com/yjun123/linux/commits/add_sunniwell_z96a/) |
 | DC-DC | Torch TCS4525 | `fan53555`（regulator） | 主线（自 v5.13） |
 
 
@@ -181,7 +181,7 @@ RK3568 是上游 Linux 支持最好的 Rockchip SoC 之一。
 | 音频 — 耳机麦克风（3.5mm 插孔） | ✅ | 通过 RK809 Microphone 输入 |
 | 音频 — 麦克风（ES7202 ADC） | ✅ | 需要非主线驱动，见 [驱动 -> 音频 ADC](#驱动) |
 | 音频 — HDMI | 🟡 | 有时需插着 HDMI 开机才能识别 |
-| 电池 / 充电（SC8886） | ✅ | 需要非主线补丁，见 [驱动 -> 电池充电芯片](#驱动) |
+| 电池 / 充电（SC8886S） | ✅ | 需要非主线补丁，见 [驱动 -> 电池充电芯片](#驱动) |
 | 充电提示 （LED 灯） | ✅ | 电源接入提示，充电中提示，充满提示 |
 | 电池监测（温度和电量显示） | ✅ | 需要非主线补丁，见 [驱动 -> 电池充电芯片](#驱动) |
 | USB 2.0 Type-A 主机口（×2） | ✅ | |
