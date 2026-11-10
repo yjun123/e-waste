@@ -21,6 +21,8 @@ The table below lists common live-streaming devices that use 9Tripod live-stream
 
 ## Hardware
 
+Model names prefixed with `*` indicate chips that have not yet been located on the board.
+
 | Specification | Description |
 | --- | --- |
 | Model | LE2110 |
@@ -30,17 +32,21 @@ The table below lists common live-streaming devices that use 9Tripod live-stream
 | DDR | 2 × 8GB BIWIN [BWMZCX32H2A-64G-X](https://www.biwintechnology.com/product/lpddr4-4x/) / LPDDR4/4X / FBGA200 / 4266 Mbps |
 | eMMC | 256GB SCY [E256CSAG4ABE00](https://www.shichuangyi.com/qianrushicunchuxinpian/7.html) / eMMC5.1 |
 | PMIC | Rockchip [RK806-1](https://item.szlcsc.com/5789556.html) / companion PMIC for RK3588 / SPI / 10×BUCK + 5×NLDO + 6×PLDO / interrupts: PWRON, HOTDIE, VDC, VB_LO |
-| WiFi | Realtek RTL8852BE / 802.11ax WiFi 6 / 2T2R / PCIe |
+| WiFi | Realtek RTL8852BE / 802.11ax WiFi 6 / 2T2R / PCIe Gen2 x1 |
 | BT | Realtek RTL8852BE / BT 5.2 / USB 2.0 |
 | Gigabit PHY | Realtek [RTL8211FD-CG](https://item.szlcsc.com/2790637.html) / 10Base-T, 100Base-TX and 1000Base-T |
-| USB3 controller | VIA Labs (VLI) [VL805-Q6](https://www.via-labs.com/product_show.php?id=48) / PCIe 2.0 x1 -> USB 3.0 xHCI, 4 ports |
+| USB3 controller | VIA Labs (VLI) [VL805-Q6](https://www.via-labs.com/product_show.php?id=48) / PCIe Gen2 x1 -> USB 3.0 xHCI, 4 ports |
 | Type-C port controller | onsemi [FUSB302BMPX](https://www.onsemi.cn/products/interfaces/usb-type-c/fusb302b) / max 100 W / marking PBAB CLH |
-| Camera | Sony [IMX766](https://bbs.16rd.com/citiao-sensor-imx766.html) / MIPI CSI-2 |
+| EDP panel | ZTRH ZTRH154FHD02 / 1920 × 1080 / 34 cm × 19 cm |
+| Touchscreen | Goodix GT9110 / 10-point capacitive touch / I2C |
 | HDMI-to-MIPI bridge | Lontium [LT6911C](https://m.elecfans.com/article/2107781.html) / HDMI 1.4 -> MIPI CSI |
+| Camera | Sony [IMX766](https://bbs.16rd.com/citiao-sensor-imx766.html) / MIPI CSI-2 |
 | Stereo audio codec | Everest [ES8388](https://item.szlcsc.com/339918.html) / 2×ADC + 2×DAC / 24-bit |
 | Audio power amplifier | Nsiway [NS4150B](https://www.nsiway.com.cn/list_38/82.html) / 3W / mono / Class D |
-| SPI NOR flash | BRIGHTMOON T25S40 / 4Mb |
+| *RTC | Haoyu [HYM8563](https://item.szlcsc.com/108470.html) / I2C / with CLKOUT clock output |
+| SPI NOR flash | BRIGHTMOON T25S40 / 4Mb / connected to **VL805-Q6** |
 | USB audio | Cmedia [HS-100C](https://warmseaic.com/cmedia/hs-100c) / USB 2.0 |
+| *Accelerometer | Silan [SC7A20](https://www.silan.com.cn/index.php/product/details/47.html) / 12-bit / digital 3-axis accelerometer |
 | DC-DC | MPS [MP8759GD-Z](https://www.monolithicpower.cn/cn/mp8759.html) / synchronous buck / 26V / 8A / marking AQQ P52 789 |
 | MOSFET | MSKSEMI [AO4480-MS](https://item.szlcsc.com/3498500.html) / N-channel / marking 4480 MS80N |
 
@@ -94,6 +100,12 @@ The factory firmware enables secure boot, so the dedicated [MiniLoaderAll](./loa
 
 RK3588 was merged into mainline Linux in 6.3, and by 7.x most core blocks are supported, including CPU/GPU (Panthor), VOP2/eDP/HDMI/DP display, HDMI RX, audio, eMMC/SD, GMAC, PCIe, USB3/Type-C, PMIC/RTC, NPU (Rocket), VPU decode (rkvdec), VICAP (rkcif) and RGA3. The main missing pieces are the VPU encoder (VENC) and RK3588 ISP (rkisp3.0); the rest of the core peripherals are largely covered.
 
+### Booting
+
+Because the factory firmware enables Secure Boot, any modification to the boot chain (loader, U-Boot, etc.) will cause boot failure.
+
+Fortunately, the device is currently unlocked and AVB (Android Verified Boot) is not enforced. The Linux kernel and device tree can therefore be packed into an Android Boot Image with `mkbootimg` and flashed to the boot partition to boot the mainline kernel.
+
 ### Device Tree
 
 [rk3588-9tripod-live3588-v4.dts](https://github.com/yjun123/linux/blob/add_9tripod_live3588_v4_support_v7.3/arch/arm64/boot/dts/rockchip/rk3588-9tripod-live3588-v4.dts)
@@ -106,9 +118,31 @@ RK3588 was merged into mainline Linux in 6.3, and by 7.x most core blocks are su
 
 Mainline support status of key peripherals.
 
+“Out-of-tree” items are covered by Rockchip BSP vendor drivers in the [armbian/linux-rockchip](https://github.com/armbian/linux-rockchip) fork and have not yet been merged into upstream Linux.
+
 | Component | Chip | Mainline driver | Status |
 | --- | --- | --- | --- |
-|      |      |          |    |
+| PMIC | RK806-1 | `rk806` (MFD + Regulator, SPI) | ✅ |
+| GPU | Mali-G610 MP4 | `panthor` | ✅ |
+| NPU | RK3588 6TOPS | `rocket` | ✅ |
+| VPU decode | RKVDEC / Hantro | `hantro_vpu` (H.264/H.265/VP8/AV1) | ✅ |
+| VPU encode | RKVENC | none | ❌ |
+| HDMI-OUT | HDMI 2.1 TX | `dw-hdmi-qp` | ✅ |
+| HDMI-IN2 | HDMI 2.0 RX | `snps_hdmirx` | 🟡 needs open-source TF-A |
+| HDMI-IN1 | LT6911C (MEDIA, I2C) | out-of-tree: [drivers/media/i2c/lt6911c.c](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/drivers/media/i2c/lt6911c.c) | ❌ |
+| eDP | ZTRH ZTRH154FHD02 | `analogix_dp` + `panel-edp` | ✅ panel support requires a non-mainline patch: [drivers/gpu/drm/panel/panel-edp.c](https://github.com/yjun123/linux/commits/add_9tripod_live3588_v4_support_v7.3/) |
+| Audio codec | ES8388 (I2C) | `snd-soc-es8328` | ✅ |
+| Speaker amp | NS4150B | `snd-soc-simple-amplifier` | ✅ |
+| USB audio | Cmedia HS-100C | `snd-usb-audio` | ✅ |
+| GbE PHY | RTL8211FD-CG | `rk_gmac-dwmac` | ✅ |
+| WiFi | RTL8852BE (PCIe) | `rtw89_8852be` | ✅ |
+| BT | RTL8852BE (UART) | `btrtl` | ✅ |
+| Type-C | FUSB302B (I2C) | `typec_fusb302` | ✅ |
+| Touch | GT9110 (I2C) | `goodix` | ✅ |
+| Accelerometer | SC7A20 (I2C) | `st_accel_i2c` | ✅ |
+| Fan | — | `gpio_fan` | ✅ |
+| LED | — | `leds-gpio` | ✅ |
+| Buttons | power key | `rk806` | ✅ |
 
 ### Peripheral Status
 
@@ -121,17 +155,44 @@ Actual (tested) status of peripherals on the mainline kernel:
 
 | Peripheral | Status | Notes |
 | --- | --- | --- |
-|      |      | |
+| eMMC | ✅ | |
+| WiFi | ✅ | |
+| Type-C | 🟡 | FUSB302 does not respond on I2C; fixed host + always-on VBUS |
+| USB 3.0 ×4 | ❌ | all four VL805 ports report over-current and are disabled; no VBUS, all four PE pins unconnected, four OC pins exposed but the control method is not determined |
+| USB 2.0 header | ✅ | USB audio HS-100C recognized |
+| Gigabit Ethernet | ❌ | initializes without errors, but the network does not work |
+| Bluetooth | ❌ | connected via UART but cannot scan |
+| Display - EDP panel | ✅ | see [Drivers - eDP](#drivers) |
+| Display - HDMI-OUT | ✅ | |
+| Display - HDMI-IN1 | ❌ | see [Drivers - HDMI-IN2](#drivers) |
+| Display - HDMI-IN2 | ❌ | see [Drivers - HDMI-IN2](#drivers) |
+| Audio - HDMI | ✅ | |
+| Audio - Speaker | ⬜ | ES8388 + NS4150B; mono speaker |
+| Audio - Microphone | ⬜ | |
+| Audio - Headphone | ⬜ | |
+| Camera | ❌ | no mainline IMX766 driver (node described) |
+| Touch | ✅ | firmware can be extracted from the chip registers |
+| NPU | ⬜ | rocket loaded |
+| VPU decode | ⬜ | hantro registered (AV1 / H.264) |
+| VPU encode | ❌ | see [Drivers - VPU encode](#drivers) |
+| GPU | ✅ | |
+| Power button | ✅ | |
+| LED | ✅ | |
+| Fan | ✅ | |
 
 ### Firmware
 
-## Issues
+| Firmware | Purpose | Source |
+| --- | --- | --- |
+| `rtw89/rtw8852b_fw.bin` | WiFi RTL8852BE | linux-firmware |
+| `rtl8852bs_fw.bin` + `rtl8852bs_config.bin` | Bluetooth | [vendor blob extracted from stock Android](./firmware/rtl_bt) |
+| `goodix_9110_cfg.bin` | Touchscreen | [dumped from the chip registers](./firmware/goodix_9110_cfg.bin) |
 
-### Unimplemented Features
+## Pending Features
 
 | Feature | Description |
 | ---- | ---- |
-|      |      |
+| Boot mainline U-Boot via chainload | |
 
 ## References
 
@@ -144,3 +205,5 @@ Actual (tested) status of peripherals on the mainline kernel:
 [yifengyou/live3588 - 9Tripod Live3588v4.0 development board](https://github.com/yifengyou/live3588)
 
 [Armbian Forum - Request for Firmware – Device Live Broadcast V4 (Board: LIVE3588V4.2) - Eng.ahmedflash](https://forum.armbian.com/topic/54363-request-for-firmware-%E2%80%93-device-live-broadcast-v4-board-live3588v42/)
+
+[rockchip.fr - julienchauveau](https://rockchip.fr/)
