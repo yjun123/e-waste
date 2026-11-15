@@ -155,9 +155,13 @@ RK3588 自 Linux 6.3 进入主线，到 7.x 已支持 CPU/GPU（Panthor）、VOP
 | 千兆 PHY | RTL8211FD-CG | `rk_gmac-dwmac` | ✅ |
 | WiFi | RTL8852BE（PCIe） | `rtw89_8852be` | ✅ |
 | BT | RTL8852BE（UART） | `btrtl` | ✅ |
+| 摄像头 | IMX766（MEDIA，I2C，MIPI-CSI ） | `rockchip-cif` 主线支持采集；`imx766` 树外：[drivers/media/i2c/imx766.c](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/drivers/media/i2c/imx766.c) | ❌ |
+| 对焦马达 | DW9800W（I2C） | 树外：[drivers/media/i2c/dw9800w.c](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/drivers/media/i2c/dw9800w.c) | ❌ |
 | Type-C | FUSB302B(I2C) | `typec_fusb302` | ✅ |
+| USB 3.0 | VL805-Q6(PCIe) | `xhci_pci` | ✅ |
 | 触摸 | GT9110（I2C) | `goodix` | ✅ |
 | 加速度计 | SC7A20(I2C)| `st_accel_i2c` | ✅ |
+| RTC | HYM8563 | `rtc-hym8563` | ✅ |
 | 风扇 | — | `gpio_fan` | ✅ |
 | LED | — | `leds-gpio` | ✅ |
 | 按键 | 电源键 | `rk806` | ✅ |

@@ -53,3 +53,7 @@
 ## Live Streaming Machine
 
 - 九鼎 Live3588V4 直播机主板 9Tripod Live3588V4 Live Streaming Machine Mainboard
+
+## Camera
+
+- 奥比中光 Astra Pro S M 3D结构光相机 Orbbec Astra Pro S M structured-light 3D camera

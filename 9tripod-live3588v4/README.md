@@ -137,9 +137,13 @@ Mainline support status of key peripherals.
 | GbE PHY | RTL8211FD-CG | `rk_gmac-dwmac` | ✅ |
 | WiFi | RTL8852BE (PCIe) | `rtw89_8852be` | ✅ |
 | BT | RTL8852BE (UART) | `btrtl` | ✅ |
+| Camera | IMX766 (MEDIA, I2C, MIPI-CSI) | `rockchip-cif` supported; `imx766` out-of-tree: [drivers/media/i2c/imx766.c](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/drivers/media/i2c/imx766.c) | ❌ |
+| Lens VCM | DW9800W (I2C) | out-of-tree: [drivers/media/i2c/dw9800w.c](https://github.com/armbian/linux-rockchip/blob/rk-6.1-rkr7.2/drivers/media/i2c/dw9800w.c) | ❌ |
 | Type-C | FUSB302B (I2C) | `typec_fusb302` | ✅ |
+| USB 3.0 | VL805-Q6 (PCIe) | `xhci_pci` | ✅ |
 | Touch | GT9110 (I2C) | `goodix` | ✅ |
 | Accelerometer | SC7A20 (I2C) | `st_accel_i2c` | ✅ |
+| RTC | HYM8563 | `rtc-hym8563` | ✅ |
 | Fan | — | `gpio_fan` | ✅ |
 | LED | — | `leds-gpio` | ✅ |
 | Buttons | power key | `rk806` | ✅ |
