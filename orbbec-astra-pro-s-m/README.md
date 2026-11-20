@@ -56,6 +56,10 @@ The RGB camera is a separate USB device inside the unit. It follows the UVC 1.00
 | YUYV (4:2:2) | 640x480 / 352x288 / 320x240 / 176x144 / 160x120 | 30 fps |
 | MJPG | 1280x800 / 1280x720 / 640x480 / 352x288 / 320x240 / 176x144 / 160x120 | 30 fps |
 
+## Host Software
+
+[AstraProSMViewer](https://github.com/yjun123/AstraProSMViewer) — an open-source Qt6 host application (MIT): Depth / IR via OpenNI2, RGB via V4L2/UVC, three streams side by side with runtime-enumerated modes.
+
 ## Debug UART
 
 

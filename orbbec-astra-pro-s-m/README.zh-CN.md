@@ -62,6 +62,10 @@ RGB 摄像头是设备内独立的 USB 设备，遵循 UVC 1.00 协议，由内�
 | YUYV (4:2:2) | 640x480 / 352x288 / 320x240 / 176x144 / 160x120 | 30 fps |
 | MJPG | 1280x800 / 1280x720 / 640x480 / 352x288 / 320x240 / 176x144 / 160x120 | 30 fps |
 
+## 上位机软件
+
+[AstraProSMViewer](https://github.com/yjun123/AstraProSMViewer) —— Qt6 开源上位机（MIT）：Depth / IR 走 OpenNI2，RGB 走 V4L2/UVC，三路同显，模式运行时枚举。
+
 ## 调试串口
 
 
@@ -69,6 +73,8 @@ RGB 摄像头是设备内独立的 USB 设备，遵循 UVC 1.00 协议，由内�
 ## SDK
 
 [OpenNI2 SDK](https://github.com/orbbec/OpenNI_SDK)
+
+
 
 ### 固件
 
